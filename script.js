@@ -116,6 +116,76 @@ let loadingPromise = fetch('./storyScript2.json')
         console.log(storyScript)
     })
 
+// from modNo, id, and episode, loadStory returns episodeNo (str), title (str), openingLine (str), dialogueLines (array). 
+// each element of the dialogueLines array is a JSON object, with the key being the character name and the 
+
+
+// function loadStory(modNo, id) {
+//     //conditional query to get the block with the correct id]
+//     storyBlock = storyScript[modNo][]
+//     episodeNo = storyBlock["episode"]
+//     title = modBlock["title"]
+//     openingLine = modBlock["opening"]
+//     dialogueBlock = modBlock["dialogue"]
+//     dialogueLines = []
+//     dialogueLoadingLine = {dialgoueLines[]}
+//     return ....
+//     /
+// }
+
+
+function createDialogue() {
+    let episodeContainer = document.createElement('section')
+    episodeContainer.classList.add('episodeContainer')
+    // episodeContainer.id = 'modFour'
+
+    // dialogueLines = episode.dialogue
+
+    // episodeContainer.style.backgroundImage = "url(`./assets/${dialogueLines.name}.png`)"
+    episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
+    
+    let avatar = document.createElement('img')
+    avatar.setAttribute("src", "./assets/asset2.png")
+    avatar.classList.add("avatar");
+
+    let dialogueLine = document.createElement('p')
+    dialogueLine.textContent = 'M - How’s your back, honey? (Gently places a plate of Yangzhou fried rice in front of J)'
+    dialogueLine.classList.add("dialogueLine")
+
+    let continueButton = document.createElement('button')
+    continueButton.classList.add('continueButton')
+    continueButton.textContext = "Click to continue"
+    
+    episodeContainer.append(avatar, dialogueLine, continueButton)
+
+    
+
+    // function 
+    // continueButton.onclick() = 
+
+    // for (let i = 0; i <= dialogueLines.length; i++) {
+    //     // get avatar corresponding to the character
+    //     let avatar = document.createElement('img')
+    //     avatar.setAttribute("src", `./assets/${dialogueLines.name}.png`)
+
+    //     avatar.classList.add("avatar");
+
+    //     // get a single dialogue line 
+    //     let dialogueLine = document.createElement('p')
+    //     dialogueLine.textContent = dialogueLines[i]
+    //     dialogueLine.classList.add("dialogueLine")
+
+        // episodeContainer.append(avatar, dialogueLine)
+
+    // }
+        
+    return episodeContainer
+}
+
+function createQn(episode) {
+
+}
+
 let Player = {
     // Variables
     'name': 'John',
@@ -192,21 +262,7 @@ function setUpModThree() {
 }
 
 function setUpModFour() {
-    let modFour = document.createElement('section')
-    modFour.classList.add('modContainer')
-    modFour.id = 'modFour'
-
-    modFour.style.backgroundImage = "url('./assets/asset1.jpg')"
-    
-    let avatar = document.createElement('img')
-    avatar.setAttribute("src", "./assets/asset2.png")
-    avatar.classList.add("avatar");
-
-    let dialogueLine = document.createElement('p')
-    dialogueLine.textContent = 'M - How’s your back, honey? (Gently places a plate of Yangzhou fried rice in front of J)'
-    dialogueLine.classList.add("dialogueLine")
-    
-    modFour.append(avatar, dialogueLine)
+    modFour = createDialogue()
 
     vizCanvas = setUpCanvas()
 
@@ -220,6 +276,7 @@ function setUpModFour() {
     
     // Player.currentSceneSectionReference.remove()
     Player.currentSceneSectionReference = modFour
+
 
 
     return modFour
