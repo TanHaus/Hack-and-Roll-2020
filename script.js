@@ -141,7 +141,7 @@ function createDialogue() {
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
     continueButton.textContext = "Click to continue"
-    continueButton.onclick = continueFrame
+    continueButton.onclick() = continueFrame()
     
     function continueFrame() {
         avatar.setAttribute("src", "./assets/asset5.png")
@@ -259,7 +259,6 @@ function setUpModFour() {
 
     vizCanvas = setUpCanvas()
 
-
     container.append(modFour, vizCanvas)
     
     bodyHTML.appendChild(container)
@@ -286,13 +285,18 @@ function createButton(option){
     return button; 
 }
 
-function createDecision(id){ //id = storyScript.module#[#]
-    //this function generate the 3 decisions in an id. 
+function createDecision(episode){ //episode = storyScript.module#[#]
+    //this function generate the 3 decisions in an episode. 
     let wrapper = document.createElement("section");
+    let title = document.createElement("h1");
+    title.classList.add("decTitle");
+    title.textContent = "What should I do?";
+    wrapper.classList.add("wrapper");
+    wrapper.appendChild(title);
     for(let i=0; i<3; i++){
-        wrapper.appendChild(createButton(id.options[i].desc));
+        wrapper.appendChild(createButton(episode.options[i].desc));
     }
-    bodyHTML.appendChild(wrapper);
+    bodyHTML.append(wrapper);
 
     return wrapper; 
 }
@@ -307,11 +311,11 @@ async function test() {
     await loadingPromise; 
     createDecision(storyScript.module1[0]);
 }
-// test();
+test();
 // startMenuScreen();
 async function testFuck() {
     await loadingPromise;
     setUpModFour()
 }
-testFuck()
+// testFuck()
 // setDecisionPage()
