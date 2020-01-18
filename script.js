@@ -489,9 +489,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
-        Player.health += option.point.Health; 
-        Player.wealth += option.point.Wealth; 
-        Player.happiness += option.point.Happiness; 
+        Player.health += option.point.Health*10; 
+        Player.wealth += option.point.Wealth*10; 
+        Player.happiness += option.point.Happiness*10; 
         
         //advance to outcome page 
         Player.decisionWrapper.remove();
