@@ -349,7 +349,7 @@
             "id": 3,
             "episode": 3,
             "title": "What's your appetite?",
-            "opening": "",
+            "opening": "It's Valentines'. You brought Mary on a date to Yokita's Restaurant. After spending some time on deciding what to eat, you called for the waiter. He arrives to take both your orders. ",
             "characters": {
                 "J": "John",
                 "M": "Mary",
@@ -690,7 +690,7 @@
             "id": 5,
             "episode": 2,
             "title": "Inheritance",
-            "opening": "After a long battle with leukemia, your grandfather passed away. You recently found out that you inherited a fortune from him. It’s 12.35pm and you’re having lunch with your colleagues.",
+            "opening": "After a long battle with leukemia, your grandfather passed away. You recently found out that you inherited a fortune from him. It's 12.35pm and you're having lunch with your colleagues.",
             "characters": {
                 "J": "John",
                 "R": "Rachel",
@@ -820,10 +820,10 @@
                 },
                 {
                     "name": "John",
-                    "text": "Huh? I mean I’ll go think about it. Nothing much."
+                    "text": "Huh? I mean I'll go think about it. Nothing much."
                 }
             ],
-            "decision": "u knock off for the day, with mixed feelings about the inheritance. It’s quite a lot of money, and you did promise Mary another trip in the near future. You decide to…",
+            "decision": "u knock off for the day, with mixed feelings about the inheritance. It's quite a lot of money, and you did promise Mary another trip in the near future. You decide to…",
             "options": [
                 {
                     "option": "1",
@@ -848,7 +848,7 @@
                 {
                     "option": "3",
                     "desc": "Save all the money ",
-                    "outcome": "You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn’t give you much returns, to your discontent.",
+                    "outcome": "You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn't give you much returns, to your discontent.",
                     "point": {
                         "Wealth": 5,
                         "Health": 0,
@@ -861,7 +861,7 @@
             "id": 6,
             "episode": 3,
             "title": "Cover me",
-            "opening": "You’re in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It’s 9.35pm and you’re putting the kids to bed.",
+            "opening": "You're in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It's 9.35pm and you're putting the kids to bed.",
             "characters": {
                 "J": "John",
                 "M": "Mary",
@@ -1373,7 +1373,7 @@
             "id": 9,
             "episode": 3,
             "title": "To retire or not to retire?",
-            "opening": "",
+            "opening": "Your age has caught up and you occasionally suffer from knee and back problems. Mary has just finished cooking dinner for the both of you. It's 6.05pm, at the dining table.",
             "characters": {
                 "J": "John",
                 "M": "Mary"
