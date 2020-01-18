@@ -234,6 +234,10 @@ button:active {
     animation: fadeOut 1s ease-in-out;
 }
 
+.addSlowFadeOut {
+    animation: fadeOut 15s linear;
+}
+
 .addFadeIn {
     animation: fadeIn 1s ease-in-out;
 }

@@ -557,9 +557,13 @@ function explode() {
             visualizer.particleRadius *= 1.003
 
             setTimeout(growCanvas, 16)
+        } else {
+            container.firstChild.remove()
+            container.classList.add('addFlash')
         }
     }
 
+    container.firstChild.classList.add('addSlowFadeOut')
     growCanvas()
 }
 
