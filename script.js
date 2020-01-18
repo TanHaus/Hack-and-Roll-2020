@@ -144,7 +144,8 @@ function createDialogue(episode) {
             avatar.remove()
             dialogueLine.remove()
             continueButton.remove()
-            episodeContainer.append(createDecision(episode))
+            decisionBlock = createDecision(episode)
+            episodeContainer.append(decisionBlock)
         }
         updateFrame(i)
     }
@@ -198,7 +199,11 @@ let Player = {
     'health':0, 
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
+<<<<<<< HEAD
     'outcomeWrapper' : null,
+=======
+    'episodeContainerReference': null,
+>>>>>>> db050b35034ae7265f8748c88d3f3dd3721c1332
     
 
     // Methods
@@ -281,7 +286,7 @@ function setUpModFour() {
 
     episode1 = storyScript.stage1[0]
     modFour = createDialogue(episode1)
-    // modFour = createDecision(episode1)
+    Player.episodeContainerReference = modFour
 
     vizCanvas = setUpCanvas()
 
@@ -292,7 +297,6 @@ function setUpModFour() {
 
     requestAnimationFrame(vizLoop)
     
-    // Player.currentSceneSectionReference.remove()
     Player.currentSceneSectionReference = modFour
 
     return modFour
@@ -330,7 +334,7 @@ function createDecision(episode){ //episode = storyScript.module#[#]
     }
     
     Player.decisionWrapper = wrapper; 
-    bodyHTML.append(wrapper);
+    // bodyHTML.append(wrapper);
     return wrapper; 
 }
 
@@ -351,12 +355,14 @@ function setOutcomePage(option){
 
     textWrapper.appendChild(text);
     wrapper.append(title,textWrapper);
-    bodyHTML.append(wrapper);
+    Player.episodeContainerReference.append(wrapper);
     return wrapper; 
 }
 
 function setUpReportCard() {
+    Player.currentSceneSectionReference.remove()
 
+    
 }
 
 //TESTING
@@ -370,7 +376,7 @@ async function testFuck() {
     await loadingPromise;
     setUpModFour()
 }
-test();
+// test();
 // testFuck()
 // setDecisionPage()
 

@@ -139,105 +139,30 @@
                     "text": "Same."
                 }
             ],
-            "decision": "er time, you wonder about your financial status. “Is there anything I can do?” You ask yourself as you spend another graceless night with your friends. Eventually, you decide to:",
+            "decision": "er time, you wonder about your financial status. “Is there anything I can do?” You ask yourself as you spend another graceless night with your friends. Eventually, you decide to...",
             "options": [
                 {
-                    "option": 1,
+                    "option": "1",
                     "desc": "Look for a part-time job ",
                     "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary’s suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
                     "point": {
-                        "Wealth": 25,
-                        "Health": -5,
-                        "Happiness": [
-                            -10,
-                            10
-                        ]
+                        "Wealth": 25
                     }
                 },
                 {
-                    "option": 2,
-                    "desc": "Look for a part-time job ",
-                    "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary’s suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
-                    "point": {
-                        "Wealth": 25,
-                        "Health": -5,
-                        "Happiness": [
-                            -10,
-                            10
-                        ]
-                    }
-                },
-                {
-                    "option": 3,
-                    "desc": "Look for a part-time job ",
-                    "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary’s suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
-                    "point": {
-                        "Wealth": 25,
-                        "Health": -5,
-                        "Happiness": [
-                            -10,
-                            10
-                        ]
-                    }
-                },
-                {
-                    "option": 1,
+                    "option": "2",
                     "desc": "Cut down on your spending.",
                     "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
                     "point": {
-                        "Wealth": 15,
-                        "Health": 10,
-                        "Happiness": -5
+                        "Wealth": 15
                     }
                 },
                 {
-                    "option": 2,
-                    "desc": "Cut down on your spending.",
-                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
+                    "option": "3",
+                    "desc": "Continue living life as usual.",
+                    "outcome": "You carry on living and spending your money with your good friends, sometimes even on yourself. Time passes, and you occasionally fear not having enough money to fund your entire university course. The worst that could happen is asking your parents for money. ",
                     "point": {
-                        "Wealth": 15,
-                        "Health": 10,
-                        "Happiness": -5
-                    }
-                },
-                {
-                    "option": 3,
-                    "desc": "Cut down on your spending.",
-                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
-                    "point": {
-                        "Wealth": 15,
-                        "Health": 10,
-                        "Happiness": -5
-                    }
-                },
-                {
-                    "option": 1,
-                    "desc": "Cut down on your spending.",
-                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
-                    "point": {
-                        "Wealth": 15,
-                        "Health": 10,
-                        "Happiness": -5
-                    }
-                },
-                {
-                    "option": 2,
-                    "desc": "Cut down on your spending.",
-                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
-                    "point": {
-                        "Wealth": 15,
-                        "Health": 10,
-                        "Happiness": -5
-                    }
-                },
-                {
-                    "option": 3,
-                    "desc": "Cut down on your spending.",
-                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
-                    "point": {
-                        "Wealth": 15,
-                        "Health": 10,
-                        "Happiness": -5
+                        "Wealth": -15
                     }
                 }
             ]
