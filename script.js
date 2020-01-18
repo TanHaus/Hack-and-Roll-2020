@@ -193,7 +193,9 @@ let Player = {
     'name': 'John',
     'sex': 'unidentified',
     'currentStage': 1,
-    'points': 0,
+    'wealth': 0,
+    'happiness':0, 
+    'health':0, 
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
     
@@ -302,6 +304,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
+        Player.health += option.point.Health; 
+        Player.wealth += option.point.Wealth; 
+        Player.happiness += option.point.Happiness; 
         
         //advance to outcome page 
         Player.decisionWrapper.remove();
@@ -364,6 +369,7 @@ async function testFuck() {
     await loadingPromise;
     setUpModFour()
 }
+test();
 // testFuck()
 // setDecisionPage()
 
