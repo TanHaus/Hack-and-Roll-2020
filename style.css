@@ -254,8 +254,17 @@ button:active {
     }
 }
 
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
 .addFlash {
     animation: flash 0.5s ease-in-out;
+}
+
+.addFadeOut {
+    animation: fadeOut 1s ease-in-out;
 }
 
 .stageContainerButtons {

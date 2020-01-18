@@ -300,8 +300,12 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
     let nextButton = document.createElement('button')
     nextButton.textContent = '...'
     nextButton.onclick = () => {
-        clearTimeout(timeoutid)
-        loadEpisode()
+        // clearTimeout(timeoutid)
+        Player.upperContainerReference.classList.add('addFadeOut')
+        setTimeout(() => {
+            Player.upperContainerReference.classList.remove('addFadeOut')
+            loadEpisode()
+        }, 1000)
     }
 
     let j = 0
@@ -341,8 +345,14 @@ function startMenuScreen() {
 
     let startButton = document.createElement("button");
     startButton.textContent = "Play"
-    startButton.onclick = setUpStage
+    startButton.onclick = () => {
+        menu.classList.add('addFadeOut')
+        setTimeout(() => {
+            menu.classList.remove('addFadeOut')
+            setUpStage()
+        }, 1000)
 
+    }
     let optionButton = document.createElement("button");
     optionButton.textContent = "Jump To ..."
     optionButton.onclick = function (){
@@ -430,9 +440,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
-        Player.health += option.point.Health; 
-        Player.wealth += option.point.Wealth; 
-        Player.happiness += option.point.Happiness; 
+        Player.health += option.point.Health*10; 
+        Player.wealth += option.point.Wealth*10; 
+        Player.happiness += option.point.Happiness*10; 
         
         //advance to outcome page 
         Player.decisionWrapper.remove();
