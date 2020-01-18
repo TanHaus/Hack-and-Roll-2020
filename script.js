@@ -1,5 +1,4 @@
 let bodyHTML = document.querySelector('body')
-
 // Create a container for each mod and the viz canvas
 let container = document.createElement('container')
 let vizCanvas
@@ -199,11 +198,7 @@ let Player = {
     'health':0, 
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
-<<<<<<< HEAD
-    'outcomeWrapper' : null,
-=======
     'episodeContainerReference': null,
->>>>>>> db050b35034ae7265f8748c88d3f3dd3721c1332
     
 
     // Methods
@@ -321,13 +316,15 @@ function createButton(option){
     return button; 
 }
 
-function createDecision(episode){ //episode = storyScript.module#[#]
+function createDecision(episode){ //episode = storyScript.stage#[#]
     //this function generate the 3 decisions in an episode. 
     let wrapper = document.createElement("section");
+    wrapper.classList.add("wrapper");
+
     let title = document.createElement("h1");
     title.classList.add("decTitle");
     title.textContent = "What should I do?";
-    wrapper.classList.add("wrapper");
+
     wrapper.appendChild(title);
     for(let i=0; i<3; i++){
         wrapper.appendChild(createButton(episode.options[i]));
@@ -377,7 +374,7 @@ async function testFuck() {
     setUpModFour()
 }
 // test();
-// testFuck()
+testFuck()
 // setDecisionPage()
 
-startMenuScreen()
+// startMenuScreen()

@@ -78,7 +78,8 @@ section h1 {
     display:block;
     color: white; 
     padding: 10px;
-    border: none;
+    border-radius: 15px; 
+    border-style:solid; 
     background: none;
     font-family: 'Roboto';
     font-size: 15px;
