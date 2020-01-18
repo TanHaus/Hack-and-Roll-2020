@@ -133,6 +133,15 @@ section h1 {
     height: 60vh;
 }
 
+.decTitle{
+    text-align: center; 
+    letter-spacing : 2px; 
+    color: white; 
+    font-size: 25px;
+
+    
+}
+
 .avatar{
     position: absolute; 
     width: 80%;
