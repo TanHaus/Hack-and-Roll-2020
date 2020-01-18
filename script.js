@@ -205,7 +205,6 @@ function createDialogue(episodeObject) {
 
 
         dialogueLine.textContent = ''
-        console.log(dialogueContent)
         typeWriter(dialogueLine, dialogueContent);
     }
     let j = 0
@@ -241,26 +240,51 @@ let Player = {
     
 
     // Methods
-    setName: function(name) {
-        Player.name = name
-    },
-    setSex: function(sex) {
-        Player.sex = sex
-    },
-    proceedStage: function() {
-        Player.currentStage += 1
-    },
-    increasePoints: function(value) {
-        Player.points += value
-    },
     clearUpperContainer: function() {
-        Player.upperContainerReference.firstChild.remove()
+        if(Player.upperContainerReference!=null) Player.upperContainerReference.firstChild.remove()
     }
 }
 
 function loadEpisode(episode = Player.currentEpisode, stage = Player.currentStage) {
     episodeObject = storyScript[`stage${stage}`][episode - 1]
-    return createDialogue(episodeObject)
+    Player.clearUpperContainer()
+    Player.upperContainerReference.append(createDialogue(episodeObject))
+}
+
+function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.currentStage) {
+    episodeObject = storyScript[`stage${stage}`][episode - 1]
+    let title = episodeObject.title
+        opening = episodeObject.opening
+    
+    let group = document.createElement('section')
+    group.classList.add('episodeContainer')
+
+    let episodeTitle = document.createElement('h1')
+    episodeTitle.textContent = title
+
+    let episodeOpening = document.createElement('p')
+
+    let nextButton = document.createElement('button')
+    nextButton.textContent = '...'
+    nextButton.onclick = () => {
+        clearTimeout(timeoutid)
+        loadEpisode()
+    }
+
+    let j = 0
+    let timeoutid = 0;   
+    function typeWriter(textObject, text) {
+        if (j < text.length) {
+          textObject.textContent += text[j];
+          j++;
+          timeoutid = setTimeout(() => typeWriter(textObject, text), 50);
+        }
+    }
+    
+    typeWriter(episodeOpening, opening)
+
+    group.append(episodeTitle, episodeOpening, nextButton)
+    Player.upperContainerReference.append(group)
 }
 
 function startMenuScreen() {
@@ -309,15 +333,13 @@ function setUpStage() {
     visualizer.updateDimension()
     visualizer.run()
 
-    let stageContent = loadEpisode(3, 3)
-    Player.upperContainerReference.append(stageContent)
+    loadTitleAndOpening()
 
-    Player.currentEpisode = 3
-    Player.currentStage = 3
+    // Player.currentEpisode = 3
+    // Player.currentStage = 3
 }
 
 function nextEpisode() {
-    Player.clearUpperContainer()
     if(Player.currentEpisode<3) {
         Player.currentEpisode += 1
 
@@ -333,8 +355,8 @@ function nextEpisode() {
         }
     }
     
-    let stageContent = loadEpisode()
-    Player.upperContainerReference.append(stageContent)
+    Player.clearUpperContainer()
+    loadTitleAndOpening()
 }
 
 function createButton(option){
