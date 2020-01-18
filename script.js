@@ -1,8 +1,6 @@
 let bodyHTML = document.querySelector('body')
-
 // Create a container for each mod and the viz canvas
 let container = document.createElement('container')
-let vizCanvas
 
 let particleArray = []
 
@@ -41,14 +39,14 @@ class Vector {
  * Particle Class
  */
 class Particle {
-    constructor(x, y) {
-        this.acceleration = new Vector(0, 0.05)
-        this.velocity = new Vector(Math.random() * 2 - 1, -Math.random())
+    constructor(x, y, radius, accelerationY, velocityX) {
+        this.acceleration = new Vector(0, accelerationY)
+        this.velocity = new Vector((Math.random()*2-1)*velocityX, -Math.random())
         this.position = new Vector(x, y)
         this.lifespan = 100
-        this.radius = 5
+        this.radius = radius
         this.lineWidth = 1
-        this.color = 'rgba(256, 256, 256, 1)'
+        this.color = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
     }
     run(vizCtx) {
         this.update();
@@ -69,22 +67,12 @@ class Particle {
         vizCtx.beginPath()
         vizCtx.arc(0, 0, this.radius, 0, Math.PI * 2)
         vizCtx.lineWidth = this.lineWidth
-        vizCtx.strokeStyle = `rgba(0,0,0,${this.lifespan/100})`
+        vizCtx.strokeStyle = 'white'
         vizCtx.stroke()
+        vizCtx.fillStyle = this.color
+        vizCtx.fill()
         
         vizCtx.restore()
-    }
-    setAcceleration(newValue) {
-        this.acceleration = new Vector(0, newValue)
-    }
-    setRadius(newValue) {
-        this.radius = newValue
-    }
-    setLifespan(newValue) {
-        this.lifespan = newValue
-    }
-    setColor(red, green, blue, alpha) {
-        this.color = `rgba(${red}, ${green}, ${blue}, ${alpha})`
     }
 }
 
@@ -94,6 +82,7 @@ let visualizer = {
     canvasWidth: 0,
     canvasHeight: 0,
     animationRequestId: 0,
+    color: '',
 
     setUp: function() {
         let canvas = document.createElement('canvas')
@@ -119,7 +108,7 @@ let visualizer = {
             for (let i=0; i<particleArray.length; i++) {
                 particleArray[i].run(visualizer.vizCtx)
             }
-            particleArray.push(new Particle(visualizer.canvasWidth/2,30))
+            particleArray.push(new Particle(visualizer.canvasWidth/2,30, Player.health/2, Player.health/100, Player.health/2))
             
             visualizer.animationRequestId = requestAnimationFrame(vizLoop)
         }
@@ -137,13 +126,12 @@ let storyScript
 let loadingPromise = fetch('./storyScriptPython.json')
     .then((response) => {
         return response.json()
-    })
-    .then((jsonFile) => {
+    }).then((jsonFile) => {
         storyScript = jsonFile
     })
 
-function createDialogue(episode) {
-    dialogueBlock = episode.dialogue
+function createDialogue(episodeObject) {
+    dialogueBlock = episodeObject.dialogue
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
@@ -161,7 +149,7 @@ function createDialogue(episode) {
             avatar.remove()
             dialogueLine.remove()
             continueButton.remove()
-            decisionBlock = createDecision(episode)
+            decisionBlock = createDecision(episodeObject)
             episodeContainer.append(decisionBlock)
         }
         updateFrame(i)
@@ -185,13 +173,14 @@ let Player = {
     'sex': 'unidentified',
     'currentStage': 1,
     'currentEpisode': 1,
-    'wealth': 0,
-    'happiness': 0, 
-    'health': 0, 
+    'wealth': 50, //determines the radius of Particles
+    'happiness': 50, //determines the color of the Particles
+    'health': 50, //determines the inital velocity and acceleration of the Particles
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
     'outcomeWrapper' : null,
     'episodeContainerReference': null,
+    'upperContainerReference': null,
     
 
     // Methods
@@ -206,6 +195,9 @@ let Player = {
     },
     increasePoints: function(value) {
         Player.points += value
+    },
+    clearUpperContainer: function() {
+        Player.upperContainerReference.firstChild.remove()
     }
 }
 
@@ -227,11 +219,10 @@ function startMenuScreen() {
     let gameTitle = document.createElement("h1")
     gameTitle.textContent="Game"
 
-
     let startButton = document.createElement("button");
     startButton.classList.add("startButton");
     startButton.textContent = "Start Game"
-    startButton.onclick = setUpModFour
+    startButton.onclick = setUpStage
     
     async function addButton() {
         await loadingPromise
@@ -243,39 +234,51 @@ function startMenuScreen() {
     Player.currentSceneSectionReference = background
 }
 
-function setUpModOne() {
-    let modOne = document.createElement('section')
-    modOne.id = 'modOne'
+function setUpStage() {
+    Player.currentSceneSectionReference.remove()
+    visualizer.setUp()
+    let upperContainer = document.createElement('section')
+    Player.upperContainerReference = upperContainer
+    container.append(upperContainer, visualizer.vizCanvas)
 
-    Player.currentSceneSectionReference.remove()    // remove the current scene from the DOM
-    Player.currentSceneSectionReference = modOne
+    bodyHTML.append(container)
 
-    return modOne
+    visualizer.updateDimension()
+    visualizer.run()
+
+    let stageContent = loadEpisode(1, 1)
+    Player.upperContainerReference.append(stageContent)
+
+    Player.currentEpisode = 1
+    Player.currentStage = 1
 }
 
-function setUpModTwo() {
-    let modTwo = document.createElement('section')
-    modTwo.id = 'modTwo'
+function nextEpisode() {
+    if(Player.currentEpisode<3) {
+        Player.currentEpisode += 1
+        loadEpisode()
 
-    Player.currentSceneSectionReference.remove()
-    Player.currentSceneSectionReference = modOne
-
-    return modTwo
-}
-
-function setUpModThree() {
-    let modThree = document.createElement('section')
-    modThree.id = 'modThree'
-
-    Player.currentSceneSectionReference.remove()
-    Player.currentSceneSectionReference = modOne
-
-    return modThree
+    } else {
+        Player.currentEpisode = 1
+        
+        if(Player.currentStage<3) {
+            Player.currentStage += 1
+        
+        } else {
+            setUpReportCard()
+        }
+    }
+    Player.clearUpperContainer()
+    
+    let stageContent = loadEpisode()
+    Player.upperContainerReference.append(stageContent)
 }
 
 function setUpModFour() {
-    Player.currentStage = 1
-    Player.currentSceneSectionReference.remove()
+    Player.currentStage = 4
+    if(Player.currentSceneSectionReference!=null){
+        Player.currentSceneSectionReference.remove()
+    } else {}
 
 
     // episode1 = storyScript.stage1[0]
@@ -318,18 +321,39 @@ function createButton(option){
     return button; 
 }
 
-function createDecision(episode){ //episode = storyScript.module#[#]
+function createDecision(episode){ //episode = storyScript.stage#[#]
     //this function generate the 3 decisions in an episode. 
+
+    //wrapper for everything 
     let wrapper = document.createElement("section");
+    wrapper.classList.add("wrapper");
+
+    //title and its wrapper 
     let title = document.createElement("h1");
     title.classList.add("decTitle");
     title.textContent = "What should I do?";
-    wrapper.classList.add("wrapper");
-    wrapper.appendChild(title);
+
+    let titWrapper = document.createElement("section");
+    titWrapper.classList.add("titWrapper");
+    titWrapper.appendChild(title);
+
+    //subtitle and its wrapper 
+    let subTitle = document.createElement("p");
+    subTitle.classList.add("subTitle");
+    subTitle.textContent = episode.decision; 
+
+    let subWrapper = document.createElement("section");
+    subWrapper.classList.add("subWrapper");
+    subWrapper.appendChild(subTitle);
+
+    //button and its wrapper 
+    let buttonWrapper = document.createElement("section");
+    buttonWrapper.classList.add("buttonWrapper");
+
     for(let i=0; i<3; i++){
-        wrapper.appendChild(createButton(episode.options[i]));
+        buttonWrapper.appendChild(createButton(episode.options[i]));
     }
-    
+    wrapper.append(titWrapper,subWrapper,buttonWrapper);
     Player.decisionWrapper = wrapper; 
     // bodyHTML.append(wrapper);
     return wrapper; 
@@ -339,61 +363,44 @@ function setOutcomePage(option){
     let wrapper = document.createElement("section");
     wrapper.classList.add("wrapper");
 
-    let textWrapper = document.createElement("section");
-    textWrapper.classList.add("textWrapper");
-
     let title = document.createElement("h1");
     title.classList.add("decTitle");
     title.textContent = "Outcome";
-
-    let text = document.createElement("p");
-    text.classList.add("outcomeP")
-    text.textContent = option.outcome;
     
     let button = document.createElement('button')
     button.textContent = 'Next'
-    button.onclick = () => {
-        if(Player.currentEpisode<3) {
-            Player.currentEpisode += 1
-            loadEpisode()
+    button.onclick = nextEpisode
 
-        } else {
-            Player.currentEpisode = 1
-            
-            if(Player.currentStage<3) {
-                Player.currentStage += 1
-            
-            } else {
-                setUpReportCard()
-            }
-        }
-    }
+    //subtitle and its wrapper 
+    let subTitle = document.createElement("p");
+    subTitle.classList.add("subTitle");
+    subTitle.textContent = option.outcome; 
 
-    textWrapper.appendChild(text);
-    wrapper.append(title,textWrapper, button);
-    Player.episodeContainerReference.append(wrapper);
+    let subWrapper = document.createElement("section");
+    subWrapper.classList.add("subWrapper");
+    subWrapper.appendChild(subTitle);
+    
+    //append
+    wrapper.append(title,button,subWrapper);
+    Player.clearUpperContainer()
+    Player.upperContainerReference.append(wrapper);
     return wrapper; 
 }
 
-function setUpReportCard() {
-    Player.currentSceneSectionReference.remove()
-
-    
-}
-
-//TESTING
-async function test() {
-    await loadingPromise; 
-    createDecision(storyScript.stage1[0]);
-}
-// test();
-// startMenuScreen();
-async function testFuck() {
-    await loadingPromise;
-    setUpModFour()
-}
-// test();
+// //TESTING
+// async function test() {
+//     await storyScript; 
+//     createDecision(storyScript.stage1[0]);
+// }
+// // test();
+// // startMenuScreen();
+// async function testFuck() {
+//     await storyScript;
+//     setUpModFour()
+// }
+// // test();
 // testFuck()
 // setDecisionPage()
 
 startMenuScreen()
+
