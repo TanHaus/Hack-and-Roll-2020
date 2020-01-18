@@ -193,6 +193,19 @@ function createDialogue(episodeObject) {
     episodeContainer.classList.add('episodeContainer')
     episodeContainer.style.backgroundImage = `url('./assets/bg${episodeObject["id"]}.jpg')`
     
+    //home button
+    let homeButton = document.createElement("input");
+    homeButton.setAttribute("type","image");
+    homeButton.classList.add("homeButton");
+    homeButton.src = './assets/icon.jpeg'; 
+    homeButton.onclick = function(){
+        episodeContainer.remove();
+        visualizer.vizCanvas.remove();
+        Player.currentSceneSectionReference = null; 
+        Player.episodeContainerReference = null; 
+        Player.upperContainerReference = null; 
+        startMenuScreen();
+    }
     //dialogue line and its wrapper 
     let dialogueBox = document.createElement('section')
     dialogueBox.classList.add("dialogueBox");
@@ -273,7 +286,7 @@ function createDialogue(episodeObject) {
     
     let i = 0
     updateFrame(i)
-    episodeContainer.append(avatarContainer, dialogueBox, charName, continueButton)
+    episodeContainer.append(avatarContainer, dialogueBox, charName, continueButton,homeButton)
 
     return episodeContainer
 }
@@ -339,20 +352,19 @@ function startMenuScreen() {
     let gameTitle = document.createElement("h1")
     gameTitle.textContent = "The Singaporean Dream"
 
-    //buttons
-
+    //button
     let stageArray = ["1: Young Adult", "2: Working Adult", "3: Silver Years"]
-
+    
     let startButton = document.createElement("button");
     startButton.textContent = "Play"
     startButton.onclick = () => {
         menu.classList.add('addFadeOut')
         setTimeout(() => {
-            menu.classList.remove('addFadeOut')
-            setUpStage()
+            menu.classList.remove('addFadeOut');
+            setUpStage();
         }, 1000)
-
     }
+
     let optionButton = document.createElement("button");
     optionButton.textContent = "Jump To ..."
     optionButton.onclick = function (){

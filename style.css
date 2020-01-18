@@ -93,6 +93,14 @@ button:active {
     height: 60vh;
 }
 
+.homeButton {
+    max-width: 6%;
+    height: auto; 
+    padding:1rem; 
+    opacity: 0.70;
+}
+
+
 .decTitle{
     margin: 0px auto; 
     padding-top: 2rem;
