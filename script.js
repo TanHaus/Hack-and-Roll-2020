@@ -199,7 +199,6 @@ function startMenuScreen() {
     let gameTitle = document.createElement("h1")
     gameTitle.textContent="Game"
 
-
     let startButton = document.createElement("button");
     startButton.classList.add("startButton");
     startButton.textContent = "Start Game"
@@ -247,7 +246,9 @@ function setUpModThree() {
 
 function setUpModFour() {
     Player.currentStage = 4
-    Player.currentSceneSectionReference.remove()
+    if(Player.currentSceneSectionReference!=null){
+        Player.currentSceneSectionReference.remove()
+    } else {}
 
     episode1 = storyScript.stage1[0]
     modFour = createDialogue(episode1)
@@ -291,18 +292,37 @@ function createButton(option){
 
 function createDecision(episode){ //episode = storyScript.stage#[#]
     //this function generate the 3 decisions in an episode. 
+
+    //wrapper for everything 
     let wrapper = document.createElement("section");
     wrapper.classList.add("wrapper");
 
+    //title and its wrapper 
     let title = document.createElement("h1");
     title.classList.add("decTitle");
     title.textContent = "What should I do?";
 
-    wrapper.appendChild(title);
+    let titWrapper = document.createElement("section");
+    titWrapper.classList.add("titWrapper");
+    titWrapper.appendChild(title);
+
+    //subtitle and its wrapper 
+    let subTitle = document.createElement("p");
+    subTitle.classList.add("subTitle");
+    subTitle.textContent = episode.decision; 
+
+    let subWrapper = document.createElement("section");
+    subWrapper.classList.add("subWrapper");
+    subWrapper.appendChild(subTitle);
+
+    //button and its wrapper 
+    let buttonWrapper = document.createElement("section");
+    buttonWrapper.classList.add("buttonWrapper");
+
     for(let i=0; i<3; i++){
-        wrapper.appendChild(createButton(episode.options[i]));
+        buttonWrapper.appendChild(createButton(episode.options[i]));
     }
-    
+    wrapper.append(titWrapper,subWrapper,buttonWrapper);
     Player.decisionWrapper = wrapper; 
     // bodyHTML.append(wrapper);
     return wrapper; 
@@ -312,19 +332,21 @@ function setOutcomePage(option){
     let wrapper = document.createElement("section");
     wrapper.classList.add("wrapper");
 
-    let textWrapper = document.createElement("section");
-    textWrapper.classList.add("textWrapper");
-
     let title = document.createElement("h1");
     title.classList.add("decTitle");
     title.textContent = "Outcome";
 
-    let text = document.createElement("p");
-    text.classList.add("outcomeP")
-    text.textContent = option.outcome; 
+    //subtitle and its wrapper 
+    let subTitle = document.createElement("p");
+    subTitle.classList.add("subTitle");
+    subTitle.textContent = option.outcome; 
 
-    textWrapper.appendChild(text);
-    wrapper.append(title,textWrapper);
+    let subWrapper = document.createElement("section");
+    subWrapper.classList.add("subWrapper");
+    subWrapper.appendChild(subTitle);
+    
+    //append
+    wrapper.append(title,subWrapper);
     Player.episodeContainerReference.append(wrapper);
     return wrapper; 
 }

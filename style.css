@@ -48,6 +48,8 @@ section h1 {
 /* Decision and Outcome Page */
 .wrapper {
     background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 60vh;
 }
 
 .decPage{
@@ -60,12 +62,27 @@ section h1 {
 }
 
 .decTitle{
+    margin: 0px auto; 
     text-align: center; 
     letter-spacing : 2px; 
     color: white; 
     font-size: 25px;   
 }
+.buttonWrapper {
+    margin-top: 18%; 
+}
 
+.subWrapper {
+    margin-top : 10%; 
+    margin-left : 10%; 
+    margin-right: 10%;
+}
+.subTitle {
+    text-align: center; 
+    letter-spacing : 2px; 
+    color: white; 
+    font-size: 15px;  
+}
 .outcomeP {
     color: white; 
     font-size: 15px; 
@@ -95,8 +112,9 @@ section h1 {
     background: none; 
     padding:10px; 
     transition: all 0.3s ease-in;
-
 }
+
+/*Mods*/
 .menu {
     margin:0; 
     position: absolute; 
