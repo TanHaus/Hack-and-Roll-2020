@@ -198,9 +198,8 @@ button:active {
 
 .dialogueLine{
     font-family: 'Roboto', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: white;
-    text-align: center;
     margin-left: 2rem;
     margin-right: 2rem;
 }
@@ -223,13 +222,14 @@ button:active {
     font-size: 1.5rem;
     color: white;
     font-style:italic; 
+    text-align: center; 
     
     background-color: rgba(233, 236, 38, 0.705);
     padding: 0.2rem 3rem 0.4rem 1rem;
     border-radius: 0.4rem;
     margin: 0 auto;
     position: absolute;
-    bottom: calc(3.5rem + 28px);
+    bottom: calc(4.3rem + 28px);
     left: calc(15% - 1rem);
 }
 
