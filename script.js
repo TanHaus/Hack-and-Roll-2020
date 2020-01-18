@@ -1,3 +1,35 @@
+let Player = {
+    // Variables
+    'name': 'John',
+    'sex': 'unidentified',
+    'currentStage': 1,
+    'currentEpisode': 1,
+    'wealth': 50, //determines the radius of Particles
+    'happiness': 50, //determines the saturation and luminance of the Particles
+    'health': 50, //determines the inital velocity and acceleration of the Particles
+    'currentSceneSectionReference': null,
+    'decisionWrapper': null,
+    'episodeContainerReference': null,
+    'upperContainerReference': null,
+    
+
+    // Methods
+    setName: function(name) {
+        Player.name = name
+    },
+    setSex: function(sex) {
+        Player.sex = sex
+    },
+    proceedStage: function() {
+        Player.currentStage += 1
+    },
+    increasePoints: function(value) {
+        Player.points += value
+    },
+    clearUpperContainer: function() {
+        Player.upperContainerReference.firstChild.remove()
+    }
+}
 
 let bodyHTML = document.querySelector('body')
 // Create a container for each mod and the viz canvas
@@ -41,14 +73,14 @@ class Vector {
  * Particle Class
  */
 class Particle {
-    constructor(x, y, radius, accelerationY, velocityX) {
-        this.acceleration = new Vector(0, accelerationY)
-        this.velocity = new Vector((Math.random()*2-1)*velocityX, -Math.random())
+    constructor(x, y) {
+        this.acceleration = new Vector(0, visualizer.particleAcceleration)
+        this.velocity = new Vector((Math.random()*2-1)*visualizer.particleVelocity, -Math.random())
         this.position = new Vector(x, y)
         this.lifespan = 100
-        this.radius = radius
+        this.radius = visualizer.particleRadius
         this.lineWidth = 1
-        this.color = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
+        this.color = visualizer.particleColorHsl
     }
     run(vizCtx) {
         this.update();
@@ -61,6 +93,7 @@ class Particle {
         if(this.lifespan == 0) {
             particleArray.splice(particleArray.indexOf(this), 1)
         }
+        
     }
     display(vizCtx) {
         vizCtx.save()
@@ -69,9 +102,10 @@ class Particle {
         vizCtx.beginPath()
         vizCtx.arc(0, 0, this.radius, 0, Math.PI * 2)
         vizCtx.lineWidth = this.lineWidth
-        vizCtx.strokeStyle = 'white'
+        vizCtx.strokeStyle = `rgba(255, 255, 255, ${this.lifespan/100})`
         vizCtx.stroke()
         vizCtx.fillStyle = this.color
+        vizCtx.globalAlpha = this.lifespan/100
         vizCtx.fill()
         
         vizCtx.restore()
@@ -84,7 +118,12 @@ let visualizer = {
     canvasWidth: 0,
     canvasHeight: 0,
     animationRequestId: 0,
-    color: '',
+    particleColor: '',
+    particleRadius: 0,
+    particleAcceleration: 0,
+    particleVelocity: 0,
+
+    
 
     setUp: function() {
         let canvas = document.createElement('canvas')
@@ -110,7 +149,11 @@ let visualizer = {
             for (let i=0; i<particleArray.length; i++) {
                 particleArray[i].run(visualizer.vizCtx)
             }
-            particleArray.push(new Particle(visualizer.canvasWidth/2,30, Player.health/2, Player.health/100, Player.health/2))
+            visualizer.particleColorHsl = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
+            visualizer.particleRadius = Player.wealth/10
+            visualizer.particleAcceleration = Player.happiness/1000
+            visualizer.particleVelocity = Player.happiness/50
+            particleArray.push(new Particle(visualizer.canvasWidth/2,30))
             
             visualizer.animationRequestId = requestAnimationFrame(vizLoop)
         }
@@ -120,7 +163,6 @@ let visualizer = {
     stop: function() {
         cancelAnimationFrame(visualizer.animationRequestId)
     }
-
 }
 
 // Load story script from the json file
@@ -224,20 +266,6 @@ function createDialogue(episodeObject) {
     return episodeContainer
 }
 
-let Player = {
-    // Variables
-    'name': 'John',
-    'sex': 'unidentified',
-    'currentStage': 1,
-    'currentEpisode': 1,
-    'wealth': 50, //determines the radius of Particles
-    'happiness': 50, //determines the color of the Particles
-    'health': 50, //determines the inital velocity and acceleration of the Particles
-    'currentSceneSectionReference': null,
-    'decisionWrapper': null,
-    'episodeContainerReference': null,
-    'upperContainerReference': null,
-    
 
     // Methods
     clearUpperContainer: function() {
