@@ -1,7 +1,6 @@
 let Player = {
     // Variables
     'name': 'John',
-    'sex': 'unidentified',
     'currentStage': 1,
     'currentEpisode': 1,
     'wealth': 50, //determines the radius of Particles
@@ -28,6 +27,21 @@ let Player = {
     },
     clearUpperContainer: function() {
         Player.upperContainerReference.firstChild.remove()
+    },
+    updateWealth: function(value) {
+        Player.wealth += value
+        if(Player.wealth < 0) Player.wealth = 0
+    },
+    updateHappiness: function(value) {
+        Player.happiness += value
+        if(Player.happiness < 0) Player.happiness = 0
+    },
+    updateHealth: function(value) {
+        Player.health += value
+        if(Player.health < 0) Player.health = 0
+    },
+    isGameOver: function() {
+        return !Boolean(Player.wealth * Player.happiness * Player.health)
     }
 }
 
@@ -307,6 +321,10 @@ function loadEpisode(episode = Player.currentEpisode, stage = Player.currentStag
 }
 
 function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.currentStage) {
+    if(Player.isGameOver()) {
+        explode()
+    }
+
     episodeObject = storyScript[`stage${stage}`][episode - 1]
     let title = episodeObject.title
         opening = episodeObject.opening
@@ -500,9 +518,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
-        Player.health += option.point.Health*10; 
-        Player.wealth += option.point.Wealth*10; 
-        Player.happiness += option.point.Happiness*10; 
+        Player.updateHealth(option.point.Health*10); 
+        Player.updateWealth(option.point.Wealth*10); 
+        Player.updateHappiness(option.point.Happiness*10); 
 
         
         visualizer.particleSaturation = visualizer.particleLight = Player.happiness
