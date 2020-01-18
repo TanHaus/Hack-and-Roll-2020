@@ -1,375 +1,244 @@
 {
-    "module1": [
+    "stage1": [
         {
             "id": 1,
             "episode": 1,
-            "title": "To retire or not to retire?",
-            "opening": "Your children have all grown up and have their own families and houses. You now live alone with Mary in your decades-old 5-room HDB flat. Your 55th birthday is coming soon, and Mary just got back from her yoga class. ",
+            "title": " Lunch Buddies",
+            "opening": "You are a university student. Your cohort mate and girlfriend, Mary, is studying with you today in school. It’s 2.08pm, and the both of you just returned from lunch. ",
             "characters": {
                 "J": "John",
-                "M": "Mary",
-                "Ja": "Janelle",
-                "P": "Peter"
+                "M": "Mary"
             },
             "dialogue": [
                 {
                     "name": "Mary",
-                    "text": "(closes the door) Wow. You’re early and changed."
+                    "text": "That meal was so filling I might get a food coma soon."
                 },
                 {
                     "name": "John",
-                    "text": "Boss left early today. "
+                    "text": "Oh man, looks like today is going to be unproductive."
                 },
                 {
                     "name": "Mary",
-                    "text": "You sure you didn’t sneak out of office?"
+                    "text": "So how much was it? I’ll eTransfer you."
                 },
                 {
                     "name": "John",
-                    "text": "Maybe."
+                    "text": "It’s fine. I’ll pay today."
                 },
                 {
                     "name": "Mary",
-                    "text": "Well, what do you want to eat for dinner? "
+                    "text": "Wow, why’s that?"
                 },
                 {
                     "name": "John",
-                    "text": "Let’s go to Teck Lee’s. I’m craving for some laksa."
+                    "text": "You deserve a treat for doing well for your quiz."
                 },
                 {
                     "name": "Mary",
-                    "text": "Sure, just let me get changed. "
+                    "text": "Thank you!"
                 },
                 {
                     "name": "John",
-                    "text": "Okay."
+                    "text": "No worries."
                 },
                 {
                     "name": "Mary",
-                    "text": "You know I was talking to Megan during yoga. She says her husband keeps spending his CPF payouts on toto."
+                    "text": "Do you even have enough money for the rest of the month?"
                 },
                 {
                     "name": "John",
-                    "text": "(whispers) Can’t blame a gambler."
+                    "text": "Uh- I try to spend less."
                 },
                 {
                     "name": "Mary",
-                    "text": "You’re going to be 55 next week. "
+                    "text": "But I’ve seen you going out frequently with Jay, Sean and the other guy."
                 },
                 {
                     "name": "John",
-                    "text": "Yeah, CPF sent me a booklet recently, about withdrawals and payouts. "
+                    "text": "His name is Peter. "
                 },
                 {
                     "name": "Mary",
-                    "text": "(pulls up her shorts) Have you decided what to do already? "
+                    "text": "Yeah, him. You’re not working part time too right?"
                 },
                 {
                     "name": "John",
-                    "text": "Nope. I checked my CPF status on the way back from work. It says I can withdraw a lump-sum or leave it."
+                    "text": "Nope. I just use my savings for now. "
                 },
                 {
                     "name": "Mary",
-                    "text": "(closes her drawers) I think you should leave it and let it accumulate. You have a lot of current savings anyway."
+                    "text": "You might not last long with the way you’re spending, John."
                 },
                 {
                     "name": "John",
-                    "text": "Does it really matter? "
+                    "text": "Well, what about you? How do you spend?"
                 },
                 {
                     "name": "Mary",
-                    "text": "The interest rates in CPF are much higher than average. You also get a higher monthly payout at 65 if you top up that savings-turned-retirement account."
+                    "text": "I try to limit my spending on wants, like branded items."
                 },
                 {
                     "name": "John",
-                    "text": "How do you know all these?"
+                    "text": "Isn’t your wallet and bag is from Yucha?"
                 },
                 {
                     "name": "Mary",
-                    "text": "You meet all kinds of people at yoga. "
+                    "text": "Yeah, but those are birthday gifts from my family. Doesn’t count."
                 },
                 {
                     "name": "John",
-                    "text": "I’m sure you do."
+                    "text": "What about going out with friends?"
                 },
                 {
                     "name": "Mary",
-                    "text": "There’s this one auntie today who kept complaining about not knowing how to view her CPF accounts. Poor her."
+                    "text": "I do hang out quite often, but I don’t spend much. It’s possible."
                 },
                 {
                     "name": "John",
-                    "text": "(whispers) Can’t blame a boomer."
+                    "text": "Interesting. Anyway, I will also need to pay for my hostel and tuition fees."
                 },
                 {
                     "name": "Mary",
-                    "text": "What’s that?"
+                    "text": "Your parents are not paying for you?"
                 },
                 {
                     "name": "John",
-                    "text": "Nothing. Can’t wait for laksa."
+                    "text": "I told him I’ll settle them myself first."
                 },
                 {
                     "name": "Mary",
-                    "text": "(ties her ponytail) Okay. I’m done!"
+                    "text": "But you don’t have a lot of money, right?"
                 },
                 {
                     "name": "John",
-                    "text": "(gets out of sofa) Alright. I’m starving! "
+                    "text": "Yeah. I need to reconsider how I spend."
+                },
+                {
+                    "name": "Mary",
+                    "text": "You can part-time. Teach tuition. Work F&B. Whatever."
+                },
+                {
+                    "name": "John",
+                    "text": "I have other commitments in school too."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Oh right. Community Service Club and Ultimate Frisbee."
+                },
+                {
+                    "name": "John",
+                    "text": "I’ll see what I can do then. Time to continue work."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Yeah, my assignment is due in 2 days."
+                },
+                {
+                    "name": "John",
+                    "text": "Same."
                 }
             ],
-            "decision": "That night, feeling full after your favourite bowl of laksa, you thought about what to do with your CPF. You decided to:",
+            "decision": "er time, you wonder about your financial status. “Is there anything I can do?” You ask yourself as you spend another graceless night with your friends. Eventually, you decide to:",
             "options": [
                 {
-                    "option": "A",
-                    "desc": "Withdraw partial amounts in the hundreds every month from your CPF account.",
-                    "outcome": "For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn’t need the money, in fact. But you were definitely more happy spending a little more than usual.",
-                    "point": 0
+                    "option": 1,
+                    "desc": "Look for a part-time job ",
+                    "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary’s suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
+                    "point": {
+                        "Wealth": 25,
+                        "Health": -5,
+                        "Happiness": [
+                            -10,
+                            10
+                        ]
+                    }
                 },
                 {
-                    "option": "B",
-                    "desc": "Withdraw a lump-sum of $20,000 to spend.",
-                    "outcome": "You withdraw $20,000 out of the blue. Mary asks why you needed the money. You said that you really wanted to get new kitchen appliances for the house. But actually you were secretly paying off housing debts. Occasionally you would take some of the money to gamble, and at one-point you got scammed of $2,000 buying “futuristic fridges” from r200.com.",
-                    "point": -1
+                    "option": 2,
+                    "desc": "Look for a part-time job ",
+                    "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary’s suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
+                    "point": {
+                        "Wealth": 25,
+                        "Health": -5,
+                        "Happiness": [
+                            -10,
+                            10
+                        ]
+                    }
                 },
                 {
-                    "option": "C",
-                    "desc": "Leave your CPF as it is.",
-                    "outcome": "You leave all your CPF savings in the account. You didn’t need the money because of all the savings and investments from before. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.”",
-                    "point": 2
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "episode": 2,
-            "title": "To retire or not to retire?",
-            "opening": "",
-            "characters": {
-                "J": "John",
-                "M": "Mary (wife)",
-                "Ja": "Janelle (daughter)",
-                "P": "Peter (friend)"
-            },
-            "dialogue": [
-                {
-                    "name": "Mary (wife)",
-                    "text": "How’s your back, honey? (Gently places a plateartpo of Yangzhou fried rice in front of J)"
+                    "option": 3,
+                    "desc": "Look for a part-time job ",
+                    "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary’s suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
+                    "point": {
+                        "Wealth": 25,
+                        "Health": -5,
+                        "Happiness": [
+                            -10,
+                            10
+                        ]
+                    }
                 },
                 {
-                    "name": "John",
-                    "text": "Not doing so good. (Takes up a pair of utensils) I know we gave Janelle our car because she needed it more than us, but damn, travelling on the MRT for 45minutes is no joke!"
+                    "option": 1,
+                    "desc": "Cut down on your spending.",
+                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
+                    "point": {
+                        "Wealth": 15,
+                        "Health": 10,
+                        "Happiness": -5
+                    }
                 },
                 {
-                    "name": "Mary (wife)",
-                    "text": "I’m sure people would give up their seats for you. (comes back with her own plate of food and sits down across the table)"
+                    "option": 2,
+                    "desc": "Cut down on your spending.",
+                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
+                    "point": {
+                        "Wealth": 15,
+                        "Health": 10,
+                        "Happiness": -5
+                    }
                 },
                 {
-                    "name": "John",
-                    "text": "The problem is I don’t look old."
+                    "option": 3,
+                    "desc": "Cut down on your spending.",
+                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
+                    "point": {
+                        "Wealth": 15,
+                        "Health": 10,
+                        "Happiness": -5
+                    }
                 },
                 {
-                    "name": "Mary (wife)",
-                    "text": "Right. You’re as young as when you were still working for Toshki Inc."
+                    "option": 1,
+                    "desc": "Cut down on your spending.",
+                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
+                    "point": {
+                        "Wealth": 15,
+                        "Health": 10,
+                        "Happiness": -5
+                    }
                 },
                 {
-                    "name": "John",
-                    "text": "Yeah. They dropped me and gave me health problems as a bonus."
+                    "option": 2,
+                    "desc": "Cut down on your spending.",
+                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
+                    "point": {
+                        "Wealth": 15,
+                        "Health": 10,
+                        "Happiness": -5
+                    }
                 },
                 {
-                    "name": "Mary (wife)",
-                    "text": "… So when do you plan to retire? "
-                },
-                {
-                    "name": "John",
-                    "text": "I don’t know… when I feel like it?"
-                },
-                {
-                    "name": "Mary (wife)",
-                    "text": "When you’re bedridden and it’s too late?"
-                },
-                {
-                    "name": "John",
-                    "text": "You know what I mean."
-                },
-                {
-                    "name": "Mary (wife)",
-                    "text": "Honey, you’re a few years away from retirement age, you know that right?"
-                },
-                {
-                    "name": "John",
-                    "text": "Yeah yeah yeah. 62. Or is it 63? Wait -- Peter told me this just this morning."
-                },
-                {
-                    "name": "Mary (wife)",
-                    "text": "Dementia now?"
-                },
-                {
-                    "name": "John",
-                    "text": "Come on! I was the best at remembering our children’s birthdays"
-                },
-                {
-                    "name": "Mary (wife)",
-                    "text": "You really need to think about retiring, dear. You need time to take better care of yourself. Besides, we have much savings and passive income from our investments. We can still live comfortably."
-                },
-                {
-                    "name": "John",
-                    "text": "(Sigh) I’ll consider."
-                },
-                {
-                    "name": "Mary (wife)",
-                    "text": "Good. How’s my fried rice?"
-                },
-                {
-                    "name": "John",
-                    "text": "Sweeter than honey."
-                }
-            ],
-            "decision": "What should I do?",
-            "options": [
-                {
-                    "option": "A",
-                    "desc": "Retire within the year. My health is more important than finances.",
-                    "outcome": "You retire at 60. You let out a huge sigh of relief on your last day as fellow colleagues came to wish you a happy retirement. You bring all your gifts and hand-written letters back to your apartment, taking smaller steps than before so as not to worsen your knee pains. If not for Mary, you would probably be working until your death.",
-                    "point": 1
-                },
-                {
-                    "option": "B",
-                    "desc": "Retire when you hit the retirement age (62). It’s called as such for a reason.",
-                    "outcome": "You retire at 62. Your back condition worsens although you made a little more money for you and your spouse. “Was it worth it?” You asked yourself. Your boss gave you the firmest handshake since your first day and smiled so sincerely as he wished you goodbye. Mary welcomed you back home with her signature Yangzhou Fried Rice.",
-                    "point": 0
-                },
-                {
-                    "option": "C",
-                    "desc": "Retire at 67, when I have earned more money.",
-                    "outcome": "You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but you can’t help to think of all the times Mary insisted to retire early. Nobody in the office truly recognised your efforts because of major restructuring. A “Thank You!” post-it note stuck on the sleeve of your yellowing shirt.",
-                    "point": -1
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "episode": 3,
-            "title": "Efficient Allocation of Resources",
-            "opening": "",
-            "characters": {
-                "J": "John",
-                "M": "Mary (wife)",
-                "Ja": "Janelle (daughter)",
-                "P": "Peter (friend)"
-            },
-            "dialogue": [
-                {
-                    "name": "John",
-                    "text": "Maybe I should think about how to properly allocate my finances now that I’ve retired. Peter’s probably the best person to ask about this."
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "Hi, Johnny. What a weird timing. What’s up?"
-                },
-                {
-                    "name": "John",
-                    "text": "Nothing much. Watching your favourite TV show."
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "“Heaven’s Demons?!” "
-                },
-                {
-                    "name": "John",
-                    "text": "Nah, “Frugal Families”."
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "Pfft. You’re one to kid. I’m actually out now so I don’t have much time. Grandpa things, you know?"
-                },
-                {
-                    "name": "John",
-                    "text": "Yeah, just wanted to ask for some financial advice. "
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "Like what?"
-                },
-                {
-                    "name": "John",
-                    "text": "Like how much to spend. How much to save. So far I’ve just gone along with my gut feeling."
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "Looks like it took decades for you to start thinking about budget allocation."
-                },
-                {
-                    "name": "John",
-                    "text": "Peter…"
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "Okay, okay. It depends on you."
-                },
-                {
-                    "name": "John",
-                    "text": "That’s such a cliche. "
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "I know, but it’s true. Personally I follow the 80-20 rule. That means 20% goes towards your financial goals, like paying off your remaining debts. The other 80 can be used for anything."
-                },
-                {
-                    "name": "John",
-                    "text": "That works for retirement right?"
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "Yeah, everything is just a guideline though. Some people follow the 50-30-20 rule, where 80% is further broken down to 50% for necessities like electricity, water and phone bills, while the other 30% is for wants. Like your weekly mahjong sessions."
-                },
-                {
-                    "name": "John",
-                    "text": "I haven’t played in forever."
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "Even better. Take Mary out for a good dinner with that money instead."
-                },
-                {
-                    "name": "John",
-                    "text": "She’s at Selena’s tupperware party now. Also, I haven’t asked her about her comments on this allocation thing."
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "Yeah, you should ask for her opinions too. Maybe she has a better plan. But ultimately it’s up to you. She’s your wife, not your finance secretary. Or maybe you want to continue living with your ‘gut feeling’."
-                },
-                {
-                    "name": "John",
-                    "text": "Maybe. Well, thanks for the advise, Peter. Appreciate it."
-                },
-                {
-                    "name": "Peter (friend)",
-                    "text": "Anything for you, buddy. See you another time."
-                },
-                {
-                    "name": "John",
-                    "text": "Yup! (hangs up) "
-                }
-            ],
-            "decision": "How should I do this?",
-            "options": [
-                {
-                    "option": "A",
-                    "desc": "Spend and save as you feel suitable. Besides, there’s more fun in a flexible option.",
-                    "outcome": "The months go by, and you spend your retirement savings as you wish. Whatever remains depletes without control. Living without proper budget allocation, you decide that taking Mary out for dinners and spending on entertainment is more important than anything else. “Do I have enough left?” You ask yourself every time you buy another lottery ticket.",
-                    "point": -2
-                },
-                {
-                    "option": "B",
-                    "desc": "Follow the 50-30-20 rule: 50% to necessities, 30% to wants, and 20% to financial goals. ",
-                    "outcome": "You make it a point to adhere to the 50-30-20 rule. It started off troublesome to keep track of your expenses, but as time went by, you got the hang of it. You could tell when you were exceeding budget without calculating. One time you passed by an electronics sale, but resisted the urge to get that $799 Grandplayer Set. “Not today, Saturn!” you exclaimed as Mary laughed.",
-                    "point": 2
-                },
-                {
-                    "option": "C",
-                    "desc": "Go with the 80-20 rule: 20% to financial goals and 80% to everything else.",
-                    "outcome": "You decided to follow the 80-20 rule. Paying off your financial debts became your top priority, and 20% of your monthly expenses went toward it. The rest you decided to spend with Mary, after settling home bills, of course. 80% was a lot to manage, but you promised yourself to keep within the limit. You still meet old friends for a game of mahjong as and when.",
-                    "point": 2
+                    "option": 3,
+                    "desc": "Cut down on your spending.",
+                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
+                    "point": {
+                        "Wealth": 15,
+                        "Health": 10,
+                        "Happiness": -5
+                    }
                 }
             ]
         }
