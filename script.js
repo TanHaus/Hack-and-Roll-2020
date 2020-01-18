@@ -313,77 +313,11 @@ function startMenuScreen() {
     let optionButton = document.createElement("button");
     optionButton.textContent = "Jump To ..."
     optionButton.onclick = function (){
-        // //stage buttons 
-        // //Stage 1 
-        // let st1 = document.createElement("button");
-        // st1.textContent = stageArray[0];
-        // st1.classList.add("stageButton");
-        // st1.onclick = function(){
-        //     //S1 E1 
-        //     let st11 = document.createElement("button");
-        //     st11.textContent = storyScript.stage1[0].title; 
-        //     st11.classList.add("st1Button");
-        //     menu.appendChild(st11);
-        //     //S1 E2 
-        //     let st12 = document.createElement("button");
-        //     st12.textContent = storyScript.stage1[1].title; 
-        //     st12.classList.add("st1Button");
-        //     menu.appendChild(st12);
-        //     //S1 E3 
-        //     let st13 = document.createElement("button");
-        //     st13.textContent = storyScript.stage1[2].title; 
-        //     st13.classList.add("st1Button");
-        //     menu.appendChild(st13);
-        // }
-        // //Stage 2
-        // let st2 = document.createElement("button");
-        // st2.textContent = stageArray[1];
-        // st2.classList.add("stageButton");
-        // st2.onclick = function(){
-        //     //S2 E1 
-        //     let st21 = document.createElement("button");
-        //     st21.textContent = storyScript.stage2[0].title; 
-        //     st21.classList.add("st2Button");
-        //     menu.appendChild(st21);
-        //     //S2 E2 
-        //     let st22 = document.createElement("button");
-        //     st22.textContent = storyScript.stage2[1].title; 
-        //     st22.classList.add("st2Button");
-        //     menu.appendChild(st22);
-        //     //S2 E3 
-        //     let st23 = document.createElement("button");
-        //     st23.textContent = storyScript.stage2[2].title; 
-        //     st23.classList.add("st2Button");
-        //     menu.appendChild(st23);
-        // }
-        // //Stage 3
-        // let st3 = document.createElement("button");
-        // st3.textContent = stageArray[2];
-        // st3.classList.add("stageButton");
-        // st3.onclick = function(){
-        //     //S3 E1 
-        //     let st31 = document.createElement("button");
-        //     st31.textContent = storyScript.stage3[0].title; 
-        //     st31.classList.add("st3Button");
-        //     menu.appendChild(st31);
-        //     //S3 E2 
-        //     let st32 = document.createElement("button");
-        //     st32.textContent = storyScript.stage3[1].title; 
-        //     st32.classList.add("st3Button");
-        //     menu.appendChild(st32);
-        //     //S3 E3 
-        //     let st33 = document.createElement("button");
-        //     st33.textContent = storyScript.stage3[2].title; 
-        //     st33.classList.add("st3Button");
-        //     menu.appendChild(st33);
         let optionsContainer = document.createElement('section')
         optionsContainer.classList.add('optionsContainerButtons')
 
         for (let i=0; i<3;i++){
-            // let stageContainer = document.createElement('section')
-            // stageContainer.classList.add('stageContainerButtons')
-
-            let btn = document.createElement("button")
+            let btn = document.createElement("section")
             optionsContainer.append(btn)
             btn.textContent = stageArray[i];
             btn.classList.add("stageButton");
@@ -392,12 +326,14 @@ function startMenuScreen() {
                 let button = document.createElement("button")
                 button.textContent = storyScript[`stage${i+1}`][j].title
                 button.classList.add('episodeButton')
+                button.onclick = function(){
+                    setUpStage();
+                    Player.clearUpperContainer()
+                    loadTitleAndOpening(i+1,j+1);
+                }
                 optionsContainer.append(button)
-                // stageContainer.append(button)
             }
-            // menu.append(stageContainer)
         }
-        // menu.append(st1,st2,st3);
         menu.append(optionsContainer)
     }
     
