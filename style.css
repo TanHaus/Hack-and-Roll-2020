@@ -18,7 +18,7 @@ section h1 {
     
 }
 
-button {
+.startButton {
     display: block;
     box-sizing: border-box;
     margin: 0 auto;
@@ -36,9 +36,9 @@ button {
     font-family: 'Futura';
     font-size: 30px;
 }
-button:hover,
-button:focus,
-button:active {
+.startButton:hover,
+.startButton:focus,
+.startButton:active {
   background: rgb(249, 251, 208);
   color: #000;
   transition: all 0.5s ease-in;

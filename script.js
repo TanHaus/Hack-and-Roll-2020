@@ -229,6 +229,7 @@ function startMenuScreen() {
     let gameTitle = document.createElement("h1")
     gameTitle.textContent="Game"
     let startButton = document.createElement("button");
+    startButton.classList.add("startButton");
     startButton.textContent = "Start Game"
 
     menu.append(gameTitle,startButton);
@@ -320,12 +321,7 @@ async function test() {
     await loadingPromise; 
     createDecision(storyScript.module1[0]);
 }
-test();
-startMenuScreen()
+// test();
+startMenuScreen();
 // setUpModFour()
 // setDecisionPage()
-
-
-
-
-
