@@ -520,9 +520,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
-        Player.updateHealth(option.point.Health*5); 
-        Player.updateWealth(option.point.Wealth*5); 
-        Player.updateHappiness(option.point.Happiness*5); 
+        Player.updateHealth(option.point.Health); 
+        Player.updateWealth(option.point.Wealth); 
+        Player.updateHappiness(option.point.Happiness); 
 
         
         visualizer.particleSaturation = visualizer.particleLight = Player.happiness
