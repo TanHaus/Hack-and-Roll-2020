@@ -20,7 +20,7 @@ section h1 {
 
 button {
     display: block;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: 1rem 1.5rem;
 
     background: rgba(7, 82, 69, 0.5);

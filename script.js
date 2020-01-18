@@ -282,10 +282,14 @@ function startMenuScreen() {
     startButton.classList.add("startButton");
     startButton.textContent = "Start Game"
     startButton.onclick = setUpStage
+
+    let fullscreenButton = document.createElement('button')
+    fullscreenButton.textContent = 'Fullscreen'
+    fullscreenButton.onclick = () => document.documentElement.requestFullscreen()
     
     async function addButton() {
         await loadingPromise
-        menu.append(gameTitle,startButton); 
+        menu.append(gameTitle,startButton, fullscreenButton); 
     }
 
     addButton()
