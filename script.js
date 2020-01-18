@@ -37,16 +37,25 @@ class Vector {
     }
 }
 
+function colorBlender(percentage) {
+    color1 = [0, 0, 0]
+    color2 = [255, 255, 0]
+    colorResult = []
+    for (let i = 0; i < 3; i++) {
+        colorResult[i] = toString((color1[i]*(100-parseInt(percentage)) + color2[i]*(parseInt(percentage)))/100)
+    }
+    return `${colorResult[0]},${colorResult[1]},${colorResult[2]}` //returns "r,g,b"
+}
 /**
  * Particle Class
  */
 class Particle {
-    constructor(x, y) {
-        this.acceleration = new Vector(0, 0.05)
+    constructor(x, y, radius, accelerationVert) {
+        this.acceleration = new Vector(0, accelerationVert)
         this.velocity = new Vector(Math.random() * 2 - 1, -Math.random())
         this.position = new Vector(x, y)
         this.lifespan = 100
-        this.radius = 5
+        this.radius = radius
         this.lineWidth = 1
     }
     run(vizCtx) {
@@ -68,13 +77,12 @@ class Particle {
         vizCtx.beginPath()
         vizCtx.arc(0, 0, this.radius, 0, Math.PI * 2)
         vizCtx.lineWidth = this.lineWidth
-        vizCtx.strokeStyle = `rgba(0,0,0,${this.lifespan/100})`
+        vizCtx.strokeStyle = `rgba(${colorBlender(Player.wealth)},${this.lifespan/100})`
         vizCtx.stroke()
         
         vizCtx.restore()
     }
 }
-
 
 function vizLoop() {
     let ctx = vizCanvas.getContext('2d')
@@ -83,7 +91,7 @@ function vizLoop() {
     for (let i=0; i<ballArray.length; i++) {
         ballArray[i].run(ctx)
     }
-    ballArray.push(new Particle(vizCanvas.width/2,30))
+    ballArray.push(new Particle(vizCanvas.width/2,30, Player.health/2, Player.happiness/100))
     // if (ballArray.length==0) return
     requestAnimationFrame(vizLoop)
 }
@@ -158,16 +166,13 @@ let Player = {
     'name': 'John',
     'sex': 'unidentified',
     'currentStage': 1,
-    'wealth': 0,
-    'happiness':0, 
-    'health':0, 
+    'wealth': 84, //determines the border color of Particles
+    'happiness':1, //determines the gravity borne by Particles
+    'health':10, //determines the Particle radius = health/2
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
-<<<<<<< HEAD
     'outcomeWrapper' : null,
-=======
     'episodeContainerReference': null,
->>>>>>> db050b35034ae7265f8748c88d3f3dd3721c1332
     
 
     // Methods
