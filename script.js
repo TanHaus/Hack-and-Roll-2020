@@ -403,8 +403,8 @@ function startMenuScreen() {
         optionsContainer.classList.add('optionsContainerButtons')
 
         for (let i=0; i<3;i++){
-            let btn = document.createElement("section")
-            optionsContainer.setAttribute("style", "display: inline")
+            let btn = document.createElement("h2")
+            optionsContainer.setAttribute("style", "display: inline");
             optionsContainer.append(btn)
             
             btn.textContent = stageArray[i];
