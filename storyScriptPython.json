@@ -1,0 +1,314 @@
+{
+    "module1": [
+        {
+            "id": 1,
+            "episode": 1,
+            "title": "To retire or not to retire?",
+            "opening": "Your children have all grown up and have their own families and houses. You now live alone with Mary in your decades-old 5-room HDB flat. Your 55th birthday is coming soon, and Mary just got back from her yoga class. ",
+            "characters": {
+                "J": "John",
+                "M": "Mary (wife)",
+                "Ja": "Janelle (daughter)",
+                "P": "Peter (friend)"
+            },
+            "dialogue": [
+                {
+                    "name": "Mary (wife)",
+                    "text": "(closes the door) Wow. You’re early and changed."
+                },
+                {
+                    "name": "John",
+                    "text": "Boss left early today. "
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "You sure you didn’t sneak out of office?"
+                },
+                {
+                    "name": "John",
+                    "text": "Maybe."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "Well, what do you want to eat for dinner? "
+                },
+                {
+                    "name": "John",
+                    "text": "Let’s go to Teck Lee’s. I’m craving for some laksa."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "Sure, just let me get changed. "
+                },
+                {
+                    "name": "John",
+                    "text": "Okay."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "You know I was talking to Megan during yoga. She says her husband keeps spending his CPF payouts on toto."
+                },
+                {
+                    "name": "John",
+                    "text": "(whispers) Can’t blame a gambler."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "You’re going to be 55 next week. "
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah, CPF sent me a booklet recently, about withdrawals and payouts. "
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "(pulls up her shorts) Have you decided what to do already? "
+                },
+                {
+                    "name": "John",
+                    "text": "Nope. I checked my CPF status on the way back from work. It says I can withdraw a lump-sum or leave it."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "(closes her drawers) I think you should leave it and let it accumulate. You have a lot of current savings anyway."
+                },
+                {
+                    "name": "John",
+                    "text": "Does it really matter? "
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "The interest rates in CPF are much higher than average. You also get a higher monthly payout at 65 if you top up that savings-turned-retirement account."
+                },
+                {
+                    "name": "John",
+                    "text": "How do you know all these?"
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "You meet all kinds of people at yoga. "
+                },
+                {
+                    "name": "John",
+                    "text": "I’m sure you do."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "There’s this one auntie today who kept complaining about not knowing how to view her CPF accounts. Poor her."
+                },
+                {
+                    "name": "John",
+                    "text": "(whispers) Can’t blame a boomer."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "What’s that?"
+                },
+                {
+                    "name": "John",
+                    "text": "Nothing. Can’t wait for laksa."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "(ties her ponytail) Okay. I’m done!"
+                },
+                {
+                    "name": "John",
+                    "text": "(gets out of sofa) Alright. I’m starving! "
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "episode": 2,
+            "title": "To retire or not to retire?",
+            "opening": "",
+            "characters": {
+                "J": "John",
+                "M": "Mary (wife)",
+                "Ja": "Janelle (daughter)",
+                "P": "Peter (friend)"
+            },
+            "dialogue": [
+                {
+                    "name": "Mary (wife)",
+                    "text": "How’s your back, honey? (Gently places a plateartpo of Yangzhou fried rice in front of J)"
+                },
+                {
+                    "name": "John",
+                    "text": "Not doing so good. (Takes up a pair of utensils) I know we gave Janelle our car because she needed it more than us, but damn, travelling on the MRT for 45minutes is no joke!"
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "I’m sure people would give up their seats for you. (comes back with her own plate of food and sits down across the table)"
+                },
+                {
+                    "name": "John",
+                    "text": "The problem is I don’t look old."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "Right. You’re as young as when you were still working for Toshki Inc."
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah. They dropped me and gave me health problems as a bonus."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "… So when do you plan to retire? "
+                },
+                {
+                    "name": "John",
+                    "text": "I don’t know… when I feel like it?"
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "When you’re bedridden and it’s too late?"
+                },
+                {
+                    "name": "John",
+                    "text": "You know what I mean."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "Honey, you’re a few years away from retirement age, you know that right?"
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah yeah yeah. 62. Or is it 63? Wait -- Peter told me this just this morning."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "Dementia now?"
+                },
+                {
+                    "name": "John",
+                    "text": "Come on! I was the best at remembering our children’s birthdays"
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "You really need to think about retiring, dear. You need time to take better care of yourself. Besides, we have much savings and passive income from our investments. We can still live comfortably."
+                },
+                {
+                    "name": "John",
+                    "text": "(Sigh) I’ll consider."
+                },
+                {
+                    "name": "Mary (wife)",
+                    "text": "Good. How’s my fried rice?"
+                },
+                {
+                    "name": "John",
+                    "text": "Sweeter than honey."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "episode": 3,
+            "title": "Efficient Allocation of Resources",
+            "opening": "",
+            "characters": {
+                "J": "John",
+                "M": "Mary (wife)",
+                "Ja": "Janelle (daughter)",
+                "P": "Peter (friend)"
+            },
+            "dialogue": [
+                {
+                    "name": "John",
+                    "text": "Maybe I should think about how to properly allocate my finances now that I’ve retired. Peter’s probably the best person to ask about this."
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "Hi, Johnny. What a weird timing. What’s up?"
+                },
+                {
+                    "name": "John",
+                    "text": "Nothing much. Watching your favourite TV show."
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "“Heaven’s Demons?!” "
+                },
+                {
+                    "name": "John",
+                    "text": "Nah, “Frugal Families”."
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "Pfft. You’re one to kid. I’m actually out now so I don’t have much time. Grandpa things, you know?"
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah, just wanted to ask for some financial advice. "
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "Like what?"
+                },
+                {
+                    "name": "John",
+                    "text": "Like how much to spend. How much to save. So far I’ve just gone along with my gut feeling."
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "Looks like it took decades for you to start thinking about budget allocation."
+                },
+                {
+                    "name": "John",
+                    "text": "Peter…"
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "Okay, okay. It depends on you."
+                },
+                {
+                    "name": "John",
+                    "text": "That’s such a cliche. "
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "I know, but it’s true. Personally I follow the 80-20 rule. That means 20% goes towards your financial goals, like paying off your remaining debts. The other 80 can be used for anything."
+                },
+                {
+                    "name": "John",
+                    "text": "That works for retirement right?"
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "Yeah, everything is just a guideline though. Some people follow the 50-30-20 rule, where 80% is further broken down to 50% for necessities like electricity, water and phone bills, while the other 30% is for wants. Like your weekly mahjong sessions."
+                },
+                {
+                    "name": "John",
+                    "text": "I haven’t played in forever."
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "Even better. Take Mary out for a good dinner with that money instead."
+                },
+                {
+                    "name": "John",
+                    "text": "She’s at Selena’s tupperware party now. Also, I haven’t asked her about her comments on this allocation thing."
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "Yeah, you should ask for her opinions too. Maybe she has a better plan. But ultimately it’s up to you. She’s your wife, not your finance secretary. Or maybe you want to continue living with your ‘gut feeling’."
+                },
+                {
+                    "name": "John",
+                    "text": "Maybe. Well, thanks for the advise, Peter. Appreciate it."
+                },
+                {
+                    "name": "Peter (friend)",
+                    "text": "Anything for you, buddy. See you another time."
+                },
+                {
+                    "name": "John",
+                    "text": "Yup! (hangs up) "
+                }
+            ]
+        }
+    ]
+}

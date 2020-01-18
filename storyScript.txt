@@ -1,0 +1,143 @@
+Mod5: budgeting - retirement age (plan for retirement) - cancer 50-70 GAB
+Character: John, 60 (retirement age in sg is 62)
+
+Start: 
+-Fraudulent cases led to your old company’s bankruptcy. Thankfully, you got another product development role at another sales firm, but with a pay cut to $90000 
+-Your children have all grown up and have their own families and houses
+-Your live alone with your spouse in your decades-old 5-room HDB flat
+-You age has caught up with you and you occasionally suffer from knee and back problems
+
+
+Act 1: To retire or not to retire?
+Characters: J - John. M - Mary (wife). Ja - Janelle (daughter). P - Peter (friend)
+
+Opening: Your children have all grown up and have their own families and houses. You now live alone with Mary in your decades-old 5-room HDB flat. Your 55th birthday is coming soon, and Mary just got back from her yoga class. 
+
+M: (closes the door) Wow. You’re early and changed.
+J: Boss left early today. 
+M: You sure you didn’t sneak out of office?
+J: Maybe.
+M: Well, what do you want to eat for dinner? 
+J: Let’s go to Teck Lee’s. I’m craving for some laksa.
+M: Sure, just let me get changed. 
+J: Okay.
+M: You know I was talking to Megan during yoga. She says her husband keeps spending his CPF payouts on toto.
+J: (whispers) Can’t blame a gambler.
+M: You’re going to be 55 next week. 
+J: Yeah, CPF sent me a booklet recently, about withdrawals and payouts. 
+M: (pulls up her shorts) Have you decided what to do already? 
+J: Nope. I checked my CPF status on the way back from work. It says I can withdraw a lump-sum or leave it.
+M: (closes her drawers) I think you should leave it and let it accumulate. You have a lot of current savings anyway.
+J: Does it really matter? 
+M: The interest rates in CPF are much higher than average. You also get a higher monthly payout at 65 if you top up that savings-turned-retirement account.
+J: How do you know all these?
+M: You meet all kinds of people at yoga. 
+J: I’m sure you do.
+M: There’s this one auntie today who kept complaining about not knowing how to view her CPF accounts. Poor her.
+J: (whispers) Can’t blame a boomer.
+M: What’s that?
+J: Nothing. Can’t wait for laksa.
+M: (ties her ponytail) Okay. I’m done!
+J: (gets out of sofa) Alright. I’m starving! 
+
+
+Decision 1: That night, feeling full after your favourite bowl of laksa, you thought about what to do with your CPF. You decided to:
+Withdraw partial amounts in the hundreds every month from your CPF account.
+Withdraw a lump-sum of $20,000 to spend.
+Leave your CPF as it is.
+
+Consequences 1:
+For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn’t need the money, in fact. But you were definitely more happy spending a little more than usual. [+0]
+You withdraw $20,000 out of the blue. Mary asks why you needed the money. You said that you really wanted to get new kitchen appliances for the house. But actually you were secretly paying off housing debts. Occasionally you would take some of the money to gamble, and at one-point you got scammed of $2,000 buying “futuristic fridges” from r200.com. [-1]
+You leave all your CPF savings in the account. You didn’t need the money because of all the savings and investments from before. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.” [+2]
+
+
+
+Act 2: To retire or not to retire?
+Characters: J - John. M - Mary (wife). Ja - Janelle (daughter). P - Peter (friend)
+
+You’re 58 now. Fraudulent cases led to your old company’s bankruptcy. Thankfully, you got another product development role at another sales firm. Your age has caught up and you occasionally suffer from knee and back problems. Mary has just finished cooking dinner for the both of you.
+
+(At the dining table, 6.05pm…)
+M: How’s your back, honey? (Gently places a plateartpo of Yangzhou fried rice in front of J)
+J: Not doing so good. (Takes up a pair of utensils) I know we gave Janelle our car because she needed it more than us, but damn, travelling on the MRT for 45minutes is no joke!
+M: I’m sure people would give up their seats for you. (comes back with her own plate of food and sits down across the table)
+J: The problem is I don’t look old.
+M: Right. You’re as young as when you were still working for Toshki Inc.
+J: Yeah. They dropped me and gave me health problems as a bonus.
+M: … So when do you plan to retire? 
+J: I don’t know… when I feel like it?
+M: When you’re bedridden and it’s too late?
+J: You know what I mean.
+M: Honey, you’re a few years away from retirement age, you know that right?
+J: Yeah yeah yeah. 62. Or is it 63? Wait -- Peter told me this just this morning.
+M: Dementia now?
+J: Come on! I was the best at remembering our children’s birthdays: 7th January, 19th March and 20th October!
+M: You really need to think about retiring, dear. You need time to take better care of yourself. Besides, we have much savings and passive income from our investments. We can still live comfortably.
+J: (Sigh) I’ll consider.
+M: Good. How’s my fried rice?
+J: Sweeter than honey.
+
+Decision 2: What should I do?
+Retire within the year. My health is more important than finances.
+Retire when you hit the retirement age (62). It’s called as such for a reason.
+Retire at 67, when I have earned more money.
+Decide later. It will get to me one day, definitely.
+
+Get off my scenes!
+
+Consequences 2:
+You retire at 60. You let out a huge sigh of relief on your last day as fellow colleagues came to wish you a happy retirement. You bring all your gifts and hand-written letters back to your apartment, taking smaller steps than before so as not to worsen your knee pains. If not for Mary, you would probably be working until your death. [+1]
+You retire at 62. Your back condition worsens although you made a little more money for you and your spouse. “Was it worth it?” You asked yourself. Your boss gave you the firmest handshake since your first day and smiled so sincerely as he wished you goodbye. Mary welcomed you back home with her signature Yangzhou Fried Rice. [0]
+You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but you can’t help to think of all the times Mary insisted to retire early. Nobody in the office truly recognised your efforts because of major restructuring. A “Thank You!” post-it note stuck on the sleeve of your yellowing shirt. [-1]
+Mary doesn’t understand why you can’t make up your mind. Your commute and work itself were aggravating your health issues. Frequent health checkups costs a lot and were ultimately ineffective. Fortunately you saved up for such events. You retire at 64 when you realise you can’t live on with a major back problem anymore. [0]
+
+
+
+Act 3: Efficient Allocation of Resources
+Characters: J - John. M - Mary (wife). Ja - Janelle (daughter). P - Peter (friend)
+
+It’s 1.34pm. The sky is clear. Mary is out at a tupperware party. The hit docu-series “Frugal Families” is playing on your 55” Smart TV. You stare at the clock and watch how the second hand moves, so consistently. 1.35pm.
+
+TV: … Like Chen Li, many of us don’t know how to properly spend our money.
+J: Maybe I should think about how to properly allocate my finances now that I’ve retired. Peter’s probably the best person to ask about this.
+TV: Chen Li’s favourite designer brand is Louis Vuitton. He has a room full of prized collections that he calls his “baby vuittons”.
+
+(Calls Peter on the phone)
+
+P: Hi, Johnny. What a weird timing. What’s up?
+J: Nothing much. Watching your favourite TV show.
+P: “Heaven’s Demons?!” 
+J: Nah, “Frugal Families”.
+P: Pfft. You’re one to kid. I’m actually out now so I don’t have much time. Grandpa things, you know?
+J: Yeah, just wanted to ask for some financial advice. 
+P: Like what?
+J: Like how much to spend. How much to save. So far I’ve just gone along with my gut feeling.
+P: Looks like it took decades for you to start thinking about budget allocation.
+J: Peter…
+P: Okay, okay. It depends on you.
+J: That’s such a cliche. 
+P: I know, but it’s true. Personally I follow the 80-20 rule. That means 20% goes towards your financial goals, like paying off your remaining debts. The other 80 can be used for anything.
+J: That works for retirement right?
+P: Yeah, everything is just a guideline though. Some people follow the 50-30-20 rule, where 80% is further broken down to 50% for necessities like electricity, water and phone bills, while the other 30% is for wants. Like your weekly mahjong sessions.
+J: I haven’t played in forever.
+P: Even better. Take Mary out for a good dinner with that money instead.
+J: She’s at Selena’s tupperware party now. Also, I haven’t asked her about her comments on this allocation thing.
+P: Yeah, you should ask for her opinions too. Maybe she has a better plan. But ultimately it’s up to you. She’s your wife, not your finance secretary. Or maybe you want to continue living with your ‘gut feeling’.
+J: Maybe. Well, thanks for the advise, Peter. Appreciate it.
+P: Anything for you, buddy. See you another time.
+J: Yup! (hangs up) 
+
+TV: Currently in debt, Chen Li has a hard time managing his finances. Abandoned by his own children, he has only his “baby vuittons” to keep him company through his old age.
+
+Decision 3: How should I do this?
+Spend and save as you feel suitable. Besides, there’s more fun in a flexible option.
+Follow the 50-30-20 rule: 50% to necessities, 30% to wants, and 20% to financial goals. 
+Go with the 80-20 rule: 20% to financial goals and 80% to everything else.
+Wait for Mary to return from her party and discuss with her.
+
+Consequences 3: 
+The months go by, and you spend your retirement savings as you wish. Whatever remains depletes without control. Living without proper budget allocation, you decide that taking Mary out for dinners and spending on entertainment is more important than anything else. “Do I have enough left?” You ask yourself every time you buy another lottery ticket. [-2]
+You make it a point to adhere to the 50-30-20 rule. It started off troublesome to keep track of your expenses, but as time went by, you got the hang of it. You could tell when you were exceeding budget without calculating. One time you passed by an electronics sale, but resisted the urge to get that $799 Grandplayer Set. “Not today, Saturn!” you exclaimed as Mary laughed. [+2]
+You decided to follow the 80-20 rule. Paying off your financial debts became your top priority, and 20% of your monthly expenses went toward it. The rest you decided to spend with Mary, after settling home bills, of course. 80% was a lot to manage, but you promised yourself to keep within the limit. You still meet old friends for a game of mahjong as and when. [+2]
+Mary starts to think you are becoming more dependent on her. “I’m your wife, not your finance secretary,” she joked, “but following a rule is definitely wise.” You heeded Mary’s advice, and proportioned your budget based on the 50-30-20 rule. Over time, Mary wonders why you like to take her out for dinners when she could’ve cooked fried rice for the both of you. [+1]

@@ -1,0 +1,111 @@
+body {
+    margin: 0; 
+    padding: 0; 
+}
+
+.background {
+    height: 100vh; 
+    background-image: url('./assets/asset3.png');
+    background-repeat:no-repeat;
+    background-position:center; 
+    background-size:cover;
+}
+section h1 {
+    text-align: center; 
+    font-family: 'Futura';
+    font-size: 75px;
+    letter-spacing : 8px; 
+    
+}
+
+button {
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 300px;
+    background: rgb(2, 66, 2); 
+    background: rgba(7, 82, 69, 0.5);
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out;
+    font-family: 'Futura';
+    font-size: 30px;
+}
+button:hover,
+button:focus,
+button:active {
+  background: rgb(249, 251, 208);
+  color: #000;
+  transition: all 0.5s ease-in;
+}
+.menu {
+    margin:0; 
+    position: absolute; 
+    top: 40%;
+    left:50%;
+    margin-right:-50%;
+    transform: translate(-50%,-50%);
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.viz{
+    width: 100vw;
+    height: 40vh;
+    background-color: rgb(97, 97, 97);
+}
+
+.dec{
+    width: 100vw;
+    height: 40vh;
+    background-color: rgb(97, 97, 97);
+}
+
+.modContainer{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+}
+
+.decPage{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+}
+
+.avatar{
+    position: absolute; 
+    width: 80%;
+    max-height: 80%;
+    bottom: 0;
+    left: 10%;
+}
+
+.dialogueLine{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    position: absolute; 
+    bottom: 1rem;
+    left: calc(15% - 1rem);
+    width: 70%;
+}

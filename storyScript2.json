@@ -1,0 +1,149 @@
+{
+    "module1" : [
+        {
+            "id": 1,
+            "episode": 1,
+            "title": "Central Provident Fund",
+            "opening": "Your children have all grown up and have their own families and houses. You now live alone with Mary in your decades-old 5-room HDB flat. Your 55th birthday is coming soon, and Mary just got back from her yoga class.",
+            "dialogue": [
+                {
+                    "name": "Mary", 
+                    "text": "(closes the door) Wow. You’re early and changed."
+                },
+                {
+                    "name": "John", 
+                    "text": "Boss left early today."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "You sure you didn’t sneak out of office?"
+                },
+                {
+                    "name": "John", 
+                    "text": "Maybe."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "Well, what do you want to eat for dinner?"
+                },
+                {
+                    "name": "John", 
+                    "text": "Let’s go to Teck Lee’s. I’m craving for some laksa."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "Sure, just let me get changed."
+                },
+                {
+                    "name": "John", 
+                    "text": "Okay."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "You know I was talking to Megan during yoga. She says her husband keeps spending his CPF payouts on toto."
+                },
+                {
+                    "name": "John", 
+                    "text": "(whispers) Can’t blame a gambler."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "You’re going to be 55 next week. "
+                },
+                {
+                    "name": "John", 
+                    "text": "Yeah, CPF sent me a booklet recently, about withdrawals and payouts."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "(pulls up her shorts) Have you decided what to do already?"
+                },
+                {
+                    "name": "John", 
+                    "text": "Nope. I checked my CPF status on the way back from work. It says I can withdraw a lump-sum or leave it."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "(closes her drawers) I think you should leave it and let it accumulate. You have a lot of current savings anyway."
+                },
+                {
+                    "name": "John", 
+                    "text": "Does it really matter?"
+                },
+                {
+                    "name": "Mary", 
+                    "text": "The interest rates in CPF are much higher than average. You also get a higher monthly payout at 65 if you top up that savings-turned-retirement account."
+                },
+                {
+                    "name": "John", 
+                    "text": "How do you know all these?"
+                },
+                {
+                    "name": "Mary", 
+                    "text": "You meet all kinds of people at yoga."
+                },
+                {
+                    "name": "John", 
+                    "text": "I’m sure you do."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "There’s this one auntie today who kept complaining about not knowing how to view her CPF accounts. Poor her."
+                },
+                {
+                    "name": "John", 
+                    "text": "(whispers) Can’t blame a boomer."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "What’s that?"
+                },
+                {
+                    "name": "John", 
+                    "text": "Nothing. Can’t wait for laksa."
+                },
+                {
+                    "name": "Mary", 
+                    "text": "(ties her ponytail) Okay. I’m done!"
+                },
+                {
+                    "name": "John", 
+                    "text": "(gets out of sofa) Alright. I’m starving!"
+                }         
+            ],
+            "decision": "That night, feeling full after your favourite bowl of laksa, you thought about what to do with your CPF. You decided to:",
+            "options": [
+                {
+                    "option": "A",
+                    "desc": "Withdraw partial amounts in the hundreds every month from your CPF account.",
+                    "outcome": "For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn’t need the money, in fact. But you were definitely more happy spending a little more than usual.",
+                    "points": 0
+                },
+                {
+                    "option": "B",
+                    "desc": "Withdraw a lump-sum of $20,000 to spend.",
+                    "outcome": "You withdraw $20,000 out of the blue. Mary asks why you needed the money. You said that you really wanted to get new kitchen appliances for the house. But actually you were secretly paying off housing debts. Occasionally you would take some of the money to gamble, and at one-point you got scammed of $2,000 buying “futuristic fridges” from r200.com.",
+                    "points": -1
+                },
+                {
+                    "option": "C",
+                    "desc": "Leave your CPF as it is.",
+                    "outcome": "You leave all your CPF savings in the account. You didn’t need the money because of all the savings and investments from before. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.”",
+                    "points": 2
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "episode": 2,
+            "title": "testing",
+            "dialogue": []
+        },
+        {
+            "id": 3,
+            "episode": 3,
+            "title": "testing",
+            "dialogue": []
+        }
+    ]
+}
