@@ -75,6 +75,7 @@ class Particle {
     }
 }
 
+
 function vizLoop() {
     let ctx = vizCanvas.getContext('2d')
     ctx.clearRect(0,0,vizCanvas.width,vizCanvas.height)
@@ -116,7 +117,8 @@ let loadingPromise = fetch('./storyScriptPython.json')
         storyScript = jsonFile
     })
 
-function createDialogue(dialogueBlock) {
+function createDialogue(episode) {
+    dialogueBlock = episode.dialogue
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     // episodeContainer.id = 'modFour'
@@ -131,7 +133,6 @@ function createDialogue(dialogueBlock) {
     avatar.classList.add("avatar");
 
     let dialogueLine = document.createElement('p')
-    
     dialogueLine.classList.add("dialogueLine")
 
     let continueButton = document.createElement('button')
@@ -139,6 +140,12 @@ function createDialogue(dialogueBlock) {
     continueButton.textContext = "Click to continue"
     continueButton.onclick = function() {
         i += 1
+        if (i == dialogueBlock.length) {
+            avatar.remove()
+            dialogueLine.remove()
+            continueButton.remove()
+            episodeContainer.append(createDecision(episode))
+        }
         updateFrame(i)
     }
     
@@ -188,6 +195,7 @@ let Player = {
     'currentStage': 1,
     'points': 0,
     'currentSceneSectionReference': null,
+    'decisionWrapper': null,
     
 
     // Methods
@@ -268,8 +276,9 @@ function setUpModFour() {
     Player.currentStage = 4
     Player.currentSceneSectionReference.remove()
 
-    dialogueBlock = storyScript.stage1[0].dialogue
-    modFour = createDialogue(dialogueBlock)
+    episode1 = storyScript.stage1[0]
+    modFour = createDialogue(episode1)
+    // modFour = createDecision(episode1)
 
     vizCanvas = setUpCanvas()
 
@@ -283,18 +292,21 @@ function setUpModFour() {
     // Player.currentSceneSectionReference.remove()
     Player.currentSceneSectionReference = modFour
 
-
-
     return modFour
 }
 function createButton(option){
     //this function generate decision buttons
     let button = document.createElement("button");
     button.classList.add("decButton");
-    button.textContent = option
+    button.textContent = option.desc;
     //add event handler 
     button.onclick = function(){
+        //update Player's fields
         
+        //advance to outcome page 
+        Player.decisionWrapper.remove();
+        Player.decisionWrapper = null; 
+        setOutcomePage(option);
     }
     return button; 
 }
@@ -308,10 +320,32 @@ function createDecision(episode){ //episode = storyScript.module#[#]
     wrapper.classList.add("wrapper");
     wrapper.appendChild(title);
     for(let i=0; i<3; i++){
-        wrapper.appendChild(createButton(episode.options[i].desc));
+        wrapper.appendChild(createButton(episode.options[i]));
     }
+    
+    Player.decisionWrapper = wrapper; 
     bodyHTML.append(wrapper);
+    return wrapper; 
+}
 
+function setOutcomePage(option){
+    let wrapper = document.createElement("section");
+    wrapper.classList.add("wrapper");
+
+    let textWrapper = document.createElement("section");
+    textWrapper.classList.add("textWrapper");
+
+    let title = document.createElement("h1");
+    title.classList.add("decTitle");
+    title.textContent = "Outcome";
+
+    let text = document.createElement("p");
+    text.classList.add("outcomeP")
+    text.textContent = option.outcome; 
+
+    textWrapper.appendChild(text);
+    wrapper.append(title,textWrapper);
+    bodyHTML.append(wrapper);
     return wrapper; 
 }
 
