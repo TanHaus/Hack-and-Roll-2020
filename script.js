@@ -197,7 +197,7 @@ function createDialogue(episodeObject) {
     charToColor = {
         "John"      : "rgba(0, 102, 12, 0.95)", //emerald
         "Mary"      : "rgba(0, 27, 97, 0.95)", //navy
-        "Waiter"    : "rgba(240, 1184, 0, 0.95)", //gold
+        "Waiter"    : "rgba(86, 61, 0, 0.95)", //brown
         "Peter"     : "rgba(225, 119, 0, 0.95)", //orange
         "TV"        : "rgba(36, 36, 36, 0.95)", //grey
         "Elsa"      : "rgba(135, 0, 184, 0.95)", //violet
@@ -418,7 +418,9 @@ function startMenuScreen() {
                 button.onclick = function(){
                     setUpStage();
                     Player.clearUpperContainer()
-                    loadTitleAndOpening(i+1,j+1);
+                    Player.currentStage = i+1; 
+                    Player.currentEpisode = j+1; 
+                    loadTitleAndOpening();
                 }
                 btn.append(button)
             }
