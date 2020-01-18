@@ -48,6 +48,7 @@ class Particle {
         this.lifespan = 100
         this.radius = 5
         this.lineWidth = 1
+        this.color = 'rgba(256, 256, 256, 1)'
     }
     run(vizCtx) {
         this.update();
@@ -73,18 +74,30 @@ class Particle {
         
         vizCtx.restore()
     }
+    setAcceleration(newValue) {
+        this.acceleration = new Vector(0, newValue)
+    }
+    setRadius(newValue) {
+        this.radius = newValue
+    }
+    setLifespan(newValue) {
+        this.lifespan = newValue
+    }
+    setColor(red, green, blue, alpha) {
+        this.color = `rgba(${red}, ${green}, ${blue}, ${alpha})`
+    }
 }
 
 
 function vizLoop() {
     let ctx = vizCanvas.getContext('2d')
     ctx.clearRect(0,0,vizCanvas.width,vizCanvas.height)
-    // ballArray.push(new Particle(50,20))
+    
     for (let i=0; i<ballArray.length; i++) {
         ballArray[i].run(ctx)
     }
     ballArray.push(new Particle(vizCanvas.width/2,30))
-    // if (ballArray.length==0) return
+    
     requestAnimationFrame(vizLoop)
 }
 
@@ -95,16 +108,9 @@ function setUpCanvas() {
     return vizCanvas
 }
 
-function draw() {
-    let vizCtx = vizCanvas.getContext('2d');
-    vizCtx.clearRect(0, 0, vizCanvas.width, vizCanvas.height); //clear canvas
-    
-}
 function updateCanvas(vizCanvas) {
     vizCanvas.height = vizCanvas.clientHeight
     vizCanvas.width = vizCanvas.clientWidth
-    // let ballTest = new Particle(50, 20)
-    // ballTest.run(vizCtx)
 }
 
 // Load story script from the json file
@@ -195,8 +201,8 @@ let Player = {
     'sex': 'unidentified',
     'currentStage': 1,
     'wealth': 0,
-    'happiness':0, 
-    'health':0, 
+    'happiness': 0, 
+    'health': 0, 
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
     'episodeContainerReference': null,
@@ -289,8 +295,11 @@ function setUpModFour() {
     container.append(modFour, vizCanvas)
     
     bodyHTML.appendChild(container)
+
+    // get width and height after attaching to bodyHTML
     updateCanvas(vizCanvas)
 
+    // start the visualizer
     requestAnimationFrame(vizLoop)
     
     Player.currentSceneSectionReference = modFour
