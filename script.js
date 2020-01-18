@@ -1,7 +1,8 @@
 
 let bodyHTML = document.querySelector('body')
 // Create a container for each mod and the viz canvas
-let container = document.createElement('container')
+let container = document.createElement('section')
+container.classList.add('biggestContainer')
 
 let particleArray = []
 
@@ -172,6 +173,7 @@ function createDialogue(episodeObject) {
 
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
+    continueButton.textContent = '>'
     continueButton.onclick = function() {
         i += 1
         if (i == dialogueBlock.length) {
@@ -218,7 +220,7 @@ function createDialogue(episodeObject) {
     
     let i = 0
     updateFrame(i)
-    episodeContainer.append(avatarContainer, charName, dialogueBox, continueButton)
+    episodeContainer.append(avatarContainer, dialogueBox, charName, continueButton)
 
     return episodeContainer
 }
@@ -234,7 +236,6 @@ let Player = {
     'health': 50, //determines the inital velocity and acceleration of the Particles
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
-    'outcomeWrapper' : null,
     'episodeContainerReference': null,
     'upperContainerReference': null,
     
@@ -267,13 +268,15 @@ function startMenuScreen() {
     let background = document.createElement("section")
     background.classList.add("background")
     bodyHTML.appendChild(background)
+
     //add menu
     let menu = document.createElement("section")
     menu.classList.add("menu")
     background.appendChild(menu)
+
     //add components of menu - title and button. 
     let gameTitle = document.createElement("h1")
-    gameTitle.textContent="Game"
+    gameTitle.textContent = "The Singaporean Dream"
 
     let startButton = document.createElement("button");
     startButton.classList.add("startButton");
@@ -415,7 +418,7 @@ function setOutcomePage(option){
     subWrapper.appendChild(subTitle);
     
     //append
-    wrapper.append(title,button,subWrapper);
+    wrapper.append(title,subWrapper,button);
     Player.clearUpperContainer()
     Player.upperContainerReference.append(wrapper);
     return wrapper; 
