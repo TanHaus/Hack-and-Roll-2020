@@ -10,12 +10,13 @@ body {
     background-image: url('./assets/bg0.jpg');
     background-repeat:no-repeat;
     background-position:bottom; 
-    background-size:cover;
+    background-size:contain;
 }
 section h1 {
     text-align: center; 
     font-family: 'Futura';
-    font-size: 4rem;
+    font-size: 2rem;
+    padding: 2rem 2rem 2rem 2rem;
 }
 
 button {
