@@ -19,30 +19,27 @@ section h1 {
     
 }
 
-.startButton {
+button {
     display: block;
-    box-sizing: border-box;
     margin: 0 auto;
-    padding: 10px;
-    width: 90%;
-    max-width: 300px;
-    background: rgb(2, 66, 2); 
+    padding: 1rem 1.5rem;
+
     background: rgba(7, 82, 69, 0.5);
-    border-radius: 8px;
+    border: 0;
+    border-radius: 1rem;
+
     color: rgb(255, 255, 255);
     text-align: center;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: all 0.3s ease-out;
-    font-family: 'Futura';
-    font-size: 30px;
+    font-size: 1.5rem;
+
+    transition: all 0.2s ease-out;
 }
-.startButton:hover,
-.startButton:focus,
-.startButton:active {
+
+button:hover,
+button:focus,
+button:active {
   background: rgb(249, 251, 208);
   color: #000;
-  transition: all 0.5s ease-in;
 }
 
 /* Decision and Outcome Page */
@@ -92,31 +89,23 @@ section h1 {
 }
 
 .decButton {
-    display:block;
-    color: white; 
-    padding: 10px;
-    border-radius: 15px; 
-    border-style:solid; 
-    background: none;
+    color: white;
+    padding: 0.7rem;
+    margin: 0.7rem auto;
+    width: 60%;
+
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 1px;
+    background: rgba(0, 0, 0, 0.5);
+
     font-family: 'Roboto';
-    font-size: 15px;
-    margin: 5px; 
-    justify-content: center; 
-    margin-left: auto; 
-    margin-right:auto; 
-}
-.decButton:focus,
-.decButton:active{
-    border-radius: 15px; 
-    border-style:solid; 
-    background: none; 
-    padding:10px; 
-    transition: all 0.3s ease-in;
+    font-size: 1rem;
 }
 
 /*Mods*/
 .menu {
-    margin:0; 
+    margin: 0; 
     position: absolute; 
     top: 40%;
     left:50%;
@@ -175,29 +164,64 @@ section h1 {
     max-height: 80%;
     bottom: 0;
     left: 10%;
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
     transform-origin: 50% 100%;
+    filter: brightness(0.8) blur(1px);
 }
 
 .dialogueLine{
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 0.8rem;
+    color: white;
+    text-align: center;
+}
+
+
+.dialogueBox {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    color: black; 
+    padding: 0.8rem;
+    margin: 0 auto; 
+    position: absolute;
+    bottom: 1rem;
+    left: calc(15% - 1rem);
+    width: 70%; 
+}
+
+.charName{
+    font-family: 'Futura', sans-serif;
+    font-size: 15px;
     color: white;
     text-align: center;
     
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    position: absolute; 
-    bottom: 1rem;
+    background-color: rgba(255, 234, 75, 0.5);
+    padding: 0.3rem;
+    margin: 0 auto 0 auto;
+    position: absolute;
+    bottom: calc(1rem + 1.6rem + 1.6rem + 28px);
     left: calc(15% - 1rem);
-    width: 70%;
+    width: 73%;
 }
-
-p {
-    transition: all 0.2s ease-in-out;
+.charNameContainer {
+    z-index: 1;
+    padding-top: calc(80% - 2rem);
 }
 
 .activeCharacter {
     transform: scale(2, 2);
+    filter: brightness(1);
 }
 
+@keyframes flash {
+    0%, 100%{
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(20);
+    }
+}
+
+.addFlash {
+    animation: flash 0.5s ease-in-out;
+}

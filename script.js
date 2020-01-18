@@ -1,3 +1,4 @@
+
 let bodyHTML = document.querySelector('body')
 // Create a container for each mod and the viz canvas
 let container = document.createElement('container')
@@ -132,10 +133,28 @@ let loadingPromise = fetch('./storyScriptPython.json')
 
 function createDialogue(episodeObject) {
     dialogueBlock = episodeObject.dialogue
+
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     episodeContainer.style.backgroundImage = `url('./assets/bg${episodeObject["id"]}.jpg')`
+    
+    //dialogue line and its wrapper 
+    let dialogueBox = document.createElement('section')
+    dialogueBox.classList.add("dialogueBox");
 
+    let dialogueLine = document.createElement('p')
+    dialogueLine.classList.add("dialogueLine")
+    dialogueBox.appendChild(dialogueLine)
+
+    //name and its wrapper 
+    let charName = document.createElement('h2');
+    charName.classList.add("charName");
+
+    let charNameContainer = document.createElement('section')
+    charNameContainer.append(charName)
+    charNameContainer.classList.add('charNameContainer')
+
+    //character
     let characters = {}
     let avatarContainer = document.createElement('section')
     avatarContainer.classList.add('avatarContainer')
@@ -150,11 +169,6 @@ function createDialogue(episodeObject) {
         avatarContainer.append(avatar)
         characters[name] = avatar
     }
-    // let avatar = document.createElement('img')
-    //     avatar.classList.add("avatar");
-
-    let dialogueLine = document.createElement('p')
-        dialogueLine.classList.add("dialogueLine")
 
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
@@ -164,7 +178,8 @@ function createDialogue(episodeObject) {
             for(key in characters) {
                 characters[key].remove()
             }
-            dialogueLine.remove()
+            charName.remove()
+            dialogueBox.remove()
             continueButton.remove()
             decisionBlock = createDecision(episodeObject)
             episodeContainer.append(decisionBlock)
@@ -173,19 +188,38 @@ function createDialogue(episodeObject) {
     }
     
     function updateFrame(i) {
-        // avatar.src=`./assets/${dialogueBlock[i].name}.png`
+        // handle the avatars
         let activeCharacter = dialogueBlock[i].name
         for(key in characters) {
             characters[key].classList.remove('activeCharacter')
         }
         characters[activeCharacter].classList.add('activeCharacter')
-        dialogueLine.textContent = activeCharacter + ": " + dialogueBlock[i].text
+
+        // handle the paragraph
+        j = 0
+        clearTimeout(timeoutid)
+        let dialogueContent = dialogueBlock[i].text;
+        charName.textContent = dialogueBlock[i].name;
+
+
+        dialogueLine.textContent = ''
+        console.log(dialogueContent)
+        typeWriter(dialogueLine, dialogueContent);
+    }
+    let j = 0
+    let timeoutid = 0;   
+    function typeWriter(line, text) {
+        if (j < text.length) {
+          line.textContent += text[j];
+          j++;
+          timeoutid = setTimeout(() => typeWriter(line, text), 20);
+        }
     }
     
     let i = 0
     updateFrame(i)
-    // episodeContainer.append(avatar, dialogueLine, continueButton)
-    episodeContainer.append(avatarContainer, dialogueLine, continueButton)
+    episodeContainer.append(avatarContainer, charName, dialogueBox, continueButton)
+
     return episodeContainer
 }
 
@@ -268,17 +302,17 @@ function setUpStage() {
     visualizer.updateDimension()
     visualizer.run()
 
-    let stageContent = loadEpisode(1, 1)
+    let stageContent = loadEpisode(3, 3)
     Player.upperContainerReference.append(stageContent)
 
-    Player.currentEpisode = 1
-    Player.currentStage = 1
+    Player.currentEpisode = 3
+    Player.currentStage = 3
 }
 
 function nextEpisode() {
+    Player.clearUpperContainer()
     if(Player.currentEpisode<3) {
         Player.currentEpisode += 1
-        loadEpisode()
 
     } else {
         Player.currentEpisode = 1
@@ -288,9 +322,9 @@ function nextEpisode() {
         
         } else {
             setUpReportCard()
+            return
         }
     }
-    Player.clearUpperContainer()
     
     let stageContent = loadEpisode()
     Player.upperContainerReference.append(stageContent)
@@ -351,6 +385,11 @@ function createDecision(episode){ //episode = storyScript.stage#[#]
     wrapper.append(titWrapper,subWrapper,buttonWrapper);
     Player.decisionWrapper = wrapper; 
     // bodyHTML.append(wrapper);
+
+    // animation
+    Player.upperContainerReference.classList.add('addFlash')
+    setTimeout(() => Player.upperContainerReference.classList.remove('addFlash'), 1000)
+
     return wrapper; 
 }
 
@@ -381,6 +420,44 @@ function setOutcomePage(option){
     Player.upperContainerReference.append(wrapper);
     return wrapper; 
 }
+
+function setUpRadarChart() {
+
+    let radarChart = document.createElement("canvas");
+    radarChart.setAttribute("id", "myChart");
+    
+    var ctx = radarChart.getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+
+    container.append(radarChart);
+}
+
+function setUpReportCard(){
+    
+    container.firstElementChild.remove();
+    container.firstElementChild.remove();
+    
+    setUpRadarChart();
+
+}
+
 
 // //TESTING
 // async function test() {
