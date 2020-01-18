@@ -50,14 +50,14 @@ function colorBlender(percentage) {
  * Particle Class
  */
 class Particle {
-    constructor(x, y, radius, accelerationVert) {
-        this.acceleration = new Vector(0, accelerationVert)
-        this.velocity = new Vector(Math.random() * 2 - 1, -Math.random())
+    constructor(x, y, radius, accelerationY, velocityX) {
+        this.acceleration = new Vector(0, accelerationY)
+        this.velocity = new Vector((Math.random()*2-1)*velocityX, -Math.random())
         this.position = new Vector(x, y)
         this.lifespan = 100
         this.radius = radius
         this.lineWidth = 1
-        this.color = 'rgba(256, 256, 256, 1)'
+        this.color = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
     }
     run(vizCtx) {
         this.update();
@@ -78,23 +78,25 @@ class Particle {
         vizCtx.beginPath()
         vizCtx.arc(0, 0, this.radius, 0, Math.PI * 2)
         vizCtx.lineWidth = this.lineWidth
-        vizCtx.strokeStyle = `rgba(${colorBlender(Player.wealth)},${this.lifespan/100})`
+        vizCtx.strokeStyle = 'white'
         vizCtx.stroke()
+        vizCtx.fillStyle = this.color
+        vizCtx.fill()
         
         vizCtx.restore()
     }
-    setAcceleration(newValue) {
-        this.acceleration = new Vector(0, newValue)
-    }
-    setRadius(newValue) {
-        this.radius = newValue
-    }
-    setLifespan(newValue) {
-        this.lifespan = newValue
-    }
-    setColor(red, green, blue, alpha) {
-        this.color = `rgba(${red}, ${green}, ${blue}, ${alpha})`
-    }
+    // setAcceleration(newValue) {
+    //     this.acceleration = new Vector(0, newValue)
+    // }
+    // setRadius(newValue) {
+    //     this.radius = newValue
+    // }
+    // setLifespan(newValue) {
+    //     this.lifespan = newValue
+    // }
+    // setColor(red, green, blue, alpha) {
+    //     this.color = `rgba(${red}, ${green}, ${blue}, ${alpha})`
+    // }
 }
 
 let visualizer = {
@@ -128,7 +130,7 @@ let visualizer = {
             for (let i=0; i<particleArray.length; i++) {
                 particleArray[i].run(visualizer.vizCtx)
             }
-            particleArray.push(new Particle(visualizer.canvasWidth/2,30))
+            particleArray.push(new Particle(visualizer.canvasWidth/2,30, Player.health/2, Player.health/100, Player.health/2))
             
             visualizer.animationRequestId = requestAnimationFrame(vizLoop)
         }
@@ -192,9 +194,9 @@ let Player = {
     'name': 'John',
     'sex': 'unidentified',
     'currentStage': 1,
-    'wealth': 84, //determines the border color of Particles
-    'happiness':1, //determines the gravity borne by Particles
-    'health':10, //determines the Particle radius = health/2
+    'wealth': 84, //determines the radius of Particles
+    'happiness':87, //determines the color of the Particles
+    'health':70, //determines the inital velocity and acceleration of the Particles
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
     'outcomeWrapper' : null,
@@ -355,12 +357,6 @@ function setOutcomePage(option){
     wrapper.append(title,textWrapper);
     Player.episodeContainerReference.append(wrapper);
     return wrapper; 
-}
-
-function setUpReportCard() {
-    Player.currentSceneSectionReference.remove()
-
-    
 }
 
 //TESTING
