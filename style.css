@@ -2,6 +2,7 @@ html, body {
     margin: 0; 
     padding: 0; 
     height: 100%;
+    font-style : "Roboto";
 }
 
 .biggestContainer > :first-child {
@@ -50,7 +51,7 @@ button {
     margin: 1rem auto;
     padding: 1rem 1.5rem;
 
-    background: rgba(7, 82, 69, 0.5);
+    background: rgba(227, 78, 45, 0.751);
     border: 0;
     border-radius: 1rem;
 
@@ -218,7 +219,7 @@ button:active {
 }
 
 .charName{
-    font-family: 'Futura', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     color: white;
     font-style:italic; 
@@ -277,6 +278,12 @@ button:active {
     animation: fadeIn 1s ease-in-out;
 }
 
+.btn {
+    background:yellow;
+}
+.stageButton {
+    text-align:center;
+}
 .stageContainerButtons {
     display: flex;
     flex-flow: column nowrap;
