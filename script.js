@@ -225,6 +225,7 @@ function setUpModFour() {
     return modFour
 }
 function createButton(option){
+    //this function generate decision buttons
     let button = document.createElement("button");
     button.classList.add("button");
     button.textContent = option
@@ -235,10 +236,11 @@ function createButton(option){
     return button; 
 }
 
-function createDecision(episode){ //episode = storyScript.module#[#]
+function createDecision(id){ //id = storyScript.module#[#]
+    //this function generate the 3 decisions in an id. 
     let wrapper = document.createElement("section");
     for(let i=0; i<3; i++){
-        wrapper.appendChild(createButton(episode.options[i].desc));
+        wrapper.appendChild(createButton(id.options[i].desc));
     }
     bodyHTML.appendChild(wrapper);
 
