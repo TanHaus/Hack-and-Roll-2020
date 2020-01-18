@@ -1,12 +1,16 @@
-body {
+html, body {
     margin: 0; 
     padding: 0; 
-    overflow: hidden;
+    height: 100%;
+}
+
+.biggestContainer > :first-child {
+    height: 60%;
 }
 
 /* Start Screen */
 .background {
-    height: 100vh; 
+    height: 100%; 
     background-image: url('./assets/bg0.jpg');
     background-repeat:no-repeat;
     background-position:bottom; 
@@ -17,6 +21,7 @@ section h1 {
     font-family: 'Futura';
     font-size: 2rem;
     padding: 2rem 2rem 2rem 2rem;
+    margin: 0;
 }
 
 button {
@@ -80,8 +85,8 @@ button:active {
 /* Decision and Outcome Page */
 .wrapper {
     background-color: rgba(0, 0, 0, 0.5);
-    width: 100vw;
-    height: 60vh;
+    width: 100%;
+    height: 100%;
 }
 
 .decPage{
@@ -89,8 +94,8 @@ button:active {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    width: 100vw;
-    height: 60vh;
+    width: 100%;
+    height: 60%;
 }
 
 .decTitle{
@@ -100,19 +105,12 @@ button:active {
     color: white; 
     font-size: 25px;   
 }
-.buttonWrapper {
-    margin-top: 18%; 
-}
 
-.subWrapper {
-    margin-top : 10%; 
-    margin-left : 10%; 
-    margin-right: 10%;
-}
 .subTitle {
     text-align: center; 
     color: white; 
-    font-size: 15px;  
+    font-size: 1rem;
+    padding: 1rem 2rem;
 }
 .outcomeP {
     color: white; 
@@ -133,8 +131,7 @@ button:active {
     border-width: 1px;
     background: rgba(0, 0, 0, 0.5);
 
-    font-family: 'Roboto';
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 /*Mods*/
@@ -147,10 +144,9 @@ button:active {
     transform: translate(-50%,-50%);
 }
 
-/* .biggestContainer{
-    height: 100vh;
-    width: 100vw;
-} */
+.biggestContainer{
+    height: 100%;
+}
 
 .continueButton{
     background-color: rgba(15, 150, 127, 0.9);;
@@ -164,14 +160,14 @@ button:active {
 }
 
 .viz{
-    width: 100vw;
-    height: 40vh;
+    width: 100%;
+    height: 40%;
     background-color: rgb(0, 0, 0);
 }
 
 .dec{
-    width: 100vw;
-    height: 40vh;
+    width: 100%;
+    height: 40%;
     background-color: rgb(97, 97, 97);
 }
 
@@ -181,8 +177,8 @@ button:active {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    width: 100vw;
-    height: 60vh;
+    width: 100%;
+    height: 100%;
 }
 
 .avatarContainer {
@@ -195,10 +191,9 @@ button:active {
 }
 
 .avatar{
-    width: 40%;
-    max-height: 80%;
-    bottom: 0;
-    left: 10%;
+    /* width: 40%;
+    max-height: 80%; */
+    width: 25%;
     transition: 0.2s ease-in-out;
     transform-origin: 50% 100%;
     filter: brightness(0.8) blur(1px);
@@ -259,12 +254,21 @@ button:active {
     to { opacity: 0; }
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .addFlash {
     animation: flash 0.5s ease-in-out;
 }
 
 .addFadeOut {
     animation: fadeOut 1s ease-in-out;
+}
+
+.addFadeIn {
+    animation: fadeIn 1s ease-in-out;
 }
 
 .stageContainerButtons {
@@ -280,4 +284,8 @@ button:active {
 }
 .radar {
     padding-top: 20%;
+}
+
+.episodeContainer > p {
+    margin: auto 4rem;
 }

@@ -303,6 +303,8 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
           textObject.textContent += text[j];
           j++;
           timeoutid = setTimeout(() => typeWriter(textObject, text), 50);
+        } else {
+            // group.append(nextButton)
         }
     }
     
@@ -498,7 +500,9 @@ function setOutcomePage(option){
     //subtitle and its wrapper 
     let subTitle = document.createElement("p");
     subTitle.classList.add("subTitle");
-    subTitle.textContent = option.outcome; 
+    subTitle.textContent = option.outcome;
+    subTitle.classList.add('addFadeIn')
+    setTimeout(() => subTitle.classList.remove('addFadeIn'), 1000)
 
     let subWrapper = document.createElement("section");
     subWrapper.classList.add("subWrapper");
@@ -509,6 +513,28 @@ function setOutcomePage(option){
     Player.clearUpperContainer()
     Player.upperContainerReference.append(wrapper);
     return wrapper; 
+}
+
+function explode() {
+    let height = Math.max(
+        document.documentElement.clientHeight, 
+        document.documentElement.scrollHeight)
+    let i = 0
+
+    function growCanvas() {
+        if(visualizer.canvasHeight < height) {
+            i++
+            canvasHeight = (40*1.001**i)
+            
+            container.firstChild.style.height = `${100-canvasHeight}%`
+
+            visualizer.vizCanvas.style.height = `${canvasHeight}%`
+            visualizer.updateDimension()
+            setTimeout(growCanvas, 16)
+        }
+    }
+
+    growCanvas()
 }
 
 function setUpRadarChart(PlayerObject) {
