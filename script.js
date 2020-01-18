@@ -643,7 +643,7 @@ function explode() {
     growCanvas()
 }
 
-function setUpRadarChart(PlayerObject) {
+function setUpRadarChart() {
 
     let radarChart = document.createElement("canvas");
     radarChart.setAttribute("id", "myChart");
@@ -654,7 +654,7 @@ function setUpRadarChart(PlayerObject) {
     bodyHTML.append(radarChart);
 
     var ctx = radarChart.getContext('2d');
-    var chart = new Chart(ctx, {
+    new Chart(ctx, {
     type: 'radar',
     data: {
         labels: ['Wealth', 'Health', 'Happiness'],
@@ -718,10 +718,9 @@ function createEndButtons() {
 
 function setUpReportCard(){
     
-    container.firstElementChild.remove();
-    container.firstElementChild.remove();
+    container.remove();
     
-    setUpRadarChart(Player);
+    setUpRadarChart();
     createEndButtons();
 
 }
@@ -743,4 +742,5 @@ function setUpReportCard(){
 // setDecisionPage()
 
 
+// setUpReportCard()
 startMenuScreen()
