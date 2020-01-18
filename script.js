@@ -300,11 +300,12 @@ function createButton(option){
     return button; 
 }
 
-function createDecision(id){ //id = storyScript.module#[#]
-    //this function generate the 3 decisions in an id. 
+function createDecision(episode){ //episode = storyScript.module#[#]
+    //this function generate the 3 decisions in an episode. 
     let wrapper = document.createElement("section");
+    wrapper.classList.add("wrapper");
     for(let i=0; i<3; i++){
-        wrapper.appendChild(createButton(id.options[i].desc));
+        wrapper.appendChild(createButton(episode.options[i].desc));
     }
     bodyHTML.appendChild(wrapper);
 
@@ -321,7 +322,7 @@ async function test() {
     await loadingPromise; 
     createDecision(storyScript.module1[0]);
 }
-// test();
-startMenuScreen();
+test();
+// startMenuScreen();
 // setUpModFour()
-// setDecisionPage()
+
