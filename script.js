@@ -132,14 +132,20 @@ let loadingPromise = fetch('./storyScriptPython.json')
 
 function createDialogue(episodeObject) {
     dialogueBlock = episodeObject.dialogue
+
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
     
     let avatar = document.createElement('img')
     avatar.classList.add("avatar");
+
+    let dialogueBox = document.createElement('section')
+    dialogueBox.classList.add("dialogueBox");
+
     let dialogueLine = document.createElement('p')
     dialogueLine.classList.add("dialogueLine")
+    dialogueBox.appendChild(dialogueLine)
 
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
@@ -156,14 +162,25 @@ function createDialogue(episodeObject) {
     }
     
     function updateFrame(i) {
+        j = 0
         avatar.setAttribute("src", `./assets/${dialogueBlock[i].name}.png`)
-        console.log(dialogueBlock[i])
-        dialogueLine.textContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text
+        let dialogueContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text;
+        dialogueLine.textContent = ''
+        // dialogueLine.textContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text
+        typeWriter(dialogueLine, dialogueContent);
+    }
+    let j = 0
+    function typeWriter(line, text) {
+        if (j < text.length) {
+          line.textContent += text.charAt(j);
+          j++;
+          setTimeout(() => typeWriter(line, text), 50);
+        }
     }
     
     let i = 0
     updateFrame(i)
-    episodeContainer.append(avatar, dialogueLine, continueButton)
+    episodeContainer.append(avatar, dialogueBox, continueButton)
     return episodeContainer
 }
 
