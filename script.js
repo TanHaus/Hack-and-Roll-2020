@@ -152,7 +152,7 @@ let visualizer = {
             visualizer.particleColorHsl = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
             visualizer.particleRadius = Player.wealth/10
             visualizer.particleAcceleration = Player.happiness/1000
-            visualizer.particleVelocity = Player.happiness/50
+            visualizer.particleVelocity = Player.happiness/25
             particleArray.push(new Particle(visualizer.canvasWidth/2,30))
             
             visualizer.animationRequestId = requestAnimationFrame(vizLoop)
@@ -337,7 +337,8 @@ function startMenuScreen() {
         menu.classList.add('addFadeOut')
         setTimeout(() => {
             menu.classList.remove('addFadeOut')
-            setUpStage()
+            setUpPrologue()
+            // setUpStage()
         }, 1000)
 
     }
@@ -380,6 +381,41 @@ function startMenuScreen() {
     addButton()
 
     Player.currentSceneSectionReference = background
+}
+function setUpPrologue() {
+    Player.currentSceneSectionReference.remove()
+    let bgBlack = document.createElement("section")
+    bgBlack.classList.add("bgBlack")
+    bodyHTML.appendChild(bgBlack)
+    
+    prologueBlock = ["Navigate through life and make financial choices.",
+    "Will you be able to be financially independent?", 
+    "Will you be able to live well?",
+    "And one more thing.",
+    "You are John."]
+
+    let i = 0;
+    function setPrologueLine() {
+        if(i<prologueBlock.length) {
+            let prologueLine = document.createElement('p')
+            prologueLine.classList.add('prologue')
+            prologueLine.textContent = prologueBlock[i]
+            prologueLine.classList.add('addFadeIn')
+            bgBlack.append(prologueLine)
+            i += 1
+            setTimeout(setPrologueLine, 2000)
+        }
+        else {
+            let startButton = document.createElement("button");
+            startButton.textContent = "Start"
+            startButton.onclick = setUpStage
+            bgBlack.append(startButton)
+        }
+
+    }
+    setPrologueLine()
+    
+    Player.currentSceneSectionReference = bgBlack
 }
 
 function setUpStage() {
@@ -428,9 +464,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
-        Player.health += option.point.Health*10; 
-        Player.wealth += option.point.Wealth*10; 
-        Player.happiness += option.point.Happiness*10; 
+        Player.health += option.point.Health*2; 
+        Player.wealth += option.point.Wealth*2; 
+        Player.happiness += option.point.Happiness*2; 
         
         //advance to outcome page 
         Player.decisionWrapper.remove();
@@ -591,4 +627,5 @@ function setUpReportCard(){
 
 
 //setUpReportCard();
-startMenuScreen()
+startMenuScreen();
+//setUpPrologue()
