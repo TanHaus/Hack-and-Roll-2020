@@ -107,7 +107,7 @@ function updateCanvas(vizCanvas) {
 }
 
 let storyScript
-let loadingPromise = fetch('./storyScript2.json')
+let loadingPromise = fetch('./storyScriptPython.json')
     .then((response) => {
         return response.json()
     })
@@ -116,25 +116,7 @@ let loadingPromise = fetch('./storyScript2.json')
         console.log(storyScript)
     })
 
-// from modNo, id, and episode, loadStory returns episodeNo (str), title (str), openingLine (str), dialogueLines (array). 
-// each element of the dialogueLines array is a JSON object, with the key being the character name and the 
-
-
-// function loadStory(modNo, id) {
-//     //conditional query to get the block with the correct id]
-//     storyBlock = storyScript[modNo][]
-//     episodeNo = storyBlock["episode"]
-//     title = modBlock["title"]
-//     openingLine = modBlock["opening"]
-//     dialogueBlock = modBlock["dialogue"]
-//     dialogueLines = []
-//     dialogueLoadingLine = {dialgoueLines[]}
-//     return ....
-//     /
-// }
-
-
-function createDialogue() {
+function createDialogue(dialogueBlock) {
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     // episodeContainer.id = 'modFour'
@@ -142,29 +124,36 @@ function createDialogue() {
     // dialogueLines = episode.dialogue
 
     // episodeContainer.style.backgroundImage = "url(`./assets/${dialogueLines.name}.png`)"
+
     episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
     
     let avatar = document.createElement('img')
-    avatar.setAttribute("src", "./assets/asset2.png")
     avatar.classList.add("avatar");
 
     let dialogueLine = document.createElement('p')
-    dialogueLine.textContent = 'M - How’s your back, honey? (Gently places a plate of Yangzhou fried rice in front of J)'
+    
     dialogueLine.classList.add("dialogueLine")
 
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
     continueButton.textContext = "Click to continue"
-    continueButton.onclick() = continueFrame()
-    
-    function continueFrame() {
-        avatar.setAttribute("src", "./assets/asset5.png")
-        dialogueLine.textContent = 'Fucky you'
+    continueButton.onclick = function() {
+        i += 1
+        updateFrame(i)
     }
+    
+    function updateFrame(i) {
+        avatar.setAttribute("src", `./assets/${dialogueBlock[i].name}.png`)
+        dialogueLine.textContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text
+    }
+    
+    let i = 0
+    updateFrame(i)
+    
 
     episodeContainer.append(avatar, dialogueLine, continueButton)
 
-    
+
 
     // function 
     // continueButton.onclick() = 
@@ -270,7 +259,8 @@ function setUpModThree() {
 }
 
 function setUpModFour() {
-    modFour = createDialogue()
+    dialogueBlock = storyScript.stage1[0].dialogue
+    modFour = createDialogue(dialogueBlock)
 
     vizCanvas = setUpCanvas()
 
@@ -352,7 +342,11 @@ async function test() {
     await loadingPromise; 
     createDecision(storyScript.module1[0]);
 }
-test();
+// test();
 // startMenuScreen();
-// setUpModFour()
-
+async function testFuck() {
+    await loadingPromise;
+    setUpModFour()
+}
+testFuck()
+// setDecisionPage()
