@@ -155,11 +155,11 @@ function createDialogue() {
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
     continueButton.textContext = "Click to continue"
-    continueButton.onclick() = continueFrame()
+    continueButton.onclick = continueFrame
     
     function continueFrame() {
         avatar.setAttribute("src", "./assets/asset5.png")
-        dialogueLine.textContent = 'Fucky you'
+        dialogueLine.textContent = 'NFR'
     }
 
     episodeContainer.append(avatar, dialogueLine, continueButton)
@@ -321,7 +321,7 @@ async function test() {
     createDecision(storyScript.module1[0]);
 }
 test();
-// startMenuScreen()
+startMenuScreen()
 // setUpModFour()
 // setDecisionPage()
 
