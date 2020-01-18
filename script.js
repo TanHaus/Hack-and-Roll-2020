@@ -4,7 +4,7 @@ let bodyHTML = document.querySelector('body')
 let container = document.createElement('container')
 let vizCanvas
 
-let ballArray = []
+let particleArray = []
 
 /**
  * Class Vector
@@ -59,7 +59,7 @@ class Particle {
         this.velocity.add(this.acceleration);
         this.lifespan -= 1;
         if(this.lifespan == 0) {
-            ballArray.splice(ballArray.indexOf(this), 1)
+            particleArray.splice(particleArray.indexOf(this), 1)
         }
     }
     display(vizCtx) {
@@ -88,29 +88,48 @@ class Particle {
     }
 }
 
+let visualizer = {
+    vizCanvas: null,
+    vizCtx: null,
+    canvasWidth: 0,
+    canvasHeight: 0,
+    animationRequestId: 0,
 
-function vizLoop() {
-    let ctx = vizCanvas.getContext('2d')
-    ctx.clearRect(0,0,vizCanvas.width,vizCanvas.height)
-    
-    for (let i=0; i<ballArray.length; i++) {
-        ballArray[i].run(ctx)
+    setUp: function() {
+        let canvas = document.createElement('canvas')
+        canvas.classList.add('viz')
+
+        visualizer.vizCanvas = canvas
+        visualizer.vizCtx = canvas.getContext('2d')
+    },
+    updateDimension: function() {
+        visualizer.canvasHeight = visualizer.vizCanvas.height = visualizer.vizCanvas.clientHeight
+        visualizer.canvasWidth = visualizer.vizCanvas.width = visualizer.vizCanvas.clientWidth
+    },
+    clear: function() {
+        let ctx = visualizer.vizCtx
+            width = visualizer.canvasWidth
+            height = visualizer.canvasHeight
+     
+        ctx.clearRect(0,0,width,height)
+    },
+    run: function() {
+        function vizLoop() {
+            visualizer.clear()
+            for (let i=0; i<particleArray.length; i++) {
+                particleArray[i].run(visualizer.vizCtx)
+            }
+            particleArray.push(new Particle(visualizer.canvasWidth/2,30))
+            
+            visualizer.animationRequestId = requestAnimationFrame(vizLoop)
+        }
+
+        visualizer.animationRequestId = requestAnimationFrame(vizLoop)
+    }, 
+    stop: function() {
+        cancelAnimationFrame(visualizer.animationRequestId)
     }
-    ballArray.push(new Particle(vizCanvas.width/2,30))
-    
-    requestAnimationFrame(vizLoop)
-}
 
-// Create the viz canvas
-function setUpCanvas() {
-    let vizCanvas = document.createElement('canvas')
-    vizCanvas.classList.add('viz')
-    return vizCanvas
-}
-
-function updateCanvas(vizCanvas) {
-    vizCanvas.height = vizCanvas.clientHeight
-    vizCanvas.width = vizCanvas.clientWidth
 }
 
 // Load story script from the json file
@@ -169,11 +188,8 @@ let Player = {
     'health': 0, 
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
-<<<<<<< HEAD
     'outcomeWrapper' : null,
-=======
     'episodeContainerReference': null,
->>>>>>> db050b35034ae7265f8748c88d3f3dd3721c1332
     
 
     // Methods
@@ -258,17 +274,17 @@ function setUpModFour() {
     modFour = createDialogue(episode1)
     Player.episodeContainerReference = modFour
 
-    vizCanvas = setUpCanvas()
+    visualizer.setUp()
 
-    container.append(modFour, vizCanvas)
+    container.append(modFour, visualizer.vizCanvas)
     
     bodyHTML.appendChild(container)
 
     // get width and height after attaching to bodyHTML
-    updateCanvas(vizCanvas)
+    visualizer.updateDimension()
 
     // start the visualizer
-    requestAnimationFrame(vizLoop)
+    visualizer.run()
     
     Player.currentSceneSectionReference = modFour
 
