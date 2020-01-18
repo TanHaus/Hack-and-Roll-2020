@@ -3,7 +3,7 @@ let bodyHTML = document.querySelector('body')
 let container = document.createElement('container')
 let vizCanvas
 
-let ballArray = []
+let particleArray = []
 
 /**
  * Class Vector
@@ -36,18 +36,27 @@ class Vector {
     }
 }
 
+function colorBlender(percentage) {
+    color1 = [0, 0, 0]
+    color2 = [255, 255, 0]
+    colorResult = []
+    for (let i = 0; i < 3; i++) {
+        colorResult[i] = toString((color1[i]*(100-parseInt(percentage)) + color2[i]*(parseInt(percentage)))/100)
+    }
+    return `${colorResult[0]},${colorResult[1]},${colorResult[2]}` //returns "r,g,b"
+}
 /**
  * Particle Class
  */
 class Particle {
-    constructor(x, y) {
-        this.acceleration = new Vector(0, 0.05)
-        this.velocity = new Vector(Math.random() * 2 - 1, -Math.random())
+    constructor(x, y, radius, accelerationY, velocityX) {
+        this.acceleration = new Vector(0, accelerationY)
+        this.velocity = new Vector((Math.random()*2-1)*velocityX, -Math.random())
         this.position = new Vector(x, y)
         this.lifespan = 100
-        this.radius = 5
+        this.radius = radius
         this.lineWidth = 1
-        this.color = 'rgba(256, 256, 256, 1)'
+        this.color = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
     }
     run(vizCtx) {
         this.update();
@@ -58,7 +67,7 @@ class Particle {
         this.velocity.add(this.acceleration);
         this.lifespan -= 1;
         if(this.lifespan == 0) {
-            ballArray.splice(ballArray.indexOf(this), 1)
+            particleArray.splice(particleArray.indexOf(this), 1)
         }
     }
     display(vizCtx) {
@@ -68,48 +77,69 @@ class Particle {
         vizCtx.beginPath()
         vizCtx.arc(0, 0, this.radius, 0, Math.PI * 2)
         vizCtx.lineWidth = this.lineWidth
-        vizCtx.strokeStyle = `rgba(0,0,0,${this.lifespan/100})`
+        vizCtx.strokeStyle = 'white'
         vizCtx.stroke()
+        vizCtx.fillStyle = this.color
+        vizCtx.fill()
         
         vizCtx.restore()
     }
-    setAcceleration(newValue) {
-        this.acceleration = new Vector(0, newValue)
-    }
-    setRadius(newValue) {
-        this.radius = newValue
-    }
-    setLifespan(newValue) {
-        this.lifespan = newValue
-    }
-    setColor(red, green, blue, alpha) {
-        this.color = `rgba(${red}, ${green}, ${blue}, ${alpha})`
-    }
+    // setAcceleration(newValue) {
+    //     this.acceleration = new Vector(0, newValue)
+    // }
+    // setRadius(newValue) {
+    //     this.radius = newValue
+    // }
+    // setLifespan(newValue) {
+    //     this.lifespan = newValue
+    // }
+    // setColor(red, green, blue, alpha) {
+    //     this.color = `rgba(${red}, ${green}, ${blue}, ${alpha})`
+    // }
 }
 
+let visualizer = {
+    vizCanvas: null,
+    vizCtx: null,
+    canvasWidth: 0,
+    canvasHeight: 0,
+    animationRequestId: 0,
 
-function vizLoop() {
-    let ctx = vizCanvas.getContext('2d')
-    ctx.clearRect(0,0,vizCanvas.width,vizCanvas.height)
-    
-    for (let i=0; i<ballArray.length; i++) {
-        ballArray[i].run(ctx)
+    setUp: function() {
+        let canvas = document.createElement('canvas')
+        canvas.classList.add('viz')
+
+        visualizer.vizCanvas = canvas
+        visualizer.vizCtx = canvas.getContext('2d')
+    },
+    updateDimension: function() {
+        visualizer.canvasHeight = visualizer.vizCanvas.height = visualizer.vizCanvas.clientHeight
+        visualizer.canvasWidth = visualizer.vizCanvas.width = visualizer.vizCanvas.clientWidth
+    },
+    clear: function() {
+        let ctx = visualizer.vizCtx
+            width = visualizer.canvasWidth
+            height = visualizer.canvasHeight
+     
+        ctx.clearRect(0,0,width,height)
+    },
+    run: function() {
+        function vizLoop() {
+            visualizer.clear()
+            for (let i=0; i<particleArray.length; i++) {
+                particleArray[i].run(visualizer.vizCtx)
+            }
+            particleArray.push(new Particle(visualizer.canvasWidth/2,30, Player.health/2, Player.health/100, Player.health/2))
+            
+            visualizer.animationRequestId = requestAnimationFrame(vizLoop)
+        }
+
+        visualizer.animationRequestId = requestAnimationFrame(vizLoop)
+    }, 
+    stop: function() {
+        cancelAnimationFrame(visualizer.animationRequestId)
     }
-    ballArray.push(new Particle(vizCanvas.width/2,30))
-    
-    requestAnimationFrame(vizLoop)
-}
 
-// Create the viz canvas
-function setUpCanvas() {
-    let vizCanvas = document.createElement('canvas')
-    vizCanvas.classList.add('viz')
-    return vizCanvas
-}
-
-function updateCanvas(vizCanvas) {
-    vizCanvas.height = vizCanvas.clientHeight
-    vizCanvas.width = vizCanvas.clientWidth
 }
 
 // Load story script from the json file
@@ -163,11 +193,15 @@ let Player = {
     'name': 'John',
     'sex': 'unidentified',
     'currentStage': 1,
-    'wealth': 0,
-    'happiness': 0, 
-    'health': 0, 
+    'wealth': 84, //determines the radius of Particles
+    'happiness':87, //determines the color of the Particles
+    'health':70, //determines the inital velocity and acceleration of the Particles
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
+<<<<<<< HEAD
+=======
+    'outcomeWrapper' : null,
+>>>>>>> ddf24febbb4114b4ea82edf404e2063ced02e2cf
     'episodeContainerReference': null,
     
 
@@ -254,17 +288,17 @@ function setUpModFour() {
     modFour = createDialogue(episode1)
     Player.episodeContainerReference = modFour
 
-    vizCanvas = setUpCanvas()
+    visualizer.setUp()
 
-    container.append(modFour, vizCanvas)
+    container.append(modFour, visualizer.vizCanvas)
     
     bodyHTML.appendChild(container)
 
     // get width and height after attaching to bodyHTML
-    updateCanvas(vizCanvas)
+    visualizer.updateDimension()
 
     // start the visualizer
-    requestAnimationFrame(vizLoop)
+    visualizer.run()
     
     Player.currentSceneSectionReference = modFour
 
@@ -349,12 +383,6 @@ function setOutcomePage(option){
     wrapper.append(title,subWrapper);
     Player.episodeContainerReference.append(wrapper);
     return wrapper; 
-}
-
-function setUpReportCard() {
-    Player.currentSceneSectionReference.remove()
-
-    
 }
 
 //TESTING
