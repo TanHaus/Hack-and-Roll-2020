@@ -1,3 +1,35 @@
+let Player = {
+    // Variables
+    'name': 'John',
+    'sex': 'unidentified',
+    'currentStage': 1,
+    'currentEpisode': 1,
+    'wealth': 50, //determines the radius of Particles
+    'happiness': 50, //determines the saturation and luminance of the Particles
+    'health': 50, //determines the inital velocity and acceleration of the Particles
+    'currentSceneSectionReference': null,
+    'decisionWrapper': null,
+    'episodeContainerReference': null,
+    'upperContainerReference': null,
+    
+
+    // Methods
+    setName: function(name) {
+        Player.name = name
+    },
+    setSex: function(sex) {
+        Player.sex = sex
+    },
+    proceedStage: function() {
+        Player.currentStage += 1
+    },
+    increasePoints: function(value) {
+        Player.points += value
+    },
+    clearUpperContainer: function() {
+        Player.upperContainerReference.firstChild.remove()
+    }
+}
 
 let bodyHTML = document.querySelector('body')
 // Create a container for each mod and the viz canvas
@@ -41,14 +73,14 @@ class Vector {
  * Particle Class
  */
 class Particle {
-    constructor(x, y, radius, accelerationY, velocityX) {
-        this.acceleration = new Vector(0, accelerationY)
-        this.velocity = new Vector((Math.random()*2-1)*velocityX, -Math.random())
+    constructor(x, y) {
+        this.acceleration = new Vector(0, visualizer.particleAcceleration)
+        this.velocity = new Vector((Math.random()*2-1)*visualizer.particleVelocity, -Math.random())
         this.position = new Vector(x, y)
         this.lifespan = 100
-        this.radius = radius
+        this.radius = visualizer.particleRadius
         this.lineWidth = 1
-        this.color = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
+        this.color = visualizer.particleColorHsl
     }
     run(vizCtx) {
         this.update();
@@ -61,6 +93,7 @@ class Particle {
         if(this.lifespan == 0) {
             particleArray.splice(particleArray.indexOf(this), 1)
         }
+        
     }
     display(vizCtx) {
         vizCtx.save()
@@ -69,9 +102,10 @@ class Particle {
         vizCtx.beginPath()
         vizCtx.arc(0, 0, this.radius, 0, Math.PI * 2)
         vizCtx.lineWidth = this.lineWidth
-        vizCtx.strokeStyle = 'white'
+        vizCtx.strokeStyle = `rgba(255, 255, 255, ${this.lifespan/100})`
         vizCtx.stroke()
         vizCtx.fillStyle = this.color
+        vizCtx.globalAlpha = this.lifespan/100
         vizCtx.fill()
         
         vizCtx.restore()
@@ -84,7 +118,12 @@ let visualizer = {
     canvasWidth: 0,
     canvasHeight: 0,
     animationRequestId: 0,
-    color: '',
+    particleColor: '',
+    particleRadius: 0,
+    particleAcceleration: 0,
+    particleVelocity: 0,
+
+    
 
     setUp: function() {
         let canvas = document.createElement('canvas')
@@ -110,7 +149,11 @@ let visualizer = {
             for (let i=0; i<particleArray.length; i++) {
                 particleArray[i].run(visualizer.vizCtx)
             }
-            particleArray.push(new Particle(visualizer.canvasWidth/2,30, Player.health/2, Player.health/100, Player.health/2))
+            visualizer.particleColorHsl = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
+            visualizer.particleRadius = Player.wealth/10
+            visualizer.particleAcceleration = Player.happiness/1000
+            visualizer.particleVelocity = Player.happiness/50
+            particleArray.push(new Particle(visualizer.canvasWidth/2,30))
             
             visualizer.animationRequestId = requestAnimationFrame(vizLoop)
         }
@@ -120,7 +163,6 @@ let visualizer = {
     stop: function() {
         cancelAnimationFrame(visualizer.animationRequestId)
     }
-
 }
 
 // Load story script from the json file
@@ -135,6 +177,18 @@ let loadingPromise = fetch('./storyScriptPython.json')
 function createDialogue(episodeObject) {
     dialogueBlock = episodeObject.dialogue
 
+    charToColor = {
+        "John"      : "rgba(0, 102, 12, 0.95)", //emerald
+        "Mary"      : "rgba(0, 27, 97, 0.95)", //navy
+        "Waiter"    : "rgba(240, 1184, 0, 0.95)", //gold
+        "Peter"     : "rgba(225, 119, 0, 0.95)", //orange
+        "TV"        : "rgba(36, 36, 36, 0.95)", //grey
+        "Elsa"      : "rgba(135, 0, 184, 0.95)", //violet
+        "Karen"     : "rgba(0, 102, 122, 0.95)", //torquoise
+        "Oliver"    : "rgba(0, 191, 230, 0.95)",//light blue
+        "Rachel"    : "rgba(225, 26, 121, 0.95)", //pink
+        "Chris"     : "rgba(0, 194, 10, 0.95)"//light green
+    }
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     episodeContainer.style.backgroundImage = `url('./assets/bg${episodeObject["id"]}.jpg')`
@@ -202,10 +256,9 @@ function createDialogue(episodeObject) {
         clearTimeout(timeoutid)
         let dialogueContent = dialogueBlock[i].text;
         charName.textContent = dialogueBlock[i].name;
-
+        charName.style.backgroundColor = charToColor[charName.textContent];
 
         dialogueLine.textContent = ''
-        console.log(dialogueContent)
         typeWriter(dialogueLine, dialogueContent);
     }
     let j = 0
@@ -225,42 +278,50 @@ function createDialogue(episodeObject) {
     return episodeContainer
 }
 
-let Player = {
-    // Variables
-    'name': 'John',
-    'sex': 'unidentified',
-    'currentStage': 1,
-    'currentEpisode': 1,
-    'wealth': 50, //determines the radius of Particles
-    'happiness': 50, //determines the color of the Particles
-    'health': 50, //determines the inital velocity and acceleration of the Particles
-    'currentSceneSectionReference': null,
-    'decisionWrapper': null,
-    'episodeContainerReference': null,
-    'upperContainerReference': null,
-    
-
-    // Methods
-    setName: function(name) {
-        Player.name = name
-    },
-    setSex: function(sex) {
-        Player.sex = sex
-    },
-    proceedStage: function() {
-        Player.currentStage += 1
-    },
-    increasePoints: function(value) {
-        Player.points += value
-    },
-    clearUpperContainer: function() {
-        Player.upperContainerReference.firstChild.remove()
-    }
-}
-
 function loadEpisode(episode = Player.currentEpisode, stage = Player.currentStage) {
     episodeObject = storyScript[`stage${stage}`][episode - 1]
-    return createDialogue(episodeObject)
+    Player.clearUpperContainer()
+    Player.upperContainerReference.append(createDialogue(episodeObject))
+}
+
+function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.currentStage) {
+    episodeObject = storyScript[`stage${stage}`][episode - 1]
+    let title = episodeObject.title
+        opening = episodeObject.opening
+    
+    let group = document.createElement('section')
+    group.classList.add('episodeContainer')
+
+    let episodeTitle = document.createElement('h1')
+    episodeTitle.textContent = title
+
+    let episodeOpening = document.createElement('p')
+
+    let nextButton = document.createElement('button')
+    nextButton.textContent = '...'
+    nextButton.onclick = () => {
+        // clearTimeout(timeoutid)
+        Player.upperContainerReference.classList.add('addFadeOut')
+        setTimeout(() => {
+            Player.upperContainerReference.classList.remove('addFadeOut')
+            loadEpisode()
+        }, 1000)
+    }
+
+    let j = 0
+    let timeoutid = 0;   
+    function typeWriter(textObject, text) {
+        if (j < text.length) {
+          textObject.textContent += text[j];
+          j++;
+          timeoutid = setTimeout(() => typeWriter(textObject, text), 50);
+        }
+    }
+    
+    typeWriter(episodeOpening, opening)
+
+    group.append(episodeTitle, episodeOpening, nextButton)
+    Player.upperContainerReference.append(group)
 }
 
 function startMenuScreen() {
@@ -278,18 +339,54 @@ function startMenuScreen() {
     let gameTitle = document.createElement("h1")
     gameTitle.textContent = "The Singaporean Dream"
 
-    let startButton = document.createElement("button");
-    startButton.classList.add("startButton");
-    startButton.textContent = "Start Game"
-    startButton.onclick = setUpStage
+    //buttons
 
+    let stageArray = ["1: Young Adult", "2: Working Adult", "3: Silver Years"]
+
+    let startButton = document.createElement("button");
+    startButton.textContent = "Play"
+    startButton.onclick = () => {
+        menu.classList.add('addFadeOut')
+        setTimeout(() => {
+            menu.classList.remove('addFadeOut')
+            setUpStage()
+        }, 1000)
+
+    }
+    let optionButton = document.createElement("button");
+    optionButton.textContent = "Jump To ..."
+    optionButton.onclick = function (){
+        let optionsContainer = document.createElement('section')
+        optionsContainer.classList.add('optionsContainerButtons')
+
+        for (let i=0; i<3;i++){
+            let btn = document.createElement("section")
+            optionsContainer.append(btn)
+            btn.textContent = stageArray[i];
+            btn.classList.add("stageButton");
+
+            for(let j=0;j<3;j++){
+                let button = document.createElement("button")
+                button.textContent = storyScript[`stage${i+1}`][j].title
+                button.classList.add('episodeButton')
+                button.onclick = function(){
+                    setUpStage();
+                    Player.clearUpperContainer()
+                    loadTitleAndOpening(i+1,j+1);
+                }
+                optionsContainer.append(button)
+            }
+        }
+        menu.append(optionsContainer)
+    }
+    
     let fullscreenButton = document.createElement('button')
     fullscreenButton.textContent = 'Fullscreen'
     fullscreenButton.onclick = () => document.documentElement.requestFullscreen()
     
     async function addButton() {
         await loadingPromise
-        menu.append(gameTitle,startButton, fullscreenButton); 
+        menu.append(gameTitle,startButton, fullscreenButton,optionButton); 
     }
 
     addButton()
@@ -309,15 +406,13 @@ function setUpStage() {
     visualizer.updateDimension()
     visualizer.run()
 
-    let stageContent = loadEpisode(3, 3)
-    Player.upperContainerReference.append(stageContent)
+    loadTitleAndOpening()
 
-    Player.currentEpisode = 3
-    Player.currentStage = 3
+    // Player.currentEpisode = 3
+    // Player.currentStage = 3
 }
 
 function nextEpisode() {
-    Player.clearUpperContainer()
     if(Player.currentEpisode<3) {
         Player.currentEpisode += 1
 
@@ -333,8 +428,8 @@ function nextEpisode() {
         }
     }
     
-    let stageContent = loadEpisode()
-    Player.upperContainerReference.append(stageContent)
+    Player.clearUpperContainer()
+    loadTitleAndOpening()
 }
 
 function createButton(option){
@@ -345,9 +440,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
-        Player.health += option.point.Health; 
-        Player.wealth += option.point.Wealth; 
-        Player.happiness += option.point.Happiness; 
+        Player.health += option.point.Health*10; 
+        Player.wealth += option.point.Wealth*10; 
+        Player.happiness += option.point.Happiness*10; 
         
         //advance to outcome page 
         Player.decisionWrapper.remove();
