@@ -266,13 +266,6 @@ function createDialogue(episodeObject) {
     return episodeContainer
 }
 
-
-    // Methods
-    clearUpperContainer: function() {
-        if(Player.upperContainerReference!=null) Player.upperContainerReference.firstChild.remove()
-    }
-}
-
 function loadEpisode(episode = Player.currentEpisode, stage = Player.currentStage) {
     episodeObject = storyScript[`stage${stage}`][episode - 1]
     Player.clearUpperContainer()
