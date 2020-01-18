@@ -75,6 +75,7 @@ class Particle {
     }
 }
 
+
 function vizLoop() {
     let ctx = vizCanvas.getContext('2d')
     ctx.clearRect(0,0,vizCanvas.width,vizCanvas.height)
@@ -116,7 +117,8 @@ let loadingPromise = fetch('./storyScriptPython.json')
         console.log(storyScript)
     })
 
-function createDialogue(dialogueBlock) {
+function createDialogue(episode) {
+    dialogueBlock = episode.dialogue
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     // episodeContainer.id = 'modFour'
@@ -131,7 +133,6 @@ function createDialogue(dialogueBlock) {
     avatar.classList.add("avatar");
 
     let dialogueLine = document.createElement('p')
-    
     dialogueLine.classList.add("dialogueLine")
 
     let continueButton = document.createElement('button')
@@ -139,6 +140,12 @@ function createDialogue(dialogueBlock) {
     continueButton.textContext = "Click to continue"
     continueButton.onclick = function() {
         i += 1
+        if (i == dialogueBlock.length) {
+            avatar.remove()
+            dialogueLine.remove()
+            continueButton.remove()
+            episodeContainer.append(createDecision(episode))
+        }
         updateFrame(i)
     }
     
@@ -258,8 +265,9 @@ function setUpModThree() {
 }
 
 function setUpModFour() {
-    dialogueBlock = storyScript.stage1[0].dialogue
-    modFour = createDialogue(dialogueBlock)
+    episode1 = storyScript.stage1[0]
+    modFour = createDialogue(episode1)
+    // modFour = createDecision(episode1)
 
     vizCanvas = setUpCanvas()
 
