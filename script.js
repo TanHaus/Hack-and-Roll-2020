@@ -198,6 +198,7 @@ let Player = {
     'health':0, 
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
+    'outcomeWrapper' : null,
     
 
     // Methods
