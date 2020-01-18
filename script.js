@@ -433,7 +433,7 @@ function setUpRadarChart(PlayerObject) {
     let radarChart = document.createElement("canvas");
     radarChart.setAttribute("id", "myChart");
     radarChart.setAttribute("width", "100%");
-    radarChart.setAttribute("height", "70%");
+    radarChart.setAttribute("height", "90%");
     radarChart.classList.add("radar")
 
     bodyHTML.append(radarChart);
@@ -444,9 +444,10 @@ function setUpRadarChart(PlayerObject) {
     data: {
         labels: ['Wealth', 'Health', 'Happiness'],
         datasets: [{
-            label: 'My First dataset',
+            label: 'Points',
             backgroundColor: 'rgb(153, 204, 255, 0.5)',
             borderColor: 'rgb(153, 204, 255)',
+            fontSize: 25,
             data: [Player['wealth'], Player['happiness'], Player['happiness']]
         }]
     },
@@ -457,10 +458,22 @@ function setUpRadarChart(PlayerObject) {
                 display: false
             },
             ticks: {
-                suggestedMin: 0,
-                suggestedMax: 100
+                min: 0,
+                max: 100,
+                stepSize: 20
+            },
+        },
+        legend: {
+            labels: {
+                fontSize: 16
             }
-        }
+        },
+        title: {
+            display: true,
+            text: 'Overall Results',
+            fontSize: 32,
+            padding: 10
+        },
     }
     });
 }
@@ -472,11 +485,19 @@ function createEndButtons() {
 
     let restartButton = document.createElement('button')
     restartButton.textContent = 'Restart Game'
-    restartButton.onclick = ""
+    restartButton.onclick = function() {
+        document.body.innerHTML = ""
+        startMenuScreen()
+    }
 
     let quitButton = document.createElement('button')
     quitButton.textContent = 'Quit Game'
-    quitButton.onclick = ""
+    quitButton.onclick = function() {
+        if (confirm("Give up Another Singaporean Dream?")) {
+          close();
+        }
+      }
+
     bodyHTML.append(infoButton, restartButton, quitButton)
 }
 
@@ -507,5 +528,4 @@ function setUpReportCard(){
 // setDecisionPage()
 
 
-//setUpReportCard();
 startMenuScreen()
