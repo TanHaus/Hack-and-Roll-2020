@@ -148,7 +148,7 @@ let visualizer = {
         visualizer.vizCanvas = canvas
         visualizer.vizCtx = canvas.getContext('2d')
 
-        visualizer.particleSaturation = visualizer.particleLight = Player.happiness
+        visualizer.particleSaturation = visualizer.particleLight = Player.health
         visualizer.particleRadius = Player.wealth/10
         visualizer.particleAcceleration = Player.happiness/1000
         visualizer.particleVelocity = Player.happiness/50
@@ -525,7 +525,7 @@ function createButton(option){
         Player.updateHappiness(option.point.Happiness); 
 
         
-        visualizer.particleSaturation = visualizer.particleLight = Player.happiness
+        visualizer.particleSaturation = visualizer.particleLight = Player.health
         visualizer.particleRadius = Player.wealth/10
         visualizer.particleAcceleration = Player.happiness/1000
         visualizer.particleVelocity = Player.happiness/50
@@ -663,7 +663,7 @@ function setUpRadarChart(PlayerObject) {
             backgroundColor: 'rgb(153, 204, 255, 0.5)',
             borderColor: 'rgb(153, 204, 255)',
             fontSize: 25,
-            data: [Player['wealth'], Player['happiness'], Player['happiness']]
+            data: [Player['wealth'], Player['health'], Player['happiness']]
         }]
     },
 

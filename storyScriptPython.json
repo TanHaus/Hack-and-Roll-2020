@@ -148,10 +148,7 @@
                     "point": {
                         "Wealth": 25,
                         "Health": -5,
-                        "Happiness": [
-                            -10,
-                            10
-                        ]
+                        "Happiness": 0
                     }
                 },
                 {
