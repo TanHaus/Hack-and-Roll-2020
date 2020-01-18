@@ -2,41 +2,41 @@ Stage 1: Young Adult
 
 Episode 1:  Lunch Buddies
 
-Opening: You are a university student. Your cohort mate and girlfriend, Mary, is studying with you today in school. It’s 2.08pm, and the both of you just returned from lunch. 
+Opening: You are a university student. Your cohort mate and girlfriend, Mary, is studying with you today in school. It's 2.08pm, and the both of you just returned from lunch. 
 
 Characters: J - John. M - Mary
 
 Script:
 M: That meal was so filling I might get a food coma soon.
 J: Oh man, looks like today is going to be unproductive.
-M: So how much was it? I’ll eTransfer you.
-J: It’s fine. I’ll pay today.
-M: Wow, why’s that?
+M: So how much was it? I'll eTransfer you.
+J: It's fine. I'll pay today.
+M: Wow, why's that?
 J: You deserve a treat for doing well for your quiz.
 M: Thank you!
 J: No worries.
 M: Do you even have enough money for the rest of the month?
 J: Uh- I try to spend less.
-M: But I’ve seen you going out frequently with Jay, Sean and the other guy.
+M: But I've seen you going out frequently with Jay, Sean and the other guy.
 J: His name is Peter. 
-M: Yeah, him. You’re not working part time too right?
+M: Yeah, him. You're not working part time too right?
 J: Nope. I just use my savings for now. 
-M: You might not last long with the way you’re spending, John.
+M: You might not last long with the way you're spending, John.
 J: Well, what about you? How do you spend?
 M: I try to limit my spending on wants, like branded items.
-J: Isn’t your wallet and bag is from Yucha?
-M: Yeah, but those are birthday gifts from my family. Doesn’t count.
+J: Isn't your wallet and bag is from Yucha?
+M: Yeah, but those are birthday gifts from my family. Doesn't count.
 J: What about going out with friends?
-M: I do hang out quite often, but I don’t spend much. It’s possible.
+M: I do hang out quite often, but I don't spend much. It's possible.
 J: Interesting. Anyway, I will also need to pay for my hostel and tuition fees.
 M: Your parents are not paying for you?
-J: I told him I’ll settle them myself first.
-M: But you don’t have a lot of money, right?
+J: I told him I'll settle them myself first.
+M: But you don't have a lot of money, right?
 J: Yeah. I need to reconsider how I spend.
 M: You can part-time. Teach tuition. Work F&B. Whatever.
 J: I have other commitments in school too.
 M: Oh right. Community Service Club and Ultimate Frisbee.
-J: I’ll see what I can do then. Time to continue work.
+J: I'll see what I can do then. Time to continue work.
 M: Yeah, my assignment is due in 2 days.
 J: Same.
 
@@ -44,14 +44,14 @@ Decision: Over time, you wonder about your financial status. “Is there anythin
 
 Option: 1
 Description: Look for a part-time job 
-Outcome: You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary’s suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.
+Outcome: You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary's suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.
 Wealth: +25 
 Health: -5 
 Happiness: rand=[-10,10]
 
 Option: 2
 Description: Cut down on your spending.
-Outcome: You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.
+Outcome: You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you're not earning money. You don't feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.
 Wealth: +15
 Health: +10
 Happiness: -5
@@ -70,34 +70,34 @@ Opening: You and Mary have finally graduated with good Honours degrees. As such,
 Characters: J - John. M - Mary
 
 Script:
-J: How about Prince Rae’s Town? I love how artistic the place feels.
+J: How about Prince Rae's Town? I love how artistic the place feels.
 M: Ah, it looks better in winter. Not now.
-J: Right. It’s probably crowded during this peak period too.
+J: Right. It's probably crowded during this peak period too.
 M: What about Mory Islands? (points) Apparently that shop originated from there.
-J: Oh, I’ve read that in the news too. It’s not as popular yet.
+J: Oh, I've read that in the news too. It's not as popular yet.
 M: We can travel around the area too.
 J: Would 10 days be enough? 
 M: Maybe 12. We could spend a few days up in the hills.
-J: Nice. I’ll source for flight tickets too.
+J: Nice. I'll source for flight tickets too.
 M: And insurance.
 J: Travel insurance?
-M: Yeah. Insurance is a must-have. You’re still under Doricane Healthcare right?
-J: That one’s for medical coverage. 
+M: Yeah. Insurance is a must-have. You're still under Doricane Healthcare right?
+J: That one's for medical coverage. 
 M: We need to get travel insurance too.
 J: Well, if you keep your items safe and sound…
-M: It doesn’t work that way, John.
+M: It doesn't work that way, John.
 J: I find it a waste of money. 
-M: You’re paying for coverage. Think protection.
-J: I’ll protect you.
-M: Don’t be gross. There are cheap ones out there.
-J: Then I’ll get them.
+M: You're paying for coverage. Think protection.
+J: I'll protect you.
+M: Don't be gross. There are cheap ones out there.
+J: Then I'll get them.
 M: Usually the more you pay, the greater your coverage.
 J: Logically.
-M: So you’ll be settling all these for the trip?
+M: So you'll be settling all these for the trip?
 J: Can you think of what else to do there?
-M: Snorkelling, surfing, hiking. There’s so much to do.
+M: Snorkelling, surfing, hiking. There's so much to do.
 J: Yes, we have 12 days.
-M: We’ll have lots of fun there. 
+M: We'll have lots of fun there. 
 J: More fun than strolling along this sad street.
 M: Hey! You agreed to this.
 J: Just kidding!
@@ -113,7 +113,7 @@ Happiness: +15
 
 Option: 2
 Description: Get the lower-end insurance that provides basic travel coverage.
-Outcome: You bought the basic travel insurance that provides the minimum protection. You didn’t spend too much on it, and so you use most of your money on the actual trip. Mary enjoyed the trip very much, as it was her first time participating in many of the water sport activities. 
+Outcome: You bought the basic travel insurance that provides the minimum protection. You didn't spend too much on it, and so you use most of your money on the actual trip. Mary enjoyed the trip very much, as it was her first time participating in many of the water sport activities. 
 Wealth: -5
 Health: +5
 Happiness: +10
@@ -125,18 +125,18 @@ Wealth: -5
 Health: -5
 Happiness: -10
 
-Episode 3: What’s your appetite?
-It’s Valentines’. You brought Mary on a date to Yokita’s Restaurant. After spending some time on deciding what to eat, you called for the waiter. He arrives to take both your orders. 
+Episode 3: What's your appetite?
+It's Valentines'. You brought Mary on a date to Yokita's Restaurant. After spending some time on deciding what to eat, you called for the waiter. He arrives to take both your orders. 
 
 Characters: J - John. M - Mary. W - Waiter
 
 Script:
 W: Good evening, Sir. May I take your order? (Takes up his notebook and pen)
 J: Hi. Can we get the Signature OmuRice Set and the Ultimate-- Omama Set?
-M: (laughs) It’s Omu-Ma.
+M: (laughs) It's Omu-Ma.
 J: Yes! That.
 W: Okay, and your drinks?
-J: I’ll have Ice Lemon Tea, and.. (signals to Mary)
+J: I'll have Ice Lemon Tea, and.. (signals to Mary)
 M: Passionfruit tea for me.
 W: Got it. Anything else?
 J: No, thank you.
@@ -144,24 +144,24 @@ J: No, thank you.
 M: Omama.
 J: I have no words. But I have things to ask you.
 M: Yes Mr. Omama?
-J: I’ve been thinking about how to fund our future.
+J: I've been thinking about how to fund our future.
 M: You mean like buying a car? Condo? Our wedding? 
-J: Yeah, all those. I realised we don’t have that much money.
+J: Yeah, all those. I realised we don't have that much money.
 M: Mmm. Have you considered investments? 
 J: Yeah. Peter did mention to me about it before.
 M: Did he mention the different types?
 J: He said I could invest in low-risk unit trusts or high-risk individual stocks. 
 J: They all come with different risk levels and potential returns. 
 J: It all depends on my risk appetite.
-M: Hmm.. seems like you don’t know much about investments.
+M: Hmm.. seems like you don't know much about investments.
 J: Sadly, yeah.
 M: But how hungry are you to fulfill those financial goals?
 J: (stomach growls) … More than my want to eat OmuRice.
 M: Sounds alot. But if you need the money urgently, we can always loan from the bank.
 J: Or use our savings first.
 M: Yeah, why not.
-J: So many options, huh. I guess I’ll go consider my various options.
-M: Don’t worry too much. You’ll find your answer.
+J: So many options, huh. I guess I'll go consider my various options.
+M: Don't worry too much. You'll find your answer.
 J: Yes, Mrs Omama.
 
 Decision: You went home satisfied. That was probably the best OmuRice you had in ages. As you crept into bed, you pondered about how to meet your financial goals. You decide to…
@@ -175,14 +175,14 @@ Happiness: +25
 
 Option: 2
 Description: Invest in high-risk stocks.
-Outcome: You bought some high-risk stocks without much financial knowledge. Nobody knows about it except you. Weeks later, you were notified of the closure of the company you invested in. Because you weren’t keeping an eye on the market, it crashed before you could sell your stocks.
+Outcome: You bought some high-risk stocks without much financial knowledge. Nobody knows about it except you. Weeks later, you were notified of the closure of the company you invested in. Because you weren't keeping an eye on the market, it crashed before you could sell your stocks.
 Wealth: rand=-25&-5
 Health: -5
 Happiness: -10
 
 Option: 3
 Description: Invest in low to medium risk instruments.
-Outcome: You chose to invest in stocks that were relatively low-risk. The potential returns weren’t too much, but such investment was suitable given your own financial knowledge. Online advisors and guides assisted you along the way. You watch your investments grow slowly but steadily.
+Outcome: You chose to invest in stocks that were relatively low-risk. The potential returns weren't too much, but such investment was suitable given your own financial knowledge. Online advisors and guides assisted you along the way. You watch your investments grow slowly but steadily.
 Wealth: rand=+5&+25
 Health: +5
 Happiness: +10
@@ -195,13 +195,13 @@ Opening: You work for Toshki Inc as a sales manager. One weekend, you accompanie
 
 Characters: P - Peter. J - John
 
-P: See, that’s the best deal in this entire show. The Tasel 3X5!
+P: See, that's the best deal in this entire show. The Tasel 3X5!
 J: So this is how it looks like.
 P: This model runs on clean energy too. More expensive, but lower maintenance costs.
 J: So you save in the long run?
 P: Exactly. 
 J: Sounds worth it.
-P: I think you should consider getting one. Your place isn’t near your house anyway.
+P: I think you should consider getting one. Your place isn't near your house anyway.
 J: (Sighs) Well I do have a driving license.
 P: Or maybe a more affordable but functional brand? Like Toyata.
 J: Maybe a second-hand one. 
@@ -213,53 +213,53 @@ P: I can afford the downpayment. They say you can haggle for 15%.
 J: And the interest? 
 P: Depends on the seller, usually between 2-3%.
 J: Hmm..
-P: But it’s around the same here. Just find what you like most.
+P: But it's around the same here. Just find what you like most.
 J: I kinda fine with public transport though.
 P: Yeah, but since I brought you here, might as well get a good deal for yourself.
-J: Oh! Isn’t that the Jaguava?
+J: Oh! Isn't that the Jaguava?
 P: You bet. Some say it provides the best comfort and technical features.
 J: Interesting.
-P: You don’t sound interested.
-J: I’m just considering my options.
+P: You don't sound interested.
+J: I'm just considering my options.
 P: So you might actually get one!
 J: I have to think about how to finance it too.
 P: Ah. Wise man, but remember that these discounts will probably not happen again.
 J: How sure are you?
-P: About 8-- Wait, that’s the Tasel!
+P: About 8-- Wait, that's the Tasel!
 
-Decision: Peter eventually purchased the Tasel and urged you to consider getting one too. “You won’t regret it,” Peter said as you watched him hand over his credit card. As the automobile show was on for another 2 days, you decided to give it a thought. You choose to…
+Decision: Peter eventually purchased the Tasel and urged you to consider getting one too. “You won't regret it,” Peter said as you watched him hand over his credit card. As the automobile show was on for another 2 days, you decided to give it a thought. You choose to…
 
 Option: 1
 Description: Not get any car.
-Outcome: You decided that public transport was alright, so you didn’t spend money on any car. Occasionally it fails you, but on the whole it has been efficient. Every now and then, Peter would give you a hitch in his new Tasel 3X5 and give a lecture on why getting a car is the best decision one could ever make.
+Outcome: You decided that public transport was alright, so you didn't spend money on any car. Occasionally it fails you, but on the whole it has been efficient. Every now and then, Peter would give you a hitch in his new Tasel 3X5 and give a lecture on why getting a car is the best decision one could ever make.
 Wealth: +5
 Health: +0
 Happiness: +0
 
 Option: 2
 Description: Get a second-hand but lower-brand car.
-Outcome: You decided to purchase a second-hand Toyata. It didn’t save you much time because of peak hour traffic jams, and it wasn’t the most comfortable either. It was usable, and getting around the city was much easier. You paid the down payment of 15% and paid the rest in monthly instalments, with a surprising 3.5% interest.
+Outcome: You decided to purchase a second-hand Toyata. It didn't save you much time because of peak hour traffic jams, and it wasn't the most comfortable either. It was usable, and getting around the city was much easier. You paid the down payment of 15% and paid the rest in monthly instalments, with a surprising 3.5% interest.
 Wealth: -5
 Health: +0
 Happiness: +5
 
 Option: 3
 Description: Get the Tasel too.
-Outcome: You got the Tasel the following day. Peter’s persuasion was convincing and you believed that getting one was worth it. Down payment was 20%, which set you back quite a bit. With the high marked price and 3% interest, you had quite a struggle funding instalments as well. “You won’t regret it,” you replay again in your head.
+Outcome: You got the Tasel the following day. Peter's persuasion was convincing and you believed that getting one was worth it. Down payment was 20%, which set you back quite a bit. With the high marked price and 3% interest, you had quite a struggle funding instalments as well. “You won't regret it,” you replay again in your head.
 Wealth: -10
 Health: +5
 Happiness: +10
 
 Episode 2: Inheritance
 
-Opening: After a long battle with leukemia, your grandfather passed away. You recently found out that you inherited a fortune from him. It’s 12.35pm and you’re having lunch with your colleagues.
+Opening: After a long battle with leukemia, your grandfather passed away. You recently found out that you inherited a fortune from him. It's 12.35pm and you're having lunch with your colleagues.
 
 Characters: J - John. R - Rachel. K - Karen. O - Oliver
 
 Script:
 R: (arrives last) Wow. That was such a long queue for a plate of Hokkien Mee!
 J: Well, it probably good then.
-O: Do you guys want drinks? I’m getting a Teh Bing.
+O: Do you guys want drinks? I'm getting a Teh Bing.
 R: Teh Alia Bing.
 J: Teh Bing too.
 K: Kopi O Kosong Bing.
@@ -267,31 +267,31 @@ O: (looks around) Ah Uncle! I want a …
 K: So how was your holiday, Rachel? Got see scenery anot?
 R: Yeah of course! The Moon Dust River was so chio!
 O: Thanks Uncle. Yeah, did you go to that famous town?
-J: Prince Rae’s Town! I heard the place looks like an artwork.
+J: Prince Rae's Town! I heard the place looks like an artwork.
 R: We did! That was on our second day though. The kids became tired so quickly.
 K: Aiya.. kids like that one.
 O: So John, when will it be your turn? 
-J: Don’t know. When I get enough money.
-R: You say as if you’re broke. Why not go travel with Mary this summer!
+J: Don't know. When I get enough money.
+R: You say as if you're broke. Why not go travel with Mary this summer!
 O: Or save that money and buy a car.
 K: Cars nowadays very expensive.
 J: (head) I guess I do have $50,000. 
 O: And nowadays you need a car to travel around. The MRTs unreliable one.
-R: John, I know you haven’t been to Prince Rae’s. 
-R: I tell you, you can spend 2 days there and it won’t be enough. 
-J: Don’t know leh. I need to check when Mary’s free. 
-R: I’m sure Mary will love it. You were saying you promised to bring her on a trip?
-J: Yeah, but she’s always busy with her Pilates and cooking sessions. 
+R: John, I know you haven't been to Prince Rae's. 
+R: I tell you, you can spend 2 days there and it won't be enough. 
+J: Don't know leh. I need to check when Mary's free. 
+R: I'm sure Mary will love it. You were saying you promised to bring her on a trip?
+J: Yeah, but she's always busy with her Pilates and cooking sessions. 
 R: So that she can cook your dinner next time. No need to go out.
-O: Can ask her cook for Toshki’s D&D also?
+O: Can ask her cook for Toshki's D&D also?
 K: Crazy. Anyway, if you ever have a lot of money, remember to save and invest some.
 R: Actually, working in this company taught me to spend more and make myself happier.
-J: Yeah. Maybe I’ll think about what to do with my inheritance.
+J: Yeah. Maybe I'll think about what to do with my inheritance.
 (All three): Your what?!
-J: Huh? I mean I’ll go think about it. Nothing much.
+J: Huh? I mean I'll go think about it. Nothing much.
 U: (holds a tray of iced drinks) 来烧啊! (hot drinks incoming!)
 
-Decision: You knock off for the day, with mixed feelings about the inheritance. It’s quite a lot of money, and you did promise Mary another trip in the near future. You decide to…
+Decision: You knock off for the day, with mixed feelings about the inheritance. It's quite a lot of money, and you did promise Mary another trip in the near future. You decide to…
 
 Option: 1
 Description: Travel with Mary
@@ -309,14 +309,14 @@ Happiness: +5
 
 Option: 3
 Description: Save all the money 
-Outcome: You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn’t give you much returns, to your discontent.
+Outcome: You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn't give you much returns, to your discontent.
 Wealth: +5
 Health: +0
 Happiness: +0
 
-Act 3: Cover me
+Episode 3: Cover me
 
-Opening: You’re in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It’s 9.35pm and you’re putting the kids to bed.
+Opening: You're in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It's 9.35pm and you're putting the kids to bed.
 
 Characters: J - John. M - Mary. E - Elsa. C - Chris
 
@@ -325,30 +325,30 @@ C: Daddy, is Santa Claus real?
 J: (covers Chris with a blanket) As real as you want him to be. 
 E: My friend said Santa Claus is fake. 
 C: My friend said he saw him before.
-J: Okay, it’s past bedtime. Go to sleep.
+J: Okay, it's past bedtime. Go to sleep.
 C: Okay.
 J: Cover yourself with the blanket, Elsa.
 E: But Daddy I-
 J: Shh.. No more noise. Goodnight.
 (John walks out and closes the door)
-M: Dear, there’s a letter for you. From Doricane Healthcare. The kids asleep?
+M: Dear, there's a letter for you. From Doricane Healthcare. The kids asleep?
 J: (opens letter) Yeah, I just tucked them in. How are you?
-M: Bad. The weather’s so humid even at night. So what does it say?
-J: It says my Integrated Shield Plan is expiring in a month’s time.
+M: Bad. The weather's so humid even at night. So what does it say?
+J: It says my Integrated Shield Plan is expiring in a month's time.
 M: Oh that one. Are you going to renew it?
 J: Maybe. Medical insurance for private hospitals are so expensive though.
-M: You can try government hospitals instead. They’re cheaper.
+M: You can try government hospitals instead. They're cheaper.
 J: On top of MediShield Life that provides basic protection against high hospital bills?
 M: Yes. You may want to get another one to supplement MediShield.
-J: Actually I haven’t gone for any surgery.
-M: It doesn’t mean that you don’t need coverage.
-J: I haven’t been greatly sick!
+J: Actually I haven't gone for any surgery.
+M: It doesn't mean that you don't need coverage.
+J: I haven't been greatly sick!
 M: You never know when you might need it.
 J: But honey I-
 M: Shh.. the kids are sleeping.
 J: I know. My bad.
 M: At least get the Class B1 coverage for government hospitals.
-J: I’ll go think about it. The premiums are higher for me now.
+J: I'll go think about it. The premiums are higher for me now.
 M: Insurance is a must-have, honey.
 J: So is a healthy lifestyle.
 (John puts the letter back into the envelope)
@@ -364,14 +364,14 @@ Happiness: +5
 
 Option: 2
 Description: Switch to a coverage for government hospitals Class B1.
-Outcome: You bought a new and cheaper coverage for government hospitals. Mary was glad you got yourself covered. She too was under the same coverage, and believed that Class B1 is good enough. Your premiums are relatively cheaper, but that doesn’t stop you from continuing to adopt a healthy lifestyle.
+Outcome: You bought a new and cheaper coverage for government hospitals. Mary was glad you got yourself covered. She too was under the same coverage, and believed that Class B1 is good enough. Your premiums are relatively cheaper, but that doesn't stop you from continuing to adopt a healthy lifestyle.
 Wealth: +0
 Health: +10
 Happiness: +5
 
 Option: 3
 Description: Live only with the basic MediShield Plan
-Outcome: You refrained from getting another insurance plan because you didn’t think you would need it. Because of this, you feared doing activities that might cost you injuries, since you were only covered on the basic level. You rather spend time on developing a healthy lifestyle than pay premiums.
+Outcome: You refrained from getting another insurance plan because you didn't think you would need it. Because of this, you feared doing activities that might cost you injuries, since you were only covered on the basic level. You rather spend time on developing a healthy lifestyle than pay premiums.
 Wealth: +5
 Health: +5
 Happiness: +5
@@ -380,31 +380,31 @@ Stage 3: Silver Years
 
 Episode 1: Allocation of Resources
 
-Opening: It’s 1.34pm. The sky is clear. Mary is out at a tupperware party. The hit docu-series “Frugal Families” is playing on your 55” Smart TV. 
+Opening: It's 1.34pm. The sky is clear. Mary is out at a tupperware party. The hit docu-series “Frugal Families” is playing on your 55” Smart TV. 
 
 Characters: J - John. P - Peter. T - TV
 
 Script:
-T: … Like Chen Li, many of us don’t know how to properly spend our money.
-J: Maybe I should think about how to properly allocate my finances now that I’ve retired. 
-T: Chen Li’s favourite designer brand is Louis Vuitton.
-J: Peter’s probably the best person to ask about this.
+T: … Like Chen Li, many of us don't know how to properly spend our money.
+J: Maybe I should think about how to properly allocate my finances now that I've retired. 
+T: Chen Li's favourite designer brand is Louis Vuitton.
+J: Peter's probably the best person to ask about this.
 T: He has a room full of prized collections that he calls his “baby vuittons”.
 J: (Calls Peter on the phone)
-P: Hi, Johnny. What a weird timing. What’s up?
+P: Hi, Johnny. What a weird timing. What's up?
 J: Nothing much. Watching your favourite TV show.
-P: “Heaven’s Demons?!” 
+P: “Heaven's Demons?!” 
 J: Nah, “Frugal Families”.
-P: Pfft. You’re one to kid. I’m actually busy now. Grandpa things, you know?
+P: Pfft. You're one to kid. I'm actually busy now. Grandpa things, you know?
 J: Yeah, just wanted to ask for some financial advice. 
 P: Like what?
 J: Like how much to spend. How much to save. 
-J: So far I’ve just gone along with my gut feeling.
+J: So far I've just gone along with my gut feeling.
 P: Looks like it took decades for you to start thinking about budget allocation.
 J: Peter...
 P: Okay, okay. It depends on you.
-J: That’s such a cliche. 
-P: I know, but it’s true. Personally I follow the 80-20 rule. 
+J: That's such a cliche. 
+P: I know, but it's true. Personally I follow the 80-20 rule. 
 P: 20% goes towards your financial goals, like paying off your remaining debts. 
 P: The other 80% can be used for anything.
 J: That works for retirement right?
@@ -412,15 +412,15 @@ P: Yeah, but everything is just a guideline though.
 P: Some people follow the 50-30-20 rule, where 80% is further broken down.
 P: 50% is for necessities like electricity and phone bills, and the other 30% is for wants.
 J: Yeah, I can ask Mary about it too.
-P: She’s your wife, not your finance secretary.
-P: Or maybe you want to continue living with your ‘gut feeling’.
+P: She's your wife, not your finance secretary.
+P: Or maybe you want to continue living with your ‘gut feeling'.
 J: Maybe. Well, thanks for the advise, Peter. Appreciate it.
 P: Anything for you, buddy. See you another time.
 J: Yup! (hangs up) 
 T: Currently in debt, Chen Li has a hard time managing his finances. 
 T: Abandoned by his own children, he has only his “baby vuittons” to keep him company.
 
-Decision: You turn off the TV after that episode ended. You don’t want to end up like Chen Li, although you don’t buy branded goods. As such, you decide to… 
+Decision: You turn off the TV after that episode ended. You don't want to end up like Chen Li, although you don't buy branded goods. As such, you decide to… 
 
 Option: 1
 Description: Spend and save as you feel suitable. 
@@ -450,18 +450,18 @@ Opening: Your children have all grown up and have their own families and houses.
 Characters: J - John. M - Mary
 
 Script:
-M: (closes the door) Wow. You’re early and changed.
+M: (closes the door) Wow. You're early and changed.
 J: Boss left early today. 
-M: You sure you didn’t sneak out of office?
+M: You sure you didn't sneak out of office?
 J: Maybe.
 M: Well, what do you want to eat for dinner? 
-J: Let’s go to Teck Lee’s. I’m craving for some laksa.
+J: Let's go to Teck Lee's. I'm craving for some laksa.
 M: Sure, just let me get changed. 
 J: Okay.
 M: You know I was talking to Megan during yoga. 
 M: She says her husband keeps spending his CPF payouts on toto.
-J: (whispers) Can’t blame a gambler.
-M: You’re going to be 55 next week. 
+J: (whispers) Can't blame a gambler.
+M: You're going to be 55 next week. 
 J: Yeah, CPF sent me a booklet recently, about withdrawals and payouts. 
 M: (pulls up her shorts) Have you decided what to do already? 
 J: Nope. I checked my CPF status on the way back from work. 
@@ -473,19 +473,19 @@ M: The interest rates in CPF are much higher than average.
 M: You also get a higher monthly payout at 65 if you top up your retirement account.
 J: How do you know all these?
 M: You meet all kinds of people at yoga. 
-J: I’m sure you do.
-M: There’s this auntie today who kept complaining her CPF. Poor her.
-J: (whispers) Can’t blame a boomer.
-M: What’s that?
-J: Nothing. Can’t wait for laksa.
-M: (ties her ponytail) Okay. I’m done!
-J: (gets out of sofa) Alright. I’m starving! 
+J: I'm sure you do.
+M: There's this auntie today who kept complaining her CPF. Poor her.
+J: (whispers) Can't blame a boomer.
+M: What's that?
+J: Nothing. Can't wait for laksa.
+M: (ties her ponytail) Okay. I'm done!
+J: (gets out of sofa) Alright. I'm starving! 
 
 Decision: That night, feeling full after your favourite bowl of laksa, you thought about what to do with your CPF. You decided to…
 
 Option: 1
 Description: Withdraw partial amounts in the hundreds every month from your CPF account.
-Outcome: For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn’t need the money, in fact. But you were definitely more happy spending a little more than usual.
+Outcome: For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn't need the money, in fact. But you were definitely more happy spending a little more than usual.
 Wealth: -5
 Health: +0
 Happiness: +5
@@ -499,7 +499,7 @@ Happiness: -10
 
 Option: 3
 Description: Leave your CPF as it is.
-Outcome: You leave all your CPF savings in the account. You didn’t need the money. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.”
+Outcome: You leave all your CPF savings in the account. You didn't need the money. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.”
 Wealth: +5
 Health: +5
 Happiness: +5
@@ -508,30 +508,30 @@ Episode 3: To retire or not to retire?
 
 Characters: J - John. M - Mary
 
-Your age has caught up and you occasionally suffer from knee and back problems. Mary has just finished cooking dinner for the both of you. It’s 6.05pm, at the dining table.
+Your age has caught up and you occasionally suffer from knee and back problems. Mary has just finished cooking dinner for the both of you. It's 6.05pm, at the dining table.
 
-M: How’s your back, honey? (Gently places Yangzhou fried rice in front of John)
+M: How's your back, honey? (Gently places Yangzhou fried rice in front of John)
 J: Not doing so good. Sometimes when I commute for too long, it hurts.
 M: You should take care of yourself. 
-J: Yeah. It’s just us two now that the kids have all grown up.
+J: Yeah. It's just us two now that the kids have all grown up.
 M: They seldom visit us either. 
-J: They’re probably busy, especially Elsa. 
+J: They're probably busy, especially Elsa. 
 M: Do you plan to retire? 
 J: Why the sudden question?
-M: I’m afraid for you.
-J: I don’t know… when I feel like it?
-M: When you’re bedridden and it’s too late?
+M: I'm afraid for you.
+J: I don't know… when I feel like it?
+M: When you're bedridden and it's too late?
 J: You know what I mean.
-M: Honey, you’re not too far from retirement age, you know that right?
+M: Honey, you're not too far from retirement age, you know that right?
 J: Yeah yeah yeah. 62. Or is it 63? Peter told me this just this morning.
 M: Dementia now?
-J: Come on! I was the best at remembering our children’s birthdays.
+J: Come on! I was the best at remembering our children's birthdays.
 J: 7th January and… 19th March!
 M: Regardless, you really need to think about retiring, dear. 
 M: You need time to take better care of yourself. 
 M: Besides, we have enough money.
-J:  I’ll consider. Don’t worry about me.
-M: Good. How’s my fried rice?
+J:  I'll consider. Don't worry about me.
+M: Good. How's my fried rice?
 J: Sweeter than honey.
 
 Decision: You realised you have been overworked recently but still have the determination to work longer. You considered your options. Eventually, you decide to…
@@ -552,7 +552,7 @@ Happiness: +5
 
 Option: 3 
 Description: Retire at 67.
-Outcome: You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but can’t help to think when Mary insisted you to retire early. Nobody in the office truly recognised your efforts because of major restructuring. 
+Outcome: You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but can't help to think when Mary insisted you to retire early. Nobody in the office truly recognised your efforts because of major restructuring. 
 Wealth: +10
 Health: -5
 Happiness: +0

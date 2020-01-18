@@ -1,7 +1,8 @@
 
 let bodyHTML = document.querySelector('body')
 // Create a container for each mod and the viz canvas
-let container = document.createElement('container')
+let container = document.createElement('section')
+container.classList.add('biggestContainer')
 
 let particleArray = []
 
@@ -136,8 +137,9 @@ function createDialogue(episodeObject) {
 
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
-    episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
-
+    episodeContainer.style.backgroundImage = `url('./assets/bg${episodeObject["id"]}.jpg')`
+    
+    //dialogue line and its wrapper 
     let dialogueBox = document.createElement('section')
     dialogueBox.classList.add("dialogueBox");
 
@@ -145,6 +147,15 @@ function createDialogue(episodeObject) {
     dialogueLine.classList.add("dialogueLine")
     dialogueBox.appendChild(dialogueLine)
 
+    //name and its wrapper 
+    let charName = document.createElement('h2');
+    charName.classList.add("charName");
+
+    let charNameContainer = document.createElement('section')
+    charNameContainer.append(charName)
+    charNameContainer.classList.add('charNameContainer')
+
+    //character
     let characters = {}
     let avatarContainer = document.createElement('section')
     avatarContainer.classList.add('avatarContainer')
@@ -162,13 +173,15 @@ function createDialogue(episodeObject) {
 
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
+    continueButton.textContent = '>'
     continueButton.onclick = function() {
         i += 1
         if (i == dialogueBlock.length) {
             for(key in characters) {
                 characters[key].remove()
             }
-            dialogueLine.remove()
+            charName.remove()
+            dialogueBox.remove()
             continueButton.remove()
             decisionBlock = createDecision(episodeObject)
             episodeContainer.append(decisionBlock)
@@ -186,22 +199,28 @@ function createDialogue(episodeObject) {
 
         // handle the paragraph
         j = 0
-        let dialogueContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text;
+        clearTimeout(timeoutid)
+        let dialogueContent = dialogueBlock[i].text;
+        charName.textContent = dialogueBlock[i].name;
+
+
         dialogueLine.textContent = ''
+        console.log(dialogueContent)
         typeWriter(dialogueLine, dialogueContent);
     }
     let j = 0
+    let timeoutid = 0;   
     function typeWriter(line, text) {
         if (j < text.length) {
-          line.textContent += text.charAt(j);
+          line.textContent += text[j];
           j++;
-          setTimeout(() => typeWriter(line, text), 20);
+          timeoutid = setTimeout(() => typeWriter(line, text), 20);
         }
     }
     
     let i = 0
     updateFrame(i)
-    episodeContainer.append(avatarContainer, dialogueBox, continueButton)
+    episodeContainer.append(avatarContainer, dialogueBox, charName, continueButton)
 
     return episodeContainer
 }
@@ -217,7 +236,6 @@ let Player = {
     'health': 50, //determines the inital velocity and acceleration of the Particles
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
-    'outcomeWrapper' : null,
     'episodeContainerReference': null,
     'upperContainerReference': null,
     
@@ -250,22 +268,28 @@ function startMenuScreen() {
     let background = document.createElement("section")
     background.classList.add("background")
     bodyHTML.appendChild(background)
+
     //add menu
     let menu = document.createElement("section")
     menu.classList.add("menu")
     background.appendChild(menu)
+
     //add components of menu - title and button. 
     let gameTitle = document.createElement("h1")
-    gameTitle.textContent="Game"
+    gameTitle.textContent = "The Singaporean Dream"
 
     let startButton = document.createElement("button");
     startButton.classList.add("startButton");
     startButton.textContent = "Start Game"
     startButton.onclick = setUpStage
+
+    let fullscreenButton = document.createElement('button')
+    fullscreenButton.textContent = 'Fullscreen'
+    fullscreenButton.onclick = () => document.documentElement.requestFullscreen()
     
     async function addButton() {
         await loadingPromise
-        menu.append(gameTitle,startButton); 
+        menu.append(gameTitle,startButton, fullscreenButton); 
     }
 
     addButton()
@@ -398,7 +422,7 @@ function setOutcomePage(option){
     subWrapper.appendChild(subTitle);
     
     //append
-    wrapper.append(title,button,subWrapper);
+    wrapper.append(title,subWrapper,button);
     Player.clearUpperContainer()
     Player.upperContainerReference.append(wrapper);
     return wrapper; 
