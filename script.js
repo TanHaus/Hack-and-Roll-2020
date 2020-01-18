@@ -349,7 +349,7 @@ function createDecision(episode){ //episode = storyScript.stage#[#]
     // bodyHTML.append(wrapper);
 
     // animation
-    Player.upperContainerReference.add('addFlash')
+    Player.upperContainerReference.classList.add('addFlash')
     setTimeout(() => Player.upperContainerReference.classList.remove('addFlash'), 1000)
 
     return wrapper; 
