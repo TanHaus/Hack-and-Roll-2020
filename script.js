@@ -133,21 +133,41 @@ let loadingPromise = fetch('./storyScriptPython.json')
 
 function createDialogue(episodeObject) {
     dialogueBlock = episodeObject.dialogue
+
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
-    
-    let avatar = document.createElement('img')
-    avatar.classList.add("avatar");
+
+    let dialogueBox = document.createElement('section')
+    dialogueBox.classList.add("dialogueBox");
+
     let dialogueLine = document.createElement('p')
     dialogueLine.classList.add("dialogueLine")
+    dialogueBox.appendChild(dialogueLine)
+
+    let characters = {}
+    let avatarContainer = document.createElement('section')
+    avatarContainer.classList.add('avatarContainer')
+
+    for(key in episodeObject.characters) {
+        let name = episodeObject.characters[key]
+
+        let avatar = document.createElement('img')
+        avatar.classList.add("avatar");
+        avatar.src=`./assets/${name}.png`
+
+        avatarContainer.append(avatar)
+        characters[name] = avatar
+    }
 
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
     continueButton.onclick = function() {
         i += 1
         if (i == dialogueBlock.length) {
-            avatar.remove()
+            for(key in characters) {
+                characters[key].remove()
+            }
             dialogueLine.remove()
             continueButton.remove()
             decisionBlock = createDecision(episodeObject)
@@ -157,14 +177,32 @@ function createDialogue(episodeObject) {
     }
     
     function updateFrame(i) {
-        avatar.setAttribute("src", `./assets/${dialogueBlock[i].name}.png`)
-        console.log(dialogueBlock[i])
-        dialogueLine.textContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text
+        // handle the avatars
+        let activeCharacter = dialogueBlock[i].name
+        for(key in characters) {
+            characters[key].classList.remove('activeCharacter')
+        }
+        characters[activeCharacter].classList.add('activeCharacter')
+
+        // handle the paragraph
+        j = 0
+        let dialogueContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text;
+        dialogueLine.textContent = ''
+        typeWriter(dialogueLine, dialogueContent);
+    }
+    let j = 0
+    function typeWriter(line, text) {
+        if (j < text.length) {
+          line.textContent += text.charAt(j);
+          j++;
+          setTimeout(() => typeWriter(line, text), 20);
+        }
     }
     
     let i = 0
     updateFrame(i)
-    episodeContainer.append(avatar, dialogueLine, continueButton)
+    episodeContainer.append(avatarContainer, dialogueBox, continueButton)
+
     return episodeContainer
 }
 
@@ -275,33 +313,6 @@ function nextEpisode() {
     Player.upperContainerReference.append(stageContent)
 }
 
-function setUpModFour() {
-    Player.currentStage = 4
-    if(Player.currentSceneSectionReference!=null){
-        Player.currentSceneSectionReference.remove()
-    } else {}
-
-
-    // episode1 = storyScript.stage1[0]
-    modFour = loadEpisode(1)
-    Player.episodeContainerReference = modFour
-
-    visualizer.setUp()
-
-    container.append(modFour, visualizer.vizCanvas)
-    
-    bodyHTML.appendChild(container)
-
-    // get width and height after attaching to bodyHTML
-    visualizer.updateDimension()
-
-    // start the visualizer
-    visualizer.run()
-    
-    Player.currentSceneSectionReference = modFour
-
-    return modFour
-}
 function createButton(option){
     //this function generate decision buttons
     let button = document.createElement("button");
@@ -357,6 +368,11 @@ function createDecision(episode){ //episode = storyScript.stage#[#]
     wrapper.append(titWrapper,subWrapper,buttonWrapper);
     Player.decisionWrapper = wrapper; 
     // bodyHTML.append(wrapper);
+
+    // animation
+    Player.upperContainerReference.classList.add('addFlash')
+    setTimeout(() => Player.upperContainerReference.classList.remove('addFlash'), 1000)
+
     return wrapper; 
 }
 
