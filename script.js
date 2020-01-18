@@ -227,11 +227,11 @@ function setUpModFour() {
 function createButton(option){
     //this function generate decision buttons
     let button = document.createElement("button");
-    button.classList.add("button");
+    button.classList.add("decButton");
     button.textContent = option
     //add event handler 
     button.onclick = function(){
-        alert("pass");
+        
     }
     return button; 
 }
