@@ -1,7 +1,6 @@
 let Player = {
     // Variables
     'name': 'John',
-    'sex': 'unidentified',
     'currentStage': 1,
     'currentEpisode': 1,
     'wealth': 50, //determines the radius of Particles
@@ -28,6 +27,21 @@ let Player = {
     },
     clearUpperContainer: function() {
         Player.upperContainerReference.firstChild.remove()
+    },
+    updateWealth: function(value) {
+        Player.wealth += value
+        if(Player.wealth < 0) Player.wealth = 0
+    },
+    updateHappiness: function(value) {
+        Player.happiness += value
+        if(Player.happiness < 0) Player.happiness = 0
+    },
+    updateHealth: function(value) {
+        Player.health += value
+        if(Player.health < 0) Player.health = 0
+    },
+    isGameOver: function() {
+        return !Boolean(Player.wealth * Player.happiness * Player.health)
     }
 }
 
@@ -183,7 +197,7 @@ function createDialogue(episodeObject) {
     charToColor = {
         "John"      : "rgba(0, 102, 12, 0.95)", //emerald
         "Mary"      : "rgba(0, 27, 97, 0.95)", //navy
-        "Waiter"    : "rgba(240, 1184, 0, 0.95)", //gold
+        "Waiter"    : "rgba(86, 61, 0, 0.95)", //brown
         "Peter"     : "rgba(225, 119, 0, 0.95)", //orange
         "TV"        : "rgba(36, 36, 36, 0.95)", //grey
         "Elsa"      : "rgba(135, 0, 184, 0.95)", //violet
@@ -307,6 +321,10 @@ function loadEpisode(episode = Player.currentEpisode, stage = Player.currentStag
 }
 
 function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.currentStage) {
+    if(Player.isGameOver()) {
+        explode()
+    }
+
     episodeObject = storyScript[`stage${stage}`][episode - 1]
     let title = episodeObject.title
         opening = episodeObject.opening
@@ -400,7 +418,9 @@ function startMenuScreen() {
                 button.onclick = function(){
                     setUpStage();
                     Player.clearUpperContainer()
-                    loadTitleAndOpening(i+1,j+1);
+                    Player.currentStage = i+1; 
+                    Player.currentEpisode = j+1; 
+                    loadTitleAndOpening();
                 }
                 btn.append(button)
             }
@@ -500,9 +520,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
-        Player.health += option.point.Health*5; 
-        Player.wealth += option.point.Wealth*5; 
-        Player.happiness += option.point.Happiness*5; 
+        Player.updateHealth(option.point.Health*5); 
+        Player.updateWealth(option.point.Wealth*5); 
+        Player.updateHappiness(option.point.Happiness*5); 
 
         
         visualizer.particleSaturation = visualizer.particleLight = Player.happiness
