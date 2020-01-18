@@ -4,7 +4,7 @@
             "id": 1,
             "episode": 1,
             "title": " Lunch Buddies",
-            "opening": "You are a university student. Your cohort mate and girlfriend, Mary, is studying with you today in school. It’s 2.08pm, and the both of you just returned from lunch. ",
+            "opening": "You are a university student. Your cohort mate and girlfriend, Mary, is studying with you today in school. It's 2.08pm, and the both of you just returned from lunch. ",
             "characters": {
                 "J": "John",
                 "M": "Mary"
@@ -20,15 +20,15 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "So how much was it? I’ll eTransfer you."
+                    "text": "So how much was it? I'll eTransfer you."
                 },
                 {
                     "name": "John",
-                    "text": "It’s fine. I’ll pay today."
+                    "text": "It's fine. I'll pay today."
                 },
                 {
                     "name": "Mary",
-                    "text": "Wow, why’s that?"
+                    "text": "Wow, why's that?"
                 },
                 {
                     "name": "John",
@@ -52,7 +52,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "But I’ve seen you going out frequently with Jay, Sean and the other guy."
+                    "text": "But I've seen you going out frequently with Jay, Sean and the other guy."
                 },
                 {
                     "name": "John",
@@ -60,7 +60,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "Yeah, him. You’re not working part time too right?"
+                    "text": "Yeah, him. You're not working part time too right?"
                 },
                 {
                     "name": "John",
@@ -68,7 +68,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "You might not last long with the way you’re spending, John."
+                    "text": "You might not last long with the way you're spending, John."
                 },
                 {
                     "name": "John",
@@ -80,11 +80,11 @@
                 },
                 {
                     "name": "John",
-                    "text": "Isn’t your wallet and bag is from Yucha?"
+                    "text": "Isn't your wallet and bag is from Yucha?"
                 },
                 {
                     "name": "Mary",
-                    "text": "Yeah, but those are birthday gifts from my family. Doesn’t count."
+                    "text": "Yeah, but those are birthday gifts from my family. Doesn't count."
                 },
                 {
                     "name": "John",
@@ -92,7 +92,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "I do hang out quite often, but I don’t spend much. It’s possible."
+                    "text": "I do hang out quite often, but I don't spend much. It's possible."
                 },
                 {
                     "name": "John",
@@ -104,11 +104,11 @@
                 },
                 {
                     "name": "John",
-                    "text": "I told him I’ll settle them myself first."
+                    "text": "I told him I'll settle them myself first."
                 },
                 {
                     "name": "Mary",
-                    "text": "But you don’t have a lot of money, right?"
+                    "text": "But you don't have a lot of money, right?"
                 },
                 {
                     "name": "John",
@@ -128,7 +128,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "I’ll see what I can do then. Time to continue work."
+                    "text": "I'll see what I can do then. Time to continue work."
                 },
                 {
                     "name": "Mary",
@@ -144,7 +144,7 @@
                 {
                     "option": "1",
                     "desc": "Look for a part-time job ",
-                    "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary’s suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
+                    "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary's suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
                     "point": {
                         "Wealth": 25,
                         "Health": -5,
@@ -157,7 +157,7 @@
                 {
                     "option": "2",
                     "desc": "Cut down on your spending.",
-                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
+                    "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you're not earning money. You don't feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
                     "point": {
                         "Wealth": 15,
                         "Health": 10,
@@ -188,7 +188,7 @@
             "dialogue": [
                 {
                     "name": "John",
-                    "text": "How about Prince Rae’s Town? I love how artistic the place feels."
+                    "text": "How about Prince Rae's Town? I love how artistic the place feels."
                 },
                 {
                     "name": "Mary",
@@ -196,7 +196,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Right. It’s probably crowded during this peak period too."
+                    "text": "Right. It's probably crowded during this peak period too."
                 },
                 {
                     "name": "Mary",
@@ -204,7 +204,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Oh, I’ve read that in the news too. It’s not as popular yet."
+                    "text": "Oh, I've read that in the news too. It's not as popular yet."
                 },
                 {
                     "name": "Mary",
@@ -220,7 +220,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Nice. I’ll source for flight tickets too."
+                    "text": "Nice. I'll source for flight tickets too."
                 },
                 {
                     "name": "Mary",
@@ -232,11 +232,11 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "Yeah. Insurance is a must-have. You’re still under Doricane Healthcare right?"
+                    "text": "Yeah. Insurance is a must-have. You're still under Doricane Healthcare right?"
                 },
                 {
                     "name": "John",
-                    "text": "That one’s for medical coverage. "
+                    "text": "That one's for medical coverage. "
                 },
                 {
                     "name": "Mary",
@@ -248,7 +248,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "It doesn’t work that way, John."
+                    "text": "It doesn't work that way, John."
                 },
                 {
                     "name": "John",
@@ -256,19 +256,19 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "You’re paying for coverage. Think protection."
+                    "text": "You're paying for coverage. Think protection."
                 },
                 {
                     "name": "John",
-                    "text": "I’ll protect you."
+                    "text": "I'll protect you."
                 },
                 {
                     "name": "Mary",
-                    "text": "Don’t be gross. There are cheap ones out there."
+                    "text": "Don't be gross. There are cheap ones out there."
                 },
                 {
                     "name": "John",
-                    "text": "Then I’ll get them."
+                    "text": "Then I'll get them."
                 },
                 {
                     "name": "Mary",
@@ -280,7 +280,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "So you’ll be settling all these for the trip?"
+                    "text": "So you'll be settling all these for the trip?"
                 },
                 {
                     "name": "John",
@@ -288,7 +288,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "Snorkelling, surfing, hiking. There’s so much to do."
+                    "text": "Snorkelling, surfing, hiking. There's so much to do."
                 },
                 {
                     "name": "John",
@@ -296,7 +296,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "We’ll have lots of fun there. "
+                    "text": "We'll have lots of fun there. "
                 },
                 {
                     "name": "John",
@@ -326,7 +326,7 @@
                 {
                     "option": "2",
                     "desc": "Get the lower-end insurance that provides basic travel coverage.",
-                    "outcome": "You bought the basic travel insurance that provides the minimum protection. You didn’t spend too much on it, and so you use most of your money on the actual trip. Mary enjoyed the trip very much, as it was her first time participating in many of the water sport activities. ",
+                    "outcome": "You bought the basic travel insurance that provides the minimum protection. You didn't spend too much on it, and so you use most of your money on the actual trip. Mary enjoyed the trip very much, as it was her first time participating in many of the water sport activities. ",
                     "point": {
                         "Wealth": -5,
                         "Health": 5,
@@ -348,7 +348,7 @@
         {
             "id": 3,
             "episode": 3,
-            "title": "What’s your appetite?",
+            "title": "What's your appetite?",
             "opening": "",
             "characters": {
                 "J": "John",
@@ -366,7 +366,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "(laughs) It’s Omu-Ma."
+                    "text": "(laughs) It's Omu-Ma."
                 },
                 {
                     "name": "John",
@@ -378,7 +378,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "I’ll have Ice Lemon Tea, and.. (signals to Mary)"
+                    "text": "I'll have Ice Lemon Tea, and.. (signals to Mary)"
                 },
                 {
                     "name": "Mary",
@@ -406,7 +406,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "I’ve been thinking about how to fund our future."
+                    "text": "I've been thinking about how to fund our future."
                 },
                 {
                     "name": "Mary",
@@ -414,7 +414,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Yeah, all those. I realised we don’t have that much money."
+                    "text": "Yeah, all those. I realised we don't have that much money."
                 },
                 {
                     "name": "Mary",
@@ -442,7 +442,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "Hmm.. seems like you don’t know much about investments."
+                    "text": "Hmm.. seems like you don't know much about investments."
                 },
                 {
                     "name": "John",
@@ -470,11 +470,11 @@
                 },
                 {
                     "name": "John",
-                    "text": "So many options, huh. I guess I’ll go consider my various options."
+                    "text": "So many options, huh. I guess I'll go consider my various options."
                 },
                 {
                     "name": "Mary",
-                    "text": "Don’t worry too much. You’ll find your answer."
+                    "text": "Don't worry too much. You'll find your answer."
                 },
                 {
                     "name": "John",
@@ -496,7 +496,7 @@
                 {
                     "option": "2",
                     "desc": "Invest in high-risk stocks.",
-                    "outcome": "You bought some high-risk stocks without much financial knowledge. Nobody knows about it except you. Weeks later, you were notified of the closure of the company you invested in. Because you weren’t keeping an eye on the market, it crashed before you could sell your stocks.",
+                    "outcome": "You bought some high-risk stocks without much financial knowledge. Nobody knows about it except you. Weeks later, you were notified of the closure of the company you invested in. Because you weren't keeping an eye on the market, it crashed before you could sell your stocks.",
                     "point": {
                         "Wealth": -29,
                         "Health": -5,
@@ -506,7 +506,7 @@
                 {
                     "option": "3",
                     "desc": "Invest in low to medium risk instruments.",
-                    "outcome": "You chose to invest in stocks that were relatively low-risk. The potential returns weren’t too much, but such investment was suitable given your own financial knowledge. Online advisors and guides assisted you along the way. You watch your investments grow slowly but steadily.",
+                    "outcome": "You chose to invest in stocks that were relatively low-risk. The potential returns weren't too much, but such investment was suitable given your own financial knowledge. Online advisors and guides assisted you along the way. You watch your investments grow slowly but steadily.",
                     "point": {
                         "Wealth": 1,
                         "Health": 5,
@@ -529,7 +529,7 @@
             "dialogue": [
                 {
                     "name": "Peter",
-                    "text": "See, that’s the best deal in this entire show. The Tasel 3X5!"
+                    "text": "See, that's the best deal in this entire show. The Tasel 3X5!"
                 },
                 {
                     "name": "John",
@@ -553,7 +553,7 @@
                 },
                 {
                     "name": "Peter",
-                    "text": "I think you should consider getting one. Your place isn’t near your house anyway."
+                    "text": "I think you should consider getting one. Your place isn't near your house anyway."
                 },
                 {
                     "name": "John",
@@ -601,7 +601,7 @@
                 },
                 {
                     "name": "Peter",
-                    "text": "But it’s around the same here. Just find what you like most."
+                    "text": "But it's around the same here. Just find what you like most."
                 },
                 {
                     "name": "John",
@@ -613,7 +613,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Oh! Isn’t that the Jaguava?"
+                    "text": "Oh! Isn't that the Jaguava?"
                 },
                 {
                     "name": "Peter",
@@ -625,11 +625,11 @@
                 },
                 {
                     "name": "Peter",
-                    "text": "You don’t sound interested."
+                    "text": "You don't sound interested."
                 },
                 {
                     "name": "John",
-                    "text": "I’m just considering my options."
+                    "text": "I'm just considering my options."
                 },
                 {
                     "name": "Peter",
@@ -649,15 +649,15 @@
                 },
                 {
                     "name": "Peter",
-                    "text": "About 8-- Wait, that’s the Tasel!"
+                    "text": "About 8-- Wait, that's the Tasel!"
                 }
             ],
-            "decision": "ter eventually purchased the Tasel and urged you to consider getting one too. “You won’t regret it,” Peter said as you watched him hand over his credit card. As the automobile show was on for another 2 days, you decided to give it a thought. You choose to…",
+            "decision": "ter eventually purchased the Tasel and urged you to consider getting one too. “You won't regret it,” Peter said as you watched him hand over his credit card. As the automobile show was on for another 2 days, you decided to give it a thought. You choose to…",
             "options": [
                 {
                     "option": "1",
                     "desc": "Not get any car.",
-                    "outcome": "You decided that public transport was alright, so you didn’t spend money on any car. Occasionally it fails you, but on the whole it has been efficient. Every now and then, Peter would give you a hitch in his new Tasel 3X5 and give a lecture on why getting a car is the best decision one could ever make.",
+                    "outcome": "You decided that public transport was alright, so you didn't spend money on any car. Occasionally it fails you, but on the whole it has been efficient. Every now and then, Peter would give you a hitch in his new Tasel 3X5 and give a lecture on why getting a car is the best decision one could ever make.",
                     "point": {
                         "Wealth": 5,
                         "Health": 0,
@@ -667,7 +667,7 @@
                 {
                     "option": "2",
                     "desc": "Get a second-hand but lower-brand car.",
-                    "outcome": "You decided to purchase a second-hand Toyata. It didn’t save you much time because of peak hour traffic jams, and it wasn’t the most comfortable either. It was usable, and getting around the city was much easier. You paid the down payment of 15% and paid the rest in monthly instalments, with a surprising 3.5% interest.",
+                    "outcome": "You decided to purchase a second-hand Toyata. It didn't save you much time because of peak hour traffic jams, and it wasn't the most comfortable either. It was usable, and getting around the city was much easier. You paid the down payment of 15% and paid the rest in monthly instalments, with a surprising 3.5% interest.",
                     "point": {
                         "Wealth": -5,
                         "Health": 0,
@@ -677,7 +677,7 @@
                 {
                     "option": "3",
                     "desc": "Get the Tasel too.",
-                    "outcome": "You got the Tasel the following day. Peter’s persuasion was convincing and you believed that getting one was worth it. Down payment was 20%, which set you back quite a bit. With the high marked price and 3% interest, you had quite a struggle funding instalments as well. “You won’t regret it,” you replay again in your head.",
+                    "outcome": "You got the Tasel the following day. Peter's persuasion was convincing and you believed that getting one was worth it. Down payment was 20%, which set you back quite a bit. With the high marked price and 3% interest, you had quite a struggle funding instalments as well. “You won't regret it,” you replay again in your head.",
                     "point": {
                         "Wealth": -10,
                         "Health": 5,
@@ -690,7 +690,7 @@
             "id": 5,
             "episode": 2,
             "title": "Inheritance",
-            "opening": "You’re in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It’s 9.35pm and you’re putting the kids to bed.",
+            "opening": "You're in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It's 9.35pm and you're putting the kids to bed.",
             "characters": {
                 "J": "John",
                 "M": "Mary",
@@ -708,7 +708,7 @@
                 },
                 {
                     "name": "Oliver",
-                    "text": "Do you guys want drinks? I’m getting a Teh Bing."
+                    "text": "Do you guys want drinks? I'm getting a Teh Bing."
                 },
                 {
                     "name": "Rachel",
@@ -740,7 +740,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Prince Rae’s Town! I heard the place looks like an artwork."
+                    "text": "Prince Rae's Town! I heard the place looks like an artwork."
                 },
                 {
                     "name": "Rachel",
@@ -756,11 +756,11 @@
                 },
                 {
                     "name": "John",
-                    "text": "Don’t know. When I get enough money."
+                    "text": "Don't know. When I get enough money."
                 },
                 {
                     "name": "Rachel",
-                    "text": "You say as if you’re broke. Why not go travel with Mary this summer!"
+                    "text": "You say as if you're broke. Why not go travel with Mary this summer!"
                 },
                 {
                     "name": "Oliver",
@@ -780,23 +780,23 @@
                 },
                 {
                     "name": "Rachel",
-                    "text": "John, I know you haven’t been to Prince Rae’s. "
+                    "text": "John, I know you haven't been to Prince Rae's. "
                 },
                 {
                     "name": "Rachel",
-                    "text": "I tell you, you can spend 2 days there and it won’t be enough. "
+                    "text": "I tell you, you can spend 2 days there and it won't be enough. "
                 },
                 {
                     "name": "John",
-                    "text": "Don’t know leh. I need to check when Mary’s free. "
+                    "text": "Don't know leh. I need to check when Mary's free. "
                 },
                 {
                     "name": "Rachel",
-                    "text": "I’m sure Mary will love it. You were saying you promised to bring her on a trip?"
+                    "text": "I'm sure Mary will love it. You were saying you promised to bring her on a trip?"
                 },
                 {
                     "name": "John",
-                    "text": "Yeah, but she’s always busy with her Pilates and cooking sessions. "
+                    "text": "Yeah, but she's always busy with her Pilates and cooking sessions. "
                 },
                 {
                     "name": "Rachel",
@@ -804,7 +804,7 @@
                 },
                 {
                     "name": "Oliver",
-                    "text": "Can ask her cook for Toshki’s D&D also?"
+                    "text": "Can ask her cook for Toshki's D&D also?"
                 },
                 {
                     "name": "Karen",
@@ -816,11 +816,11 @@
                 },
                 {
                     "name": "John",
-                    "text": "Yeah. Maybe I’ll think about what to do with my inheritance."
+                    "text": "Yeah. Maybe I'll think about what to do with my inheritance."
                 },
                 {
                     "name": "John",
-                    "text": "Huh? I mean I’ll go think about it. Nothing much."
+                    "text": "Huh? I mean I'll go think about it. Nothing much."
                 },
                 {
                     "name": "Chris",
@@ -840,7 +840,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Okay, it’s past bedtime. Go to sleep."
+                    "text": "Okay, it's past bedtime. Go to sleep."
                 },
                 {
                     "name": "Chris",
@@ -860,7 +860,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "Dear, there’s a letter for you. From Doricane Healthcare. The kids asleep?"
+                    "text": "Dear, there's a letter for you. From Doricane Healthcare. The kids asleep?"
                 },
                 {
                     "name": "John",
@@ -868,11 +868,11 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "Bad. The weather’s so humid even at night. So what does it say?"
+                    "text": "Bad. The weather's so humid even at night. So what does it say?"
                 },
                 {
                     "name": "John",
-                    "text": "It says my Integrated Shield Plan is expiring in a month’s time."
+                    "text": "It says my Integrated Shield Plan is expiring in a month's time."
                 },
                 {
                     "name": "Mary",
@@ -884,7 +884,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "You can try government hospitals instead. They’re cheaper."
+                    "text": "You can try government hospitals instead. They're cheaper."
                 },
                 {
                     "name": "John",
@@ -896,15 +896,15 @@
                 },
                 {
                     "name": "John",
-                    "text": "Actually I haven’t gone for any surgery."
+                    "text": "Actually I haven't gone for any surgery."
                 },
                 {
                     "name": "Mary",
-                    "text": "It doesn’t mean that you don’t need coverage."
+                    "text": "It doesn't mean that you don't need coverage."
                 },
                 {
                     "name": "John",
-                    "text": "I haven’t been greatly sick!"
+                    "text": "I haven't been greatly sick!"
                 },
                 {
                     "name": "Mary",
@@ -928,7 +928,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "I’ll go think about it. The premiums are higher for me now."
+                    "text": "I'll go think about it. The premiums are higher for me now."
                 },
                 {
                     "name": "Mary",
@@ -964,7 +964,7 @@
                 {
                     "option": "3",
                     "desc": "Save all the money ",
-                    "outcome": "You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn’t give you much returns, to your discontent.",
+                    "outcome": "You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn't give you much returns, to your discontent.",
                     "point": {
                         "Wealth": 5,
                         "Health": 0,
@@ -984,7 +984,7 @@
                 {
                     "option": "2",
                     "desc": "Switch to a coverage for government hospitals Class B1.",
-                    "outcome": "You bought a new and cheaper coverage for government hospitals. Mary was glad you got yourself covered. She too was under the same coverage, and believed that Class B1 is good enough. Your premiums are relatively cheaper, but that doesn’t stop you from continuing to adopt a healthy lifestyle.",
+                    "outcome": "You bought a new and cheaper coverage for government hospitals. Mary was glad you got yourself covered. She too was under the same coverage, and believed that Class B1 is good enough. Your premiums are relatively cheaper, but that doesn't stop you from continuing to adopt a healthy lifestyle.",
                     "point": {
                         "Wealth": 0,
                         "Health": 10,
@@ -994,7 +994,7 @@
                 {
                     "option": "3",
                     "desc": "Live only with the basic MediShield Plan",
-                    "outcome": "You refrained from getting another insurance plan because you didn’t think you would need it. Because of this, you feared doing activities that might cost you injuries, since you were only covered on the basic level. You rather spend time on developing a healthy lifestyle than pay premiums.",
+                    "outcome": "You refrained from getting another insurance plan because you didn't think you would need it. Because of this, you feared doing activities that might cost you injuries, since you were only covered on the basic level. You rather spend time on developing a healthy lifestyle than pay premiums.",
                     "point": {
                         "Wealth": 5,
                         "Health": 5,
@@ -1009,7 +1009,7 @@
             "id": 6,
             "episode": 1,
             "title": "Allocation of Resources",
-            "opening": "It’s 1.34pm. The sky is clear. Mary is out at a tupperware party. The hit docu-series “Frugal Families” is playing on your 55” Smart TV. ",
+            "opening": "It's 1.34pm. The sky is clear. Mary is out at a tupperware party. The hit docu-series “Frugal Families” is playing on your 55” Smart TV. ",
             "characters": {
                 "J": "John",
                 "P": "Peter",
@@ -1018,19 +1018,19 @@
             "dialogue": [
                 {
                     "name": "TV",
-                    "text": "… Like Chen Li, many of us don’t know how to properly spend our money."
+                    "text": "… Like Chen Li, many of us don't know how to properly spend our money."
                 },
                 {
                     "name": "John",
-                    "text": "Maybe I should think about how to properly allocate my finances now that I’ve retired. "
+                    "text": "Maybe I should think about how to properly allocate my finances now that I've retired. "
                 },
                 {
                     "name": "TV",
-                    "text": "Chen Li’s favourite designer brand is Louis Vuitton."
+                    "text": "Chen Li's favourite designer brand is Louis Vuitton."
                 },
                 {
                     "name": "John",
-                    "text": "Peter’s probably the best person to ask about this."
+                    "text": "Peter's probably the best person to ask about this."
                 },
                 {
                     "name": "TV",
@@ -1042,7 +1042,7 @@
                 },
                 {
                     "name": "Peter",
-                    "text": "Hi, Johnny. What a weird timing. What’s up?"
+                    "text": "Hi, Johnny. What a weird timing. What's up?"
                 },
                 {
                     "name": "John",
@@ -1050,7 +1050,7 @@
                 },
                 {
                     "name": "Peter",
-                    "text": "“Heaven’s Demons?!” "
+                    "text": "“Heaven's Demons?!” "
                 },
                 {
                     "name": "John",
@@ -1058,7 +1058,7 @@
                 },
                 {
                     "name": "Peter",
-                    "text": "Pfft. You’re one to kid. I’m actually busy now. Grandpa things, you know?"
+                    "text": "Pfft. You're one to kid. I'm actually busy now. Grandpa things, you know?"
                 },
                 {
                     "name": "John",
@@ -1074,7 +1074,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "So far I’ve just gone along with my gut feeling."
+                    "text": "So far I've just gone along with my gut feeling."
                 },
                 {
                     "name": "Peter",
@@ -1090,11 +1090,11 @@
                 },
                 {
                     "name": "John",
-                    "text": "That’s such a cliche. "
+                    "text": "That's such a cliche. "
                 },
                 {
                     "name": "Peter",
-                    "text": "I know, but it’s true. Personally I follow the 80-20 rule. "
+                    "text": "I know, but it's true. Personally I follow the 80-20 rule. "
                 },
                 {
                     "name": "Peter",
@@ -1126,11 +1126,11 @@
                 },
                 {
                     "name": "Peter",
-                    "text": "She’s your wife, not your finance secretary."
+                    "text": "She's your wife, not your finance secretary."
                 },
                 {
                     "name": "Peter",
-                    "text": "Or maybe you want to continue living with your ‘gut feeling’."
+                    "text": "Or maybe you want to continue living with your ‘gut feeling'."
                 },
                 {
                     "name": "John",
@@ -1153,7 +1153,7 @@
                     "text": "Abandoned by his own children, he has only his “baby vuittons” to keep him company."
                 }
             ],
-            "decision": "u turn off the TV after that episode ended. You don’t want to end up like Chen Li, although you don’t buy branded goods. As such, you decide to… ",
+            "decision": "u turn off the TV after that episode ended. You don't want to end up like Chen Li, although you don't buy branded goods. As such, you decide to… ",
             "options": [
                 {
                     "option": "1",
@@ -1199,7 +1199,7 @@
             "dialogue": [
                 {
                     "name": "Mary",
-                    "text": "(closes the door) Wow. You’re early and changed."
+                    "text": "(closes the door) Wow. You're early and changed."
                 },
                 {
                     "name": "John",
@@ -1207,7 +1207,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "You sure you didn’t sneak out of office?"
+                    "text": "You sure you didn't sneak out of office?"
                 },
                 {
                     "name": "John",
@@ -1219,7 +1219,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Let’s go to Teck Lee’s. I’m craving for some laksa."
+                    "text": "Let's go to Teck Lee's. I'm craving for some laksa."
                 },
                 {
                     "name": "Mary",
@@ -1239,11 +1239,11 @@
                 },
                 {
                     "name": "John",
-                    "text": "(whispers) Can’t blame a gambler."
+                    "text": "(whispers) Can't blame a gambler."
                 },
                 {
                     "name": "Mary",
-                    "text": "You’re going to be 55 next week. "
+                    "text": "You're going to be 55 next week. "
                 },
                 {
                     "name": "John",
@@ -1291,31 +1291,31 @@
                 },
                 {
                     "name": "John",
-                    "text": "I’m sure you do."
+                    "text": "I'm sure you do."
                 },
                 {
                     "name": "Mary",
-                    "text": "There’s this auntie today who kept complaining her CPF. Poor her."
+                    "text": "There's this auntie today who kept complaining her CPF. Poor her."
                 },
                 {
                     "name": "John",
-                    "text": "(whispers) Can’t blame a boomer."
+                    "text": "(whispers) Can't blame a boomer."
                 },
                 {
                     "name": "Mary",
-                    "text": "What’s that?"
+                    "text": "What's that?"
                 },
                 {
                     "name": "John",
-                    "text": "Nothing. Can’t wait for laksa."
+                    "text": "Nothing. Can't wait for laksa."
                 },
                 {
                     "name": "Mary",
-                    "text": "(ties her ponytail) Okay. I’m done!"
+                    "text": "(ties her ponytail) Okay. I'm done!"
                 },
                 {
                     "name": "John",
-                    "text": "(gets out of sofa) Alright. I’m starving! "
+                    "text": "(gets out of sofa) Alright. I'm starving! "
                 }
             ],
             "decision": "at night, feeling full after your favourite bowl of laksa, you thought about what to do with your CPF. You decided to…",
@@ -1323,7 +1323,7 @@
                 {
                     "option": "1",
                     "desc": "Withdraw partial amounts in the hundreds every month from your CPF account.",
-                    "outcome": "For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn’t need the money, in fact. But you were definitely more happy spending a little more than usual.",
+                    "outcome": "For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn't need the money, in fact. But you were definitely more happy spending a little more than usual.",
                     "point": {
                         "Wealth": -5,
                         "Health": 0,
@@ -1343,7 +1343,7 @@
                 {
                     "option": "3",
                     "desc": "Leave your CPF as it is.",
-                    "outcome": "You leave all your CPF savings in the account. You didn’t need the money. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.”",
+                    "outcome": "You leave all your CPF savings in the account. You didn't need the money. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.”",
                     "point": {
                         "Wealth": 5,
                         "Health": 5,
@@ -1364,7 +1364,7 @@
             "dialogue": [
                 {
                     "name": "Mary",
-                    "text": "How’s your back, honey? (Gently places Yangzhou fried rice in front of John)"
+                    "text": "How's your back, honey? (Gently places Yangzhou fried rice in front of John)"
                 },
                 {
                     "name": "John",
@@ -1376,7 +1376,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Yeah. It’s just us two now that the kids have all grown up."
+                    "text": "Yeah. It's just us two now that the kids have all grown up."
                 },
                 {
                     "name": "Mary",
@@ -1384,7 +1384,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "They’re probably busy, especially Elsa. "
+                    "text": "They're probably busy, especially Elsa. "
                 },
                 {
                     "name": "Mary",
@@ -1396,15 +1396,15 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "I’m afraid for you."
+                    "text": "I'm afraid for you."
                 },
                 {
                     "name": "John",
-                    "text": "I don’t know… when I feel like it?"
+                    "text": "I don't know… when I feel like it?"
                 },
                 {
                     "name": "Mary",
-                    "text": "When you’re bedridden and it’s too late?"
+                    "text": "When you're bedridden and it's too late?"
                 },
                 {
                     "name": "John",
@@ -1412,7 +1412,7 @@
                 },
                 {
                     "name": "Mary",
-                    "text": "Honey, you’re not too far from retirement age, you know that right?"
+                    "text": "Honey, you're not too far from retirement age, you know that right?"
                 },
                 {
                     "name": "John",
@@ -1424,7 +1424,7 @@
                 },
                 {
                     "name": "John",
-                    "text": "Come on! I was the best at remembering our children’s birthdays."
+                    "text": "Come on! I was the best at remembering our children's birthdays."
                 },
                 {
                     "name": "John",
@@ -1444,11 +1444,11 @@
                 },
                 {
                     "name": "John",
-                    "text": " I’ll consider. Don’t worry about me."
+                    "text": " I'll consider. Don't worry about me."
                 },
                 {
                     "name": "Mary",
-                    "text": "Good. How’s my fried rice?"
+                    "text": "Good. How's my fried rice?"
                 },
                 {
                     "name": "John",
@@ -1480,7 +1480,7 @@
                 {
                     "option": " ",
                     "desc": "Retire at 67.",
-                    "outcome": "You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but can’t help to think when Mary insisted you to retire early. Nobody in the office truly recognised your efforts because of major restructuring. ",
+                    "outcome": "You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but can't help to think when Mary insisted you to retire early. Nobody in the office truly recognised your efforts because of major restructuring. ",
                     "point": {
                         "Wealth": 10,
                         "Health": -5,
