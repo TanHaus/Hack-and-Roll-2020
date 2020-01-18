@@ -1,3 +1,4 @@
+
 let bodyHTML = document.querySelector('body')
 // Create a container for each mod and the viz canvas
 let container = document.createElement('container')
@@ -246,17 +247,17 @@ function setUpStage() {
     visualizer.updateDimension()
     visualizer.run()
 
-    let stageContent = loadEpisode(1, 1)
+    let stageContent = loadEpisode(3, 3)
     Player.upperContainerReference.append(stageContent)
 
-    Player.currentEpisode = 1
-    Player.currentStage = 1
+    Player.currentEpisode = 3
+    Player.currentStage = 3
 }
 
 function nextEpisode() {
+    Player.clearUpperContainer()
     if(Player.currentEpisode<3) {
         Player.currentEpisode += 1
-        loadEpisode()
 
     } else {
         Player.currentEpisode = 1
@@ -266,9 +267,9 @@ function nextEpisode() {
         
         } else {
             setUpReportCard()
+            return
         }
     }
-    Player.clearUpperContainer()
     
     let stageContent = loadEpisode()
     Player.upperContainerReference.append(stageContent)
@@ -386,6 +387,44 @@ function setOutcomePage(option){
     Player.upperContainerReference.append(wrapper);
     return wrapper; 
 }
+
+function setUpRadarChart() {
+
+    let radarChart = document.createElement("canvas");
+    radarChart.setAttribute("id", "myChart");
+    
+    var ctx = radarChart.getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+
+    container.append(radarChart);
+}
+
+function setUpReportCard(){
+    
+    container.firstElementChild.remove();
+    container.firstElementChild.remove();
+    
+    setUpRadarChart();
+
+}
+
 
 // //TESTING
 // async function test() {
