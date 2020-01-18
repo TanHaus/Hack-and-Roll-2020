@@ -163,8 +163,6 @@ function createDialogue(episodeObject) {
         avatarContainer.append(avatar)
         characters[name] = avatar
     }
-    // let avatar = document.createElement('img')
-    //     avatar.classList.add("avatar");
 
     let dialogueLine = document.createElement('p')
         dialogueLine.classList.add("dialogueLine")
@@ -188,6 +186,7 @@ function createDialogue(episodeObject) {
     
     function updateFrame(i) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         j = 0
         avatar.setAttribute("src", `./assets/${dialogueBlock[i].name}.png`)
         let dialogueContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text;
@@ -204,6 +203,8 @@ function createDialogue(episodeObject) {
         }
 =======
         // avatar.src=`./assets/${dialogueBlock[i].name}.png`
+=======
+>>>>>>> 828189d14381a39d351f6b595ccfe956c9013ec8
         let activeCharacter = dialogueBlock[i].name
         for(key in characters) {
             characters[key].classList.remove('activeCharacter')
@@ -216,9 +217,12 @@ function createDialogue(episodeObject) {
     let i = 0
     updateFrame(i)
 <<<<<<< HEAD
+<<<<<<< HEAD
     episodeContainer.append(avatar, dialogueBox, continueButton)
 =======
     // episodeContainer.append(avatar, dialogueLine, continueButton)
+=======
+>>>>>>> 828189d14381a39d351f6b595ccfe956c9013ec8
     episodeContainer.append(avatarContainer, dialogueLine, continueButton)
 >>>>>>> f1c02dc50f3e1573845977e5fb1654b951745510
     return episodeContainer
@@ -386,6 +390,11 @@ function createDecision(episode){ //episode = storyScript.stage#[#]
     wrapper.append(titWrapper,subWrapper,buttonWrapper);
     Player.decisionWrapper = wrapper; 
     // bodyHTML.append(wrapper);
+
+    // animation
+    Player.upperContainerReference.add('addFlash')
+    setTimeout(() => Player.upperContainerReference.classList.remove('addFlash'), 1000)
+
     return wrapper; 
 }
 

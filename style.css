@@ -175,8 +175,9 @@ section h1 {
     max-height: 80%;
     bottom: 0;
     left: 10%;
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
     transform-origin: 50% 100%;
+    filter: brightness(0.8) blur(1px);
 }
 
 .dialogueLine{
@@ -196,4 +197,23 @@ section h1 {
     bottom: 1rem;
     left: calc(15% - 1rem);
     width: 70%; 
+}
+
+
+.activeCharacter {
+    transform: scale(2, 2);
+    filter: brightness(1);
+}
+
+@keyframes flash {
+    0%, 100%{
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(20);
+    }
+}
+
+.addFlash {
+    animation: flash 1s ease-in-out;
 }
