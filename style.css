@@ -7,9 +7,9 @@ body {
 /* Start Screen */
 .background {
     height: 100vh; 
-    background-image: url('./assets/asset3.png');
+    background-image: url('./assets/bg0.jpg');
     background-repeat:no-repeat;
-    background-position:center; 
+    background-position:bottom; 
     background-size:cover;
 }
 section h1 {
