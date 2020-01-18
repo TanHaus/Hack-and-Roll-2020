@@ -291,7 +291,6 @@ function setUpModFour() {
 
     requestAnimationFrame(vizLoop)
     
-    // Player.currentSceneSectionReference.remove()
     Player.currentSceneSectionReference = modFour
 
     return modFour
@@ -355,7 +354,9 @@ function setOutcomePage(option){
 }
 
 function setUpReportCard() {
+    Player.currentSceneSectionReference.remove()
 
+    
 }
 
 //TESTING
@@ -369,7 +370,7 @@ async function testFuck() {
     await loadingPromise;
     setUpModFour()
 }
-test();
+// test();
 // testFuck()
 // setDecisionPage()
 
