@@ -177,6 +177,18 @@ let loadingPromise = fetch('./storyScriptPython.json')
 function createDialogue(episodeObject) {
     dialogueBlock = episodeObject.dialogue
 
+    charToColor = {
+        "John"      : "rgba(0, 102, 12, 0.95)", //emerald
+        "Mary"      : "rgba(0, 27, 97, 0.95)", //navy
+        "Waiter"    : "rgba(240, 1184, 0, 0.95)", //gold
+        "Peter"     : "rgba(225, 119, 0, 0.95)", //orange
+        "TV"        : "rgba(36, 36, 36, 0.95)", //grey
+        "Elsa"      : "rgba(135, 0, 184, 0.95)", //violet
+        "Karen"     : "rgba(0, 102, 122, 0.95)", //torquoise
+        "Oliver"    : "rgba(0, 191, 230, 0.95)",//light blue
+        "Rachel"    : "rgba(225, 26, 121, 0.95)", //pink
+        "Chris"     : "rgba(0, 194, 10, 0.95)"//light green
+    }
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     episodeContainer.style.backgroundImage = `url('./assets/bg${episodeObject["id"]}.jpg')`
@@ -244,7 +256,7 @@ function createDialogue(episodeObject) {
         clearTimeout(timeoutid)
         let dialogueContent = dialogueBlock[i].text;
         charName.textContent = dialogueBlock[i].name;
-
+        charName.style.backgroundColor = charToColor[charName.textContent];
 
         dialogueLine.textContent = ''
         typeWriter(dialogueLine, dialogueContent);
@@ -327,7 +339,8 @@ function startMenuScreen() {
 
     //add components of menu - title and button. 
     let gameTitle = document.createElement("h1")
-    gameTitle.textContent = "The Singaporean Dream"
+    gameTitle.textContent = "Another Singaporean Dream"
+    gameTitle.setAttribute("style", "font-size: 54px")
 
     //buttons
 
@@ -344,7 +357,7 @@ function startMenuScreen() {
 
     }
     let optionButton = document.createElement("button");
-    optionButton.textContent = "Jump To ..."
+    optionButton.textContent = "Choose Episode"
     optionButton.onclick = function (){
         let optionsContainer = document.createElement('section')
         optionsContainer.classList.add('optionsContainerButtons')
@@ -397,9 +410,6 @@ function setUpStage() {
     visualizer.run()
 
     loadTitleAndOpening()
-
-    // Player.currentEpisode = 3
-    // Player.currentStage = 3
 }
 
 function nextEpisode() {
@@ -542,7 +552,7 @@ function setUpRadarChart(PlayerObject) {
     let radarChart = document.createElement("canvas");
     radarChart.setAttribute("id", "myChart");
     radarChart.setAttribute("width", "100%");
-    radarChart.setAttribute("height", "70%");
+    radarChart.setAttribute("height", "90%");
     radarChart.classList.add("radar")
 
     bodyHTML.append(radarChart);
@@ -553,9 +563,10 @@ function setUpRadarChart(PlayerObject) {
     data: {
         labels: ['Wealth', 'Health', 'Happiness'],
         datasets: [{
-            label: 'My First dataset',
+            label: 'Points',
             backgroundColor: 'rgb(153, 204, 255, 0.5)',
             borderColor: 'rgb(153, 204, 255)',
+            fontSize: 25,
             data: [Player['wealth'], Player['happiness'], Player['happiness']]
         }]
     },
@@ -566,10 +577,22 @@ function setUpRadarChart(PlayerObject) {
                 display: false
             },
             ticks: {
-                suggestedMin: 0,
-                suggestedMax: 100
+                min: 0,
+                max: 100,
+                stepSize: 20
+            },
+        },
+        legend: {
+            labels: {
+                fontSize: 16
             }
-        }
+        },
+        title: {
+            display: true,
+            text: 'Overall Results',
+            fontSize: 32,
+            padding: 10
+        },
     }
     });
 }
@@ -581,11 +604,19 @@ function createEndButtons() {
 
     let restartButton = document.createElement('button')
     restartButton.textContent = 'Restart Game'
-    restartButton.onclick = ""
+    restartButton.onclick = function() {
+        document.body.innerHTML = ""
+        startMenuScreen()
+    }
 
     let quitButton = document.createElement('button')
     quitButton.textContent = 'Quit Game'
-    quitButton.onclick = ""
+    quitButton.onclick = function() {
+        if (confirm("Give up Another Singaporean Dream?")) {
+          close();
+        }
+      }
+
     bodyHTML.append(infoButton, restartButton, quitButton)
 }
 
@@ -616,5 +647,4 @@ function setUpReportCard(){
 // setDecisionPage()
 
 
-//setUpReportCard();
 startMenuScreen()
