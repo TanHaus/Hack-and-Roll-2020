@@ -222,3 +222,7 @@ button:active {
 .addFlash {
     animation: flash 0.5s ease-in-out;
 }
+
+.radar {
+    padding-top: 20%;
+}

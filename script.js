@@ -450,32 +450,56 @@ function setOutcomePage(option){
     return wrapper; 
 }
 
-function setUpRadarChart() {
+function setUpRadarChart(PlayerObject) {
 
     let radarChart = document.createElement("canvas");
     radarChart.setAttribute("id", "myChart");
-    
+    radarChart.setAttribute("width", "100%");
+    radarChart.setAttribute("height", "70%");
+    radarChart.classList.add("radar")
+
+    bodyHTML.append(radarChart);
+
     var ctx = radarChart.getContext('2d');
     var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
+    type: 'radar',
+    data: {
+        labels: ['Wealth', 'Health', 'Happiness'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(153, 204, 255, 0.5)',
+            borderColor: 'rgb(153, 204, 255)',
+            data: [Player['wealth'], Player['happiness'], Player['happiness']]
+        }]
+    },
 
-        // The data for our dataset
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
-            }]
-        },
-
-        // Configuration options go here
-        options: {}
+    options: {
+        scale: {
+            angleLines: {
+                display: false
+            },
+            ticks: {
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
+        }
+    }
     });
+}
 
-    container.append(radarChart);
+function createEndButtons() {
+    let infoButton = document.createElement('button')
+    infoButton.textContent = 'More'
+    infoButton.onclick = ""
+
+    let restartButton = document.createElement('button')
+    restartButton.textContent = 'Restart Game'
+    restartButton.onclick = ""
+
+    let quitButton = document.createElement('button')
+    quitButton.textContent = 'Quit Game'
+    quitButton.onclick = ""
+    bodyHTML.append(infoButton, restartButton, quitButton)
 }
 
 function setUpReportCard(){
@@ -483,7 +507,8 @@ function setUpReportCard(){
     container.firstElementChild.remove();
     container.firstElementChild.remove();
     
-    setUpRadarChart();
+    setUpRadarChart(Player);
+    createEndButtons();
 
 }
 
@@ -503,5 +528,6 @@ function setUpReportCard(){
 // testFuck()
 // setDecisionPage()
 
-startMenuScreen()
 
+//setUpReportCard();
+startMenuScreen()
