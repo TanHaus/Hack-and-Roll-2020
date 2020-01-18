@@ -337,7 +337,8 @@ function startMenuScreen() {
 
     //add components of menu - title and button. 
     let gameTitle = document.createElement("h1")
-    gameTitle.textContent = "The Singaporean Dream"
+    gameTitle.textContent = "Another Singaporean Dream"
+    gameTitle.setAttribute("style", "font-size: 54px")
 
     //buttons
 
@@ -354,7 +355,7 @@ function startMenuScreen() {
 
     }
     let optionButton = document.createElement("button");
-    optionButton.textContent = "Jump To ..."
+    optionButton.textContent = "Choose Episode"
     optionButton.onclick = function (){
         let optionsContainer = document.createElement('section')
         optionsContainer.classList.add('optionsContainerButtons')
@@ -407,9 +408,6 @@ function setUpStage() {
     visualizer.run()
 
     loadTitleAndOpening()
-
-    // Player.currentEpisode = 3
-    // Player.currentStage = 3
 }
 
 function nextEpisode() {
