@@ -169,6 +169,7 @@ function createDialogue(episode) {
     
     function updateFrame(i) {
         avatar.setAttribute("src", `./assets/${dialogueBlock[i].name}.png`)
+        console.log(dialogueBlock[i])
         dialogueLine.textContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text
     }
     
@@ -183,6 +184,7 @@ let Player = {
     'name': 'John',
     'sex': 'unidentified',
     'currentStage': 1,
+    'currentEpisode': 1,
     'wealth': 0,
     'happiness': 0, 
     'health': 0, 
@@ -205,6 +207,11 @@ let Player = {
     increasePoints: function(value) {
         Player.points += value
     }
+}
+
+function loadEpisode(episode = Player.currentEpisode, stage = Player.currentStage) {
+    episodeObject = storyScript[`stage${stage}`][episode - 1]
+    return createDialogue(episodeObject)
 }
 
 function startMenuScreen() {
@@ -267,11 +274,12 @@ function setUpModThree() {
 }
 
 function setUpModFour() {
-    Player.currentStage = 4
+    Player.currentStage = 1
     Player.currentSceneSectionReference.remove()
 
-    episode1 = storyScript.stage1[0]
-    modFour = createDialogue(episode1)
+
+    // episode1 = storyScript.stage1[0]
+    modFour = loadEpisode(1)
     Player.episodeContainerReference = modFour
 
     visualizer.setUp()
@@ -340,10 +348,29 @@ function setOutcomePage(option){
 
     let text = document.createElement("p");
     text.classList.add("outcomeP")
-    text.textContent = option.outcome; 
+    text.textContent = option.outcome;
+    
+    let button = document.createElement('button')
+    button.textContent = 'Next'
+    button.onclick = () => {
+        if(Player.currentEpisode<3) {
+            Player.currentEpisode += 1
+            loadEpisode()
+
+        } else {
+            Player.currentEpisode = 1
+            
+            if(Player.currentStage<3) {
+                Player.currentStage += 1
+            
+            } else {
+                setUpReportCard()
+            }
+        }
+    }
 
     textWrapper.appendChild(text);
-    wrapper.append(title,textWrapper);
+    wrapper.append(title,textWrapper, button);
     Player.episodeContainerReference.append(wrapper);
     return wrapper; 
 }

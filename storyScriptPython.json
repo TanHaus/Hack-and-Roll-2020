@@ -158,11 +158,338 @@
                     }
                 },
                 {
-                    "option": "3",
+                    "option": " ",
                     "desc": "Continue living life as usual.",
-                    "outcome": "You carry on living and spending your money with your good friends, sometimes even on yourself. Time passes, and you occasionally fear not having enough money to fund your entire university course. The worst that could happen is asking your parents for money. ",
+                    "outcome": "You carry on living and spending your money with your good friends, sometimes even on yourself. Time passes, and you occasionally fear not having enough money to fund your entire university course. The worst that could happen is asking your parents for money. Wealth: -15",
+                    "point": {
+                        "Health": -5
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "episode": 2,
+            "title": " Graduation Trip",
+            "opening": "You and Mary have finally graduated with good Honours degrees. As such, you plan to go on a graduation trip with her. One evening, you both take a walk along Orchard Road.",
+            "characters": {
+                "J": "John",
+                "M": "Mary"
+            },
+            "dialogue": [
+                {
+                    "name": "John",
+                    "text": "How about Prince Rae’s Town? I love how artistic the place feels."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Ah, it looks better in winter. Not now."
+                },
+                {
+                    "name": "John",
+                    "text": "Right. It’s probably crowded during this peak period too."
+                },
+                {
+                    "name": "Mary",
+                    "text": "What about Mory Islands? (points) Apparently that shop originated from there."
+                },
+                {
+                    "name": "John",
+                    "text": "Oh, I’ve read that in the news too. It’s not as popular yet."
+                },
+                {
+                    "name": "Mary",
+                    "text": "We can travel around the area too."
+                },
+                {
+                    "name": "John",
+                    "text": "Would 10 days be enough? "
+                },
+                {
+                    "name": "Mary",
+                    "text": "Maybe 12. We could spend a few days up in the hills."
+                },
+                {
+                    "name": "John",
+                    "text": "Nice. I’ll source for flight tickets too."
+                },
+                {
+                    "name": "Mary",
+                    "text": "And insurance."
+                },
+                {
+                    "name": "John",
+                    "text": "Travel insurance?"
+                },
+                {
+                    "name": "Mary",
+                    "text": "Yeah. Insurance is a must-have. You’re still under Doricane Healthcare right?"
+                },
+                {
+                    "name": "John",
+                    "text": "That one’s for medical coverage. "
+                },
+                {
+                    "name": "Mary",
+                    "text": "We need to get travel insurance too."
+                },
+                {
+                    "name": "John",
+                    "text": "Well, if you keep your items safe and sound…"
+                },
+                {
+                    "name": "Mary",
+                    "text": "It doesn’t work that way, John."
+                },
+                {
+                    "name": "John",
+                    "text": "I find it a waste of money. "
+                },
+                {
+                    "name": "Mary",
+                    "text": "You’re paying for coverage. Think protection."
+                },
+                {
+                    "name": "John",
+                    "text": "I’ll protect you."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Don’t be gross. There are cheap ones out there."
+                },
+                {
+                    "name": "John",
+                    "text": "Then I’ll get them."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Usually the more you pay, the greater your coverage."
+                },
+                {
+                    "name": "John",
+                    "text": "Logically."
+                },
+                {
+                    "name": "Mary",
+                    "text": "So you’ll be settling all these for the trip?"
+                },
+                {
+                    "name": "John",
+                    "text": "Can you think of what else to do there?"
+                },
+                {
+                    "name": "Mary",
+                    "text": "Snorkelling, surfing, hiking. There’s so much to do."
+                },
+                {
+                    "name": "John",
+                    "text": "Yes, we have 12 days."
+                },
+                {
+                    "name": "Mary",
+                    "text": "We’ll have lots of fun there. "
+                },
+                {
+                    "name": "John",
+                    "text": "More fun than strolling along this sad street."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Hey! You agreed to this."
+                },
+                {
+                    "name": "John",
+                    "text": "Just kidding!"
+                }
+            ],
+            "decision": "u return home and excitedly plan for the trip. Towards the finalisation, you remembered the travel insurance Mary kept insisting you to buy. You decide to...",
+            "options": [
+                {
+                    "option": "1",
+                    "desc": "Get the higher-end insurance that covers a multitude of travel issues.",
+                    "outcome": "You bought travel insurance that covers you and Mary greatly. Mary was surprised by your change in mentality. Though expensive, you and Mary were enabled to travel fearlessly to Mory Islands and participate in a variety of activities, like scuba diving and gliding. She felt that it was the best trip she had so far. ",
+                    "point": {
+                        "Wealth": -10
+                    }
+                },
+                {
+                    "option": "2",
+                    "desc": "Get the lower-end insurance that provides basic travel coverage.",
+                    "outcome": "You bought the basic travel insurance that provides the minimum protection. You didn’t spend too much on it, and so you use most of your money on the actual trip. Mary enjoyed the trip very much, as it was her first time participating in many of the water sport activities. ",
+                    "point": {
+                        "Wealth": -5
+                    }
+                },
+                {
+                    "option": "3",
+                    "desc": "Not get any travel insurance and save the money instead.",
+                    "outcome": "You chose not to get any travel insurance. Mary was a little upset at you but as the trip progressed, she gradually forgot about it and immersed herself in the activities on the Islands. Unfortunately, there was a delay in flight on the way back. Without insurance, the both of you reluctantly spend another night there.",
+                    "point": {
+                        "Wealth": -5
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "episode": 3,
+            "title": "What’s your appetite?",
+            "opening": "",
+            "characters": {
+                "J": "John",
+                "M": "Mary",
+                "W": "Waiter"
+            },
+            "dialogue": [
+                {
+                    "name": "Waiter",
+                    "text": "Good evening, Sir. May I take your order? (Takes up his notebook and pen)"
+                },
+                {
+                    "name": "John",
+                    "text": "Hi. Can we get the Signature OmuRice Set and the Ultimate-- Omama Set?"
+                },
+                {
+                    "name": "Mary",
+                    "text": "(laughs) It’s Omu-Ma."
+                },
+                {
+                    "name": "John",
+                    "text": "Yes! That."
+                },
+                {
+                    "name": "Waiter",
+                    "text": "Okay, and your drinks?"
+                },
+                {
+                    "name": "John",
+                    "text": "I’ll have Ice Lemon Tea, and.. (signals to Mary)"
+                },
+                {
+                    "name": "Mary",
+                    "text": "Passionfruit tea for me."
+                },
+                {
+                    "name": "Waiter",
+                    "text": "Got it. Anything else?"
+                },
+                {
+                    "name": "John",
+                    "text": "No, thank you."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Omama."
+                },
+                {
+                    "name": "John",
+                    "text": "I have no words. But I have things to ask you."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Yes Mr. Omama?"
+                },
+                {
+                    "name": "John",
+                    "text": "I’ve been thinking about how to fund our future."
+                },
+                {
+                    "name": "Mary",
+                    "text": "You mean like buying a car? Condo? Our wedding? "
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah, all those. I realised we don’t have that much money."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Mmm. Have you considered investments? "
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah. Peter did mention to me about it before."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Did he mention the different types?"
+                },
+                {
+                    "name": "John",
+                    "text": "He said I could invest in low-risk unit trusts or high-risk individual stocks. "
+                },
+                {
+                    "name": "John",
+                    "text": "They all come with different risk levels and potential returns. "
+                },
+                {
+                    "name": "John",
+                    "text": "It all depends on my risk appetite."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Hmm.. seems like you don’t know much about investments."
+                },
+                {
+                    "name": "John",
+                    "text": "Sadly, yeah."
+                },
+                {
+                    "name": "Mary",
+                    "text": "But how hungry are you to fulfill those financial goals?"
+                },
+                {
+                    "name": "John",
+                    "text": "(stomach growls) … More than my want to eat OmuRice."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Sounds alot. But if you need the money urgently, we can always loan from the bank."
+                },
+                {
+                    "name": "John",
+                    "text": "Or use our savings first."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Yeah, why not."
+                },
+                {
+                    "name": "John",
+                    "text": "So many options, huh. I guess I’ll go consider my various options."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Don’t worry too much. You’ll find your answer."
+                },
+                {
+                    "name": "John",
+                    "text": "Yes, Mrs Omama."
+                }
+            ],
+            "decision": "u went home satisfied. That was probably the best OmuRice you had in ages. As you crept into bed, you pondered about how to meet your financial goals. You decide to…",
+            "options": [
+                {
+                    "option": "1",
+                    "desc": "Use your savings and take a loan.",
+                    "outcome": "You withdrew most of your savings to fund your wedding and took a heavy loan to fund a condominium. Because of that, the interest compounded was rather great, and you took many years to clear the debt. Nonetheless, you were looking forward to the wedding and the condominium. ",
                     "point": {
                         "Wealth": -15
+                    }
+                },
+                {
+                    "option": "2",
+                    "desc": "Invest in high-risk stocks.",
+                    "outcome": "You bought some high-risk stocks without much financial knowledge. Nobody knows about it except you. Weeks later, you were notified of the closure of the company you invested in. Because you weren’t keeping an eye on the market, it crashed before you could sell your stocks.",
+                    "point": {
+                        "Wealth": -29
+                    }
+                },
+                {
+                    "option": "3",
+                    "desc": "Invest in low to medium risk instruments.",
+                    "outcome": "You chose to invest in stocks that were relatively low-risk. The potential returns weren’t too much, but such investment was suitable given your own financial knowledge. Online advisors and guides assisted you along the way. You watch your investments grow slowly but steadily.",
+                    "point": {
+                        "Wealth": 1
                     }
                 }
             ]
