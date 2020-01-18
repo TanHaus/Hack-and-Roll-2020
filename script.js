@@ -134,7 +134,7 @@ function createDialogue(episodeObject) {
     dialogueBlock = episodeObject.dialogue
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
-    episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
+    episodeContainer.style.backgroundImage = `url('./assets/bg${episodeObject["id"]}.jpg')`
 
     let characters = {}
     let avatarContainer = document.createElement('section')

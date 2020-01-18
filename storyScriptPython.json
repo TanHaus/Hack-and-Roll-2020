@@ -690,12 +690,12 @@
             "id": 5,
             "episode": 2,
             "title": "Inheritance",
-            "opening": "You’re in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It’s 9.35pm and you’re putting the kids to bed.",
+            "opening": "After a long battle with leukemia, your grandfather passed away. You recently found out that you inherited a fortune from him. It’s 12.35pm and you’re having lunch with your colleagues.",
             "characters": {
                 "J": "John",
-                "M": "Mary",
-                "E": "Elsa",
-                "C": "Chris"
+                "R": "Rachel",
+                "K": "Karen",
+                "O": "Oliver"
             },
             "dialogue": [
                 {
@@ -821,7 +821,54 @@
                 {
                     "name": "John",
                     "text": "Huh? I mean I’ll go think about it. Nothing much."
+                }
+            ],
+            "decision": "u knock off for the day, with mixed feelings about the inheritance. It’s quite a lot of money, and you did promise Mary another trip in the near future. You decide to…",
+            "options": [
+                {
+                    "option": "1",
+                    "desc": "Travel with Mary",
+                    "outcome": "You decide to take Mary on a long-awaited trip to the Land of Prince Rae. She appreciated it greatly and enjoyed the trip, and so did yourself. You finally got to visit the famous town there and got souvenirs for your office.",
+                    "point": {
+                        "Wealth": -5,
+                        "Health": 5,
+                        "Happiness": 10
+                    }
                 },
+                {
+                    "option": "2",
+                    "desc": "Invest the money",
+                    "outcome": "You decided to invest most of the money into low to medium-risk stocks, hoping it would give you better returns. You chose the stocks carefully, since you were still new to investing. To your excitement, you made a profit.",
+                    "point": {
+                        "Wealth": 4,
+                        "Health": 0,
+                        "Happiness": 5
+                    }
+                },
+                {
+                    "option": "3",
+                    "desc": "Save all the money ",
+                    "outcome": "You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn’t give you much returns, to your discontent.",
+                    "point": {
+                        "Wealth": 5,
+                        "Health": 0,
+                        "Happiness": 0
+                    }
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "episode": 3,
+            "title": "Cover me",
+            "opening": "You’re in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It’s 9.35pm and you’re putting the kids to bed.",
+            "characters": {
+                "J": "John",
+                "M": "Mary",
+                "E": "Elsa",
+                "C": "Chris"
+            },
+            "dialogue": [
                 {
                     "name": "Chris",
                     "text": "Daddy, is Santa Claus real?"
@@ -943,36 +990,6 @@
             "options": [
                 {
                     "option": "1",
-                    "desc": "Travel with Mary",
-                    "outcome": "You decide to take Mary on a long-awaited trip to the Land of Prince Rae. She appreciated it greatly and enjoyed the trip, and so did yourself. You finally got to visit the famous town there and got souvenirs for your office.",
-                    "point": {
-                        "Wealth": -5,
-                        "Health": 5,
-                        "Happiness": 10
-                    }
-                },
-                {
-                    "option": "2",
-                    "desc": "Invest the money",
-                    "outcome": "You decided to invest most of the money into low to medium-risk stocks, hoping it would give you better returns. You chose the stocks carefully, since you were still new to investing. To your excitement, you made a profit.",
-                    "point": {
-                        "Wealth": 4,
-                        "Health": 0,
-                        "Happiness": 5
-                    }
-                },
-                {
-                    "option": "3",
-                    "desc": "Save all the money ",
-                    "outcome": "You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn’t give you much returns, to your discontent.",
-                    "point": {
-                        "Wealth": 5,
-                        "Health": 0,
-                        "Happiness": 0
-                    }
-                },
-                {
-                    "option": "1",
                     "desc": "Extend the insurance for private hospitals.",
                     "outcome": "You extended your Integrated Shield Plan for Doricane Healthcare. Mary was glad you decided to continue your own coverage. You pay higher premiums because of your relatively older age and private hospital benefits. Nonetheless, you continue to stay healthy and exercise once in a while.",
                     "point": {
@@ -1006,7 +1023,7 @@
     ],
     "stage3": [
         {
-            "id": 6,
+            "id": 7,
             "episode": 1,
             "title": "Allocation of Resources",
             "opening": "It’s 1.34pm. The sky is clear. Mary is out at a tupperware party. The hit docu-series “Frugal Families” is playing on your 55” Smart TV. ",
@@ -1188,7 +1205,7 @@
             ]
         },
         {
-            "id": 7,
+            "id": 8,
             "episode": 2,
             "title": "Central Provident Fund",
             "opening": "Your children have all grown up and have their own families and houses. Your 55th birthday is coming soon, and Mary just got back from her yoga class. 3",
@@ -1353,7 +1370,7 @@
             ]
         },
         {
-            "id": 8,
+            "id": 9,
             "episode": 3,
             "title": "To retire or not to retire?",
             "opening": "",

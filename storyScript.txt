@@ -314,7 +314,7 @@ Wealth: +5
 Health: +0
 Happiness: +0
 
-Act 3: Cover me
+Episode 3: Cover me
 
 Opening: You’re in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It’s 9.35pm and you’re putting the kids to bed.
 
