@@ -195,6 +195,7 @@ let Player = {
     'currentStage': 1,
     'points': 0,
     'currentSceneSectionReference': null,
+    'decisionWrapper': null,
     
 
     // Methods
@@ -281,18 +282,21 @@ function setUpModFour() {
     // Player.currentSceneSectionReference.remove()
     Player.currentSceneSectionReference = modFour
 
-
-
     return modFour
 }
 function createButton(option){
     //this function generate decision buttons
     let button = document.createElement("button");
     button.classList.add("decButton");
-    button.textContent = option
+    button.textContent = option.desc;
     //add event handler 
     button.onclick = function(){
+        //update Player's fields
         
+        //advance to outcome page 
+        Player.decisionWrapper.remove();
+        Player.decisionWrapper = null; 
+        setOutcomePage(option);
     }
     return button; 
 }
@@ -306,12 +310,35 @@ function createDecision(episode){ //episode = storyScript.module#[#]
     wrapper.classList.add("wrapper");
     wrapper.appendChild(title);
     for(let i=0; i<3; i++){
-        wrapper.appendChild(createButton(episode.options[i].desc));
+        wrapper.appendChild(createButton(episode.options[i]));
     }
+    
+    Player.decisionWrapper = wrapper; 
     bodyHTML.append(wrapper);
-
     return wrapper; 
 }
+
+function setOutcomePage(option){
+    let wrapper = document.createElement("section");
+    wrapper.classList.add("wrapper");
+
+    let textWrapper = document.createElement("section");
+    textWrapper.classList.add("textWrapper");
+
+    let title = document.createElement("h1");
+    title.classList.add("decTitle");
+    title.textContent = "Outcome";
+
+    let text = document.createElement("p");
+    text.classList.add("outcomeP")
+    text.textContent = option.outcome; 
+
+    textWrapper.appendChild(text);
+    wrapper.append(title,textWrapper);
+    bodyHTML.append(wrapper);
+    return wrapper; 
+}
+
 
 
 // function setUpReportCard() {
