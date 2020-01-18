@@ -1,4 +1,4 @@
-{   
+{
     "stage1": [
         {
             "id": 1,
@@ -139,14 +139,19 @@
                     "text": "Same."
                 }
             ],
-            "decision": "Over time, you wonder about your financial status. “Is there anything I can do?” You ask yourself as you spend another graceless night with your friends. Eventually, you decide to...",
+            "decision": "er time, you wonder about your financial status. “Is there anything I can do?” You ask yourself as you spend another graceless night with your friends. Eventually, you decide to...",
             "options": [
                 {
                     "option": "1",
                     "desc": "Look for a part-time job ",
                     "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary’s suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
                     "point": {
-                        "Wealth": 25
+                        "Wealth": 25,
+                        "Health": -5,
+                        "Happiness": [
+                            -10,
+                            10
+                        ]
                     }
                 },
                 {
@@ -154,15 +159,19 @@
                     "desc": "Cut down on your spending.",
                     "outcome": "You decided to reduce your spending on wants. Your friends judge your frugality. You told them that you wanted to save more since you’re not earning money. You don’t feel so bad now that you spend less than before, even though you still miss getting drinks and late night supper.",
                     "point": {
-                        "Wealth": 15
+                        "Wealth": 15,
+                        "Health": 10,
+                        "Happiness": -5
                     }
                 },
                 {
                     "option": " ",
                     "desc": "Continue living life as usual.",
-                    "outcome": "You carry on living and spending your money with your good friends, sometimes even on yourself. Time passes, and you occasionally fear not having enough money to fund your entire university course. The worst that could happen is asking your parents for money. Wealth: -15",
+                    "outcome": "You carry on living and spending your money with your good friends, sometimes even on yourself. Time passes, and you occasionally fear not having enough money to fund your entire university course. The worst that could happen is asking your parents for money. ",
                     "point": {
-                        "Health": -5
+                        "Wealth": -15,
+                        "Health": -5,
+                        "Happiness": 5
                     }
                 }
             ]
@@ -309,7 +318,9 @@
                     "desc": "Get the higher-end insurance that covers a multitude of travel issues.",
                     "outcome": "You bought travel insurance that covers you and Mary greatly. Mary was surprised by your change in mentality. Though expensive, you and Mary were enabled to travel fearlessly to Mory Islands and participate in a variety of activities, like scuba diving and gliding. She felt that it was the best trip she had so far. ",
                     "point": {
-                        "Wealth": -10
+                        "Wealth": -10,
+                        "Health": 5,
+                        "Happiness": 15
                     }
                 },
                 {
@@ -317,7 +328,9 @@
                     "desc": "Get the lower-end insurance that provides basic travel coverage.",
                     "outcome": "You bought the basic travel insurance that provides the minimum protection. You didn’t spend too much on it, and so you use most of your money on the actual trip. Mary enjoyed the trip very much, as it was her first time participating in many of the water sport activities. ",
                     "point": {
-                        "Wealth": -5
+                        "Wealth": -5,
+                        "Health": 5,
+                        "Happiness": 10
                     }
                 },
                 {
@@ -325,7 +338,9 @@
                     "desc": "Not get any travel insurance and save the money instead.",
                     "outcome": "You chose not to get any travel insurance. Mary was a little upset at you but as the trip progressed, she gradually forgot about it and immersed herself in the activities on the Islands. Unfortunately, there was a delay in flight on the way back. Without insurance, the both of you reluctantly spend another night there.",
                     "point": {
-                        "Wealth": -5
+                        "Wealth": -5,
+                        "Health": -5,
+                        "Happiness": -10
                     }
                 }
             ]
@@ -473,7 +488,9 @@
                     "desc": "Use your savings and take a loan.",
                     "outcome": "You withdrew most of your savings to fund your wedding and took a heavy loan to fund a condominium. Because of that, the interest compounded was rather great, and you took many years to clear the debt. Nonetheless, you were looking forward to the wedding and the condominium. ",
                     "point": {
-                        "Wealth": -15
+                        "Wealth": -15,
+                        "Health": 5,
+                        "Happiness": 25
                     }
                 },
                 {
@@ -481,7 +498,9 @@
                     "desc": "Invest in high-risk stocks.",
                     "outcome": "You bought some high-risk stocks without much financial knowledge. Nobody knows about it except you. Weeks later, you were notified of the closure of the company you invested in. Because you weren’t keeping an eye on the market, it crashed before you could sell your stocks.",
                     "point": {
-                        "Wealth": -29
+                        "Wealth": -29,
+                        "Health": -5,
+                        "Happiness": -10
                     }
                 },
                 {
@@ -489,7 +508,983 @@
                     "desc": "Invest in low to medium risk instruments.",
                     "outcome": "You chose to invest in stocks that were relatively low-risk. The potential returns weren’t too much, but such investment was suitable given your own financial knowledge. Online advisors and guides assisted you along the way. You watch your investments grow slowly but steadily.",
                     "point": {
-                        "Wealth": 1
+                        "Wealth": 1,
+                        "Health": 5,
+                        "Happiness": 10
+                    }
+                }
+            ]
+        }
+    ],
+    "stage2": [
+        {
+            "id": 4,
+            "episode": 1,
+            "title": "Cars Cars Cars",
+            "opening": "You work for Toshki Inc as a sales manager. One weekend, you accompanied your friend Peter to an automobile show, one with “wheel-y” big discounts. Peter hands you a brochure.",
+            "characters": {
+                "P": "Peter",
+                "J": "John"
+            },
+            "dialogue": [
+                {
+                    "name": "Peter",
+                    "text": "See, that’s the best deal in this entire show. The Tasel 3X5!"
+                },
+                {
+                    "name": "John",
+                    "text": "So this is how it looks like."
+                },
+                {
+                    "name": "Peter",
+                    "text": "This model runs on clean energy too. More expensive, but lower maintenance costs."
+                },
+                {
+                    "name": "John",
+                    "text": "So you save in the long run?"
+                },
+                {
+                    "name": "Peter",
+                    "text": "Exactly. "
+                },
+                {
+                    "name": "John",
+                    "text": "Sounds worth it."
+                },
+                {
+                    "name": "Peter",
+                    "text": "I think you should consider getting one. Your place isn’t near your house anyway."
+                },
+                {
+                    "name": "John",
+                    "text": "(Sighs) Well I do have a driving license."
+                },
+                {
+                    "name": "Peter",
+                    "text": "Or maybe a more affordable but functional brand? Like Toyata."
+                },
+                {
+                    "name": "John",
+                    "text": "Maybe a second-hand one. "
+                },
+                {
+                    "name": "Peter",
+                    "text": "Hey, second-hand just means higher maintenance cost. "
+                },
+                {
+                    "name": "John",
+                    "text": "… Do you actually know what you want to get, Peter?"
+                },
+                {
+                    "name": "Peter",
+                    "text": "Either the Tasel or the Jaguava. Definitely the best deal this century!"
+                },
+                {
+                    "name": "John",
+                    "text": "And how are you going to pay for it?"
+                },
+                {
+                    "name": "Peter",
+                    "text": "I can afford the downpayment. They say you can haggle for 15%."
+                },
+                {
+                    "name": "John",
+                    "text": "And the interest? "
+                },
+                {
+                    "name": "Peter",
+                    "text": "Depends on the seller, usually between 2-3%."
+                },
+                {
+                    "name": "John",
+                    "text": "Hmm.."
+                },
+                {
+                    "name": "Peter",
+                    "text": "But it’s around the same here. Just find what you like most."
+                },
+                {
+                    "name": "John",
+                    "text": "I kinda fine with public transport though."
+                },
+                {
+                    "name": "Peter",
+                    "text": "Yeah, but since I brought you here, might as well get a good deal for yourself."
+                },
+                {
+                    "name": "John",
+                    "text": "Oh! Isn’t that the Jaguava?"
+                },
+                {
+                    "name": "Peter",
+                    "text": "You bet. Some say it provides the best comfort and technical features."
+                },
+                {
+                    "name": "John",
+                    "text": "Interesting."
+                },
+                {
+                    "name": "Peter",
+                    "text": "You don’t sound interested."
+                },
+                {
+                    "name": "John",
+                    "text": "I’m just considering my options."
+                },
+                {
+                    "name": "Peter",
+                    "text": "So you might actually get one!"
+                },
+                {
+                    "name": "John",
+                    "text": "I have to think about how to finance it too."
+                },
+                {
+                    "name": "Peter",
+                    "text": "Ah. Wise man, but remember that these discounts will probably not happen again."
+                },
+                {
+                    "name": "John",
+                    "text": "How sure are you?"
+                },
+                {
+                    "name": "Peter",
+                    "text": "About 8-- Wait, that’s the Tasel!"
+                }
+            ],
+            "decision": "ter eventually purchased the Tasel and urged you to consider getting one too. “You won’t regret it,” Peter said as you watched him hand over his credit card. As the automobile show was on for another 2 days, you decided to give it a thought. You choose to…",
+            "options": [
+                {
+                    "option": "1",
+                    "desc": "Not get any car.",
+                    "outcome": "You decided that public transport was alright, so you didn’t spend money on any car. Occasionally it fails you, but on the whole it has been efficient. Every now and then, Peter would give you a hitch in his new Tasel 3X5 and give a lecture on why getting a car is the best decision one could ever make.",
+                    "point": {
+                        "Wealth": 5,
+                        "Health": 0,
+                        "Happiness": 0
+                    }
+                },
+                {
+                    "option": "2",
+                    "desc": "Get a second-hand but lower-brand car.",
+                    "outcome": "You decided to purchase a second-hand Toyata. It didn’t save you much time because of peak hour traffic jams, and it wasn’t the most comfortable either. It was usable, and getting around the city was much easier. You paid the down payment of 15% and paid the rest in monthly instalments, with a surprising 3.5% interest.",
+                    "point": {
+                        "Wealth": -5,
+                        "Health": 0,
+                        "Happiness": 5
+                    }
+                },
+                {
+                    "option": "3",
+                    "desc": "Get the Tasel too.",
+                    "outcome": "You got the Tasel the following day. Peter’s persuasion was convincing and you believed that getting one was worth it. Down payment was 20%, which set you back quite a bit. With the high marked price and 3% interest, you had quite a struggle funding instalments as well. “You won’t regret it,” you replay again in your head.",
+                    "point": {
+                        "Wealth": -10,
+                        "Health": 5,
+                        "Happiness": 10
+                    }
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "episode": 2,
+            "title": "Inheritance",
+            "opening": "You’re in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It’s 9.35pm and you’re putting the kids to bed.",
+            "characters": {
+                "J": "John",
+                "M": "Mary",
+                "E": "Elsa",
+                "C": "Chris"
+            },
+            "dialogue": [
+                {
+                    "name": "Rachel",
+                    "text": "(arrives last) Wow. That was such a long queue for a plate of Hokkien Mee!"
+                },
+                {
+                    "name": "John",
+                    "text": "Well, it probably good then."
+                },
+                {
+                    "name": "Oliver",
+                    "text": "Do you guys want drinks? I’m getting a Teh Bing."
+                },
+                {
+                    "name": "Rachel",
+                    "text": "Teh Alia Bing."
+                },
+                {
+                    "name": "John",
+                    "text": "Teh Bing too."
+                },
+                {
+                    "name": "Karen",
+                    "text": "Kopi O Kosong Bing."
+                },
+                {
+                    "name": "Oliver",
+                    "text": "(looks around) Ah Uncle! I want a …"
+                },
+                {
+                    "name": "Karen",
+                    "text": "So how was your holiday, Rachel? Got see scenery anot?"
+                },
+                {
+                    "name": "Rachel",
+                    "text": "Yeah of course! The Moon Dust River was so chio!"
+                },
+                {
+                    "name": "Oliver",
+                    "text": "Thanks Uncle. Yeah, did you go to that famous town?"
+                },
+                {
+                    "name": "John",
+                    "text": "Prince Rae’s Town! I heard the place looks like an artwork."
+                },
+                {
+                    "name": "Rachel",
+                    "text": "We did! That was on our second day though. The kids became tired so quickly."
+                },
+                {
+                    "name": "Karen",
+                    "text": "Aiya.. kids like that one."
+                },
+                {
+                    "name": "Oliver",
+                    "text": "So John, when will it be your turn? "
+                },
+                {
+                    "name": "John",
+                    "text": "Don’t know. When I get enough money."
+                },
+                {
+                    "name": "Rachel",
+                    "text": "You say as if you’re broke. Why not go travel with Mary this summer!"
+                },
+                {
+                    "name": "Oliver",
+                    "text": "Or save that money and buy a car."
+                },
+                {
+                    "name": "Karen",
+                    "text": "Cars nowadays very expensive."
+                },
+                {
+                    "name": "John",
+                    "text": "(head) I guess I do have $50,000. "
+                },
+                {
+                    "name": "Oliver",
+                    "text": "And nowadays you need a car to travel around. The MRTs unreliable one."
+                },
+                {
+                    "name": "Rachel",
+                    "text": "John, I know you haven’t been to Prince Rae’s. "
+                },
+                {
+                    "name": "Rachel",
+                    "text": "I tell you, you can spend 2 days there and it won’t be enough. "
+                },
+                {
+                    "name": "John",
+                    "text": "Don’t know leh. I need to check when Mary’s free. "
+                },
+                {
+                    "name": "Rachel",
+                    "text": "I’m sure Mary will love it. You were saying you promised to bring her on a trip?"
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah, but she’s always busy with her Pilates and cooking sessions. "
+                },
+                {
+                    "name": "Rachel",
+                    "text": "So that she can cook your dinner next time. No need to go out."
+                },
+                {
+                    "name": "Oliver",
+                    "text": "Can ask her cook for Toshki’s D&D also?"
+                },
+                {
+                    "name": "Karen",
+                    "text": "Crazy. Anyway, if you ever have a lot of money, remember to save and invest some."
+                },
+                {
+                    "name": "Rachel",
+                    "text": "Actually, working in this company taught me to spend more and make myself happier."
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah. Maybe I’ll think about what to do with my inheritance."
+                },
+                {
+                    "name": "John",
+                    "text": "Huh? I mean I’ll go think about it. Nothing much."
+                },
+                {
+                    "name": "Chris",
+                    "text": "Daddy, is Santa Claus real?"
+                },
+                {
+                    "name": "John",
+                    "text": "(covers Chris with a blanket) As real as you want him to be. "
+                },
+                {
+                    "name": "Elsa",
+                    "text": "My friend said Santa Claus is fake. "
+                },
+                {
+                    "name": "Chris",
+                    "text": "My friend said he saw him before."
+                },
+                {
+                    "name": "John",
+                    "text": "Okay, it’s past bedtime. Go to sleep."
+                },
+                {
+                    "name": "Chris",
+                    "text": "Okay."
+                },
+                {
+                    "name": "John",
+                    "text": "Cover yourself with the blanket, Elsa."
+                },
+                {
+                    "name": "Elsa",
+                    "text": "But Daddy I-"
+                },
+                {
+                    "name": "John",
+                    "text": "Shh.. No more noise. Goodnight."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Dear, there’s a letter for you. From Doricane Healthcare. The kids asleep?"
+                },
+                {
+                    "name": "John",
+                    "text": "(opens letter) Yeah, I just tucked them in. How are you?"
+                },
+                {
+                    "name": "Mary",
+                    "text": "Bad. The weather’s so humid even at night. So what does it say?"
+                },
+                {
+                    "name": "John",
+                    "text": "It says my Integrated Shield Plan is expiring in a month’s time."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Oh that one. Are you going to renew it?"
+                },
+                {
+                    "name": "John",
+                    "text": "Maybe. Medical insurance for private hospitals are so expensive though."
+                },
+                {
+                    "name": "Mary",
+                    "text": "You can try government hospitals instead. They’re cheaper."
+                },
+                {
+                    "name": "John",
+                    "text": "On top of MediShield Life that provides basic protection against high hospital bills?"
+                },
+                {
+                    "name": "Mary",
+                    "text": "Yes. You may want to get another one to supplement MediShield."
+                },
+                {
+                    "name": "John",
+                    "text": "Actually I haven’t gone for any surgery."
+                },
+                {
+                    "name": "Mary",
+                    "text": "It doesn’t mean that you don’t need coverage."
+                },
+                {
+                    "name": "John",
+                    "text": "I haven’t been greatly sick!"
+                },
+                {
+                    "name": "Mary",
+                    "text": "You never know when you might need it."
+                },
+                {
+                    "name": "John",
+                    "text": "But honey I-"
+                },
+                {
+                    "name": "Mary",
+                    "text": "Shh.. the kids are sleeping."
+                },
+                {
+                    "name": "John",
+                    "text": "I know. My bad."
+                },
+                {
+                    "name": "Mary",
+                    "text": "At least get the Class B1 coverage for government hospitals."
+                },
+                {
+                    "name": "John",
+                    "text": "I’ll go think about it. The premiums are higher for me now."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Insurance is a must-have, honey."
+                },
+                {
+                    "name": "John",
+                    "text": "So is a healthy lifestyle."
+                }
+            ],
+            "decision": "ter settling the other mails, you watched another episode of “Vanity Lab” before preparing to sleep. You thought about your medical insurance, and decide to...",
+            "options": [
+                {
+                    "option": "1",
+                    "desc": "Travel with Mary",
+                    "outcome": "You decide to take Mary on a long-awaited trip to the Land of Prince Rae. She appreciated it greatly and enjoyed the trip, and so did yourself. You finally got to visit the famous town there and got souvenirs for your office.",
+                    "point": {
+                        "Wealth": -5,
+                        "Health": 5,
+                        "Happiness": 10
+                    }
+                },
+                {
+                    "option": "2",
+                    "desc": "Invest the money",
+                    "outcome": "You decided to invest most of the money into low to medium-risk stocks, hoping it would give you better returns. You chose the stocks carefully, since you were still new to investing. To your excitement, you made a profit.",
+                    "point": {
+                        "Wealth": 4,
+                        "Health": 0,
+                        "Happiness": 5
+                    }
+                },
+                {
+                    "option": "3",
+                    "desc": "Save all the money ",
+                    "outcome": "You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn’t give you much returns, to your discontent.",
+                    "point": {
+                        "Wealth": 5,
+                        "Health": 0,
+                        "Happiness": 0
+                    }
+                },
+                {
+                    "option": "1",
+                    "desc": "Extend the insurance for private hospitals.",
+                    "outcome": "You extended your Integrated Shield Plan for Doricane Healthcare. Mary was glad you decided to continue your own coverage. You pay higher premiums because of your relatively older age and private hospital benefits. Nonetheless, you continue to stay healthy and exercise once in a while.",
+                    "point": {
+                        "Wealth": -5,
+                        "Health": 10,
+                        "Happiness": 5
+                    }
+                },
+                {
+                    "option": "2",
+                    "desc": "Switch to a coverage for government hospitals Class B1.",
+                    "outcome": "You bought a new and cheaper coverage for government hospitals. Mary was glad you got yourself covered. She too was under the same coverage, and believed that Class B1 is good enough. Your premiums are relatively cheaper, but that doesn’t stop you from continuing to adopt a healthy lifestyle.",
+                    "point": {
+                        "Wealth": 0,
+                        "Health": 10,
+                        "Happiness": 5
+                    }
+                },
+                {
+                    "option": "3",
+                    "desc": "Live only with the basic MediShield Plan",
+                    "outcome": "You refrained from getting another insurance plan because you didn’t think you would need it. Because of this, you feared doing activities that might cost you injuries, since you were only covered on the basic level. You rather spend time on developing a healthy lifestyle than pay premiums.",
+                    "point": {
+                        "Wealth": 5,
+                        "Health": 5,
+                        "Happiness": 5
+                    }
+                }
+            ]
+        }
+    ],
+    "stage3": [
+        {
+            "id": 6,
+            "episode": 1,
+            "title": "Allocation of Resources",
+            "opening": "It’s 1.34pm. The sky is clear. Mary is out at a tupperware party. The hit docu-series “Frugal Families” is playing on your 55” Smart TV. ",
+            "characters": {
+                "J": "John",
+                "P": "Peter",
+                "T": "TV"
+            },
+            "dialogue": [
+                {
+                    "name": "TV",
+                    "text": "… Like Chen Li, many of us don’t know how to properly spend our money."
+                },
+                {
+                    "name": "John",
+                    "text": "Maybe I should think about how to properly allocate my finances now that I’ve retired. "
+                },
+                {
+                    "name": "TV",
+                    "text": "Chen Li’s favourite designer brand is Louis Vuitton."
+                },
+                {
+                    "name": "John",
+                    "text": "Peter’s probably the best person to ask about this."
+                },
+                {
+                    "name": "TV",
+                    "text": "He has a room full of prized collections that he calls his “baby vuittons”."
+                },
+                {
+                    "name": "John",
+                    "text": "(Calls Peter on the phone)"
+                },
+                {
+                    "name": "Peter",
+                    "text": "Hi, Johnny. What a weird timing. What’s up?"
+                },
+                {
+                    "name": "John",
+                    "text": "Nothing much. Watching your favourite TV show."
+                },
+                {
+                    "name": "Peter",
+                    "text": "“Heaven’s Demons?!” "
+                },
+                {
+                    "name": "John",
+                    "text": "Nah, “Frugal Families”."
+                },
+                {
+                    "name": "Peter",
+                    "text": "Pfft. You’re one to kid. I’m actually busy now. Grandpa things, you know?"
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah, just wanted to ask for some financial advice. "
+                },
+                {
+                    "name": "Peter",
+                    "text": "Like what?"
+                },
+                {
+                    "name": "John",
+                    "text": "Like how much to spend. How much to save. "
+                },
+                {
+                    "name": "John",
+                    "text": "So far I’ve just gone along with my gut feeling."
+                },
+                {
+                    "name": "Peter",
+                    "text": "Looks like it took decades for you to start thinking about budget allocation."
+                },
+                {
+                    "name": "John",
+                    "text": "Peter..."
+                },
+                {
+                    "name": "Peter",
+                    "text": "Okay, okay. It depends on you."
+                },
+                {
+                    "name": "John",
+                    "text": "That’s such a cliche. "
+                },
+                {
+                    "name": "Peter",
+                    "text": "I know, but it’s true. Personally I follow the 80-20 rule. "
+                },
+                {
+                    "name": "Peter",
+                    "text": "20% goes towards your financial goals, like paying off your remaining debts. "
+                },
+                {
+                    "name": "Peter",
+                    "text": "The other 80% can be used for anything."
+                },
+                {
+                    "name": "John",
+                    "text": "That works for retirement right?"
+                },
+                {
+                    "name": "Peter",
+                    "text": "Yeah, but everything is just a guideline though. "
+                },
+                {
+                    "name": "Peter",
+                    "text": "Some people follow the 50-30-20 rule, where 80% is further broken down."
+                },
+                {
+                    "name": "Peter",
+                    "text": "50% is for necessities like electricity and phone bills, and the other 30% is for wants."
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah, I can ask Mary about it too."
+                },
+                {
+                    "name": "Peter",
+                    "text": "She’s your wife, not your finance secretary."
+                },
+                {
+                    "name": "Peter",
+                    "text": "Or maybe you want to continue living with your ‘gut feeling’."
+                },
+                {
+                    "name": "John",
+                    "text": "Maybe. Well, thanks for the advise, Peter. Appreciate it."
+                },
+                {
+                    "name": "Peter",
+                    "text": "Anything for you, buddy. See you another time."
+                },
+                {
+                    "name": "John",
+                    "text": "Yup! (hangs up) "
+                },
+                {
+                    "name": "TV",
+                    "text": "Currently in debt, Chen Li has a hard time managing his finances. "
+                },
+                {
+                    "name": "TV",
+                    "text": "Abandoned by his own children, he has only his “baby vuittons” to keep him company."
+                }
+            ],
+            "decision": "u turn off the TV after that episode ended. You don’t want to end up like Chen Li, although you don’t buy branded goods. As such, you decide to… ",
+            "options": [
+                {
+                    "option": "1",
+                    "desc": "Spend and save as you feel suitable. ",
+                    "outcome": "The months go by, and you spend your retirement savings as you wish. Whatever remains depletes quickly. Living without proper budget allocation, you decide that taking Mary out for dinners and spending on entertainment is more important than anything else. ",
+                    "point": {
+                        "Wealth": -15,
+                        "Health": 5,
+                        "Happiness": 10
+                    }
+                },
+                {
+                    "option": "2",
+                    "desc": "Follow the 50-30-20 rule.",
+                    "outcome": "You follow the 50-30-20 rule. It started off troublesome to keep track of your expenses, but as time went by, you got the hang of it. You could tell when you were exceeding budget without calculating. One time you passed by an electronics sale, but resisted the urge to get that $799 Grandplayer Set.",
+                    "point": {
+                        "Wealth": 5,
+                        "Health": 0,
+                        "Happiness": 5
+                    }
+                },
+                {
+                    "option": "3",
+                    "desc": "Go with the 80-20 rule.",
+                    "outcome": "You decided to follow the 80-20 rule. Paying off your financial debts became your top priority, and 20% of your monthly expenses went toward it. The rest you decided to spend with Mary, after settling home bills, of course. 80% was a lot to manage, but you promised yourself to keep within the limit.",
+                    "point": {
+                        "Wealth": 5,
+                        "Health": 0,
+                        "Happiness": 5
+                    }
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "episode": 2,
+            "title": "Central Provident Fund",
+            "opening": "Your children have all grown up and have their own families and houses. Your 55th birthday is coming soon, and Mary just got back from her yoga class. 3",
+            "characters": {
+                "J": "John",
+                "M": "Mary"
+            },
+            "dialogue": [
+                {
+                    "name": "Mary",
+                    "text": "(closes the door) Wow. You’re early and changed."
+                },
+                {
+                    "name": "John",
+                    "text": "Boss left early today. "
+                },
+                {
+                    "name": "Mary",
+                    "text": "You sure you didn’t sneak out of office?"
+                },
+                {
+                    "name": "John",
+                    "text": "Maybe."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Well, what do you want to eat for dinner? "
+                },
+                {
+                    "name": "John",
+                    "text": "Let’s go to Teck Lee’s. I’m craving for some laksa."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Sure, just let me get changed. "
+                },
+                {
+                    "name": "John",
+                    "text": "Okay."
+                },
+                {
+                    "name": "Mary",
+                    "text": "You know I was talking to Megan during yoga. "
+                },
+                {
+                    "name": "Mary",
+                    "text": "She says her husband keeps spending his CPF payouts on toto."
+                },
+                {
+                    "name": "John",
+                    "text": "(whispers) Can’t blame a gambler."
+                },
+                {
+                    "name": "Mary",
+                    "text": "You’re going to be 55 next week. "
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah, CPF sent me a booklet recently, about withdrawals and payouts. "
+                },
+                {
+                    "name": "Mary",
+                    "text": "(pulls up her shorts) Have you decided what to do already? "
+                },
+                {
+                    "name": "John",
+                    "text": "Nope. I checked my CPF status on the way back from work. "
+                },
+                {
+                    "name": "John",
+                    "text": "It says I can withdraw a lump-sum or leave it."
+                },
+                {
+                    "name": "Mary",
+                    "text": "(closes her drawers) I think you should leave it and let it accumulate."
+                },
+                {
+                    "name": "Mary",
+                    "text": "You have a lot of current savings anyway."
+                },
+                {
+                    "name": "John",
+                    "text": "Does it really matter? "
+                },
+                {
+                    "name": "Mary",
+                    "text": "The interest rates in CPF are much higher than average. "
+                },
+                {
+                    "name": "Mary",
+                    "text": "You also get a higher monthly payout at 65 if you top up your retirement account."
+                },
+                {
+                    "name": "John",
+                    "text": "How do you know all these?"
+                },
+                {
+                    "name": "Mary",
+                    "text": "You meet all kinds of people at yoga. "
+                },
+                {
+                    "name": "John",
+                    "text": "I’m sure you do."
+                },
+                {
+                    "name": "Mary",
+                    "text": "There’s this auntie today who kept complaining her CPF. Poor her."
+                },
+                {
+                    "name": "John",
+                    "text": "(whispers) Can’t blame a boomer."
+                },
+                {
+                    "name": "Mary",
+                    "text": "What’s that?"
+                },
+                {
+                    "name": "John",
+                    "text": "Nothing. Can’t wait for laksa."
+                },
+                {
+                    "name": "Mary",
+                    "text": "(ties her ponytail) Okay. I’m done!"
+                },
+                {
+                    "name": "John",
+                    "text": "(gets out of sofa) Alright. I’m starving! "
+                }
+            ],
+            "decision": "at night, feeling full after your favourite bowl of laksa, you thought about what to do with your CPF. You decided to…",
+            "options": [
+                {
+                    "option": "1",
+                    "desc": "Withdraw partial amounts in the hundreds every month from your CPF account.",
+                    "outcome": "For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn’t need the money, in fact. But you were definitely more happy spending a little more than usual.",
+                    "point": {
+                        "Wealth": -5,
+                        "Health": 0,
+                        "Happiness": 5
+                    }
+                },
+                {
+                    "option": "2",
+                    "desc": "Withdraw a lump-sum of $20,000 to spend.",
+                    "outcome": "You withdraw $20,000 out of the blue. Mary asks why you needed the money. You said that you really wanted to get new kitchen appliances for the house. But actually you were secretly paying off some of the housing debts. Unbeknownst, you got scammed of $500 buying “futuristic fridges” from r200.com.",
+                    "point": {
+                        "Wealth": -10,
+                        "Health": -5,
+                        "Happiness": -10
+                    }
+                },
+                {
+                    "option": "3",
+                    "desc": "Leave your CPF as it is.",
+                    "outcome": "You leave all your CPF savings in the account. You didn’t need the money. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.”",
+                    "point": {
+                        "Wealth": 5,
+                        "Health": 5,
+                        "Happiness": 5
+                    }
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "episode": 3,
+            "title": "To retire or not to retire?",
+            "opening": "",
+            "characters": {
+                "J": "John",
+                "M": "Mary"
+            },
+            "dialogue": [
+                {
+                    "name": "Mary",
+                    "text": "How’s your back, honey? (Gently places Yangzhou fried rice in front of John)"
+                },
+                {
+                    "name": "John",
+                    "text": "Not doing so good. Sometimes when I commute for too long, it hurts."
+                },
+                {
+                    "name": "Mary",
+                    "text": "You should take care of yourself. "
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah. It’s just us two now that the kids have all grown up."
+                },
+                {
+                    "name": "Mary",
+                    "text": "They seldom visit us either. "
+                },
+                {
+                    "name": "John",
+                    "text": "They’re probably busy, especially Elsa. "
+                },
+                {
+                    "name": "Mary",
+                    "text": "Do you plan to retire? "
+                },
+                {
+                    "name": "John",
+                    "text": "Why the sudden question?"
+                },
+                {
+                    "name": "Mary",
+                    "text": "I’m afraid for you."
+                },
+                {
+                    "name": "John",
+                    "text": "I don’t know… when I feel like it?"
+                },
+                {
+                    "name": "Mary",
+                    "text": "When you’re bedridden and it’s too late?"
+                },
+                {
+                    "name": "John",
+                    "text": "You know what I mean."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Honey, you’re not too far from retirement age, you know that right?"
+                },
+                {
+                    "name": "John",
+                    "text": "Yeah yeah yeah. 62. Or is it 63? Peter told me this just this morning."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Dementia now?"
+                },
+                {
+                    "name": "John",
+                    "text": "Come on! I was the best at remembering our children’s birthdays."
+                },
+                {
+                    "name": "John",
+                    "text": "7th January and… 19th March!"
+                },
+                {
+                    "name": "Mary",
+                    "text": "Regardless, you really need to think about retiring, dear. "
+                },
+                {
+                    "name": "Mary",
+                    "text": "You need time to take better care of yourself. "
+                },
+                {
+                    "name": "Mary",
+                    "text": "Besides, we have enough money."
+                },
+                {
+                    "name": "John",
+                    "text": " I’ll consider. Don’t worry about me."
+                },
+                {
+                    "name": "Mary",
+                    "text": "Good. How’s my fried rice?"
+                },
+                {
+                    "name": "John",
+                    "text": "Sweeter than honey."
+                }
+            ],
+            "decision": "u realised you have been overworked recently but still have the determination to work longer. You considered your options. Eventually, you decide to…",
+            "options": [
+                {
+                    "option": "1",
+                    "desc": "Retire within the year. ",
+                    "outcome": "You retire at 60. You let out a huge sigh of relief on your last day as fellow colleagues came to wish you a happy retirement. You bring all your gifts and hand-written letters back to your apartment, taking smaller steps than before so as not to worsen your knee pains. If not for Mary, you would probably be working until your death. ",
+                    "point": {
+                        "Wealth": 0,
+                        "Health": 5,
+                        "Happiness": 10
+                    }
+                },
+                {
+                    "option": "2",
+                    "desc": "Retire when you hit the retirement age (62). ",
+                    "outcome": "You retire at 62. Your back condition worsens although you made more money for you and your spouse. “Was it worth it?” You asked yourself. Your boss gave you the firmest handshake since your first day and smiled so sincerely as he wished you goodbye. Mary welcomed you back home with her signature Yangzhou Fried Rice. ",
+                    "point": {
+                        "Wealth": 5,
+                        "Health": 0,
+                        "Happiness": 5
+                    }
+                },
+                {
+                    "option": " ",
+                    "desc": "Retire at 67.",
+                    "outcome": "You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but can’t help to think when Mary insisted you to retire early. Nobody in the office truly recognised your efforts because of major restructuring. ",
+                    "point": {
+                        "Wealth": 10,
+                        "Health": -5,
+                        "Happiness": 0
                     }
                 }
             ]

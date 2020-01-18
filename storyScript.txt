@@ -58,7 +58,8 @@ Happiness: -5
 
 Option: 3 
 Description: Continue living life as usual.
-Outcome: You carry on living and spending your money with your good friends, sometimes even on yourself. Time passes, and you occasionally fear not having enough money to fund your entire university course. The worst that could happen is asking your parents for money. Wealth: -15
+Outcome: You carry on living and spending your money with your good friends, sometimes even on yourself. Time passes, and you occasionally fear not having enough money to fund your entire university course. The worst that could happen is asking your parents for money. 
+Wealth: -15
 Health: -5
 Happiness: +5
 
@@ -185,3 +186,373 @@ Outcome: You chose to invest in stocks that were relatively low-risk. The potent
 Wealth: rand=+5&+25
 Health: +5
 Happiness: +10
+
+Stage 2: Working Adult
+
+Episode 1: Cars Cars Cars
+
+Opening: You work for Toshki Inc as a sales manager. One weekend, you accompanied your friend Peter to an automobile show, one with “wheel-y” big discounts. Peter hands you a brochure.
+
+Characters: P - Peter. J - John
+
+P: See, that’s the best deal in this entire show. The Tasel 3X5!
+J: So this is how it looks like.
+P: This model runs on clean energy too. More expensive, but lower maintenance costs.
+J: So you save in the long run?
+P: Exactly. 
+J: Sounds worth it.
+P: I think you should consider getting one. Your place isn’t near your house anyway.
+J: (Sighs) Well I do have a driving license.
+P: Or maybe a more affordable but functional brand? Like Toyata.
+J: Maybe a second-hand one. 
+P: Hey, second-hand just means higher maintenance cost. 
+J: … Do you actually know what you want to get, Peter?
+P: Either the Tasel or the Jaguava. Definitely the best deal this century!
+J: And how are you going to pay for it?
+P: I can afford the downpayment. They say you can haggle for 15%.
+J: And the interest? 
+P: Depends on the seller, usually between 2-3%.
+J: Hmm..
+P: But it’s around the same here. Just find what you like most.
+J: I kinda fine with public transport though.
+P: Yeah, but since I brought you here, might as well get a good deal for yourself.
+J: Oh! Isn’t that the Jaguava?
+P: You bet. Some say it provides the best comfort and technical features.
+J: Interesting.
+P: You don’t sound interested.
+J: I’m just considering my options.
+P: So you might actually get one!
+J: I have to think about how to finance it too.
+P: Ah. Wise man, but remember that these discounts will probably not happen again.
+J: How sure are you?
+P: About 8-- Wait, that’s the Tasel!
+
+Decision: Peter eventually purchased the Tasel and urged you to consider getting one too. “You won’t regret it,” Peter said as you watched him hand over his credit card. As the automobile show was on for another 2 days, you decided to give it a thought. You choose to…
+
+Option: 1
+Description: Not get any car.
+Outcome: You decided that public transport was alright, so you didn’t spend money on any car. Occasionally it fails you, but on the whole it has been efficient. Every now and then, Peter would give you a hitch in his new Tasel 3X5 and give a lecture on why getting a car is the best decision one could ever make.
+Wealth: +5
+Health: +0
+Happiness: +0
+
+Option: 2
+Description: Get a second-hand but lower-brand car.
+Outcome: You decided to purchase a second-hand Toyata. It didn’t save you much time because of peak hour traffic jams, and it wasn’t the most comfortable either. It was usable, and getting around the city was much easier. You paid the down payment of 15% and paid the rest in monthly instalments, with a surprising 3.5% interest.
+Wealth: -5
+Health: +0
+Happiness: +5
+
+Option: 3
+Description: Get the Tasel too.
+Outcome: You got the Tasel the following day. Peter’s persuasion was convincing and you believed that getting one was worth it. Down payment was 20%, which set you back quite a bit. With the high marked price and 3% interest, you had quite a struggle funding instalments as well. “You won’t regret it,” you replay again in your head.
+Wealth: -10
+Health: +5
+Happiness: +10
+
+Episode 2: Inheritance
+
+Opening: After a long battle with leukemia, your grandfather passed away. You recently found out that you inherited a fortune from him. It’s 12.35pm and you’re having lunch with your colleagues.
+
+Characters: J - John. R - Rachel. K - Karen. O - Oliver
+
+Script:
+R: (arrives last) Wow. That was such a long queue for a plate of Hokkien Mee!
+J: Well, it probably good then.
+O: Do you guys want drinks? I’m getting a Teh Bing.
+R: Teh Alia Bing.
+J: Teh Bing too.
+K: Kopi O Kosong Bing.
+O: (looks around) Ah Uncle! I want a …
+K: So how was your holiday, Rachel? Got see scenery anot?
+R: Yeah of course! The Moon Dust River was so chio!
+O: Thanks Uncle. Yeah, did you go to that famous town?
+J: Prince Rae’s Town! I heard the place looks like an artwork.
+R: We did! That was on our second day though. The kids became tired so quickly.
+K: Aiya.. kids like that one.
+O: So John, when will it be your turn? 
+J: Don’t know. When I get enough money.
+R: You say as if you’re broke. Why not go travel with Mary this summer!
+O: Or save that money and buy a car.
+K: Cars nowadays very expensive.
+J: (head) I guess I do have $50,000. 
+O: And nowadays you need a car to travel around. The MRTs unreliable one.
+R: John, I know you haven’t been to Prince Rae’s. 
+R: I tell you, you can spend 2 days there and it won’t be enough. 
+J: Don’t know leh. I need to check when Mary’s free. 
+R: I’m sure Mary will love it. You were saying you promised to bring her on a trip?
+J: Yeah, but she’s always busy with her Pilates and cooking sessions. 
+R: So that she can cook your dinner next time. No need to go out.
+O: Can ask her cook for Toshki’s D&D also?
+K: Crazy. Anyway, if you ever have a lot of money, remember to save and invest some.
+R: Actually, working in this company taught me to spend more and make myself happier.
+J: Yeah. Maybe I’ll think about what to do with my inheritance.
+(All three): Your what?!
+J: Huh? I mean I’ll go think about it. Nothing much.
+U: (holds a tray of iced drinks) 来烧啊! (hot drinks incoming!)
+
+Decision: You knock off for the day, with mixed feelings about the inheritance. It’s quite a lot of money, and you did promise Mary another trip in the near future. You decide to…
+
+Option: 1
+Description: Travel with Mary
+Outcome: You decide to take Mary on a long-awaited trip to the Land of Prince Rae. She appreciated it greatly and enjoyed the trip, and so did yourself. You finally got to visit the famous town there and got souvenirs for your office.
+Wealth: -5
+Health: +5
+Happiness: +10
+
+Option: 2
+Description: Invest the money
+Outcome: You decided to invest most of the money into low to medium-risk stocks, hoping it would give you better returns. You chose the stocks carefully, since you were still new to investing. To your excitement, you made a profit.
+Wealth: rand=+5&+20
+Health: +0
+Happiness: +5
+
+Option: 3
+Description: Save all the money 
+Outcome: You saved up the rest of the money, putting it in your savings account and watched its growth over the years. Saving was important, but it didn’t give you much returns, to your discontent.
+Wealth: +5
+Health: +0
+Happiness: +0
+
+Act 3: Cover me
+
+Opening: You’re in your middle age now, married with two kids: Elsa (7) and Chris (5). Mary went out earlier to run her usual errands. It’s 9.35pm and you’re putting the kids to bed.
+
+Characters: J - John. M - Mary. E - Elsa. C - Chris
+
+Script:
+C: Daddy, is Santa Claus real?
+J: (covers Chris with a blanket) As real as you want him to be. 
+E: My friend said Santa Claus is fake. 
+C: My friend said he saw him before.
+J: Okay, it’s past bedtime. Go to sleep.
+C: Okay.
+J: Cover yourself with the blanket, Elsa.
+E: But Daddy I-
+J: Shh.. No more noise. Goodnight.
+(John walks out and closes the door)
+M: Dear, there’s a letter for you. From Doricane Healthcare. The kids asleep?
+J: (opens letter) Yeah, I just tucked them in. How are you?
+M: Bad. The weather’s so humid even at night. So what does it say?
+J: It says my Integrated Shield Plan is expiring in a month’s time.
+M: Oh that one. Are you going to renew it?
+J: Maybe. Medical insurance for private hospitals are so expensive though.
+M: You can try government hospitals instead. They’re cheaper.
+J: On top of MediShield Life that provides basic protection against high hospital bills?
+M: Yes. You may want to get another one to supplement MediShield.
+J: Actually I haven’t gone for any surgery.
+M: It doesn’t mean that you don’t need coverage.
+J: I haven’t been greatly sick!
+M: You never know when you might need it.
+J: But honey I-
+M: Shh.. the kids are sleeping.
+J: I know. My bad.
+M: At least get the Class B1 coverage for government hospitals.
+J: I’ll go think about it. The premiums are higher for me now.
+M: Insurance is a must-have, honey.
+J: So is a healthy lifestyle.
+(John puts the letter back into the envelope)
+
+Decision: After settling the other mails, you watched another episode of “Vanity Lab” before preparing to sleep. You thought about your medical insurance, and decide to...
+
+Option: 1
+Description: Extend the insurance for private hospitals.
+Outcome: You extended your Integrated Shield Plan for Doricane Healthcare. Mary was glad you decided to continue your own coverage. You pay higher premiums because of your relatively older age and private hospital benefits. Nonetheless, you continue to stay healthy and exercise once in a while.
+Wealth: -5
+Health: +10
+Happiness: +5
+
+Option: 2
+Description: Switch to a coverage for government hospitals Class B1.
+Outcome: You bought a new and cheaper coverage for government hospitals. Mary was glad you got yourself covered. She too was under the same coverage, and believed that Class B1 is good enough. Your premiums are relatively cheaper, but that doesn’t stop you from continuing to adopt a healthy lifestyle.
+Wealth: +0
+Health: +10
+Happiness: +5
+
+Option: 3
+Description: Live only with the basic MediShield Plan
+Outcome: You refrained from getting another insurance plan because you didn’t think you would need it. Because of this, you feared doing activities that might cost you injuries, since you were only covered on the basic level. You rather spend time on developing a healthy lifestyle than pay premiums.
+Wealth: +5
+Health: +5
+Happiness: +5
+
+Stage 3: Silver Years
+
+Episode 1: Allocation of Resources
+
+Opening: It’s 1.34pm. The sky is clear. Mary is out at a tupperware party. The hit docu-series “Frugal Families” is playing on your 55” Smart TV. 
+
+Characters: J - John. P - Peter. T - TV
+
+Script:
+T: … Like Chen Li, many of us don’t know how to properly spend our money.
+J: Maybe I should think about how to properly allocate my finances now that I’ve retired. 
+T: Chen Li’s favourite designer brand is Louis Vuitton.
+J: Peter’s probably the best person to ask about this.
+T: He has a room full of prized collections that he calls his “baby vuittons”.
+J: (Calls Peter on the phone)
+P: Hi, Johnny. What a weird timing. What’s up?
+J: Nothing much. Watching your favourite TV show.
+P: “Heaven’s Demons?!” 
+J: Nah, “Frugal Families”.
+P: Pfft. You’re one to kid. I’m actually busy now. Grandpa things, you know?
+J: Yeah, just wanted to ask for some financial advice. 
+P: Like what?
+J: Like how much to spend. How much to save. 
+J: So far I’ve just gone along with my gut feeling.
+P: Looks like it took decades for you to start thinking about budget allocation.
+J: Peter...
+P: Okay, okay. It depends on you.
+J: That’s such a cliche. 
+P: I know, but it’s true. Personally I follow the 80-20 rule. 
+P: 20% goes towards your financial goals, like paying off your remaining debts. 
+P: The other 80% can be used for anything.
+J: That works for retirement right?
+P: Yeah, but everything is just a guideline though. 
+P: Some people follow the 50-30-20 rule, where 80% is further broken down.
+P: 50% is for necessities like electricity and phone bills, and the other 30% is for wants.
+J: Yeah, I can ask Mary about it too.
+P: She’s your wife, not your finance secretary.
+P: Or maybe you want to continue living with your ‘gut feeling’.
+J: Maybe. Well, thanks for the advise, Peter. Appreciate it.
+P: Anything for you, buddy. See you another time.
+J: Yup! (hangs up) 
+T: Currently in debt, Chen Li has a hard time managing his finances. 
+T: Abandoned by his own children, he has only his “baby vuittons” to keep him company.
+
+Decision: You turn off the TV after that episode ended. You don’t want to end up like Chen Li, although you don’t buy branded goods. As such, you decide to… 
+
+Option: 1
+Description: Spend and save as you feel suitable. 
+Outcome: The months go by, and you spend your retirement savings as you wish. Whatever remains depletes quickly. Living without proper budget allocation, you decide that taking Mary out for dinners and spending on entertainment is more important than anything else. 
+Wealth: -15
+Health: +5
+Happiness: +10
+
+Option: 2
+Description: Follow the 50-30-20 rule.
+Outcome: You follow the 50-30-20 rule. It started off troublesome to keep track of your expenses, but as time went by, you got the hang of it. You could tell when you were exceeding budget without calculating. One time you passed by an electronics sale, but resisted the urge to get that $799 Grandplayer Set.
+Wealth: +5
+Health: +0
+Happiness: +5
+
+Option: 3
+Description: Go with the 80-20 rule.
+Outcome: You decided to follow the 80-20 rule. Paying off your financial debts became your top priority, and 20% of your monthly expenses went toward it. The rest you decided to spend with Mary, after settling home bills, of course. 80% was a lot to manage, but you promised yourself to keep within the limit.
+Wealth: +5
+Health: +0
+Happiness: +5
+
+Episode 2: Central Provident Fund
+
+Opening: Your children have all grown up and have their own families and houses. Your 55th birthday is coming soon, and Mary just got back from her yoga class. 3
+
+Characters: J - John. M - Mary
+
+Script:
+M: (closes the door) Wow. You’re early and changed.
+J: Boss left early today. 
+M: You sure you didn’t sneak out of office?
+J: Maybe.
+M: Well, what do you want to eat for dinner? 
+J: Let’s go to Teck Lee’s. I’m craving for some laksa.
+M: Sure, just let me get changed. 
+J: Okay.
+M: You know I was talking to Megan during yoga. 
+M: She says her husband keeps spending his CPF payouts on toto.
+J: (whispers) Can’t blame a gambler.
+M: You’re going to be 55 next week. 
+J: Yeah, CPF sent me a booklet recently, about withdrawals and payouts. 
+M: (pulls up her shorts) Have you decided what to do already? 
+J: Nope. I checked my CPF status on the way back from work. 
+J: It says I can withdraw a lump-sum or leave it.
+M: (closes her drawers) I think you should leave it and let it accumulate.
+M: You have a lot of current savings anyway.
+J: Does it really matter? 
+M: The interest rates in CPF are much higher than average. 
+M: You also get a higher monthly payout at 65 if you top up your retirement account.
+J: How do you know all these?
+M: You meet all kinds of people at yoga. 
+J: I’m sure you do.
+M: There’s this auntie today who kept complaining her CPF. Poor her.
+J: (whispers) Can’t blame a boomer.
+M: What’s that?
+J: Nothing. Can’t wait for laksa.
+M: (ties her ponytail) Okay. I’m done!
+J: (gets out of sofa) Alright. I’m starving! 
+
+Decision: That night, feeling full after your favourite bowl of laksa, you thought about what to do with your CPF. You decided to…
+
+Option: 1
+Description: Withdraw partial amounts in the hundreds every month from your CPF account.
+Outcome: For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn’t need the money, in fact. But you were definitely more happy spending a little more than usual.
+Wealth: -5
+Health: +0
+Happiness: +5
+
+Option: 2
+Description: Withdraw a lump-sum of $20,000 to spend.
+Outcome: You withdraw $20,000 out of the blue. Mary asks why you needed the money. You said that you really wanted to get new kitchen appliances for the house. But actually you were secretly paying off some of the housing debts. Unbeknownst, you got scammed of $500 buying “futuristic fridges” from r200.com.
+Wealth: -10
+Health: -5
+Happiness: -10
+
+Option: 3
+Description: Leave your CPF as it is.
+Outcome: You leave all your CPF savings in the account. You didn’t need the money. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.”
+Wealth: +5
+Health: +5
+Happiness: +5
+
+Episode 3: To retire or not to retire?
+
+Characters: J - John. M - Mary
+
+Your age has caught up and you occasionally suffer from knee and back problems. Mary has just finished cooking dinner for the both of you. It’s 6.05pm, at the dining table.
+
+M: How’s your back, honey? (Gently places Yangzhou fried rice in front of John)
+J: Not doing so good. Sometimes when I commute for too long, it hurts.
+M: You should take care of yourself. 
+J: Yeah. It’s just us two now that the kids have all grown up.
+M: They seldom visit us either. 
+J: They’re probably busy, especially Elsa. 
+M: Do you plan to retire? 
+J: Why the sudden question?
+M: I’m afraid for you.
+J: I don’t know… when I feel like it?
+M: When you’re bedridden and it’s too late?
+J: You know what I mean.
+M: Honey, you’re not too far from retirement age, you know that right?
+J: Yeah yeah yeah. 62. Or is it 63? Peter told me this just this morning.
+M: Dementia now?
+J: Come on! I was the best at remembering our children’s birthdays.
+J: 7th January and… 19th March!
+M: Regardless, you really need to think about retiring, dear. 
+M: You need time to take better care of yourself. 
+M: Besides, we have enough money.
+J:  I’ll consider. Don’t worry about me.
+M: Good. How’s my fried rice?
+J: Sweeter than honey.
+
+Decision: You realised you have been overworked recently but still have the determination to work longer. You considered your options. Eventually, you decide to…
+
+Option: 1
+Description: Retire within the year. 
+Outcome: You retire at 60. You let out a huge sigh of relief on your last day as fellow colleagues came to wish you a happy retirement. You bring all your gifts and hand-written letters back to your apartment, taking smaller steps than before so as not to worsen your knee pains. If not for Mary, you would probably be working until your death. 
+Wealth: +0
+Health: +5
+Happiness: +10
+
+Option: 2
+Description: Retire when you hit the retirement age (62). 
+Outcome: You retire at 62. Your back condition worsens although you made more money for you and your spouse. “Was it worth it?” You asked yourself. Your boss gave you the firmest handshake since your first day and smiled so sincerely as he wished you goodbye. Mary welcomed you back home with her signature Yangzhou Fried Rice. 
+Wealth: +5
+Health: +0
+Happiness: +5
+
+Option: 3 
+Description: Retire at 67.
+Outcome: You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but can’t help to think when Mary insisted you to retire early. Nobody in the office truly recognised your efforts because of major restructuring. 
+Wealth: +10
+Health: -5
+Happiness: +0

@@ -68,12 +68,14 @@ for line in lineIterator:
     if line.find('Option') == 0:
         description = next(lineIterator)[13:]
         outcome = next(lineIterator)[9:]
+        print(outcome)
         
         point = {}
-        varName, valueChangeRaw = next(lineIterator).split(': ')
-        valueChange = eval(valueChangeRaw[5:]) if valueChangeRaw.find('rand=')==0 else int(valueChangeRaw)
-        
-        point[varName] = valueChange
+        for i in range(3):
+            varName, valueChangeRaw = next(lineIterator).split(': ')
+            valueChange = eval(valueChangeRaw[5:]) if valueChangeRaw.find('rand=')==0 else int(valueChangeRaw)
+            
+            point[varName] = valueChange
         
         currentEpisode['options'].append({
             'option': line[-1],
