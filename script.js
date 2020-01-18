@@ -179,7 +179,7 @@ function createDialogue(episodeObject) {
                 characters[key].remove()
             }
             charName.remove()
-            dialogueLine.remove()
+            dialogueBox.remove()
             continueButton.remove()
             decisionBlock = createDecision(episodeObject)
             episodeContainer.append(decisionBlock)
@@ -197,19 +197,22 @@ function createDialogue(episodeObject) {
 
         // handle the paragraph
         j = 0
+        clearTimeout(timeoutid)
         let dialogueContent = dialogueBlock[i].text;
         charName.textContent = dialogueBlock[i].name;
 
 
         dialogueLine.textContent = ''
+        console.log(dialogueContent)
         typeWriter(dialogueLine, dialogueContent);
     }
     let j = 0
+    let timeoutid = 0;   
     function typeWriter(line, text) {
         if (j < text.length) {
-          line.textContent += text.charAt(j);
+          line.textContent += text[j];
           j++;
-          setTimeout(() => typeWriter(line, text), 20);
+          timeoutid = setTimeout(() => typeWriter(line, text), 20);
         }
     }
     
