@@ -47,7 +47,7 @@ Description: Look for a part-time job
 Outcome: You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary's suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.
 Wealth: +25 
 Health: -5 
-Happiness: rand=[-10,10]
+Happiness: 0
 
 Option: 2
 Description: Cut down on your spending.
