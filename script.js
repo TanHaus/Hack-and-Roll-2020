@@ -163,7 +163,11 @@ let Player = {
     'health':0, 
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
+<<<<<<< HEAD
+    'outcomeWrapper' : null,
+=======
     'episodeContainerReference': null,
+>>>>>>> db050b35034ae7265f8748c88d3f3dd3721c1332
     
 
     // Methods
@@ -257,7 +261,6 @@ function setUpModFour() {
 
     requestAnimationFrame(vizLoop)
     
-    // Player.currentSceneSectionReference.remove()
     Player.currentSceneSectionReference = modFour
 
     return modFour
@@ -321,7 +324,9 @@ function setOutcomePage(option){
 }
 
 function setUpReportCard() {
+    Player.currentSceneSectionReference.remove()
 
+    
 }
 
 //TESTING
@@ -335,7 +340,7 @@ async function testFuck() {
     await loadingPromise;
     setUpModFour()
 }
-test();
+// test();
 // testFuck()
 // setDecisionPage()
 
