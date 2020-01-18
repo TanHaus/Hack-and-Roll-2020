@@ -68,7 +68,6 @@ for line in lineIterator:
     if line.find('Option') == 0:
         description = next(lineIterator)[13:]
         outcome = next(lineIterator)[9:]
-        print(outcome)
         
         point = {}
         for i in range(3):

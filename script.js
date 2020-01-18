@@ -247,7 +247,6 @@ function createDialogue(episodeObject) {
 
 
         dialogueLine.textContent = ''
-        console.log(dialogueContent)
         typeWriter(dialogueLine, dialogueContent);
     }
     let j = 0
@@ -268,10 +267,52 @@ function createDialogue(episodeObject) {
 }
 
 
+    // Methods
+    clearUpperContainer: function() {
+        if(Player.upperContainerReference!=null) Player.upperContainerReference.firstChild.remove()
+    }
+}
 
 function loadEpisode(episode = Player.currentEpisode, stage = Player.currentStage) {
     episodeObject = storyScript[`stage${stage}`][episode - 1]
-    return createDialogue(episodeObject)
+    Player.clearUpperContainer()
+    Player.upperContainerReference.append(createDialogue(episodeObject))
+}
+
+function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.currentStage) {
+    episodeObject = storyScript[`stage${stage}`][episode - 1]
+    let title = episodeObject.title
+        opening = episodeObject.opening
+    
+    let group = document.createElement('section')
+    group.classList.add('episodeContainer')
+
+    let episodeTitle = document.createElement('h1')
+    episodeTitle.textContent = title
+
+    let episodeOpening = document.createElement('p')
+
+    let nextButton = document.createElement('button')
+    nextButton.textContent = '...'
+    nextButton.onclick = () => {
+        clearTimeout(timeoutid)
+        loadEpisode()
+    }
+
+    let j = 0
+    let timeoutid = 0;   
+    function typeWriter(textObject, text) {
+        if (j < text.length) {
+          textObject.textContent += text[j];
+          j++;
+          timeoutid = setTimeout(() => typeWriter(textObject, text), 50);
+        }
+    }
+    
+    typeWriter(episodeOpening, opening)
+
+    group.append(episodeTitle, episodeOpening, nextButton)
+    Player.upperContainerReference.append(group)
 }
 
 function startMenuScreen() {
@@ -289,18 +330,112 @@ function startMenuScreen() {
     let gameTitle = document.createElement("h1")
     gameTitle.textContent = "The Singaporean Dream"
 
+    //buttons
+
+    let stageArray = ["1: Young Adult", "2: Working Adult", "3: Silver Years"]
+
     let startButton = document.createElement("button");
-    startButton.classList.add("startButton");
-    startButton.textContent = "Start Game"
+    startButton.textContent = "Play"
     startButton.onclick = setUpStage
 
+    let optionButton = document.createElement("button");
+    optionButton.textContent = "Jump To ..."
+    optionButton.onclick = function (){
+        // //stage buttons 
+        // //Stage 1 
+        // let st1 = document.createElement("button");
+        // st1.textContent = stageArray[0];
+        // st1.classList.add("stageButton");
+        // st1.onclick = function(){
+        //     //S1 E1 
+        //     let st11 = document.createElement("button");
+        //     st11.textContent = storyScript.stage1[0].title; 
+        //     st11.classList.add("st1Button");
+        //     menu.appendChild(st11);
+        //     //S1 E2 
+        //     let st12 = document.createElement("button");
+        //     st12.textContent = storyScript.stage1[1].title; 
+        //     st12.classList.add("st1Button");
+        //     menu.appendChild(st12);
+        //     //S1 E3 
+        //     let st13 = document.createElement("button");
+        //     st13.textContent = storyScript.stage1[2].title; 
+        //     st13.classList.add("st1Button");
+        //     menu.appendChild(st13);
+        // }
+        // //Stage 2
+        // let st2 = document.createElement("button");
+        // st2.textContent = stageArray[1];
+        // st2.classList.add("stageButton");
+        // st2.onclick = function(){
+        //     //S2 E1 
+        //     let st21 = document.createElement("button");
+        //     st21.textContent = storyScript.stage2[0].title; 
+        //     st21.classList.add("st2Button");
+        //     menu.appendChild(st21);
+        //     //S2 E2 
+        //     let st22 = document.createElement("button");
+        //     st22.textContent = storyScript.stage2[1].title; 
+        //     st22.classList.add("st2Button");
+        //     menu.appendChild(st22);
+        //     //S2 E3 
+        //     let st23 = document.createElement("button");
+        //     st23.textContent = storyScript.stage2[2].title; 
+        //     st23.classList.add("st2Button");
+        //     menu.appendChild(st23);
+        // }
+        // //Stage 3
+        // let st3 = document.createElement("button");
+        // st3.textContent = stageArray[2];
+        // st3.classList.add("stageButton");
+        // st3.onclick = function(){
+        //     //S3 E1 
+        //     let st31 = document.createElement("button");
+        //     st31.textContent = storyScript.stage3[0].title; 
+        //     st31.classList.add("st3Button");
+        //     menu.appendChild(st31);
+        //     //S3 E2 
+        //     let st32 = document.createElement("button");
+        //     st32.textContent = storyScript.stage3[1].title; 
+        //     st32.classList.add("st3Button");
+        //     menu.appendChild(st32);
+        //     //S3 E3 
+        //     let st33 = document.createElement("button");
+        //     st33.textContent = storyScript.stage3[2].title; 
+        //     st33.classList.add("st3Button");
+        //     menu.appendChild(st33);
+        let optionsContainer = document.createElement('section')
+        optionsContainer.classList.add('optionsContainerButtons')
+
+        for (let i=0; i<3;i++){
+            // let stageContainer = document.createElement('section')
+            // stageContainer.classList.add('stageContainerButtons')
+
+            let btn = document.createElement("button")
+            optionsContainer.append(btn)
+            btn.textContent = stageArray[i];
+            btn.classList.add("stageButton");
+
+            for(let j=0;j<3;j++){
+                let button = document.createElement("button")
+                button.textContent = storyScript[`stage${i+1}`][j].title
+                button.classList.add('episodeButton')
+                optionsContainer.append(button)
+                // stageContainer.append(button)
+            }
+            // menu.append(stageContainer)
+        }
+        // menu.append(st1,st2,st3);
+        menu.append(optionsContainer)
+    }
+    
     let fullscreenButton = document.createElement('button')
     fullscreenButton.textContent = 'Fullscreen'
     fullscreenButton.onclick = () => document.documentElement.requestFullscreen()
     
     async function addButton() {
         await loadingPromise
-        menu.append(gameTitle,startButton, fullscreenButton); 
+        menu.append(gameTitle,startButton, fullscreenButton,optionButton); 
     }
 
     addButton()
@@ -320,15 +455,13 @@ function setUpStage() {
     visualizer.updateDimension()
     visualizer.run()
 
-    let stageContent = loadEpisode(3, 3)
-    Player.upperContainerReference.append(stageContent)
+    loadTitleAndOpening()
 
-    Player.currentEpisode = 3
-    Player.currentStage = 3
+    // Player.currentEpisode = 3
+    // Player.currentStage = 3
 }
 
 function nextEpisode() {
-    Player.clearUpperContainer()
     if(Player.currentEpisode<3) {
         Player.currentEpisode += 1
 
@@ -344,8 +477,8 @@ function nextEpisode() {
         }
     }
     
-    let stageContent = loadEpisode()
-    Player.upperContainerReference.append(stageContent)
+    Player.clearUpperContainer()
+    loadTitleAndOpening()
 }
 
 function createButton(option){
@@ -439,32 +572,56 @@ function setOutcomePage(option){
     return wrapper; 
 }
 
-function setUpRadarChart() {
+function setUpRadarChart(PlayerObject) {
 
     let radarChart = document.createElement("canvas");
     radarChart.setAttribute("id", "myChart");
-    
+    radarChart.setAttribute("width", "100%");
+    radarChart.setAttribute("height", "70%");
+    radarChart.classList.add("radar")
+
+    bodyHTML.append(radarChart);
+
     var ctx = radarChart.getContext('2d');
     var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
+    type: 'radar',
+    data: {
+        labels: ['Wealth', 'Health', 'Happiness'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(153, 204, 255, 0.5)',
+            borderColor: 'rgb(153, 204, 255)',
+            data: [Player['wealth'], Player['happiness'], Player['happiness']]
+        }]
+    },
 
-        // The data for our dataset
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
-            }]
-        },
-
-        // Configuration options go here
-        options: {}
+    options: {
+        scale: {
+            angleLines: {
+                display: false
+            },
+            ticks: {
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
+        }
+    }
     });
+}
 
-    container.append(radarChart);
+function createEndButtons() {
+    let infoButton = document.createElement('button')
+    infoButton.textContent = 'More'
+    infoButton.onclick = ""
+
+    let restartButton = document.createElement('button')
+    restartButton.textContent = 'Restart Game'
+    restartButton.onclick = ""
+
+    let quitButton = document.createElement('button')
+    quitButton.textContent = 'Quit Game'
+    quitButton.onclick = ""
+    bodyHTML.append(infoButton, restartButton, quitButton)
 }
 
 function setUpReportCard(){
@@ -472,7 +629,8 @@ function setUpReportCard(){
     container.firstElementChild.remove();
     container.firstElementChild.remove();
     
-    setUpRadarChart();
+    setUpRadarChart(Player);
+    createEndButtons();
 
 }
 
@@ -492,5 +650,6 @@ function setUpReportCard(){
 // testFuck()
 // setDecisionPage()
 
-startMenuScreen()
 
+//setUpReportCard();
+startMenuScreen()

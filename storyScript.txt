@@ -126,7 +126,7 @@ Health: -5
 Happiness: -10
 
 Episode 3: What's your appetite?
-It's Valentines'. You brought Mary on a date to Yokita's Restaurant. After spending some time on deciding what to eat, you called for the waiter. He arrives to take both your orders. 
+Opening: It's Valentines'. You brought Mary on a date to Yokita's Restaurant. After spending some time on deciding what to eat, you called for the waiter. He arrives to take both your orders. 
 
 Characters: J - John. M - Mary. W - Waiter
 
@@ -508,7 +508,7 @@ Episode 3: To retire or not to retire?
 
 Characters: J - John. M - Mary
 
-Your age has caught up and you occasionally suffer from knee and back problems. Mary has just finished cooking dinner for the both of you. It's 6.05pm, at the dining table.
+Opening: Your age has caught up and you occasionally suffer from knee and back problems. Mary has just finished cooking dinner for the both of you. It's 6.05pm, at the dining table.
 
 M: How's your back, honey? (Gently places Yangzhou fried rice in front of John)
 J: Not doing so good. Sometimes when I commute for too long, it hurts.
