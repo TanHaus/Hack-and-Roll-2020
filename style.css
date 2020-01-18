@@ -200,6 +200,7 @@ button:active {
     font-family: 'Futura', sans-serif;
     font-size: 1.5rem;
     color: white;
+    font-style:italic; 
     
     background-color: rgba(233, 236, 38, 0.705);
     padding: 0.2rem 3rem 0.4rem 1rem;

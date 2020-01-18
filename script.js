@@ -203,11 +203,17 @@ function createDialogue(episodeObject) {
     homeButton.classList.add("homeButton");
     homeButton.src = './assets/icon.jpeg'; 
     homeButton.onclick = function(){
-        episodeContainer.remove();
+        Player.upperContainerReference.remove();
+        container.remove();
         visualizer.vizCanvas.remove();
+        Player.wealth = 50; 
+        Player.happiness = 50; 
+        Player.health = 50; 
         Player.currentSceneSectionReference = null; 
         Player.episodeContainerReference = null; 
         Player.upperContainerReference = null; 
+        Player.currentEpisode = 1; 
+        Player.currentStage = 1; 
         startMenuScreen();
     }
     //dialogue line and its wrapper 
