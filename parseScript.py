@@ -62,41 +62,8 @@ for line in lineIterator:
     if line.find('Decision') == 0:
         question = line[12:]
         currentEpisode['decision'] = question
-
-    #     choices = []
-    #     choices.append(next(lineIterator)) 
-    #     choices.append(next(lineIterator))
-    #     choices.append(next(lineIterator)) 
         
-    #     next(lineIterator)  # Blank line
-    #     next(lineIterator)  # Consequences word
-
-    #     listABC = ['A', 'B', 'C']
-
-    #     for i in range(3):
-    #         rawOutcome = next(lineIterator)
-    #         outcome, pointText = rawOutcome.split('. [')
-    #         pointText = pointText[:-1]
-
-    #         variableValue = pointText.split(', ')
-    #         pairs = map(lambda x: x.split(': '), variableValue)
-    #         point = {}
-    #         for pair in pairs:
-    #             if pair[1].find('rand') == -1:
-    #                 point[pair[0]] = int(pair[1])
-    #             else:
-    #                 minMax = pair[1][5:]
-    #                 minValue, maxValue = 
-    #                 point[pair[0]]
-
-    #         currentEpisode['options'].append({
-    #             'option': listABC[i],
-    #             'desc': choices[i],
-    #             'outcome': outcome,
-    #             'point': point,
-    #         })
-
-    #     continue
+        continue
 
     if line.find('Option') == 0:
         description = next(lineIterator)[13:]
@@ -108,8 +75,6 @@ for line in lineIterator:
             valueChange = eval(valueChangeRaw[5:]) if valueChangeRaw.find('rand=')==0 else int(valueChangeRaw)
             
             point[varName] = valueChange
-
-            print(line)
 
             currentEpisode['options'].append({
                 'option': i+1,

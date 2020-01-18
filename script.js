@@ -106,6 +106,7 @@ function updateCanvas(vizCanvas) {
     // ballTest.run(vizCtx)
 }
 
+// Load story script from the json file
 let storyScript
 let loadingPromise = fetch('./storyScriptPython.json')
     .then((response) => {
@@ -113,7 +114,6 @@ let loadingPromise = fetch('./storyScriptPython.json')
     })
     .then((jsonFile) => {
         storyScript = jsonFile
-        console.log(storyScript)
     })
 
 function createDialogue(dialogueBlock) {
@@ -217,12 +217,19 @@ function startMenuScreen() {
     //add components of menu - title and button. 
     let gameTitle = document.createElement("h1")
     gameTitle.textContent="Game"
+
+
     let startButton = document.createElement("button");
     startButton.classList.add("startButton");
     startButton.textContent = "Start Game"
+    startButton.onclick = setUpModFour
+    
+    async function addButton() {
+        await loadingPromise
+        menu.append(gameTitle,startButton); 
+    }
 
-    menu.append(gameTitle,startButton);
-    // startButton.onClick = setUpModOne; 
+    addButton()
 
     Player.currentSceneSectionReference = background
 }
@@ -258,6 +265,9 @@ function setUpModThree() {
 }
 
 function setUpModFour() {
+    Player.currentStage = 4
+    Player.currentSceneSectionReference.remove()
+
     dialogueBlock = storyScript.stage1[0].dialogue
     modFour = createDialogue(dialogueBlock)
 
@@ -305,15 +315,14 @@ function createDecision(episode){ //episode = storyScript.module#[#]
     return wrapper; 
 }
 
+function setUpReportCard() {
 
-// function setUpReportCard() {
-
-// }
+}
 
 //TESTING
 async function test() {
     await loadingPromise; 
-    createDecision(storyScript.module1[0]);
+    createDecision(storyScript.stage1[0]);
 }
 // test();
 // startMenuScreen();
@@ -321,5 +330,7 @@ async function testFuck() {
     await loadingPromise;
     setUpModFour()
 }
-testFuck()
+// testFuck()
 // setDecisionPage()
+
+startMenuScreen()
