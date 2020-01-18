@@ -215,5 +215,5 @@ section h1 {
 }
 
 .addFlash {
-    animation: flash 1s ease-in-out;
+    animation: flash 0.5s ease-in-out;
 }

@@ -136,10 +136,6 @@ function createDialogue(episodeObject) {
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
-<<<<<<< HEAD
-    
-    let avatar = document.createElement('img')
-    avatar.classList.add("avatar");
 
     let dialogueBox = document.createElement('section')
     dialogueBox.classList.add("dialogueBox");
@@ -147,7 +143,6 @@ function createDialogue(episodeObject) {
     let dialogueLine = document.createElement('p')
     dialogueLine.classList.add("dialogueLine")
     dialogueBox.appendChild(dialogueLine)
-=======
 
     let characters = {}
     let avatarContainer = document.createElement('section')
@@ -163,10 +158,6 @@ function createDialogue(episodeObject) {
         avatarContainer.append(avatar)
         characters[name] = avatar
     }
-
-    let dialogueLine = document.createElement('p')
-        dialogueLine.classList.add("dialogueLine")
->>>>>>> f1c02dc50f3e1573845977e5fb1654b951745510
 
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
@@ -185,13 +176,17 @@ function createDialogue(episodeObject) {
     }
     
     function updateFrame(i) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+        // handle the avatars
+        let activeCharacter = dialogueBlock[i].name
+        for(key in characters) {
+            characters[key].classList.remove('activeCharacter')
+        }
+        characters[activeCharacter].classList.add('activeCharacter')
+
+        // handle the paragraph
         j = 0
-        avatar.setAttribute("src", `./assets/${dialogueBlock[i].name}.png`)
         let dialogueContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text;
         dialogueLine.textContent = ''
-        // dialogueLine.textContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text
         typeWriter(dialogueLine, dialogueContent);
     }
     let j = 0
@@ -199,32 +194,14 @@ function createDialogue(episodeObject) {
         if (j < text.length) {
           line.textContent += text.charAt(j);
           j++;
-          setTimeout(() => typeWriter(line, text), 50);
+          setTimeout(() => typeWriter(line, text), 20);
         }
-=======
-        // avatar.src=`./assets/${dialogueBlock[i].name}.png`
-=======
->>>>>>> 828189d14381a39d351f6b595ccfe956c9013ec8
-        let activeCharacter = dialogueBlock[i].name
-        for(key in characters) {
-            characters[key].classList.remove('activeCharacter')
-        }
-        characters[activeCharacter].classList.add('activeCharacter')
-        dialogueLine.textContent = activeCharacter + ": " + dialogueBlock[i].text
->>>>>>> f1c02dc50f3e1573845977e5fb1654b951745510
     }
     
     let i = 0
     updateFrame(i)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    episodeContainer.append(avatar, dialogueBox, continueButton)
-=======
-    // episodeContainer.append(avatar, dialogueLine, continueButton)
-=======
->>>>>>> 828189d14381a39d351f6b595ccfe956c9013ec8
-    episodeContainer.append(avatarContainer, dialogueLine, continueButton)
->>>>>>> f1c02dc50f3e1573845977e5fb1654b951745510
+    episodeContainer.append(avatarContainer, dialogueBox, continueButton)
+
     return episodeContainer
 }
 
