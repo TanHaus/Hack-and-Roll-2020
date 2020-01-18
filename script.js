@@ -1,7 +1,8 @@
 
 let bodyHTML = document.querySelector('body')
 // Create a container for each mod and the viz canvas
-let container = document.createElement('container')
+let container = document.createElement('section')
+container.classList.add('biggestContainer')
 
 let particleArray = []
 
@@ -136,7 +137,7 @@ function createDialogue(episodeObject) {
 
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
-    episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
+    episodeContainer.style.backgroundImage = `url('./assets/bg${episodeObject["id"]}.jpg')`
     
     //dialogue line and its wrapper 
     let dialogueBox = document.createElement('section')
@@ -172,6 +173,7 @@ function createDialogue(episodeObject) {
 
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
+    continueButton.textContent = '>'
     continueButton.onclick = function() {
         i += 1
         if (i == dialogueBlock.length) {
@@ -203,7 +205,6 @@ function createDialogue(episodeObject) {
 
 
         dialogueLine.textContent = ''
-        console.log(dialogueContent)
         typeWriter(dialogueLine, dialogueContent);
     }
     let j = 0
@@ -218,7 +219,7 @@ function createDialogue(episodeObject) {
     
     let i = 0
     updateFrame(i)
-    episodeContainer.append(avatarContainer, charName, dialogueBox, continueButton)
+    episodeContainer.append(avatarContainer, dialogueBox, charName, continueButton)
 
     return episodeContainer
 }
@@ -234,32 +235,56 @@ let Player = {
     'health': 50, //determines the inital velocity and acceleration of the Particles
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
-    'outcomeWrapper' : null,
     'episodeContainerReference': null,
     'upperContainerReference': null,
     
 
     // Methods
-    setName: function(name) {
-        Player.name = name
-    },
-    setSex: function(sex) {
-        Player.sex = sex
-    },
-    proceedStage: function() {
-        Player.currentStage += 1
-    },
-    increasePoints: function(value) {
-        Player.points += value
-    },
     clearUpperContainer: function() {
-        Player.upperContainerReference.firstChild.remove()
+        if(Player.upperContainerReference!=null) Player.upperContainerReference.firstChild.remove()
     }
 }
 
 function loadEpisode(episode = Player.currentEpisode, stage = Player.currentStage) {
     episodeObject = storyScript[`stage${stage}`][episode - 1]
-    return createDialogue(episodeObject)
+    Player.clearUpperContainer()
+    Player.upperContainerReference.append(createDialogue(episodeObject))
+}
+
+function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.currentStage) {
+    episodeObject = storyScript[`stage${stage}`][episode - 1]
+    let title = episodeObject.title
+        opening = episodeObject.opening
+    
+    let group = document.createElement('section')
+    group.classList.add('episodeContainer')
+
+    let episodeTitle = document.createElement('h1')
+    episodeTitle.textContent = title
+
+    let episodeOpening = document.createElement('p')
+
+    let nextButton = document.createElement('button')
+    nextButton.textContent = '...'
+    nextButton.onclick = () => {
+        clearTimeout(timeoutid)
+        loadEpisode()
+    }
+
+    let j = 0
+    let timeoutid = 0;   
+    function typeWriter(textObject, text) {
+        if (j < text.length) {
+          textObject.textContent += text[j];
+          j++;
+          timeoutid = setTimeout(() => typeWriter(textObject, text), 50);
+        }
+    }
+    
+    typeWriter(episodeOpening, opening)
+
+    group.append(episodeTitle, episodeOpening, nextButton)
+    Player.upperContainerReference.append(group)
 }
 
 function startMenuScreen() {
@@ -267,13 +292,15 @@ function startMenuScreen() {
     let background = document.createElement("section")
     background.classList.add("background")
     bodyHTML.appendChild(background)
+
     //add menu
     let menu = document.createElement("section")
     menu.classList.add("menu")
     background.appendChild(menu)
+
     //add components of menu - title and button. 
     let gameTitle = document.createElement("h1")
-    gameTitle.textContent="Game"
+    gameTitle.textContent = "The Singaporean Dream"
 
     //buttons
 
@@ -374,10 +401,13 @@ function startMenuScreen() {
         menu.append(optionsContainer)
     }
     
+    let fullscreenButton = document.createElement('button')
+    fullscreenButton.textContent = 'Fullscreen'
+    fullscreenButton.onclick = () => document.documentElement.requestFullscreen()
+    
     async function addButton() {
         await loadingPromise
-
-        menu.append(gameTitle,startButton,optionButton); 
+        menu.append(gameTitle,startButton, fullscreenButton,optionButton); 
     }
 
     addButton()
@@ -397,15 +427,13 @@ function setUpStage() {
     visualizer.updateDimension()
     visualizer.run()
 
-    let stageContent = loadEpisode(3, 3)
-    Player.upperContainerReference.append(stageContent)
+    loadTitleAndOpening()
 
-    Player.currentEpisode = 3
-    Player.currentStage = 3
+    // Player.currentEpisode = 3
+    // Player.currentStage = 3
 }
 
 function nextEpisode() {
-    Player.clearUpperContainer()
     if(Player.currentEpisode<3) {
         Player.currentEpisode += 1
 
@@ -421,8 +449,8 @@ function nextEpisode() {
         }
     }
     
-    let stageContent = loadEpisode()
-    Player.upperContainerReference.append(stageContent)
+    Player.clearUpperContainer()
+    loadTitleAndOpening()
 }
 
 function createButton(option){
@@ -510,38 +538,62 @@ function setOutcomePage(option){
     subWrapper.appendChild(subTitle);
     
     //append
-    wrapper.append(title,button,subWrapper);
+    wrapper.append(title,subWrapper,button);
     Player.clearUpperContainer()
     Player.upperContainerReference.append(wrapper);
     return wrapper; 
 }
 
-function setUpRadarChart() {
+function setUpRadarChart(PlayerObject) {
 
     let radarChart = document.createElement("canvas");
     radarChart.setAttribute("id", "myChart");
-    
+    radarChart.setAttribute("width", "100%");
+    radarChart.setAttribute("height", "70%");
+    radarChart.classList.add("radar")
+
+    bodyHTML.append(radarChart);
+
     var ctx = radarChart.getContext('2d');
     var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
+    type: 'radar',
+    data: {
+        labels: ['Wealth', 'Health', 'Happiness'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(153, 204, 255, 0.5)',
+            borderColor: 'rgb(153, 204, 255)',
+            data: [Player['wealth'], Player['happiness'], Player['happiness']]
+        }]
+    },
 
-        // The data for our dataset
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
-            }]
-        },
-
-        // Configuration options go here
-        options: {}
+    options: {
+        scale: {
+            angleLines: {
+                display: false
+            },
+            ticks: {
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
+        }
+    }
     });
+}
 
-    container.append(radarChart);
+function createEndButtons() {
+    let infoButton = document.createElement('button')
+    infoButton.textContent = 'More'
+    infoButton.onclick = ""
+
+    let restartButton = document.createElement('button')
+    restartButton.textContent = 'Restart Game'
+    restartButton.onclick = ""
+
+    let quitButton = document.createElement('button')
+    quitButton.textContent = 'Quit Game'
+    quitButton.onclick = ""
+    bodyHTML.append(infoButton, restartButton, quitButton)
 }
 
 function setUpReportCard(){
@@ -549,7 +601,8 @@ function setUpReportCard(){
     container.firstElementChild.remove();
     container.firstElementChild.remove();
     
-    setUpRadarChart();
+    setUpRadarChart(Player);
+    createEndButtons();
 
 }
 
@@ -569,5 +622,6 @@ function setUpReportCard(){
 // testFuck()
 // setDecisionPage()
 
-startMenuScreen()
 
+//setUpReportCard();
+startMenuScreen()
