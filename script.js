@@ -77,10 +77,10 @@ class Particle {
         this.acceleration = new Vector(0, visualizer.particleAcceleration)
         this.velocity = new Vector((Math.random()*2-1)*visualizer.particleVelocity, -Math.random())
         this.position = new Vector(x, y)
-        this.lifespan = 100
+        this.lifespan = visualizer.particleLifespan
         this.radius = visualizer.particleRadius
         this.lineWidth = 1
-        this.color = visualizer.particleColorHsl
+        this.color = `hsl(${Math.random()*360}, ${visualizer.particleSaturation}%, ${visualizer.particleLight}%)`
     }
     run(vizCtx) {
         this.update();
@@ -122,7 +122,9 @@ let visualizer = {
     particleRadius: 0,
     particleAcceleration: 0,
     particleVelocity: 0,
-
+    particleLifespan: 100,
+    particleSaturation: '',
+    particleLight: '',
     
 
     setUp: function() {
@@ -131,6 +133,11 @@ let visualizer = {
 
         visualizer.vizCanvas = canvas
         visualizer.vizCtx = canvas.getContext('2d')
+
+        visualizer.particleSaturation = visualizer.particleLight = Player.happiness
+        visualizer.particleRadius = Player.wealth/10
+        visualizer.particleAcceleration = Player.happiness/1000
+        visualizer.particleVelocity = Player.happiness/50
     },
     updateDimension: function() {
         visualizer.canvasHeight = visualizer.vizCanvas.height = visualizer.vizCanvas.clientHeight
@@ -149,10 +156,7 @@ let visualizer = {
             for (let i=0; i<particleArray.length; i++) {
                 particleArray[i].run(visualizer.vizCtx)
             }
-            visualizer.particleColorHsl = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
-            visualizer.particleRadius = Player.wealth/10
-            visualizer.particleAcceleration = Player.happiness/1000
-            visualizer.particleVelocity = Player.happiness/50
+
             particleArray.push(new Particle(visualizer.canvasWidth/2,30))
             
             visualizer.animationRequestId = requestAnimationFrame(vizLoop)
@@ -443,6 +447,12 @@ function createButton(option){
         Player.health += option.point.Health*10; 
         Player.wealth += option.point.Wealth*10; 
         Player.happiness += option.point.Happiness*10; 
+
+        
+        visualizer.particleSaturation = visualizer.particleLight = Player.happiness
+        visualizer.particleRadius = Player.wealth/10
+        visualizer.particleAcceleration = Player.happiness/1000
+        visualizer.particleVelocity = Player.happiness/50
         
         //advance to outcome page 
         Player.decisionWrapper.remove();
@@ -540,6 +550,12 @@ function explode() {
 
             visualizer.vizCanvas.style.height = `${canvasHeight}%`
             visualizer.updateDimension()
+
+            visualizer.lifespan = Math.round(visualizer.lifespan*1.02)
+            visualizer.particleAcceleration *= 1.003
+            visualizer.particleVelocity *= 1.003
+            visualizer.particleRadius *= 1.003
+
             setTimeout(growCanvas, 16)
         }
     }
