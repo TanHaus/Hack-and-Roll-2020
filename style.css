@@ -182,7 +182,7 @@ section h1 {
 
 .dialogueLine{
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 0.8rem;
     color: white;
     text-align: center;
 }
@@ -192,13 +192,32 @@ section h1 {
     background-color: rgba(0, 0, 0, 0.5);
     display: block;
     color: black; 
-    padding: 1rem;
-    position: absolute; 
+    padding: 0.8rem;
+    margin: 0 auto; 
+    position: absolute;
     bottom: 1rem;
     left: calc(15% - 1rem);
     width: 70%; 
 }
 
+.charName{
+    font-family: 'Futura', sans-serif;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    
+    background-color: rgba(255, 234, 75, 0.5);
+    padding: 0.3rem;
+    margin: 0 auto 0 auto;
+    position: absolute;
+    bottom: calc(1rem + 1.6rem + 1.6rem + 28px);
+    left: calc(15% - 1rem);
+    width: 73%;
+}
+.charNameContainer {
+    z-index: 1;
+    padding-top: calc(80% - 2rem);
+}
 
 .activeCharacter {
     transform: scale(2, 2);

@@ -136,7 +136,8 @@ function createDialogue(episodeObject) {
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
     episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
-
+    
+    //dialogue line and its wrapper 
     let dialogueBox = document.createElement('section')
     dialogueBox.classList.add("dialogueBox");
 
@@ -144,6 +145,15 @@ function createDialogue(episodeObject) {
     dialogueLine.classList.add("dialogueLine")
     dialogueBox.appendChild(dialogueLine)
 
+    //name and its wrapper 
+    let charName = document.createElement('h2');
+    charName.classList.add("charName");
+
+    let charNameContainer = document.createElement('section')
+    charNameContainer.append(charName)
+    charNameContainer.classList.add('charNameContainer')
+
+    //character
     let characters = {}
     let avatarContainer = document.createElement('section')
     avatarContainer.classList.add('avatarContainer')
@@ -167,6 +177,7 @@ function createDialogue(episodeObject) {
             for(key in characters) {
                 characters[key].remove()
             }
+            charName.remove()
             dialogueLine.remove()
             continueButton.remove()
             decisionBlock = createDecision(episodeObject)
@@ -185,7 +196,10 @@ function createDialogue(episodeObject) {
 
         // handle the paragraph
         j = 0
-        let dialogueContent = dialogueBlock[i].name + ": " + dialogueBlock[i].text;
+        let dialogueContent = dialogueBlock[i].text;
+        charName.textContent = dialogueBlock[i].name;
+
+
         dialogueLine.textContent = ''
         typeWriter(dialogueLine, dialogueContent);
     }
@@ -200,7 +214,7 @@ function createDialogue(episodeObject) {
     
     let i = 0
     updateFrame(i)
-    episodeContainer.append(avatarContainer, dialogueBox, continueButton)
+    episodeContainer.append(avatarContainer, charName, dialogueBox, continueButton)
 
     return episodeContainer
 }
