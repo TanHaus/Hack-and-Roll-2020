@@ -362,20 +362,23 @@ function startMenuScreen() {
 
         for (let i=0; i<3;i++){
             let btn = document.createElement("section")
+            optionsContainer.setAttribute("style", "display: inline")
             optionsContainer.append(btn)
+            
             btn.textContent = stageArray[i];
             btn.classList.add("stageButton");
 
             for(let j=0;j<3;j++){
                 let button = document.createElement("button")
-                button.textContent = storyScript[`stage${i+1}`][j].title
+                button.textContent = "Ep" + storyScript[`stage${i+1}`][j].episode
                 button.classList.add('episodeButton')
+                btn.setAttribute("style", "display: infinite")
                 button.onclick = function(){
                     setUpStage();
                     Player.clearUpperContainer()
                     loadTitleAndOpening(i+1,j+1);
                 }
-                optionsContainer.append(button)
+                btn.append(button)
             }
         }
         menu.append(optionsContainer)
