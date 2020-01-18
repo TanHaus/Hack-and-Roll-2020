@@ -107,7 +107,7 @@ function updateCanvas(vizCanvas) {
 }
 
 let storyScript
-fetch('./storyScript2.json')
+let loadingPromise = fetch('./storyScript2.json')
     .then((response) => {
         return response.json()
     })
@@ -224,7 +224,8 @@ function startMenuScreen() {
     gameTitle.textContent="Game"
     let startButton = document.createElement("button");
     startButton.textContent = "Start Game"
-    menu.append(gameTitle,startButton)
+
+    menu.append(gameTitle,startButton);
     // startButton.onClick = setUpModOne; 
 
     Player.currentSceneSectionReference = background
@@ -280,64 +281,42 @@ function setUpModFour() {
 
     return modFour
 }
-function decisionButton(text, points){
+function createButton(option){
+    //this function generate decision buttons
     let button = document.createElement("button");
     button.classList.add("button");
-    button.textContent(text);
-    // button.onclick = function(){
-    //     //
-    // }
+    button.textContent = option
+    //add event handler 
+    button.onclick = function(){
+        alert("pass");
+    }
     return button; 
 }
 
-function setUpDecision(){
-    let decBox = document.createElement("section");
-    let A = decisionButton("Yes",3);
-    let B = decisionButton("No",2);
-    let C = decisionButton("Maybe",1);
-    
-    decBox.append(A,B,C);
-    return decBox; 
+function createDecision(id){ //id = storyScript.module#[#]
+    //this function generate the 3 decisions in an id. 
+    let wrapper = document.createElement("section");
+    for(let i=0; i<3; i++){
+        wrapper.appendChild(createButton(id.options[i].desc));
+    }
+    bodyHTML.appendChild(wrapper);
+
+    return wrapper; 
 }
-// function test(){
-//     let bg = document.createElement("section");
-//     let decBox = setUpDecision();
 
-//     bg.appendChild(decBox);
-//     document.bodyHTML(bg);  
-// }
-
-
-
-// function showDecisions(){
-//     let A = new Decision("Yes",2);
-//     let B = new Decision("No",1)
-//     let C = new Decision("Maybe",3)
-
-//     A.createButton();
-//     B.createButton();
-//     C.createButton();
-
-
-
-
-// }
-
-
-
-// function makeDecisions(){
-//     let A = new Decision("Yes",2);
-//     let B = new Decision("Yes",3);
-// }
 
 // function setUpReportCard() {
 
 // }
 
-
-
+//TESTING
+async function test() {
+    await loadingPromise; 
+    createDecision(storyScript.module1[0]);
+}
+test();
 // startMenuScreen()
-setUpModFour()
+// setUpModFour()
 // setDecisionPage()
 
 

@@ -1,15 +1,7 @@
 Mod5: budgeting - retirement age (plan for retirement) - cancer 50-70 GAB
-Character: John, 60 (retirement age in sg is 62)
-
-Start: 
--Fraudulent cases led to your old company’s bankruptcy. Thankfully, you got another product development role at another sales firm, but with a pay cut to $90000 
--Your children have all grown up and have their own families and houses
--Your live alone with your spouse in your decades-old 5-room HDB flat
--You age has caught up with you and you occasionally suffer from knee and back problems
-
 
 Act 1: To retire or not to retire?
-Characters: J - John. M - Mary (wife). Ja - Janelle (daughter). P - Peter (friend)
+Characters: J - John. M - Mary. Ja - Janelle. P - Peter
 
 Opening: Your children have all grown up and have their own families and houses. You now live alone with Mary in your decades-old 5-room HDB flat. Your 55th birthday is coming soon, and Mary just got back from her yoga class. 
 
@@ -82,15 +74,11 @@ Decision 2: What should I do?
 Retire within the year. My health is more important than finances.
 Retire when you hit the retirement age (62). It’s called as such for a reason.
 Retire at 67, when I have earned more money.
-Decide later. It will get to me one day, definitely.
-
-Get off my scenes!
 
 Consequences 2:
 You retire at 60. You let out a huge sigh of relief on your last day as fellow colleagues came to wish you a happy retirement. You bring all your gifts and hand-written letters back to your apartment, taking smaller steps than before so as not to worsen your knee pains. If not for Mary, you would probably be working until your death. [+1]
-You retire at 62. Your back condition worsens although you made a little more money for you and your spouse. “Was it worth it?” You asked yourself. Your boss gave you the firmest handshake since your first day and smiled so sincerely as he wished you goodbye. Mary welcomed you back home with her signature Yangzhou Fried Rice. [0]
+You retire at 62. Your back condition worsens although you made a little more money for you and your spouse. “Was it worth it?” You asked yourself. Your boss gave you the firmest handshake since your first day and smiled so sincerely as he wished you goodbye. Mary welcomed you back home with her signature Yangzhou Fried Rice. [+0]
 You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but you can’t help to think of all the times Mary insisted to retire early. Nobody in the office truly recognised your efforts because of major restructuring. A “Thank You!” post-it note stuck on the sleeve of your yellowing shirt. [-1]
-Mary doesn’t understand why you can’t make up your mind. Your commute and work itself were aggravating your health issues. Frequent health checkups costs a lot and were ultimately ineffective. Fortunately you saved up for such events. You retire at 64 when you realise you can’t live on with a major back problem anymore. [0]
 
 
 
@@ -134,10 +122,8 @@ Decision 3: How should I do this?
 Spend and save as you feel suitable. Besides, there’s more fun in a flexible option.
 Follow the 50-30-20 rule: 50% to necessities, 30% to wants, and 20% to financial goals. 
 Go with the 80-20 rule: 20% to financial goals and 80% to everything else.
-Wait for Mary to return from her party and discuss with her.
 
 Consequences 3: 
 The months go by, and you spend your retirement savings as you wish. Whatever remains depletes without control. Living without proper budget allocation, you decide that taking Mary out for dinners and spending on entertainment is more important than anything else. “Do I have enough left?” You ask yourself every time you buy another lottery ticket. [-2]
 You make it a point to adhere to the 50-30-20 rule. It started off troublesome to keep track of your expenses, but as time went by, you got the hang of it. You could tell when you were exceeding budget without calculating. One time you passed by an electronics sale, but resisted the urge to get that $799 Grandplayer Set. “Not today, Saturn!” you exclaimed as Mary laughed. [+2]
 You decided to follow the 80-20 rule. Paying off your financial debts became your top priority, and 20% of your monthly expenses went toward it. The rest you decided to spend with Mary, after settling home bills, of course. 80% was a lot to manage, but you promised yourself to keep within the limit. You still meet old friends for a game of mahjong as and when. [+2]
-Mary starts to think you are becoming more dependent on her. “I’m your wife, not your finance secretary,” she joked, “but following a rule is definitely wise.” You heeded Mary’s advice, and proportioned your budget based on the 50-30-20 rule. Over time, Mary wonders why you like to take her out for dinners when she could’ve cooked fried rice for the both of you. [+1]

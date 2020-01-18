@@ -7,13 +7,13 @@
             "opening": "Your children have all grown up and have their own families and houses. You now live alone with Mary in your decades-old 5-room HDB flat. Your 55th birthday is coming soon, and Mary just got back from her yoga class. ",
             "characters": {
                 "J": "John",
-                "M": "Mary (wife)",
-                "Ja": "Janelle (daughter)",
-                "P": "Peter (friend)"
+                "M": "Mary",
+                "Ja": "Janelle",
+                "P": "Peter"
             },
             "dialogue": [
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "(closes the door) Wow. You’re early and changed."
                 },
                 {
@@ -21,7 +21,7 @@
                     "text": "Boss left early today. "
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "You sure you didn’t sneak out of office?"
                 },
                 {
@@ -29,7 +29,7 @@
                     "text": "Maybe."
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "Well, what do you want to eat for dinner? "
                 },
                 {
@@ -37,7 +37,7 @@
                     "text": "Let’s go to Teck Lee’s. I’m craving for some laksa."
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "Sure, just let me get changed. "
                 },
                 {
@@ -45,7 +45,7 @@
                     "text": "Okay."
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "You know I was talking to Megan during yoga. She says her husband keeps spending his CPF payouts on toto."
                 },
                 {
@@ -53,7 +53,7 @@
                     "text": "(whispers) Can’t blame a gambler."
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "You’re going to be 55 next week. "
                 },
                 {
@@ -61,7 +61,7 @@
                     "text": "Yeah, CPF sent me a booklet recently, about withdrawals and payouts. "
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "(pulls up her shorts) Have you decided what to do already? "
                 },
                 {
@@ -69,7 +69,7 @@
                     "text": "Nope. I checked my CPF status on the way back from work. It says I can withdraw a lump-sum or leave it."
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "(closes her drawers) I think you should leave it and let it accumulate. You have a lot of current savings anyway."
                 },
                 {
@@ -77,7 +77,7 @@
                     "text": "Does it really matter? "
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "The interest rates in CPF are much higher than average. You also get a higher monthly payout at 65 if you top up that savings-turned-retirement account."
                 },
                 {
@@ -85,7 +85,7 @@
                     "text": "How do you know all these?"
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "You meet all kinds of people at yoga. "
                 },
                 {
@@ -93,7 +93,7 @@
                     "text": "I’m sure you do."
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "There’s this one auntie today who kept complaining about not knowing how to view her CPF accounts. Poor her."
                 },
                 {
@@ -101,7 +101,7 @@
                     "text": "(whispers) Can’t blame a boomer."
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "What’s that?"
                 },
                 {
@@ -109,12 +109,33 @@
                     "text": "Nothing. Can’t wait for laksa."
                 },
                 {
-                    "name": "Mary (wife)",
+                    "name": "Mary",
                     "text": "(ties her ponytail) Okay. I’m done!"
                 },
                 {
                     "name": "John",
                     "text": "(gets out of sofa) Alright. I’m starving! "
+                }
+            ],
+            "decision": "That night, feeling full after your favourite bowl of laksa, you thought about what to do with your CPF. You decided to:",
+            "options": [
+                {
+                    "option": "A",
+                    "desc": "Withdraw partial amounts in the hundreds every month from your CPF account.",
+                    "outcome": "For the next few years, you take out around $500 per month to supplement your income. Sometimes you would use the money to go on short vacations with Mary. Sometimes you take the money and treat yourself to another bowl of laksa. You didn’t need the money, in fact. But you were definitely more happy spending a little more than usual.",
+                    "point": 0
+                },
+                {
+                    "option": "B",
+                    "desc": "Withdraw a lump-sum of $20,000 to spend.",
+                    "outcome": "You withdraw $20,000 out of the blue. Mary asks why you needed the money. You said that you really wanted to get new kitchen appliances for the house. But actually you were secretly paying off housing debts. Occasionally you would take some of the money to gamble, and at one-point you got scammed of $2,000 buying “futuristic fridges” from r200.com.",
+                    "point": -1
+                },
+                {
+                    "option": "C",
+                    "desc": "Leave your CPF as it is.",
+                    "outcome": "You leave all your CPF savings in the account. You didn’t need the money because of all the savings and investments from before. You were glad to find the higher interest rates for the accounts as stated on the CPF booklet, just as Mary said. “The interest earned would be worth it,” you told yourself, “and maybe I could get extra ham in my laksa with that.”",
+                    "point": 2
                 }
             ]
         },
@@ -201,6 +222,27 @@
                 {
                     "name": "John",
                     "text": "Sweeter than honey."
+                }
+            ],
+            "decision": "What should I do?",
+            "options": [
+                {
+                    "option": "A",
+                    "desc": "Retire within the year. My health is more important than finances.",
+                    "outcome": "You retire at 60. You let out a huge sigh of relief on your last day as fellow colleagues came to wish you a happy retirement. You bring all your gifts and hand-written letters back to your apartment, taking smaller steps than before so as not to worsen your knee pains. If not for Mary, you would probably be working until your death.",
+                    "point": 1
+                },
+                {
+                    "option": "B",
+                    "desc": "Retire when you hit the retirement age (62). It’s called as such for a reason.",
+                    "outcome": "You retire at 62. Your back condition worsens although you made a little more money for you and your spouse. “Was it worth it?” You asked yourself. Your boss gave you the firmest handshake since your first day and smiled so sincerely as he wished you goodbye. Mary welcomed you back home with her signature Yangzhou Fried Rice.",
+                    "point": 0
+                },
+                {
+                    "option": "C",
+                    "desc": "Retire at 67, when I have earned more money.",
+                    "outcome": "You retire at 67. Your knees and back sometimes cause quick moments of agony. You wished life was easier. You saved more money for retirement, but you can’t help to think of all the times Mary insisted to retire early. Nobody in the office truly recognised your efforts because of major restructuring. A “Thank You!” post-it note stuck on the sleeve of your yellowing shirt.",
+                    "point": -1
                 }
             ]
         },
@@ -307,6 +349,27 @@
                 {
                     "name": "John",
                     "text": "Yup! (hangs up) "
+                }
+            ],
+            "decision": "How should I do this?",
+            "options": [
+                {
+                    "option": "A",
+                    "desc": "Spend and save as you feel suitable. Besides, there’s more fun in a flexible option.",
+                    "outcome": "The months go by, and you spend your retirement savings as you wish. Whatever remains depletes without control. Living without proper budget allocation, you decide that taking Mary out for dinners and spending on entertainment is more important than anything else. “Do I have enough left?” You ask yourself every time you buy another lottery ticket.",
+                    "point": -2
+                },
+                {
+                    "option": "B",
+                    "desc": "Follow the 50-30-20 rule: 50% to necessities, 30% to wants, and 20% to financial goals. ",
+                    "outcome": "You make it a point to adhere to the 50-30-20 rule. It started off troublesome to keep track of your expenses, but as time went by, you got the hang of it. You could tell when you were exceeding budget without calculating. One time you passed by an electronics sale, but resisted the urge to get that $799 Grandplayer Set. “Not today, Saturn!” you exclaimed as Mary laughed.",
+                    "point": 2
+                },
+                {
+                    "option": "C",
+                    "desc": "Go with the 80-20 rule: 20% to financial goals and 80% to everything else.",
+                    "outcome": "You decided to follow the 80-20 rule. Paying off your financial debts became your top priority, and 20% of your monthly expenses went toward it. The rest you decided to spend with Mary, after settling home bills, of course. 80% was a lot to manage, but you promised yourself to keep within the limit. You still meet old friends for a game of mahjong as and when.",
+                    "point": 2
                 }
             ]
         }
