@@ -186,7 +186,9 @@ let Player = {
     'name': 'John',
     'sex': 'unidentified',
     'currentStage': 1,
-    'points': 0,
+    'wealth': 0,
+    'happiness':0, 
+    'health':0, 
     'currentSceneSectionReference': null,
     'decisionWrapper': null,
     
@@ -284,6 +286,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
+        Player.health += option.point.Health; 
+        Player.wealth += option.point.Wealth; 
+        Player.happiness += option.point.Happiness; 
         
         //advance to outcome page 
         Player.decisionWrapper.remove();
@@ -340,7 +345,7 @@ function setOutcomePage(option){
 //TESTING
 async function test() {
     await loadingPromise; 
-    createDecision(storyScript.module1[0]);
+    createDecision(storyScript.stage1[0]);
 }
 // test();
 // startMenuScreen();
@@ -348,5 +353,6 @@ async function testFuck() {
     await loadingPromise;
     setUpModFour()
 }
-testFuck()
+test();
+// testFuck()
 // setDecisionPage()
