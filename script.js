@@ -156,7 +156,6 @@ let visualizer = {
             for (let i=0; i<particleArray.length; i++) {
                 particleArray[i].run(visualizer.vizCtx)
             }
-
             particleArray.push(new Particle(visualizer.canvasWidth/2,30))
             
             visualizer.animationRequestId = requestAnimationFrame(vizLoop)
@@ -373,8 +372,9 @@ function startMenuScreen() {
     startButton.onclick = () => {
         menu.classList.add('addFadeOut')
         setTimeout(() => {
-            menu.classList.remove('addFadeOut');
-            setUpStage();
+            menu.classList.remove('addFadeOut')
+            setUpPrologue()
+            // setUpStage()
         }, 1000)
     }
 
@@ -422,6 +422,41 @@ function startMenuScreen() {
     addButton()
 
     Player.currentSceneSectionReference = background
+}
+function setUpPrologue() {
+    Player.currentSceneSectionReference.remove()
+    let bgBlack = document.createElement("section")
+    bgBlack.classList.add("bgBlack")
+    bodyHTML.appendChild(bgBlack)
+    
+    prologueBlock = ["Navigate through life and make financial choices.",
+    "Will you be able to be financially independent?", 
+    "Will you be able to live well?",
+    "And one more thing.",
+    "You are John."]
+
+    let i = 0;
+    function setPrologueLine() {
+        if(i<prologueBlock.length) {
+            let prologueLine = document.createElement('p')
+            prologueLine.classList.add('prologue')
+            prologueLine.textContent = prologueBlock[i]
+            prologueLine.classList.add('addFadeIn')
+            bgBlack.append(prologueLine)
+            i += 1
+            setTimeout(setPrologueLine, 2000)
+        }
+        else {
+            let startButton = document.createElement("button");
+            startButton.textContent = "Start"
+            startButton.onclick = setUpStage
+            bgBlack.append(startButton)
+        }
+
+    }
+    setPrologueLine()
+    
+    Player.currentSceneSectionReference = bgBlack
 }
 
 function setUpStage() {

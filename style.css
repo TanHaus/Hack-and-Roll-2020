@@ -15,7 +15,27 @@ html, body {
     background-repeat:no-repeat;
     background-position:bottom; 
     background-size:contain;
+    position: relative;
 }
+
+.bgBlack {
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-top: calc(100% - 9rem);
+    padding-left: 2rem;
+}
+
+.prologue {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    margin: 0 0 0 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
 section h1 {
     text-align: center; 
     font-family: 'Futura';
@@ -114,6 +134,7 @@ button:active {
     margin: 0; 
     position: absolute; 
     top: 40%;
+    align-content: center;
     left:50%;
     margin-right:-50%;
     transform: translate(-50%,-50%);
@@ -242,6 +263,10 @@ button:active {
 
 .addFadeOut {
     animation: fadeOut 1s ease-in-out;
+}
+
+.addFadeIn {
+    animation: fadeIn 3s ease-in-out;
 }
 
 .addSlowFadeOut {
