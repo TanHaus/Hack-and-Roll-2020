@@ -155,7 +155,13 @@ function createDialogue() {
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
     continueButton.textContext = "Click to continue"
+    continueButton.onclick() = continueFrame()
     
+    function continueFrame() {
+        avatar.setAttribute("src", "./assets/asset5.png")
+        dialogueLine.textContent = 'Fucky you'
+    }
+
     episodeContainer.append(avatar, dialogueLine, continueButton)
 
     
