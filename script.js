@@ -77,10 +77,10 @@ class Particle {
         this.acceleration = new Vector(0, visualizer.particleAcceleration)
         this.velocity = new Vector((Math.random()*2-1)*visualizer.particleVelocity, -Math.random())
         this.position = new Vector(x, y)
-        this.lifespan = 100
+        this.lifespan = visualizer.particleLifespan
         this.radius = visualizer.particleRadius
         this.lineWidth = 1
-        this.color = visualizer.particleColorHsl
+        this.color = `hsl(${Math.random()*360}, ${visualizer.particleSaturation}%, ${visualizer.particleLight}%)`
     }
     run(vizCtx) {
         this.update();
@@ -122,7 +122,9 @@ let visualizer = {
     particleRadius: 0,
     particleAcceleration: 0,
     particleVelocity: 0,
-
+    particleLifespan: 100,
+    particleSaturation: '',
+    particleLight: '',
     
 
     setUp: function() {
@@ -131,6 +133,11 @@ let visualizer = {
 
         visualizer.vizCanvas = canvas
         visualizer.vizCtx = canvas.getContext('2d')
+
+        visualizer.particleSaturation = visualizer.particleLight = Player.happiness
+        visualizer.particleRadius = Player.wealth/10
+        visualizer.particleAcceleration = Player.happiness/1000
+        visualizer.particleVelocity = Player.happiness/50
     },
     updateDimension: function() {
         visualizer.canvasHeight = visualizer.vizCanvas.height = visualizer.vizCanvas.clientHeight
@@ -149,10 +156,7 @@ let visualizer = {
             for (let i=0; i<particleArray.length; i++) {
                 particleArray[i].run(visualizer.vizCtx)
             }
-            visualizer.particleColorHsl = `hsl(${Math.random()*360}, ${Player.happiness}%, ${Player.happiness}%)`
-            visualizer.particleRadius = Player.wealth/10
-            visualizer.particleAcceleration = Player.happiness/1000
-            visualizer.particleVelocity = Player.happiness/50
+
             particleArray.push(new Particle(visualizer.canvasWidth/2,30))
             
             visualizer.animationRequestId = requestAnimationFrame(vizLoop)
@@ -328,6 +332,8 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
           textObject.textContent += text[j];
           j++;
           timeoutid = setTimeout(() => typeWriter(textObject, text), 50);
+        } else {
+            // group.append(nextButton)
         }
     }
     
@@ -350,7 +356,8 @@ function startMenuScreen() {
 
     //add components of menu - title and button. 
     let gameTitle = document.createElement("h1")
-    gameTitle.textContent = "The Singaporean Dream"
+    gameTitle.textContent = "Another Singaporean Dream"
+    gameTitle.setAttribute("style", "font-size: 54px")
 
     //button
     let stageArray = ["1: Young Adult", "2: Working Adult", "3: Silver Years"]
@@ -366,27 +373,30 @@ function startMenuScreen() {
     }
 
     let optionButton = document.createElement("button");
-    optionButton.textContent = "Jump To ..."
+    optionButton.textContent = "Choose Episode"
     optionButton.onclick = function (){
         let optionsContainer = document.createElement('section')
         optionsContainer.classList.add('optionsContainerButtons')
 
         for (let i=0; i<3;i++){
             let btn = document.createElement("section")
+            optionsContainer.setAttribute("style", "display: inline")
             optionsContainer.append(btn)
+            
             btn.textContent = stageArray[i];
             btn.classList.add("stageButton");
 
             for(let j=0;j<3;j++){
                 let button = document.createElement("button")
-                button.textContent = storyScript[`stage${i+1}`][j].title
+                button.textContent = "Ep" + storyScript[`stage${i+1}`][j].episode
                 button.classList.add('episodeButton')
+                btn.setAttribute("style", "display: infinite")
                 button.onclick = function(){
                     setUpStage();
                     Player.clearUpperContainer()
                     loadTitleAndOpening(i+1,j+1);
                 }
-                optionsContainer.append(button)
+                btn.append(button)
             }
         }
         menu.append(optionsContainer)
@@ -419,9 +429,6 @@ function setUpStage() {
     visualizer.run()
 
     loadTitleAndOpening()
-
-    // Player.currentEpisode = 3
-    // Player.currentStage = 3
 }
 
 function nextEpisode() {
@@ -455,6 +462,12 @@ function createButton(option){
         Player.health += option.point.Health*10; 
         Player.wealth += option.point.Wealth*10; 
         Player.happiness += option.point.Happiness*10; 
+
+        
+        visualizer.particleSaturation = visualizer.particleLight = Player.happiness
+        visualizer.particleRadius = Player.wealth/10
+        visualizer.particleAcceleration = Player.happiness/1000
+        visualizer.particleVelocity = Player.happiness/50
         
         //advance to outcome page 
         Player.decisionWrapper.remove();
@@ -522,7 +535,9 @@ function setOutcomePage(option){
     //subtitle and its wrapper 
     let subTitle = document.createElement("p");
     subTitle.classList.add("subTitle");
-    subTitle.textContent = option.outcome; 
+    subTitle.textContent = option.outcome;
+    subTitle.classList.add('addFadeIn')
+    setTimeout(() => subTitle.classList.remove('addFadeIn'), 1000)
 
     let subWrapper = document.createElement("section");
     subWrapper.classList.add("subWrapper");
@@ -535,12 +550,44 @@ function setOutcomePage(option){
     return wrapper; 
 }
 
+function explode() {
+    let height = Math.max(
+        document.documentElement.clientHeight, 
+        document.documentElement.scrollHeight)
+    let i = 0
+
+    function growCanvas() {
+        if(visualizer.canvasHeight < height) {
+            i++
+            canvasHeight = (40*1.001**i)
+            
+            container.firstChild.style.height = `${100-canvasHeight}%`
+
+            visualizer.vizCanvas.style.height = `${canvasHeight}%`
+            visualizer.updateDimension()
+
+            visualizer.lifespan = Math.round(visualizer.lifespan*1.02)
+            visualizer.particleAcceleration *= 1.003
+            visualizer.particleVelocity *= 1.003
+            visualizer.particleRadius *= 1.003
+
+            setTimeout(growCanvas, 16)
+        } else {
+            container.firstChild.remove()
+            container.classList.add('addFlash')
+        }
+    }
+
+    container.firstChild.classList.add('addSlowFadeOut')
+    growCanvas()
+}
+
 function setUpRadarChart(PlayerObject) {
 
     let radarChart = document.createElement("canvas");
     radarChart.setAttribute("id", "myChart");
     radarChart.setAttribute("width", "100%");
-    radarChart.setAttribute("height", "70%");
+    radarChart.setAttribute("height", "90%");
     radarChart.classList.add("radar")
 
     bodyHTML.append(radarChart);
@@ -551,9 +598,10 @@ function setUpRadarChart(PlayerObject) {
     data: {
         labels: ['Wealth', 'Health', 'Happiness'],
         datasets: [{
-            label: 'My First dataset',
+            label: 'Points',
             backgroundColor: 'rgb(153, 204, 255, 0.5)',
             borderColor: 'rgb(153, 204, 255)',
+            fontSize: 25,
             data: [Player['wealth'], Player['happiness'], Player['happiness']]
         }]
     },
@@ -564,10 +612,22 @@ function setUpRadarChart(PlayerObject) {
                 display: false
             },
             ticks: {
-                suggestedMin: 0,
-                suggestedMax: 100
+                min: 0,
+                max: 100,
+                stepSize: 20
+            },
+        },
+        legend: {
+            labels: {
+                fontSize: 16
             }
-        }
+        },
+        title: {
+            display: true,
+            text: 'Overall Results',
+            fontSize: 32,
+            padding: 10
+        },
     }
     });
 }
@@ -579,11 +639,19 @@ function createEndButtons() {
 
     let restartButton = document.createElement('button')
     restartButton.textContent = 'Restart Game'
-    restartButton.onclick = ""
+    restartButton.onclick = function() {
+        document.body.innerHTML = ""
+        startMenuScreen()
+    }
 
     let quitButton = document.createElement('button')
     quitButton.textContent = 'Quit Game'
-    quitButton.onclick = ""
+    quitButton.onclick = function() {
+        if (confirm("Give up Another Singaporean Dream?")) {
+          close();
+        }
+      }
+
     bodyHTML.append(infoButton, restartButton, quitButton)
 }
 
@@ -614,5 +682,4 @@ function setUpReportCard(){
 // setDecisionPage()
 
 
-//setUpReportCard();
 startMenuScreen()

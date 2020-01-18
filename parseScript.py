@@ -60,7 +60,7 @@ for line in lineIterator:
 
 
     if line.find('Decision') == 0:
-        question = line[12:]
+        question = line[10:]
         currentEpisode['decision'] = question
 
         continue
