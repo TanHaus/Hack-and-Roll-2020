@@ -121,23 +121,15 @@ function createDialogue(episode) {
     dialogueBlock = episode.dialogue
     let episodeContainer = document.createElement('section')
     episodeContainer.classList.add('episodeContainer')
-    // episodeContainer.id = 'modFour'
-
-    // dialogueLines = episode.dialogue
-
-    // episodeContainer.style.backgroundImage = "url(`./assets/${dialogueLines.name}.png`)"
-
     episodeContainer.style.backgroundImage = "url('./assets/asset1.jpg')"
     
     let avatar = document.createElement('img')
     avatar.classList.add("avatar");
-
     let dialogueLine = document.createElement('p')
     dialogueLine.classList.add("dialogueLine")
 
     let continueButton = document.createElement('button')
     continueButton.classList.add('continueButton')
-    continueButton.textContext = "Click to continue"
     continueButton.onclick = function() {
         i += 1
         if (i == dialogueBlock.length) {
@@ -157,36 +149,8 @@ function createDialogue(episode) {
     
     let i = 0
     updateFrame(i)
-    
-
     episodeContainer.append(avatar, dialogueLine, continueButton)
-
-
-
-    // function 
-    // continueButton.onclick() = 
-
-    // for (let i = 0; i <= dialogueLines.length; i++) {
-    //     // get avatar corresponding to the character
-    //     let avatar = document.createElement('img')
-    //     avatar.setAttribute("src", `./assets/${dialogueLines.name}.png`)
-
-    //     avatar.classList.add("avatar");
-
-    //     // get a single dialogue line 
-    //     let dialogueLine = document.createElement('p')
-    //     dialogueLine.textContent = dialogueLines[i]
-    //     dialogueLine.classList.add("dialogueLine")
-
-        // episodeContainer.append(avatar, dialogueLine)
-
-    // }
-        
     return episodeContainer
-}
-
-function createQn(episode) {
-
 }
 
 let Player = {
