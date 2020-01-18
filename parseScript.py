@@ -7,7 +7,9 @@ structure = {}
 modCount = 0
 idCount = 0
 
-for line in lines:
+lineIterator = iter(lines)
+
+for line in lineIterator:
     if line.find('Mod') == 0:
         modCount += 1
         structure['module{}'.format(modCount)] = []
@@ -24,7 +26,9 @@ for line in lines:
                            'title': '',
                            'opening': '',
                            'characters': None,
-                           'dialogue': []
+                           'dialogue': [],
+                           'decision': '',
+                           'options': []
                            })
         currentAct = currentMod[actCount-1]
 
@@ -53,7 +57,33 @@ for line in lines:
         pass
 
     if line.find('Decision') == 0:
+        question = line[12:]
+        currentAct['decision'] = question
+
+        choices = []
+        choices.append(next(lineIterator)) 
+        choices.append(next(lineIterator))
+        choices.append(next(lineIterator)) 
         
+        next(lineIterator)  # Blank line
+        next(lineIterator)  # Consequences word
+
+        listABC = ['A', 'B', 'C']
+
+        for i in range(3):
+            rawOutcome = next(lineIterator)
+            outcome = rawOutcome[:-5]
+            point = rawOutcome[-3:-1]
+
+            currentAct['options'].append({
+                'option': listABC[i],
+                'desc': choices[i],
+                'outcome': outcome,
+                'point': int(point),
+            })
+
+        continue
+
 
 
 with open('storyScriptPython.json', 'w', encoding='utf-8') as f:
