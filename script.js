@@ -4,7 +4,7 @@ let bodyHTML = document.querySelector('body')
 let container = document.createElement('container')
 let vizCanvas
 
-let ballArray = []
+let particleArray = []
 
 /**
  * Class Vector
@@ -57,6 +57,7 @@ class Particle {
         this.lifespan = 100
         this.radius = radius
         this.lineWidth = 1
+        this.color = 'rgba(256, 256, 256, 1)'
     }
     run(vizCtx) {
         this.update();
@@ -67,7 +68,7 @@ class Particle {
         this.velocity.add(this.acceleration);
         this.lifespan -= 1;
         if(this.lifespan == 0) {
-            ballArray.splice(ballArray.indexOf(this), 1)
+            particleArray.splice(particleArray.indexOf(this), 1)
         }
     }
     display(vizCtx) {
@@ -82,37 +83,62 @@ class Particle {
         
         vizCtx.restore()
     }
-}
-
-function vizLoop() {
-    let ctx = vizCanvas.getContext('2d')
-    ctx.clearRect(0,0,vizCanvas.width,vizCanvas.height)
-    // ballArray.push(new Particle(50,20))
-    for (let i=0; i<ballArray.length; i++) {
-        ballArray[i].run(ctx)
+    setAcceleration(newValue) {
+        this.acceleration = new Vector(0, newValue)
     }
-    ballArray.push(new Particle(vizCanvas.width/2,30, Player.health/2, Player.happiness/100))
-    // if (ballArray.length==0) return
-    requestAnimationFrame(vizLoop)
+    setRadius(newValue) {
+        this.radius = newValue
+    }
+    setLifespan(newValue) {
+        this.lifespan = newValue
+    }
+    setColor(red, green, blue, alpha) {
+        this.color = `rgba(${red}, ${green}, ${blue}, ${alpha})`
+    }
 }
 
-// Create the viz canvas
-function setUpCanvas() {
-    let vizCanvas = document.createElement('canvas')
-    vizCanvas.classList.add('viz')
-    return vizCanvas
-}
+let visualizer = {
+    vizCanvas: null,
+    vizCtx: null,
+    canvasWidth: 0,
+    canvasHeight: 0,
+    animationRequestId: 0,
 
-function draw() {
-    let vizCtx = vizCanvas.getContext('2d');
-    vizCtx.clearRect(0, 0, vizCanvas.width, vizCanvas.height); //clear canvas
-    
-}
-function updateCanvas(vizCanvas) {
-    vizCanvas.height = vizCanvas.clientHeight
-    vizCanvas.width = vizCanvas.clientWidth
-    // let ballTest = new Particle(50, 20)
-    // ballTest.run(vizCtx)
+    setUp: function() {
+        let canvas = document.createElement('canvas')
+        canvas.classList.add('viz')
+
+        visualizer.vizCanvas = canvas
+        visualizer.vizCtx = canvas.getContext('2d')
+    },
+    updateDimension: function() {
+        visualizer.canvasHeight = visualizer.vizCanvas.height = visualizer.vizCanvas.clientHeight
+        visualizer.canvasWidth = visualizer.vizCanvas.width = visualizer.vizCanvas.clientWidth
+    },
+    clear: function() {
+        let ctx = visualizer.vizCtx
+            width = visualizer.canvasWidth
+            height = visualizer.canvasHeight
+     
+        ctx.clearRect(0,0,width,height)
+    },
+    run: function() {
+        function vizLoop() {
+            visualizer.clear()
+            for (let i=0; i<particleArray.length; i++) {
+                particleArray[i].run(visualizer.vizCtx)
+            }
+            particleArray.push(new Particle(visualizer.canvasWidth/2,30))
+            
+            visualizer.animationRequestId = requestAnimationFrame(vizLoop)
+        }
+
+        visualizer.animationRequestId = requestAnimationFrame(vizLoop)
+    }, 
+    stop: function() {
+        cancelAnimationFrame(visualizer.animationRequestId)
+    }
+
 }
 
 // Load story script from the json file
@@ -257,14 +283,17 @@ function setUpModFour() {
     modFour = createDialogue(episode1)
     Player.episodeContainerReference = modFour
 
-    vizCanvas = setUpCanvas()
+    visualizer.setUp()
 
-    container.append(modFour, vizCanvas)
+    container.append(modFour, visualizer.vizCanvas)
     
     bodyHTML.appendChild(container)
-    updateCanvas(vizCanvas)
 
-    requestAnimationFrame(vizLoop)
+    // get width and height after attaching to bodyHTML
+    visualizer.updateDimension()
+
+    // start the visualizer
+    visualizer.run()
     
     Player.currentSceneSectionReference = modFour
 
