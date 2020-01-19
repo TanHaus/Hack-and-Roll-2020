@@ -708,7 +708,7 @@ function createEndButtons() {
     infoButton.textContent = 'More'
     infoButton.onclick = ""
 
-    //home button
+    // home button
     let restartButton = document.createElement("button");
     restartButton.textContent = "Restart Now"
     restartButton.onclick = function(){
@@ -722,7 +722,13 @@ function createEndButtons() {
         Player.currentEpisode = 1; 
         Player.currentStage = 1; 
         startMenuScreen();
-    }
+        }
+
+    // let restartButton = document.createElement("button")
+    // restartButton.onClick = "window.location.href=window.location.href"
+    // restartButton.value = "Refresh"
+    // restartButton.textContent = "Restart Now"
+    
 
     let quitButton = document.createElement('button')
     quitButton.textContent = 'Quit Game'
