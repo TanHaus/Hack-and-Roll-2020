@@ -146,7 +146,7 @@
                     "desc": "Look for a part-time job ",
                     "outcome": "You found a tuition gig that pays really well. You finally have some income but you still decided to heed Mary's suggestion to spend less on wants. You feel better offloading some burden off your parents while still being self-sufficient, although you had to struggle with studies and other commitments.",
                     "point": {
-                        "Wealth": 25,
+                        "Wealth": 15,
                         "Health": -5,
                         "Happiness": 0
                     }
@@ -487,7 +487,7 @@
                     "point": {
                         "Wealth": -15,
                         "Health": 5,
-                        "Happiness": 25
+                        "Happiness": 20
                     }
                 },
                 {
@@ -495,7 +495,7 @@
                     "desc": "Invest in high-risk stocks.",
                     "outcome": "You bought some high-risk stocks without much financial knowledge. Nobody knows about it except you. Weeks later, you were notified of the closure of the company you invested in. Because you weren't keeping an eye on the market, it crashed before you could sell your stocks.",
                     "point": {
-                        "Wealth": -29,
+                        "Wealth": -10,
                         "Health": -5,
                         "Happiness": -10
                     }
@@ -505,7 +505,7 @@
                     "desc": "Invest in low to medium risk instruments.",
                     "outcome": "You chose to invest in stocks that were relatively low-risk. The potential returns weren't too much, but such investment was suitable given your own financial knowledge. Online advisors and guides assisted you along the way. You watch your investments grow slowly but steadily.",
                     "point": {
-                        "Wealth": 1,
+                        "Wealth": 15,
                         "Health": 5,
                         "Happiness": 10
                     }
@@ -837,7 +837,7 @@
                     "desc": "Invest the money",
                     "outcome": "You decided to invest most of the money into low to medium-risk stocks, hoping it would give you better returns. You chose the stocks carefully, since you were still new to investing. To your excitement, you made a profit.",
                     "point": {
-                        "Wealth": 4,
+                        "Wealth": 10,
                         "Health": 0,
                         "Happiness": 5
                     }
