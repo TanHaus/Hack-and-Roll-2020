@@ -333,14 +333,15 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
     group.classList.add('episodeContainer')
 
     let episodeTitle = document.createElement('h1')
+    episodeTitle.setAttribute("style", "padding: 10vh 0 0 0")
     episodeTitle.textContent = title
 
     let episodeOpening = document.createElement('p')
+    episodeOpening.classList.add("openingText")
 
-    let nextButton = document.createElement('button')
-    nextButton.classList.add("nextButton");
-    nextButton.textContent = '...'
-    nextButton.onclick = () => {
+    let openingButton = document.createElement('button')
+    openingButton.textContent = 'Next...'
+    openingButton.onclick = () => {
         // clearTimeout(timeoutid)
         Player.upperContainerReference.classList.add('addFadeOut')
         setTimeout(() => {
@@ -355,15 +356,15 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
         if (j < text.length) {
           textObject.textContent += text[j];
           j++;
-          timeoutid = setTimeout(() => typeWriter(textObject, text), 50);
+          timeoutid = setTimeout(() => typeWriter(textObject, text), 25);
         } else {
-            // group.append(nextButton)
+            // group.append(openingButton)
         }
     }
     
     typeWriter(episodeOpening, opening)
 
-    group.append(episodeTitle, episodeOpening, nextButton)
+    group.append(episodeTitle, episodeOpening, openingButton)
     Player.upperContainerReference.append(group)
 }
 
@@ -449,7 +450,7 @@ function setUpPrologue() {
     bodyHTML.appendChild(bgBlack)
     
     prologueBlock = ["Navigate through life and make financial choices.",
-    "Will you be able to be financially independent?", 
+    "Will you be financially independent?", 
     "Will you be able to live well?",
     "And one more thing.",
     "You are John."]
