@@ -278,9 +278,6 @@ button:active {
     animation: fadeIn 1s ease-in-out;
 }
 
-.btn {
-    background:yellow;
-}
 .stageButton {
     text-align:center;
 }

@@ -701,8 +701,18 @@ function createEndButtons() {
     let restartButton = document.createElement('button')
     restartButton.textContent = 'Restart Game'
     restartButton.onclick = function() {
-        document.body.innerHTML = ""
-        startMenuScreen()
+        Player.upperContainerReference.remove();
+        container.remove();
+        visualizer.vizCanvas.remove();
+        Player.wealth = 50; 
+        Player.happiness = 50; 
+        Player.health = 50; 
+        Player.currentSceneSectionReference = null; 
+        Player.episodeContainerReference = null; 
+        Player.upperContainerReference = null; 
+        Player.currentEpisode = 1; 
+        Player.currentStage = 1; 
+        startMenuScreen();
     }
 
     let quitButton = document.createElement('button')
