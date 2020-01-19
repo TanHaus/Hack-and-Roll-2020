@@ -50,23 +50,17 @@ let bodyHTML = document.querySelector('body')
 let container = document.createElement('section')
 container.classList.add('biggestContainer')
 
-function addMusic() {
-    let music = document.createElement('audio')
-    let source = document.createElement('source')
-
-    music.append(source)
-    music.controls = false
-
-    bodyHTML.append(music)
-}
+let music = null
 
 function updateMusic() {
-    let source = document.querySelector('audio > source')
-    source.src = '/assets/' + getMusic()
-    document.querySelector('audio').play()
+    if(music) {
+        music.pause();
+        music.remove();
+    }
+    music = new Audio('./assets/'+getMusic())
+    bodyHTML.append(music)
+    music.play()
 }
-
-addMusic()
 
 let particleArray = []
 
@@ -334,16 +328,23 @@ function createDialogue(episodeObject) { //episode = storyScript.stage#[#]
 }
 
 function loadEpisode(episode = Player.currentEpisode, stage = Player.currentStage) {
+    updateMusic()
     episodeObject = storyScript[`stage${stage}`][episode - 1]
     Player.clearUpperContainer()
     Player.upperContainerReference.append(createDialogue(episodeObject))
 }
 
 function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.currentStage) {
+    if(music) {
+        music.pause();
+        music.remove();
+    }
+    music = new Audio("./assets/Opening.mp3");
+    music.play();
     if(Player.isGameOver()) {
         explode()
     }
-    updateMusic()
+
 
     episodeObject = storyScript[`stage${stage}`][episode - 1]
     let title = episodeObject.title
@@ -363,6 +364,10 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
     openingButton.textContent = 'Next...'
     openingButton.onclick = () => {
         // clearTimeout(timeoutid)
+        if(music) {
+            music.pause();
+            music.remove();
+        }
         Player.upperContainerReference.classList.add('addFadeOut')
         setTimeout(() => {
             Player.upperContainerReference.classList.remove('addFadeOut')
@@ -389,6 +394,12 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
 }
 
 function startMenuScreen() {
+    if (music) {
+        music.pause();
+        music.remove();
+    }
+    music = new Audio("./assets/Home.mp3");
+    music.play();
     //add game background
     let background = document.createElement("section")
     background.classList.add("background")
@@ -565,7 +576,12 @@ function createButton(option){
 
 function createDecision(episode){ //episode = storyScript.stage#[#]
     //this function generate the 3 decisions in an episode. 
-
+    if(music) {
+        music.pause();
+        music.remove();
+    }
+    music = new Audio("./assets/Decision.mp3");
+    music.play();
     //wrapper for everything 
     let wrapper = document.createElement("section");
     wrapper.classList.add("wrapper");
@@ -643,6 +659,12 @@ function setOutcomePage(option){
 }
 
 function explode() {
+    if(music) {
+        music.pause();
+        music.remove();
+    }
+    music = new Audio("./assets/Explosion.mp3");
+    music.play();
     let height = Math.max(
         document.documentElement.clientHeight, 
         document.documentElement.scrollHeight)
@@ -780,7 +802,7 @@ function getMusic(){
         episode = Player.currentEpisode
 
     if((stage==1 && episode ==1) ||(stage==3 && episode ==1)){
-        return "Happy.mp3"; 
+        return "Happy2.mp3"; 
     } else if ((stage==1 && episode ==2) ||(stage==2 && episode ==3)||(stage==3 && episode ==3)){
         return "Cool.mp3"; 
     } else if((stage==1 && episode ==3) ||(stage==2 && episode ==2)){
