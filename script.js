@@ -557,7 +557,7 @@ function createButton(option){
     button.onclick = function(){
         //update Player's fields
         Player.updateHealth(option.point.Health); 
-        Player.updateWealth(option.point.Wealth); 
+        Player.updateWealth(option.point.Wealth*2); 
         Player.updateHappiness(option.point.Happiness); 
 
         
