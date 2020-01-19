@@ -329,3 +329,12 @@ a.button {
 .episodeContainer > p {
     margin: auto 4rem;
 }
+
+@keyframes zoomInOut {
+    0%, 100%{ transform: scale(3, 3); }
+    50% { transform: scale(1, 1); }
+}
+
+.addZoomInOut {
+    animation: zoomInOut 0.5s ease-in-out;
+}

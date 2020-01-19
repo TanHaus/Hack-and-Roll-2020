@@ -802,6 +802,8 @@ function setUpReportCard(){
     endContainer.append(setUpRadarChart(), createEndButtons())
     bodyHTML.append(endContainer)
 
+    endContainer.classList.add('addZoomInOut')
+
 }
 
 function getMusic(){
