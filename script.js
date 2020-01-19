@@ -432,8 +432,8 @@ function startMenuScreen() {
     let fullscreenButton = document.createElement('button')
     fullscreenButton.textContent = 'Fullscreen'
     fullscreenButton.onclick = () => {
-        let requestFullscreen = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen
-        requestFullscreen()
+        document.documentElement.requestFullscreen()
+        document.documentElement.webkitRequestFullscreen()
     }
     
     async function addButton() {
