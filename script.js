@@ -50,6 +50,24 @@ let bodyHTML = document.querySelector('body')
 let container = document.createElement('section')
 container.classList.add('biggestContainer')
 
+function addMusic() {
+    let music = document.createElement('audio')
+    let source = document.createElement('source')
+
+    music.append(source)
+    music.controls = false
+
+    bodyHTML.append(music)
+}
+
+function updateMusic() {
+    let source = document.querySelector('audio > source')
+    source.src = '/assets/' + getMusic()
+    document.querySelector('audio').play()
+}
+
+addMusic()
+
 let particleArray = []
 
 /**
@@ -191,8 +209,9 @@ let loadingPromise = fetch('./storyScriptPython.json')
         storyScript = jsonFile
     })
 
-function createDialogue(episodeObject) {
+function createDialogue(episodeObject) { //episode = storyScript.stage#[#] 
     dialogueBlock = episodeObject.dialogue
+
 
     charToColor = {
         "John"      : "rgba(0, 102, 12, 0.95)", //emerald
@@ -324,6 +343,7 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
     if(Player.isGameOver()) {
         explode()
     }
+    updateMusic()
 
     episodeObject = storyScript[`stage${stage}`][episode - 1]
     let title = episodeObject.title
@@ -406,7 +426,7 @@ function startMenuScreen() {
 
         for (let i=0; i<3;i++){
             let btn = document.createElement("h2")
-            optionsContainer.setAttribute("style", "display: inline");
+            // optionsContainer.setAttribute("style", "display: inline");
             optionsContainer.append(btn)
             
             btn.textContent = stageArray[i];
@@ -416,7 +436,7 @@ function startMenuScreen() {
                 let button = document.createElement("button")
                 button.textContent = "Ep" + storyScript[`stage${i+1}`][j].episode
                 button.classList.add('episodeButton')
-                btn.setAttribute("style", "display: infinite")
+                // btn.setAttribute("style", "display: infinite")
                 button.onclick = function(){
                     setUpStage();
                     Player.clearUpperContainer()
@@ -424,7 +444,7 @@ function startMenuScreen() {
                     Player.currentEpisode = j+1; 
                     loadTitleAndOpening();
                 }
-                btn.append(button)
+                optionsContainer.append(button)
             }
         }
         menu.append(optionsContainer)
@@ -432,7 +452,10 @@ function startMenuScreen() {
     
     let fullscreenButton = document.createElement('button')
     fullscreenButton.textContent = 'Fullscreen'
-    fullscreenButton.onclick = () => document.documentElement.requestFullscreen()
+    fullscreenButton.onclick = () => {
+        document.documentElement.requestFullscreen()
+        document.documentElement.webkitRequestFullscreen()
+    }
     
     async function addButton() {
         await loadingPromise
@@ -522,9 +545,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
-        Player.updateHealth(option.point.Health*10); 
-        Player.updateWealth(option.point.Wealth*10); 
-        Player.updateHappiness(option.point.Happiness*10); 
+        Player.updateHealth(option.point.Health); 
+        Player.updateWealth(option.point.Wealth); 
+        Player.updateHappiness(option.point.Happiness); 
 
         
         visualizer.particleSaturation = visualizer.particleLight = Player.health
@@ -579,6 +602,12 @@ function createDecision(episode){ //episode = storyScript.stage#[#]
     // animation
     Player.upperContainerReference.classList.add('addFlash')
     setTimeout(() => Player.upperContainerReference.classList.remove('addFlash'), 1000)
+
+    if(Player.currentEpisode==3 && Player.currentStage==3) {
+        if(Player.isGameOver()){
+            explode()
+        }
+    }
 
     return wrapper; 
 }
@@ -700,7 +729,7 @@ function createEndButtons() {
     infoButton.textContent = 'More'
     infoButton.onclick = ""
 
-    //home button
+    // home button
     let restartButton = document.createElement("button");
     restartButton.textContent = "Restart Now"
     restartButton.onclick = function(){
@@ -714,7 +743,13 @@ function createEndButtons() {
         Player.currentEpisode = 1; 
         Player.currentStage = 1; 
         startMenuScreen();
-    }
+        }
+
+    // let restartButton = document.createElement("button")
+    // restartButton.onClick = "window.location.href=window.location.href"
+    // restartButton.value = "Refresh"
+    // restartButton.textContent = "Restart Now"
+    
 
     let quitButton = document.createElement('button')
     quitButton.textContent = 'Quit Game'
@@ -739,6 +774,23 @@ function setUpReportCard(){
     bodyHTML.append(endContainer)
 
 }
+
+function getMusic(){
+    let stage = Player.currentStage,
+        episode = Player.currentEpisode
+
+    if((stage==1 && episode ==1) ||(stage==3 && episode ==1)){
+        return "Happy.mp3"; 
+    } else if ((stage==1 && episode ==2) ||(stage==2 && episode ==3)||(stage==3 && episode ==3)){
+        return "Cool.mp3"; 
+    } else if((stage==1 && episode ==3) ||(stage==2 && episode ==2)){
+        return "Upbeat.mp3"; 
+    } else {
+        return "Lively.mp3";
+    }
+}
+
+
 
 
 // //TESTING
