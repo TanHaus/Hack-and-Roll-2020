@@ -787,6 +787,13 @@ function createEndButtons() {
 
 
 function setUpReportCard(){
+    if(music) {
+        music.pause()
+        music.remove()
+    }
+    music = new Audio('./assets/Ending.mp3')
+    music.play()
+
     container.remove();
     Player.upperContainerReference.remove()
     visualizer.vizCanvas.remove()
@@ -812,24 +819,4 @@ function getMusic(){
     }
 }
 
-
-
-
-// //TESTING
-// async function test() {
-//     await storyScript; 
-//     createDecision(storyScript.stage1[0]);
-// }
-// // test();
-// // startMenuScreen();
-// async function testFuck() {
-//     await storyScript;
-//     setUpModFour()
-// }
-// // test();
-// testFuck()
-// setDecisionPage()
-
-
-// setUpReportCard()
 startMenuScreen()
