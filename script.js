@@ -338,6 +338,7 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
     let episodeOpening = document.createElement('p')
 
     let nextButton = document.createElement('button')
+    nextButton.classList.add("nextButton");
     nextButton.textContent = '...'
     nextButton.onclick = () => {
         // clearTimeout(timeoutid)

@@ -115,6 +115,9 @@ button:active {
     justify-content: center; 
     
 }
+.nextButton {
+    margin-top:32%; 
+}
 
 .decButton {
     color: white;
