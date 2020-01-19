@@ -338,6 +338,7 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
     let episodeOpening = document.createElement('p')
 
     let nextButton = document.createElement('button')
+    nextButton.classList.add("nextButton");
     nextButton.textContent = '...'
     nextButton.onclick = () => {
         // clearTimeout(timeoutid)
@@ -380,7 +381,7 @@ function startMenuScreen() {
     //add components of menu - title and button. 
     let gameTitle = document.createElement("h1")
     gameTitle.textContent = "Another Singaporean Dream"
-    gameTitle.setAttribute("style", "font-size: 54px")
+    gameTitle.setAttribute("style", "font-size: 42px")
 
     //button
     let stageArray = ["1: Young Adult", "2: Working Adult", "3: Silver Years"]
@@ -404,7 +405,7 @@ function startMenuScreen() {
 
         for (let i=0; i<3;i++){
             let btn = document.createElement("h2")
-            optionsContainer.setAttribute("style", "display: inline");
+            // optionsContainer.setAttribute("style", "display: inline");
             optionsContainer.append(btn)
             
             btn.textContent = stageArray[i];
@@ -414,7 +415,7 @@ function startMenuScreen() {
                 let button = document.createElement("button")
                 button.textContent = "Ep" + storyScript[`stage${i+1}`][j].episode
                 button.classList.add('episodeButton')
-                btn.setAttribute("style", "display: infinite")
+                // btn.setAttribute("style", "display: infinite")
                 button.onclick = function(){
                     setUpStage();
                     Player.clearUpperContainer()
@@ -422,7 +423,7 @@ function startMenuScreen() {
                     Player.currentEpisode = j+1; 
                     loadTitleAndOpening();
                 }
-                btn.append(button)
+                optionsContainer.append(button)
             }
         }
         menu.append(optionsContainer)
@@ -430,7 +431,10 @@ function startMenuScreen() {
     
     let fullscreenButton = document.createElement('button')
     fullscreenButton.textContent = 'Fullscreen'
-    fullscreenButton.onclick = () => document.documentElement.requestFullscreen()
+    fullscreenButton.onclick = () => {
+        document.documentElement.requestFullscreen()
+        document.documentElement.webkitRequestFullscreen()
+    }
     
     async function addButton() {
         await loadingPromise
@@ -578,6 +582,12 @@ function createDecision(episode){ //episode = storyScript.stage#[#]
     Player.upperContainerReference.classList.add('addFlash')
     setTimeout(() => Player.upperContainerReference.classList.remove('addFlash'), 1000)
 
+    if(Player.currentEpisode==3 && Player.currentStage==3) {
+        if(Player.isGameOver()){
+            explode()
+        }
+    }
+
     return wrapper; 
 }
 
@@ -651,8 +661,6 @@ function setUpRadarChart() {
     radarChart.setAttribute("height", "90%");
     radarChart.classList.add("radar")
 
-    // bodyHTML.append(radarChart);
-
     var ctx = radarChart.getContext('2d');
     new Chart(ctx, {
     type: 'radar',
@@ -704,7 +712,7 @@ function createEndButtons() {
     let restartButton = document.createElement("button");
     restartButton.textContent = "Restart Now"
     restartButton.onclick = function(){
-        bodyHTML.firstChild.remove();
+        document.querySelector('section').remove()
         Player.wealth = 50; 
         Player.happiness = 50; 
         Player.health = 50; 
@@ -735,12 +743,12 @@ function createEndButtons() {
 }
 
 
-
 function setUpReportCard(){
-    console.log(container)
     container.remove();
+    Player.upperContainerReference.remove()
+    visualizer.vizCanvas.remove()
+    
     let endContainer = document.createElement('section')
-    console.log(endContainer)
     endContainer.append(setUpRadarChart(), createEndButtons())
     bodyHTML.append(endContainer)
 
