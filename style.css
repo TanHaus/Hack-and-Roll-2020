@@ -20,11 +20,8 @@ html, body {
 }
 
 .bgBlack {
-    height: 100vh;
+    height: 100%;
     background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
     padding-top: calc(100% - 9rem);
     padding-left: 2rem;
 }
@@ -32,7 +29,7 @@ html, body {
 .prologue {
     font-size: 1rem;
     padding-bottom: 1rem;
-    margin: 0 0 0 0;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
     color: white;
 }
@@ -67,6 +64,20 @@ button:focus,
 button:active {
   background: rgb(249, 251, 208);
   color: #000;
+}
+
+a.button {
+    display: block;
+    width: 45%;
+    margin: 1rem auto;
+    padding: 1rem 1.5rem;
+    background: rgba(227, 78, 45, 0.751);
+    border: 0;
+    border-radius: 1rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-out;
 }
 
 /* Decision and Outcome Page */
