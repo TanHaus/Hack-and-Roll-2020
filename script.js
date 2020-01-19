@@ -431,7 +431,10 @@ function startMenuScreen() {
     
     let fullscreenButton = document.createElement('button')
     fullscreenButton.textContent = 'Fullscreen'
-    fullscreenButton.onclick = () => document.documentElement.requestFullscreen()
+    fullscreenButton.onclick = () => {
+        let requestFullscreen = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen
+        requestFullscreen()
+    }
     
     async function addButton() {
         await loadingPromise
@@ -578,6 +581,12 @@ function createDecision(episode){ //episode = storyScript.stage#[#]
     // animation
     Player.upperContainerReference.classList.add('addFlash')
     setTimeout(() => Player.upperContainerReference.classList.remove('addFlash'), 1000)
+
+    if(Player.currentEpisode==3 && Player.currentStage==3) {
+        if(Player.isGameOver()){
+            explode()
+        }
+    }
 
     return wrapper; 
 }
