@@ -381,7 +381,7 @@ function startMenuScreen() {
     //add components of menu - title and button. 
     let gameTitle = document.createElement("h1")
     gameTitle.textContent = "Another Singaporean Dream"
-    gameTitle.setAttribute("style", "font-size: 54px")
+    gameTitle.setAttribute("style", "font-size: 42px")
 
     //button
     let stageArray = ["1: Young Adult", "2: Working Adult", "3: Silver Years"]
