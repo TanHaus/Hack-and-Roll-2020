@@ -652,8 +652,6 @@ function setUpRadarChart() {
     radarChart.setAttribute("height", "90%");
     radarChart.classList.add("radar")
 
-    bodyHTML.append(radarChart);
-
     var ctx = radarChart.getContext('2d');
     new Chart(ctx, {
     type: 'radar',
@@ -696,7 +694,7 @@ function setUpRadarChart() {
 }
 
 function createEndButtons() {
-    endButtonWrapper = document.createElement('section')
+    let endButtonWrapper = document.createElement('section')
     let infoButton = document.createElement('button')
     infoButton.textContent = 'More'
     infoButton.onclick = ""
@@ -705,9 +703,7 @@ function createEndButtons() {
     let restartButton = document.createElement("button");
     restartButton.textContent = "Restart Now"
     restartButton.onclick = function(){
-        Player.upperContainerReference.remove();
-        endContainer.remove();
-        visualizer.vizCanvas.remove();
+        document.querySelector('section').remove()
         Player.wealth = 50; 
         Player.happiness = 50; 
         Player.health = 50; 
@@ -731,12 +727,13 @@ function createEndButtons() {
     return endButtonWrapper
 }
 
-endContainer = document.createElement('section')
 
 function setUpReportCard(){
-    
     container.remove();
+    Player.upperContainerReference.remove()
+    visualizer.vizCanvas.remove()
     
+    let endContainer = document.createElement('section')
     endContainer.append(setUpRadarChart(), createEndButtons())
     bodyHTML.append(endContainer)
 
