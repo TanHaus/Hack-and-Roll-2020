@@ -405,7 +405,7 @@ function startMenuScreen() {
 
         for (let i=0; i<3;i++){
             let btn = document.createElement("h2")
-            optionsContainer.setAttribute("style", "display: inline");
+            // optionsContainer.setAttribute("style", "display: inline");
             optionsContainer.append(btn)
             
             btn.textContent = stageArray[i];
@@ -415,7 +415,7 @@ function startMenuScreen() {
                 let button = document.createElement("button")
                 button.textContent = "Ep" + storyScript[`stage${i+1}`][j].episode
                 button.classList.add('episodeButton')
-                btn.setAttribute("style", "display: infinite")
+                // btn.setAttribute("style", "display: infinite")
                 button.onclick = function(){
                     setUpStage();
                     Player.clearUpperContainer()
@@ -423,7 +423,7 @@ function startMenuScreen() {
                     Player.currentEpisode = j+1; 
                     loadTitleAndOpening();
                 }
-                btn.append(button)
+                optionsContainer.append(button)
             }
         }
         menu.append(optionsContainer)
