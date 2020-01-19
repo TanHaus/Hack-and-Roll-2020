@@ -92,7 +92,7 @@ class Particle {
         this.velocity = new Vector((Math.random()*2-1)*visualizer.particleVelocity, -Math.random())
         this.position = new Vector(x, y)
         this.lifespan = visualizer.particleLifespan
-        this.radius = visualizer.particleRadius
+        this.radius = visualizer.particleRadius + 5
         this.lineWidth = 1
         this.color = `hsl(${Math.random()*360}, ${visualizer.particleSaturation}%, ${visualizer.particleLight}%)`
     }
@@ -520,9 +520,9 @@ function createButton(option){
     //add event handler 
     button.onclick = function(){
         //update Player's fields
-        Player.updateHealth(option.point.Health); 
-        Player.updateWealth(option.point.Wealth); 
-        Player.updateHappiness(option.point.Happiness); 
+        Player.updateHealth(option.point.Health*10); 
+        Player.updateWealth(option.point.Wealth*10); 
+        Player.updateHappiness(option.point.Happiness*10); 
 
         
         visualizer.particleSaturation = visualizer.particleLight = Player.health
@@ -636,6 +636,7 @@ function explode() {
         } else {
             container.firstChild.remove()
             container.classList.add('addFlash')
+            setUpReportCard()
         }
     }
 
@@ -644,7 +645,6 @@ function explode() {
 }
 
 function setUpRadarChart() {
-
     let radarChart = document.createElement("canvas");
     radarChart.setAttribute("id", "myChart");
     radarChart.setAttribute("width", "100%");
@@ -691,18 +691,31 @@ function setUpRadarChart() {
         },
     }
     });
+    return radarChart
 }
 
 function createEndButtons() {
+    endButtonWrapper = document.createElement('section')
     let infoButton = document.createElement('button')
     infoButton.textContent = 'More'
     infoButton.onclick = ""
 
-    let restartButton = document.createElement('button')
-    restartButton.textContent = 'Restart Game'
-    restartButton.onclick = function() {
-        document.body.innerHTML = ""
-        startMenuScreen()
+    //home button
+    let restartButton = document.createElement("button");
+    restartButton.textContent = "Restart Now"
+    restartButton.onclick = function(){
+        Player.upperContainerReference.remove();
+        endContainer.remove();
+        visualizer.vizCanvas.remove();
+        Player.wealth = 50; 
+        Player.happiness = 50; 
+        Player.health = 50; 
+        Player.currentSceneSectionReference = null; 
+        Player.episodeContainerReference = null; 
+        Player.upperContainerReference = null; 
+        Player.currentEpisode = 1; 
+        Player.currentStage = 1; 
+        startMenuScreen();
     }
 
     let quitButton = document.createElement('button')
@@ -713,15 +726,18 @@ function createEndButtons() {
         }
       }
 
-    bodyHTML.append(infoButton, restartButton, quitButton)
+    endButtonWrapper.append(infoButton, restartButton, quitButton)
+    return endButtonWrapper
 }
+
+endContainer = document.createElement('section')
 
 function setUpReportCard(){
     
     container.remove();
     
-    setUpRadarChart();
-    createEndButtons();
+    endContainer.append(setUpRadarChart(), createEndButtons())
+    bodyHTML.append(endContainer)
 
 }
 
