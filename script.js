@@ -50,6 +50,24 @@ let bodyHTML = document.querySelector('body')
 let container = document.createElement('section')
 container.classList.add('biggestContainer')
 
+function addMusic() {
+    let music = document.createElement('audio')
+    let source = document.createElement('source')
+
+    music.append(source)
+    music.controls = false
+
+    bodyHTML.append(music)
+}
+
+function updateMusic() {
+    let source = document.querySelector('audio > source')
+    source.src = '/assets/' + getMusic()
+    document.querySelector('audio').play()
+}
+
+addMusic()
+
 let particleArray = []
 
 /**
@@ -191,8 +209,9 @@ let loadingPromise = fetch('./storyScriptPython.json')
         storyScript = jsonFile
     })
 
-function createDialogue(episodeObject) {
+function createDialogue(episodeObject) { //episode = storyScript.stage#[#] 
     dialogueBlock = episodeObject.dialogue
+
 
     charToColor = {
         "John"      : "rgba(0, 102, 12, 0.95)", //emerald
@@ -324,6 +343,7 @@ function loadTitleAndOpening(episode = Player.currentEpisode, stage = Player.cur
     if(Player.isGameOver()) {
         explode()
     }
+    updateMusic()
 
     episodeObject = storyScript[`stage${stage}`][episode - 1]
     let title = episodeObject.title
@@ -753,6 +773,23 @@ function setUpReportCard(){
     bodyHTML.append(endContainer)
 
 }
+
+function getMusic(){
+    let stage = Player.currentStage,
+        episode = Player.currentEpisode
+
+    if((stage==1 && episode ==1) ||(stage==3 && episode ==1)){
+        return "Happy.mp3"; 
+    } else if ((stage==1 && episode ==2) ||(stage==2 && episode ==3)||(stage==3 && episode ==3)){
+        return "Cool.mp3"; 
+    } else if((stage==1 && episode ==3) ||(stage==2 && episode ==2)){
+        return "Upbeat.mp3"; 
+    } else {
+        return "Lively.mp3";
+    }
+}
+
+
 
 
 // //TESTING
