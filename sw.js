@@ -8,7 +8,7 @@ let FILES_TO_CACHE = [
 ]
 
 function fetchAssets() {
-    return fetch('./assetsList.txt')
+    return fetch('/assetsList.txt')
     .then((resp) => resp.text())
     .then((text) => text.split('\n'))
     .then((assetsArray) => {
