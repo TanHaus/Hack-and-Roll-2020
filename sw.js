@@ -21,12 +21,15 @@ function fetchAssets() {
 self.addEventListener('install', evt => {
     console.log('[Service Worker] Install event')
     evt.waitUntil(
-        fetchAssets().then(
-        caches.open(CACHE_NAME)
-        .then(cache => {
-            console.log('[Service Worker] Pre-cache offline assets')
-            return cache.addAll(FILES_TO_CACHE)
-        }))
+        fetchAssets().then(() => {
+            caches.open(CACHE_NAME)
+            .then(cache => {
+                console.log('[Service Worker] Pre-cache offline assets')
+                let response = cache.addAll(FILES_TO_CACHE)
+                console.log(cache)
+                return response
+            })
+        })
     )
 
     self.skipWaiting()
