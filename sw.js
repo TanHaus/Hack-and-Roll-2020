@@ -1,19 +1,32 @@
 const CACHE_NAME = 'v1'
 
-const FILES_TO_CACHE = [
+let FILES_TO_CACHE = [
     './index.html',
     './style.css',
     './script.js',
     './storyScript.text',
 ]
+
+function fetchAssets() {
+    return fetch('./assetsList.txt')
+    .then((resp) => resp.text())
+    .then((text) => text.split('\n'))
+    .then((assetsArray) => {
+        FILES_TO_CACHE = FILES_TO_CACHE.concat(assetsArray)
+        console.log('Successfully fetch assets array')
+        console.log(FILES_TO_CACHE)
+    })
+}
+
 self.addEventListener('install', evt => {
     console.log('[Service Worker] Install event')
     evt.waitUntil(
+        fetchAssets().then(
         caches.open(CACHE_NAME)
         .then(cache => {
             console.log('[Service Worker] Pre-cache offline assets')
             return cache.addAll(FILES_TO_CACHE)
-        })
+        }))
     )
 
     self.skipWaiting()
