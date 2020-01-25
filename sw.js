@@ -1,10 +1,10 @@
 const CACHE_NAME = 'v1'
 
 let FILES_TO_CACHE = [
-    './index.html',
-    './style.css',
-    './script.js',
-    './storyScript.text',
+    '/index.html',
+    '/style.css',
+    '/script.js',
+    '/storyScript.text',
 ]
 
 function fetchAssets() {
